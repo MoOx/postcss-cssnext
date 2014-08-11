@@ -1,1 +1,12 @@
 language: node_js
+
+notifications:
+  irc:
+    channels:
+      - "irc.freenode.org#putaindecode"
+    on_success: change
+    on_failure: always
+
+cache:
+  directories:
+    - node_modules
