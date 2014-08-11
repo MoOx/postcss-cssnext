@@ -2,7 +2,7 @@
 
 Use tomorrow's CSS syntax today.
 
-**tl;dr** : [try cssnext in your browser](http://cssnext.putaindecode.io/).
+@todo ~~**tl;dr** : [try cssnext in your browser](http://cssnext.putaindecode.io/).~~
 
 ## Goals
 
@@ -19,7 +19,7 @@ Use tomorrow's CSS syntax today.
 
 Right now, nothing :D
 
-### TODO
+### @todo
 
 * [custom properties & `var()`](http://www.w3.org/TR/css-variables/) (via [postcss-custom-properties](https://github.com/postcss/postcss-custom-properties))
 * [reduced `calc()`]() (via [postcss-calc](https://github.com/postcss/postcss-calc), to optimize previously parsed `var()` references)
@@ -49,7 +49,7 @@ You can install it
 
 You can use cssnext using [CLI](cli), as [a JavaScript library](node-js-library) or through [others tools](usage-with-other-tools).
 
-### CLI
+### @todo CLI
 
 cssnext offer a command-line interface. Here's how to compile a file and print it to stdout:
 
@@ -65,7 +65,7 @@ To see all CLI options
 
 		$ cssnext --help
 
-### Node.js library
+### @todo Node.js library
 
 ```js
 var cssnext = require("cssnext")
@@ -81,8 +81,8 @@ fs.writeFileSync("dist/index.css", output)
 
 Here are some tools that will help you to use cssnext in your current workflow
 
-* [gulp-cssnext](https://github.com/putaindecode/gulp-cssnext)
-* [grunt-cssnext](https://github.com/putaindecode/grunt-cssnext)
+* @todo [gulp-cssnext](https://github.com/putaindecode/gulp-cssnext)
+* @todo [grunt-cssnext](https://github.com/putaindecode/grunt-cssnext)
 
 ---
 
