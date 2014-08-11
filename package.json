@@ -1,25 +1,40 @@
 {
   "name": "cssnext",
   "version": "0.0.0",
-  "description": "Use the future of CSS, today",
-  "main": "index.js",
-  "files": [
-    "LICENSE",
-    "README.md"
-  ],
-  "scripts": {
-    "test": "node test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/putaindecode/cssnext.git"
-  },
+  "description": "Use tomorrow's CSS syntax, today",
   "keywords": [
     "css",
     "preprocessor",
     "postprocessor",
+    "rework",
+    "postcss",
     "autoprefixer"
   ],
-  "author": "MoOx <m@moox.io>",
-  "license": "MIT"
+  "author": "MoOx",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/putaindecode/cssnext.git"
+  },
+  "files": [
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md",
+    "index.js"
+  ],
+  "dependencies": {
+    "postcss": "^2.1.0"
+  },
+  "devDependencies": {
+    "jscs": "^1.5.9",
+    "jshint": "^2.5.2",
+    "jshint-stylish": "^0.4.0",
+    "tap-colorize": "^1.2.0",
+    "tape": "^2.13.4"
+  },
+  "scripts": {
+    "jscs": "jscs *.js **/*.js",
+    "jshint": "jshint . --exclude node_modules --reporter node_modules/jshint-stylish/stylish.js",
+    "test": "npm run jscs && npm run jshint && tape test | tap-colorize"
+  }
 }

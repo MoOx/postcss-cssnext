@@ -1,0 +1,9 @@
+{
+  "newcap": false,
+  "undef": true,
+  "unused": true,
+  "asi": true,
+  "esnext": true,
+  "node": true,
+  "browser": true
+}
