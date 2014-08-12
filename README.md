@@ -1,6 +1,10 @@
-# ![cssnext](logo/cssnext-256.png) [![Build Status](https://travis-ci.org/putaindecode/cssnext.png?branch=master)](https://travis-ci.org/putaindecode/cssnext)
+# ![cssnext](logo/cssnext-256.png)
+<a href="https://travis-ci.org/putaindecode/cssnext"><img align="right" alt="Build Status" src="https://travis-ci.org/putaindecode/cssnext.png?branch=master" /></a>
 
 Use tomorrow's CSS syntax today.
+
+_This is not a CSS preprocessor, but can totally replace one._  
+This is a CSS transpiler for CSS specs that are not already implemented in popular browsers. Take a look to [available features](available).
 
 @todo ~~**tl;dr** : [try cssnext in your browser](http://cssnext.putaindecode.io/).~~
 
@@ -25,7 +29,6 @@ Right now, nothing :D
 * [custom properties & `var()`](http://www.w3.org/TR/css-variables/) (via [postcss-custom-properties](https://github.com/postcss/postcss-custom-properties))
 * [reduced `calc()`]() (via [postcss-calc](https://github.com/postcss/postcss-calc), to optimize previously parsed `var()` references)
 * [custom media queries](http://dev.w3.org/csswg/mediaqueries/#custom-mq) (via [postcss-custom-media](https://github.com/postcss/postcss-custom-media)), a nice way to avoid repeating media queries
-
 * [`color()`](http://dev.w3.org/csswg/css-color/#modifying-colors) (via [postcss-color](https://github.com/postcss/postcss-color)), a color function to modify color
 * [`hwb()`](http://dev.w3.org/csswg/css-color/#the-hwb-notation) (via [postcss-color](https://github.com/postcss/postcss-color)), similar to `hsl()` but easier for humans to work with
 * [#rrggbbaa](http://dev.w3.org/csswg/css-color/#hex-notation) (via [postcss-color](https://github.com/postcss/postcss-color))
@@ -54,17 +57,25 @@ You can use cssnext using [CLI](cli), as [a JavaScript library](node-js-library)
 
 cssnext offer a command-line interface. Here's how to compile a file and print it to stdout:
 
-		$ cssnext index.css
+    $ cssnext index.css
+
+To create an output file, you can just add a second argument
+
+    $ cssnext index.css output.css
+
+Or use CLI stdout redirection `$ cssnext index.css > output.css`
+
+### CLI options
 
 If you don't care about a certain feature, such as custom media queries, you can omit support for them like so:
 
-	$ cssnext --no-custom-media index.css
+    $ cssnext --no-custom-media index.css
 
 To enable source maps for these files, add the `--sourcemaps` flag.
 
-To see all CLI options
+**To see all CLI options**
 
-		$ cssnext --help
+    $ cssnext --help
 
 ### @todo Node.js library
 
@@ -78,27 +89,35 @@ var output = cssnext(css)
 fs.writeFileSync("dist/index.css", output)
 ```
 
+cssnext accept 2 arguments: a css string and an object of options.
+
+#### Node.js options
+
+@todo
+
 ### Usage with other tools
 
 Here are some tools that will help you to use cssnext in your current workflow
 
 * @todo [gulp-cssnext](https://github.com/putaindecode/gulp-cssnext)
 * @todo [grunt-cssnext](https://github.com/putaindecode/grunt-cssnext)
+* @todo brunch plugin
+* @todo brocolli plugin
+* @todo component-builder package
+* @todo meteor package
 
 ---
 
 ## Contributing
 
-cssnext use a lot of [postcss](https://github.com/postcss) plugins, so you might take a look to them if you found an issue or want to create or enhance a feature.
+_cssnext use a lot of [postcss](https://github.com/postcss) plugins, so you might take a look to them if you found an issue or want to create or enhance a feature._
 
 Otherwise, work on a branch, install dev-dependencies, respect coding style & run tests before submitting a bug fix or a feature.
 
-```bash
-git clone https://github.com/putaindecode/cssnext.git
-git checkout -b patch-1
-npm install
-npm test
-```
+    $ git clone https://github.com/putaindecode/cssnext.git
+    $ git checkout -b patch-1
+    $ npm install
+    $ npm test
 
 ## [Changelog](CHANGELOG.md)
 
