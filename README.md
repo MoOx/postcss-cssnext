@@ -1,4 +1,4 @@
-# cssnext [![Build Status](https://travis-ci.org/putaindecode/cssnext.png?branch=master)](https://travis-ci.org/putaindecode/cssnext)
+# ![cssnext](logo/cssnext-256.png) [![Build Status](https://travis-ci.org/putaindecode/cssnext.png?branch=master)](https://travis-ci.org/putaindecode/cssnext)
 
 Use tomorrow's CSS syntax today.
 
