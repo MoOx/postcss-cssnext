@@ -1,7 +1,9 @@
 var test = require("tape")
 
+var cssnext = require("..")
+
 test("cssnext", function(t) {
-  t.equal(true, true, "cssnext is useless for now")
+  t.ok(typeof cssnext("html{}") === "string", "should return a string")
 
   t.end()
 })
