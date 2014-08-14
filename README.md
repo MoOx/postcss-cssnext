@@ -27,17 +27,17 @@ cssnext works great with [SUIT CSS](http://suitcss.github.io/) and [cssrecipes](
 ### Available
 
 * [custom properties & `var()`](http://www.w3.org/TR/css-variables/) (via [postcss-custom-properties](https://github.com/postcss/postcss-custom-properties))
-
-### @todo
-
-* automatic vendor prefixes (via [autoprefixer](https://github.com/ai/autoprefixer))
 * [reduced `calc()`](https://github.com/MoOx/reduce-css-calc#readme) (via [postcss-calc](https://github.com/postcss/postcss-calc), to optimize previously parsed `var()` references)
 * [custom media queries](http://dev.w3.org/csswg/mediaqueries/#custom-mq) (via [postcss-custom-media](https://github.com/postcss/postcss-custom-media)), a nice way to avoid repeating media queries
 * [`color()`](http://dev.w3.org/csswg/css-color/#modifying-colors) (via [postcss-color](https://github.com/postcss/postcss-color)), a color function to modify color
 * [`hwb()`](http://dev.w3.org/csswg/css-color/#the-hwb-notation) (via [postcss-color](https://github.com/postcss/postcss-color)), similar to `hsl()` but easier for humans to work with
 * [#rrggbbaa](http://dev.w3.org/csswg/css-color/#hex-notation) (via [postcss-color](https://github.com/postcss/postcss-color))
 
-_Another feature ~~is~~ __will be__ available in cssnext: local `@import` files can be inlined  (via [postcss-import](https://github.com/postcss/postcss-import)) to output an optimized an ready to use CSS file._
+_Another feature is available in cssnext: local `@import` files can be inlined  (via [postcss-import](https://github.com/postcss/postcss-import)) to output an bundled CSS file._
+
+### @todo
+
+* automatic vendor prefixes (via [autoprefixer](https://github.com/ai/autoprefixer))
 
 Any omissions of the CSS specifications (even in draft) that are subject to be handled bye cssnext are not intentional.  
 Feel free to [open a new issue]() if you find something that should be handled.  
