@@ -4,7 +4,8 @@
 var Postcss = require("postcss")
 var features = {
   customProperties: require("postcss-custom-properties"),
-  calc: require("postcss-calc")
+  calc: require("postcss-calc"),
+  customMedia: require("postcss-custom-media")
 }
 
 /**
