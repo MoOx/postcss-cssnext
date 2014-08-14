@@ -40,8 +40,10 @@
     "tape": "^2.13.4"
   },
   "scripts": {
+    "standalone": "rm -rf dist && mkdir dist && browserify index.js --standalone cssnext > dist/cssnext.js",
     "jscs": "jscs *.js **/*.js",
-    "jshint": "jshint . --exclude node_modules --reporter node_modules/jshint-stylish/stylish.js",
-    "test": "npm run jscs && npm run jshint && tape test | tap-colorize"
+    "jshint": "jshint . --exclude-path .gitignore --reporter node_modules/jshint-stylish/stylish.js",
+    "tape": "tape test | tap-colorize",
+    "test": "npm run jscs && npm run jshint && npm run standalone && npm run tape"
   }
 }
