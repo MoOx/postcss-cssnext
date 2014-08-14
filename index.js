@@ -2,12 +2,14 @@
  * Modules dependencies
  */
 var Postcss = require("postcss")
+
 var features = {
-  import: require("postcss-import"),
-  customProperties: require("postcss-custom-properties"),
-  calc: require("postcss-calc"),
-  customMedia: require("postcss-custom-media"),
-  color: require("postcss-color")
+  import: function(options) { return require("postcss-import")(options) },
+  customProperties: function(options) { return require("postcss-custom-properties")(options) },
+  calc: function(options) { return require("postcss-calc")(options)},
+  customMedia: function(options) { return require("postcss-custom-media")(options)},
+  color: function(options) { return require("postcss-color")(options)},
+  prefixes: function(options) { return require("autoprefixer")(options).postcss}
 }
 
 /**

@@ -26,6 +26,7 @@ cssnext works great with [SUIT CSS](http://suitcss.github.io/) and [cssrecipes](
 
 ### Available
 
+* automatic vendor prefixes (via [autoprefixer](https://github.com/ai/autoprefixer))
 * [custom properties & `var()`](http://www.w3.org/TR/css-variables/) (via [postcss-custom-properties](https://github.com/postcss/postcss-custom-properties))
 * [reduced `calc()`](https://github.com/MoOx/reduce-css-calc#readme) (via [postcss-calc](https://github.com/postcss/postcss-calc), to optimize previously parsed `var()` references)
 * [custom media queries](http://dev.w3.org/csswg/mediaqueries/#custom-mq) (via [postcss-custom-media](https://github.com/postcss/postcss-custom-media)), a nice way to avoid repeating media queries
@@ -37,11 +38,11 @@ _Another feature is available in cssnext: local `@import` files can be inlined  
 
 ### @todo
 
-* automatic vendor prefixes (via [autoprefixer](https://github.com/ai/autoprefixer))
-
 Any omissions of the CSS specifications (even in draft) that are subject to be handled bye cssnext are not intentional.  
 Feel free to [open a new issue]() if you find something that should be handled.  
 Keep in mind that, as of right now, this project is intended to support new CSS *syntax* only.
+
+---
 
 ## Installation
 
@@ -81,7 +82,7 @@ To enable source maps for these files, add the `--sourcemaps` flag.
 
     $ cssnext --help
 
-### @todo Node.js library
+### Node.js library
 
 ```js
 var cssnext = require("cssnext")
@@ -96,6 +97,8 @@ fs.writeFileSync("dist/index.css", output)
 cssnext accept 2 arguments: a css string and an object of options.
 
 #### Node.js options
+
+_For now, options are passed to all postcss plugins._ This mean you should be able to any specific plugin option.
 
 ##### `from` (default: `null`)
 
@@ -115,8 +118,28 @@ Object containing key of features to enable. _No key means feature is enabled_
 
 ```js
 //eg: disable color support
-cssnext({features: {color: false}})
+var output = cssnext({
+  features: {
+    color: false
+  }
+})
 ```
+
+Here is all available features:
+
+- `import`
+- `customProperties`
+- `calc`
+- `customMedia`
+- `color`
+- `prefixes`
+
+##### `browsers` (default: autoprefixer default)
+
+Array to specify browsers you want to target (for now only used by [autoprefixer](https://github.com/ai/autoprefixer)).  
+See [autoprefixer documentation of this option for more details](https://github.com/ai/autoprefixer#browsers).
+
+Default to something like `["> 1%", "last 2 versions", "Firefox ESR"]`.
 
 ### Usage with other tools
 
