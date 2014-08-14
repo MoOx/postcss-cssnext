@@ -3,7 +3,8 @@
  */
 var Postcss = require("postcss")
 var features = {
-  customProperties: require("postcss-custom-properties")
+  customProperties: require("postcss-custom-properties"),
+  calc: require("postcss-calc")
 }
 
 /**
