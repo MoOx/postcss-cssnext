@@ -6,7 +6,8 @@ var features = {
   import: require("postcss-import"),
   customProperties: require("postcss-custom-properties"),
   calc: require("postcss-calc"),
-  customMedia: require("postcss-custom-media")
+  customMedia: require("postcss-custom-media"),
+  color: require("postcss-color")
 }
 
 /**

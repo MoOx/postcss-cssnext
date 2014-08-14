@@ -25,6 +25,7 @@
   "dependencies": {
     "postcss": "^2.1.0",
     "postcss-calc": "^2.0.1",
+    "postcss-color": "^1.0.0",
     "postcss-custom-media": "^1.0.0",
     "postcss-custom-properties": "^0.1.0",
     "postcss-import": "^1.0.0",
