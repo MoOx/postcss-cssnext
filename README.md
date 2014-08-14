@@ -7,6 +7,10 @@ Use tomorrow's CSS syntax today.
 _This is not a CSS preprocessor, but can totally replace one._  
 This is a CSS transpiler for CSS specs that are not already implemented in popular browsers. Take a look to [available features](available).
 
+cssnext is similar to [Myth](http://myth.io/) or [SUIT CSS preprocessor](https://github.com/suitcss/preprocessor) but push the concept to the next level by supporting more features.
+
+cssnext works great with [SUIT CSS](http://suitcss.github.io/) and [cssrecipes](https://github.com/cssrecipes).
+
 @todo ~~**tl;dr** : [try cssnext in your browser](http://cssnext.putaindecode.io/).~~
 
 ## Goals
