@@ -98,23 +98,12 @@ cssnext accept 2 arguments: a css string and an object of options.
 
 #### Node.js options
 
-_For now, options are passed to all postcss plugins._ This mean you should be able to any specific plugin option.
-
-##### `from` (default: `null`)
-
-Source of the file. Need to be provided to enable sourcemap.
-
-```js
-var cssnext = require("cssnext")
-var fs = require("fs")
-var source = "./index.css"
-var output = cssnext(fs.readFileSync(source, "utf8"), {from: source})
-fs.writeFileSync("dist/index.css", output)
-```
+_For now, all options are passed to all postcss plugins._ This mean you should be able to any specific plugin options.
 
 ##### `features` (default: all features)
 
-Object containing key of features to enable. _No key means feature is enabled_
+Object containing key of features to enable/disable.  
+_No key means feature is enabled_.
 
 ```js
 //eg: disable color support
@@ -140,6 +129,30 @@ Array to specify browsers you want to target (for now only used by [autoprefixer
 See [autoprefixer documentation of this option for more details](https://github.com/ai/autoprefixer#browsers).
 
 Default to something like `["> 1%", "last 2 versions", "Firefox ESR"]`.
+
+##### `sourcemap` (default: `false`)
+
+**If you want a accurate sourcemap, please use instead the `from` option.**
+
+This option is a shortcut to enable inlined sourcemap in the output.  
+Just pass `true` to get the sourcemap at the end of the output.  
+If you want better control on sourcemap, use [postcss `map` option](https://github.com/postcss/postcss#source-map-1) directly.
+
+##### `from` (default: `null`)
+
+Source of the file. **Enable `sourcemap` option automatically** (except if you provide both `from` & `sourcemap`).
+
+```js
+var cssnext = require("cssnext")
+var fs = require("fs")
+
+var source = "./index.css"
+var output = cssnext(
+  fs.readFileSync(source, "utf8"),
+  {from: source}
+)
+fs.writeFileSync("dist/index.css", output)
+```
 
 ### Usage with other tools
 
