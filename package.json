@@ -23,7 +23,9 @@
     "index.js"
   ],
   "dependencies": {
-    "postcss": "^2.1.0"
+    "postcss": "^2.1.0",
+    "postcss-custom-properties": "^0.1.0",
+    "to-slug-case": "^0.1.2"
   },
   "devDependencies": {
     "jscs": "^1.5.9",

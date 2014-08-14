@@ -21,12 +21,11 @@ This is a CSS transpiler for CSS specs that are not already implemented in popul
 
 ### Available
 
-Right now, nothing :D
+* [custom properties & `var()`](http://www.w3.org/TR/css-variables/) (via [postcss-custom-properties](https://github.com/postcss/postcss-custom-properties))
 
 ### @todo
 
 * automatic vendor prefixes (via [autoprefixer](https://github.com/ai/autoprefixer))
-* [custom properties & `var()`](http://www.w3.org/TR/css-variables/) (via [postcss-custom-properties](https://github.com/postcss/postcss-custom-properties))
 * [reduced `calc()`]() (via [postcss-calc](https://github.com/postcss/postcss-calc), to optimize previously parsed `var()` references)
 * [custom media queries](http://dev.w3.org/csswg/mediaqueries/#custom-mq) (via [postcss-custom-media](https://github.com/postcss/postcss-custom-media)), a nice way to avoid repeating media queries
 * [`color()`](http://dev.w3.org/csswg/css-color/#modifying-colors) (via [postcss-color](https://github.com/postcss/postcss-color)), a color function to modify color
@@ -93,7 +92,26 @@ cssnext accept 2 arguments: a css string and an object of options.
 
 #### Node.js options
 
-@todo
+##### `from` (default: `null`)
+
+Source of the file. Need to be provided to enable sourcemap.
+
+```js
+var cssnext = require("cssnext")
+var fs = require("fs")
+var source = "./index.css"
+var output = cssnext(fs.readFileSync(source, "utf8"), {from: source})
+fs.writeFileSync("dist/index.css", output)
+```
+
+##### `features` (default: all features)
+
+Object containing key of features to enable. _No key means feature is enabled_
+
+```js
+//eg: disable color support
+cssnext({features: {color: false}})
+```
 
 ### Usage with other tools
 
