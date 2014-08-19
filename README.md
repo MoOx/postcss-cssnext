@@ -1,6 +1,8 @@
 # ![cssnext](logo/cssnext-256.png)
 
-<a href="https://travis-ci.org/putaindecode/cssnext"><img align="right" alt="Build Status" src="https://travis-ci.org/putaindecode/cssnext.png?branch=master" /></a>
+[![Build Status](http://img.shields.io/travis/putaindecode/cssnext.svg)](https://travis-ci.org/putaindecode/cssnext)
+[![Code Climate](http://img.shields.io/codeclimate/github/putaindecode/cssnext.svg)](https://codeclimate.com/github/putaindecode/cssnext)
+[![NPM version](http://img.shields.io/npm/v/cssnext.svg)](https://codeclimate.com/github/putaindecode/cssnext)
 
 Use tomorrow's CSS syntax today.
 
