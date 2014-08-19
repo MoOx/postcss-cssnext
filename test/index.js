@@ -58,7 +58,7 @@ test("compress", function(t) {
       {compress: true}
     ).trim(),
     read("compress/expected").trim(),
-    "should compress on --compress (thanks Captain Obvious)"
+    "should be able to compress"
   )
 
   t.end()
@@ -136,7 +136,13 @@ test("cli", function(t) {
 
   exec("bin/cssnext --compress test/compress/input.css", function(err, stdout) {
     if (err) { throw err }
-    t.equal(stdout, read("compress/expected").trim(), "should compress on --compress (thanks Captain Obvious)")
+    t.equal(stdout, read("compress/expected").trim(), "should compress on --compress")
+  })
+  planned+=1
+
+  exec("bin/cssnext --sourcemap test/sourcemap/input.css", function(err, stdout) {
+    if (err) { throw err }
+    t.equal(stdout, read("sourcemap/expected").trim(), "should add sourcemap on --sourcemap")
   })
   planned+=1
 

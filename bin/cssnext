@@ -13,6 +13,7 @@ program
   .version(pkg.version)
   .usage("[options] [<input> [<output>]]")
   .option("-c, --compress", "compress output")
+  .option("-s, --sourcemap", "add sourcemap")
   .option("-w, --watch", "watch the input file for changes")
   .option("-v, --verbose", "verbose output")
 
