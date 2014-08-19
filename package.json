@@ -16,6 +16,10 @@
     "type": "git",
     "url": "https://github.com/putaindecode/cssnext.git"
   },
+  "homepage": "https://cssnext.putaindecode.io",
+  "bugs": {
+    "url": "https://github.com/putaindecode/cssnext/issues"
+  },
   "files": [
     "CHANGELOG.md",
     "LICENSE",
