@@ -1,0 +1,52 @@
+#!/usr/bin/env node
+
+var colors = require("colors")
+
+var program = require("commander")
+
+var path = require("path")
+
+var cssnext = require("..")
+var pkg = require("../package")
+
+program
+  .version(pkg.version)
+  .usage("[options] [<input> [<output>]]")
+
+program.parse(process.argv)
+
+var input = program.args[0] ? path.resolve(program.args[0]) : null
+var output = program.args[1] ? path.resolve(program.args[1]) : null
+function transform() {
+  require("read-file-stdin")(input, function(err, buffer) {
+    if (err) {
+      throw err
+    }
+
+    try {
+      var css = cssnext(buffer.toString(), {
+        features: program,
+        from: input,
+        sourcemap: Boolean(program.sourcemap)
+      })
+
+      require("write-file-stdout")(output, css)
+    }
+    catch (e) {
+      console.error()
+      console.error()
+      console.error(colors.bold("cssnext encounters an error:"))
+      console.error()
+      console.error(e.message.red)
+      console.error()
+      console.error(e.stack.split("\n").slice(1).join("\n").grey)
+      console.error()
+      console.error("If this error looks like a bug, please report it here:")
+      console.error(colors.grey("❯ ") + pkg.bugs.url.cyan)
+      console.error()
+      process.exit(2)
+    }
+  })
+}
+
+transform()

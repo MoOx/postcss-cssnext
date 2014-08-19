@@ -81,6 +81,35 @@ test("sourcemap", function(t) {
 })
 
 /**
+ * CLI tests.
+ */
+
+test("cli", function(t) {
+  var exec = require("child_process").exec
+
+  var output = read("cli/input.expected")
+
+  var planned = 0
+
+  exec("bin/cssnext test/cli/input.css test/cli/output.css", function(err) {
+    if (err) { throw err }
+    var res = read("cli/output")
+    t.equal(res, output, "should read from a file and write to a file")
+    remove("cli/output")
+  })
+  planned+=1
+
+  exec("bin/cssnext test/cli/error.css", function(err, stdout, stderr) {
+    t.ok(err && err.code === 2, "should throw an error")
+    t.ok(contains(stderr, "encounters an error"), "should output a readable error")
+    t.ok(contains(stderr, "If this error looks like a bug, please report it here"), "should show the url where to report bugs")
+  })
+  planned+=3
+
+  t.plan(planned)
+})
+
+/*
  * Resolve a fixture by `filename`.
  *
  * @param {String} filename
@@ -107,13 +136,23 @@ function read(filename) {
  *
  * @param {String} filename
  */
+function remove(filename) {
+  var fs = require("fs")
 
-// function remove(filename) {
-//   var fs = require("fs")
-//
-//   var file = resolve(filename)
-//   if (!fs.existsSync(file)) {
-//     return
-//   }
-//   fs.unlinkSync(file)
-// }
+  var file = resolve(filename)
+  if (!fs.existsSync(file)) {
+    return
+  }
+  fs.unlinkSync(file)
+}
+
+/**
+ * Check if a string is contained into another
+ *
+ * @param  {String}  string string to look into
+ * @param  {String}  piece  string to find
+ * @return {Boolean}        returns true if piece is contained in string
+ */
+function contains(string, piece) {
+  return Boolean(string.indexOf(piece) + 1)
+}
