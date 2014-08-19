@@ -4,14 +4,14 @@
 [![Code Climate](http://img.shields.io/codeclimate/github/putaindecode/cssnext.svg)](https://codeclimate.com/github/putaindecode/cssnext)
 [![NPM version](http://img.shields.io/npm/v/cssnext.svg)](https://codeclimate.com/github/putaindecode/cssnext)
 
-Use tomorrow's CSS syntax today.
+> Use tomorrow's CSS syntax today.
 
-_This is not a CSS preprocessor, but can totally replace one._  
+_This is not a CSS preprocessor, but can replace one._  
 This is a CSS transpiler for CSS specs that are not already implemented in popular browsers. Take a look to [available features](available).
 
-cssnext is similar to [Myth](http://myth.io/) or [SUIT CSS preprocessor](https://github.com/suitcss/preprocessor) but push the concept to the next level by supporting more features.
+**cssnext** is similar to [Myth](http://myth.io/) or [SUIT CSS preprocessor](https://github.com/suitcss/preprocessor) but push the concept to the next level by supporting more features.
 
-cssnext works great with [SUIT CSS](http://suitcss.github.io/) and [cssrecipes](https://github.com/cssrecipes).
+**cssnext** works great with [SUIT CSS](http://suitcss.github.io/) and [cssrecipes](https://github.com/cssrecipes).
 
 @todo ~~**tl;dr** : [try cssnext in your browser](http://cssnext.putaindecode.io/).~~
 
@@ -36,24 +36,28 @@ cssnext works great with [SUIT CSS](http://suitcss.github.io/) and [cssrecipes](
 * [`hwb()`](http://dev.w3.org/csswg/css-color/#the-hwb-notation) (via [postcss-color](https://github.com/postcss/postcss-color)), similar to `hsl()` but easier for humans to work with
 * [#rrggbbaa](http://dev.w3.org/csswg/css-color/#hex-notation) (via [postcss-color](https://github.com/postcss/postcss-color))
 
-_Another feature is available in cssnext: local `@import` files can be inlined  (via [postcss-import](https://github.com/postcss/postcss-import)) to output an bundled CSS file._
+
+### Additionals enhancements
+
+* `@import` inline local files  (via [postcss-import](https://github.com/postcss/postcss-import)) to output an bundled CSS file.
+
 
 ### @todo
 
 Any omissions of the CSS specifications (even in draft) that are subject to be handled bye cssnext are not intentional.  
-Feel free to [open a new issue]() if you find something that should be handled.  
+Feel free to [open a new issue](issues) if you find something that should be handled.  
 Keep in mind that, as of right now, this project is intended to support new CSS *syntax* only.
 
 ---
 
 ## Installation
 
-    $ npm install [-g|--save-dev] cssnext
+    $ npm install cssnext
 
 You can install it
 
-- globally, to use it through the [CLI](cli)
-- locally, to use it through [npm scripts](https://www.npmjs.org/doc/misc/npm-scripts.html) (`npm run`) or via `.node_modules/.bin/csnext`
+- globally (`-g`), to use it through the [CLI](cli)
+- locally ()`--save` or `--save-dev`), to use it through [npm scripts](https://www.npmjs.org/doc/misc/npm-scripts.html) (`npm run`) or via `.node_modules/.bin/csnext`
 - by using [other tools](usage-with-other-tools) like [gulp-cssnext](https://github.com/putaindecode/gulp-cssnext)
 
 ## Usage
