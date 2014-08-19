@@ -24,7 +24,7 @@ var testFeature = function(t, feature, cssnext, version, source, input, expected
 
   // enable only the one we want to test
   options.features[feature] = true
-  t.equal(cssnext(input, options), expected, version + ": should add " + feature + " support")
+  t.equal(cssnext(input, options).trim(), expected.trim(), version + ": should add " + feature + " support")
 }
 
 Object.keys(cssnext.features).forEach(function(name) {
@@ -72,8 +72,8 @@ test("sourcemap", function(t) {
     cssnext(
       read("sourcemap/input"),
       {from: "./test/sourcemap/input.css"}
-    ),
-    read("sourcemap/expected"),
+    ).trim(),
+    read("sourcemap/expected").trim(),
     "should contain a correct sourcemap"
   )
 
