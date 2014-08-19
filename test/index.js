@@ -154,6 +154,18 @@ test("cli", function(t) {
   })
   planned+=features.length
 
+  exec("bin/cssnext --watch", function(err, stdout, stderr) {
+    t.ok(err && err.code === 3, "should return an error when <input> or <output> are missing when `--watch` option passed")
+    t.ok(contains(stderr, "--watch option need"), "should show an explanation when <input> or <output> are missing when `--watch` option passed")
+  })
+  planned+=2
+
+  exec("bin/cssnext --watch test/cli/input.css", function(err, stdout, stderr) {
+    t.ok(err && err.code === 3, "should return an error when <output> is missing when `--watch` option passed")
+    t.ok(contains(stderr, "--watch option need"), "should show an explanation when <output> is missing when `--watch` option passed")
+  })
+  planned+=2
+
   t.plan(planned)
 })
 

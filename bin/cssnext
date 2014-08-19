@@ -13,6 +13,7 @@ program
   .version(pkg.version)
   .usage("[options] [<input> [<output>]]")
   .option("-c, --compress", "compress output")
+  .option("-w, --watch", "watch the input file for changes")
   .option("-v, --verbose", "verbose output")
 
 // register features as flag
@@ -60,7 +61,7 @@ function transform() {
       console.error()
       console.error(colors.bold("cssnext encounters an error:"))
       console.error()
-      console.error(e.message.red)
+      console.error(colors.red(e.message))
       console.error()
       console.error(e.stack.split("\n").slice(1).join("\n").grey)
       console.error()
@@ -73,6 +74,17 @@ function transform() {
 }
 
 transform()
+
+if (program.watch) {
+  if (!input || !output) {
+    console.error(colors.red("--watch option need both <input> & <output> files to work"))
+    process.exit(3)
+  }
+  require("node-watch")(input, transform)
+  if (verbose) {
+    log(colors.cyan("Watching"), input)
+  }
+}
 
 /**
  * log content prefixed by time
