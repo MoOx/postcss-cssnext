@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
-var colors = require("colors")
-
-var program = require("commander")
-
+var fs = require("fs")
 var path = require("path")
+
+var colors = require("colors")
+var program = require("commander")
 
 var cssnext = require("..")
 var pkg = require("../package")

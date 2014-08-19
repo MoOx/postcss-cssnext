@@ -87,6 +87,7 @@ test("sourcemap", function(t) {
 test("cli", function(t) {
   var exec = require("child_process").exec
 
+  var input = read("cli/input")
   var output = read("cli/input.expected")
 
   var planned = 0
@@ -97,6 +98,20 @@ test("cli", function(t) {
     t.equal(res, output, "should read from a file and write to a file")
     remove("cli/output")
   })
+  planned+=1
+
+  exec("bin/cssnext test/cli/input.css", function(err, stdout) {
+    if (err) { throw err }
+    t.equal(stdout, output, "should read from a file and write to stdout")
+  })
+  planned+=1
+
+  var childProcess = exec("bin/cssnext", function(err, stdout) {
+    if (err) { throw err }
+    t.equal(stdout, output, "should read from stdin and write to stdout")
+  })
+  childProcess.stdin.write(new Buffer(input))
+  childProcess.stdin.end()
   planned+=1
 
   exec("bin/cssnext test/cli/wtf.css", function(err, stdout, stderr) {
@@ -115,7 +130,7 @@ test("cli", function(t) {
   t.plan(planned)
 })
 
-/*
+/**
  * Resolve a fixture by `filename`.
  *
  * @param {String} filename
