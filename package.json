@@ -48,7 +48,8 @@
     "standalone": "rm -rf dist && mkdir dist && browserify index.js --standalone cssnext > dist/cssnext.js",
     "jscs": "jscs *.js **/*.js",
     "jshint": "jshint . --exclude-path .gitignore --reporter node_modules/jshint-stylish/stylish.js",
+    "lint": "npm run jscs && npm run jshint",
     "tape": "tape test | tap-colorize",
-    "test": "npm run jscs && npm run jshint && npm run standalone && npm run tape"
+    "test": "npm run lint && npm run standalone && npm run tape"
   }
 }
