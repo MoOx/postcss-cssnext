@@ -99,6 +99,12 @@ test("cli", function(t) {
   })
   planned+=1
 
+  exec("bin/cssnext test/cli/wtf.css", function(err, stdout, stderr) {
+    t.ok(err && err.code === 1, "should return an error when input file is unreadable")
+    t.ok(contains(stderr, "Unable to read file"), "should show that the input file is not found")
+  })
+  planned+=2
+
   exec("bin/cssnext test/cli/error.css", function(err, stdout, stderr) {
     t.ok(err && err.code === 2, "should throw an error")
     t.ok(contains(stderr, "encounters an error"), "should output a readable error")

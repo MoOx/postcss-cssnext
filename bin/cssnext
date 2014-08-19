@@ -17,6 +17,11 @@ program.parse(process.argv)
 
 var input = program.args[0] ? path.resolve(program.args[0]) : null
 var output = program.args[1] ? path.resolve(program.args[1]) : null
+if (input && !fs.existsSync(input)) {
+  console.error(colors.red("Unable to read file"), input)
+  process.exit(1)
+}
+
 function transform() {
   require("read-file-stdin")(input, function(err, buffer) {
     if (err) {
