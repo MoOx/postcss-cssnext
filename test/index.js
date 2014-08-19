@@ -127,6 +127,13 @@ test("cli", function(t) {
   })
   planned+=3
 
+  exec("bin/cssnext --verbose test/cli/input.css test/cli/output.css", function(err, stdout) {
+    if (err) { throw err }
+    t.ok(contains(stdout, "Output written"), "should log on --verbose")
+    remove("cli/output")
+  })
+  planned+=1
+
   t.plan(planned)
 })
 

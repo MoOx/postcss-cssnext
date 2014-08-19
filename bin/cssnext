@@ -12,11 +12,14 @@ var pkg = require("../package")
 program
   .version(pkg.version)
   .usage("[options] [<input> [<output>]]")
+  .option("-v, --verbose", "verbose output")
 
 program.parse(process.argv)
 
 var input = program.args[0] ? path.resolve(program.args[0]) : null
 var output = program.args[1] ? path.resolve(program.args[1]) : null
+var verbose = program.verbose
+
 if (input && !fs.existsSync(input)) {
   console.error(colors.red("Unable to read file"), input)
   process.exit(1)
@@ -36,6 +39,9 @@ function transform() {
       })
 
       require("write-file-stdout")(output, css)
+      if (verbose && output) {
+        log(colors.cyan("Output written"), output)
+      }
     }
     catch (e) {
       console.error()
@@ -55,3 +61,14 @@ function transform() {
 }
 
 transform()
+
+/**
+ * log content prefixed by time
+ *
+ * @return {String} output all given parameters prefixed by the current locale time
+ */
+function log() {
+  var args = [].slice.call(arguments)
+  args.unshift("[" + colors.grey(new Date().toLocaleTimeString()) + "]")
+  console.log.apply(console.log, args)
+}
