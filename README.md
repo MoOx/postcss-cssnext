@@ -58,7 +58,7 @@ You can install it
 
 You can use cssnext using [CLI](cli), as [a JavaScript library](node-js-library) or through [others tools](usage-with-other-tools).
 
-### @todo CLI
+### CLI
 
 cssnext offer a command-line interface. Here's how to compile a file and print it to stdout:
 
@@ -68,7 +68,9 @@ To create an output file, you can just add a second argument
 
     $ cssnext index.css output.css
 
-Or use CLI stdout redirection `$ cssnext index.css > output.css`
+Or use CLI std(in|out) redirection(s)
+
+    $ cat input.css | cssnext > output.css
 
 ### CLI options
 
@@ -76,7 +78,7 @@ If you don't care about a certain feature, such as custom media queries, you can
 
     $ cssnext --no-custom-media index.css
 
-To enable source maps for these files, add the `--sourcemaps` flag.
+To enable source maps for these files, add the `--sourcemap` flag.
 
 **To see all CLI options**
 

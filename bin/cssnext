@@ -27,6 +27,24 @@ Object.keys(cssnext.features).forEach(function(feature) {
   program.option(flag, desc)
 })
 
+program.on("--help", function() {
+  console.log(function() {/*
+  Examples:
+
+    # pass an input and output file
+    $ cssnext input.css output.css
+
+
+    # start cssnext watcher (need input & output)
+    $ cssnext --watch input.css output.css
+
+
+    # using stdin and stdout
+    $ cat input.css | cssnext > output.css
+  */
+  }.toString().split("\n").slice(1, -2).join("\n"))
+})
+
 program.parse(process.argv)
 
 var input = program.args[0] ? path.resolve(program.args[0]) : null
