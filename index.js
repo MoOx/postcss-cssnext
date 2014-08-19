@@ -4,12 +4,12 @@
 var Postcss = require("postcss")
 
 var features = {
-  import: function(options) { return require("postcss-import")(options) },
+  import:           function(options) { return require("postcss-import")(options) },
   customProperties: function(options) { return require("postcss-custom-properties")(options) },
-  calc: function(options) { return require("postcss-calc")(options)},
-  customMedia: function(options) { return require("postcss-custom-media")(options)},
-  color: function(options) { return require("postcss-color")(options)},
-  prefixes: function(options) { return require("autoprefixer")(options).postcss}
+  calc:             function(options) { return require("postcss-calc")(options)},
+  customMedia:      function(options) { return require("postcss-custom-media")(options)},
+  color:            function(options) { return require("postcss-color")(options)},
+  prefixes:         function(options) { return require("autoprefixer")(options).postcss}
 }
 
 /**
