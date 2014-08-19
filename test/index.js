@@ -49,6 +49,22 @@ Object.keys(cssnext.features).forEach(function(name) {
 })
 
 /**
+ * Compress tests
+ */
+test("compress", function(t) {
+  t.equal(
+    cssnext(
+      read("compress/input"),
+      {compress: true}
+    ).trim(),
+    read("compress/expected").trim(),
+    "should compress on --compress (thanks Captain Obvious)"
+  )
+
+  t.end()
+})
+
+/**
  * Sourcemap tests
  */
 test("sourcemap", function(t) {

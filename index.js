@@ -54,6 +54,11 @@ function cssnext(string, options) {
     }
   })
 
+  // simple minifier plugin
+  if (options.compress) {
+    postcss.use(require("csswring").postcss)
+  }
+
   return postcss.process(string, options).css
 }
 

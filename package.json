@@ -28,6 +28,7 @@
   ],
   "dependencies": {
     "autoprefixer": "^2.2.0",
+    "csswring": "^1.0.0",
     "postcss": "^2.1.0",
     "postcss-calc": "^2.0.1",
     "postcss-color": "^1.0.0",

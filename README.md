@@ -130,6 +130,10 @@ See [autoprefixer documentation of this option for more details](https://github.
 
 Default to something like `["> 1%", "last 2 versions", "Firefox ESR"]`.
 
+##### `compress` (default: `false`)
+
+Allow you to compress the output (using [CSSWring](https://github.com/hail2u/node-csswring)).
+
 ##### `sourcemap` (default: `false`)
 
 **If you want a accurate sourcemap, please use instead the `from` option.**
