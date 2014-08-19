@@ -140,6 +140,20 @@ test("cli", function(t) {
   })
   planned+=1
 
+  var toSpace = require("to-space-case")
+  var toSlug = require("to-slug-case")
+  var features = Object.keys(cssnext.features)
+  var no = "--no-" + features.map(function(feature) { return toSlug(feature)}).join(" --no-")
+  features.forEach(function(feature) {
+    var slug = toSlug(feature)
+    var output = read("features/" + slug)
+    exec("bin/cssnext " + no + " test/features/" + slug + ".css", function(err, stdout) {
+      if (err) { throw err }
+      t.equal(stdout, output, "should not modify input of '" + toSpace(feature) + "' fixture if all features are disabled")
+    })
+  })
+  planned+=features.length
+
   t.plan(planned)
 })
 

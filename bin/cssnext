@@ -15,6 +15,16 @@ program
   .option("-c, --compress", "compress output")
   .option("-v, --verbose", "verbose output")
 
+// register features as flag
+var format = require("util").format
+var toSlug = require("to-slug-case")
+var toSpace = require("to-space-case")
+Object.keys(cssnext.features).forEach(function(feature) {
+  var flag = format("--no-%s", toSlug(feature))
+  var desc = format("disable %s support", toSpace(feature))
+  program.option(flag, desc)
+})
+
 program.parse(process.argv)
 
 var input = program.args[0] ? path.resolve(program.args[0]) : null
