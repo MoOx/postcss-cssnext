@@ -134,6 +134,12 @@ test("cli", function(t) {
   })
   planned+=1
 
+  exec("bin/cssnext --compress test/compress/input.css", function(err, stdout) {
+    if (err) { throw err }
+    t.equal(stdout, read("compress/expected").trim(), "should compress on --compress (thanks Captain Obvious)")
+  })
+  planned+=1
+
   t.plan(planned)
 })
 

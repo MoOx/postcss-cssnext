@@ -12,6 +12,7 @@ var pkg = require("../package")
 program
   .version(pkg.version)
   .usage("[options] [<input> [<output>]]")
+  .option("-c, --compress", "compress output")
   .option("-v, --verbose", "verbose output")
 
 program.parse(process.argv)
@@ -35,7 +36,8 @@ function transform() {
       var css = cssnext(buffer.toString(), {
         features: program,
         from: input,
-        sourcemap: Boolean(program.sourcemap)
+        sourcemap: Boolean(program.sourcemap),
+        compress: program.compress
       })
 
       require("write-file-stdout")(output, css)
