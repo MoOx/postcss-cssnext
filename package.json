@@ -33,6 +33,7 @@
     "to-slug-case": "^0.1.2"
   },
   "devDependencies": {
+    "browserify": "^5.10.0",
     "jscs": "^1.5.9",
     "jshint": "^2.5.2",
     "jshint-stylish": "^0.4.0",
