@@ -32,7 +32,7 @@ function cssnext(string, options) {
   var features = options.features || {}
 
   // default sourcemap
-  // if `map` option is passed, sourcemap option is ignored
+  // if `map` option is passed, `sourcemap` option is ignored
   // if `sourcemap` option is passed, a default map is used (insert content in the output)
   // if `from` option is passed, we assume sourcemap is wanted
   options.map = options.map ||
