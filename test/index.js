@@ -71,7 +71,10 @@ test("sourcemap", function(t) {
   t.equal(
     cssnext(
       read("sourcemap/input"),
-      {from: "./test/sourcemap/input.css"}
+      {
+        from: "./test/sourcemap/input.css",
+        sourcemap:  true
+      }
     ).trim(),
     read("sourcemap/expected").trim(),
     "should contain a correct sourcemap"

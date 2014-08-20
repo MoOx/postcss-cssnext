@@ -152,7 +152,7 @@ If you want better control on sourcemap, use [postcss `map` option](https://gith
 
 ##### `from` (default: `null`)
 
-Source of the file. **Enable `sourcemap` option automatically** (except if you provide both `from` & `sourcemap`).
+Source of the file. Needed for sourcemap.
 
 ```js
 var cssnext = require("cssnext")
