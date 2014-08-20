@@ -90,7 +90,7 @@ To enable source maps for these files, add the `--sourcemap` flag.
 
     $ cssnext --help
 
-### Node.js library
+### Node.js API
 
 ```js
 var cssnext = require("cssnext")
