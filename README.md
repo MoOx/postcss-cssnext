@@ -2,7 +2,7 @@
 
 [![Build Status](http://img.shields.io/travis/putaindecode/cssnext.svg)](https://travis-ci.org/putaindecode/cssnext)
 [![Code Climate](http://img.shields.io/codeclimate/github/putaindecode/cssnext.svg)](https://codeclimate.com/github/putaindecode/cssnext)
-[![NPM version](http://img.shields.io/npm/v/cssnext.svg)](https://codeclimate.com/github/putaindecode/cssnext)
+[![NPM version](http://img.shields.io/npm/v/cssnext.svg)](https://www.npmjs.org/package/cssnext)
 
 > Use tomorrow's CSS syntax today.
 
