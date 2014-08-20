@@ -170,8 +170,8 @@ fs.writeFileSync("dist/index.css", output)
 
 Here are some tools that will help you to use cssnext in your current workflow
 
-* @todo [gulp-cssnext](https://github.com/putaindecode/gulp-cssnext)
-* @todo [grunt-cssnext](https://github.com/putaindecode/grunt-cssnext)
+* [gulp-cssnext](https://github.com/putaindecode/gulp-cssnext)
+* [grunt-cssnext](https://github.com/putaindecode/grunt-cssnext)
 * @todo brunch plugin
 * @todo brocolli plugin
 * @todo component-builder package
