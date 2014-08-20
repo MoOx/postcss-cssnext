@@ -4,7 +4,7 @@
 [![Code Climate](http://img.shields.io/codeclimate/github/putaindecode/cssnext.svg)](https://codeclimate.com/github/putaindecode/cssnext)
 [![NPM version](http://img.shields.io/npm/v/cssnext.svg)](https://www.npmjs.org/package/cssnext)
 
-> Use tomorrow's CSS syntax today.
+> Use tomorrow's CSS syntax, today.
 
 _This is not a CSS preprocessor, but can replace one._  
 This is a CSS transpiler for CSS specs that are not already implemented in popular browsers. Take a look to [available features](available).
