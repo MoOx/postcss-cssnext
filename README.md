@@ -13,7 +13,7 @@ This is a CSS transpiler for CSS specs that are not already implemented in popul
 
 **cssnext** works great with [SUIT CSS](http://suitcss.github.io/) and [cssrecipes](https://github.com/cssrecipes).
 
-@todo ~~**tl;dr** : [try cssnext in your browser](http://cssnext.putaindecode.io/).~~
+**tl;dr** : [try cssnext in your browser](http://putaindecode.github.io/cssnext-playground).
 
 ## Goals
 
