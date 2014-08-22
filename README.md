@@ -166,6 +166,14 @@ var output = cssnext(
 fs.writeFileSync("dist/index.css", output)
 ```
 
+##### `path` (default: `dirname(from)` || `process.cwd()`)
+
+A string or an array of paths in where to look for files when inlining using `@import`.  
+Default to dirname of postcss [`from`](https://github.com/postcss/postcss#node-source) or fallback to `process.cwd()`.
+
+_Note: nested `@import` will additionally benefit of the relative dirname of imported files._
+
+
 ### Usage with other tools
 
 Here are some tools that will help you to use cssnext in your current workflow
