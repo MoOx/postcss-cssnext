@@ -58,5 +58,8 @@
     "lint": "npm run jscs && npm run jshint",
     "tape": "tape test | tap-colorize",
     "test": "npm run lint && npm run standalone && npm run tape"
+  },
+  "bin": {
+    "cssnext": "bin/cssnext"
   }
 }
