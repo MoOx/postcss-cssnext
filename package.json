@@ -28,12 +28,12 @@
     "index.js"
   ],
   "dependencies": {
-    "autoprefixer": "^2.2.0",
+    "autoprefixer-core": "^3.0.0",
     "colors": "^0.6.2",
     "commander": "^2.3.0",
     "csswring": "^1.0.0",
     "node-watch": "^0.3.4",
-    "postcss": "^2.1.0",
+    "postcss": "^2.2.1",
     "postcss-calc": "^2.0.1",
     "postcss-color": "^1.0.0",
     "postcss-custom-media": "^1.0.0",

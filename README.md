@@ -28,7 +28,7 @@ This is a CSS transpiler for CSS specs that are not already implemented in popul
 
 ### Available
 
-* automatic vendor prefixes (via [autoprefixer](https://github.com/ai/autoprefixer))
+* automatic vendor prefixes (via [autoprefixer](https://github.com/postcss/autoprefixer))
 * [custom properties & `var()`](http://www.w3.org/TR/css-variables/) (via [postcss-custom-properties](https://github.com/postcss/postcss-custom-properties))
 * [reduced `calc()`](https://github.com/MoOx/reduce-css-calc#readme) (via [postcss-calc](https://github.com/postcss/postcss-calc), to optimize previously parsed `var()` references)
 * [custom media queries](http://dev.w3.org/csswg/mediaqueries/#custom-mq) (via [postcss-custom-media](https://github.com/postcss/postcss-custom-media)), a nice way to avoid repeating media queries
@@ -133,8 +133,8 @@ Here is all available features:
 
 ##### `browsers` (default: autoprefixer default)
 
-Array to specify browsers you want to target (for now only used by [autoprefixer](https://github.com/ai/autoprefixer)).  
-See [autoprefixer documentation of this option for more details](https://github.com/ai/autoprefixer#browsers).
+Array to specify browsers you want to target (for now only used by [autoprefixer](https://github.com/postcss/autoprefixer)).  
+See [autoprefixer documentation of this option for more details](https://github.com/postcss/autoprefixer#browsers).
 
 Default to something like `["> 1%", "last 2 versions", "Firefox ESR"]`.
 
@@ -210,7 +210,7 @@ Huge thanks to all the people that where involved in :
 - [rework](https://github.com/reworkcss/rework/graphs/contributors)
 - [rework css parser](https://github.com/reworkcss/css/graphs/contributors)
 - [myth](https://github.com/segmentio/myth/graphs/contributors)
-- [autoprefixer](https://github.com/ai/autoprefixer/graphs/contributors)
+- [autoprefixer](https://github.com/postcss/autoprefixer/graphs/contributors)
 
 Thanks to [Andrey Sitnik](https://github.com/ai) for [postcss](https://github.com/postcss/postcss).  
 
