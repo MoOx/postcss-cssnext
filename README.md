@@ -15,6 +15,8 @@ This is a CSS transpiler for CSS specs that are not already implemented in popul
 
 **tl;dr** : [try cssnext in your browser](http://putaindecode.github.io/cssnext-playground).
 
+_Follow [@cssnext](https://twitter.com/cssnext) to get latest news & [join #cssnext on irc.freenode.net](irc://irc.freenode.net/cssnext) if you have any questions._
+
 ## Goals
 
 * Allow using future CSS syntax today.
