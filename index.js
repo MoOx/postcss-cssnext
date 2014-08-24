@@ -9,7 +9,7 @@ var features = {
   calc:             function(options) { return require("postcss-calc")(options)},
   customMedia:      function(options) { return require("postcss-custom-media")(options)},
   color:            function(options) { return require("postcss-color")(options)},
-  prefixes:         function(options) { return require("autoprefixer")(options).postcss}
+  prefixes:         function(options) { return require("autoprefixer-core")(options).postcss}
 }
 
 /**
