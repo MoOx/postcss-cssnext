@@ -37,7 +37,7 @@
     "postcss-calc": "^2.0.1",
     "postcss-color": "^1.0.0",
     "postcss-custom-media": "^1.0.0",
-    "postcss-custom-properties": "^0.1.0",
+    "postcss-custom-properties": "^0.2.0",
     "postcss-import": "^1.0.0",
     "read-file-stdin": "0.0.4",
     "to-slug-case": "^0.1.2",
@@ -50,7 +50,7 @@
     "jshint": "^2.5.2",
     "jshint-stylish": "^0.4.0",
     "tap-colorize": "^1.2.0",
-    "tape": "^2.13.4"
+    "tape": "^2.14.0"
   },
   "scripts": {
     "standalone": "rm -rf dist && mkdir dist && browserify index.js --standalone cssnext > dist/cssnext.js",
