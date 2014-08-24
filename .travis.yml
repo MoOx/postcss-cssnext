@@ -6,7 +6,3 @@ notifications:
       - "irc.freenode.org#cssnext"
     on_success: change
     on_failure: always
-
-cache:
-  directories:
-    - node_modules
