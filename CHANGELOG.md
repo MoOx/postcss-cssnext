@@ -1,3 +1,7 @@
+# 0.3.0 - 2014-08-26
+
+- better custom properties fallbacks (thanks to postcss-custom-properties 0.3.0)
+
 # 0.2.3 - 2014-08-26
 
 - Support empty files ([#24](https://github.com/putaindecode/cssnext/issues/24))
