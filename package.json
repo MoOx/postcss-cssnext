@@ -38,7 +38,7 @@
     "postcss-color": "^1.0.0",
     "postcss-custom-media": "^1.0.0",
     "postcss-custom-properties": "^0.2.0",
-    "postcss-import": "^1.0.0",
+    "postcss-import": "^1.0.1",
     "read-file-stdin": "0.0.4",
     "to-slug-case": "^0.1.2",
     "to-space-case": "^0.1.3",

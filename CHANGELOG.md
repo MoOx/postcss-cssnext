@@ -1,3 +1,7 @@
+# 0.2.3 - 2014-08-26
+
+- Support empty files ([#24](https://github.com/putaindecode/cssnext/issues/24))
+
 # 0.2.2 - 2014-08-22
 
 - Add missing `bin` in npm files...
