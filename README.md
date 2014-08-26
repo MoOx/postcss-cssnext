@@ -47,7 +47,7 @@ _Follow [@cssnext](https://twitter.com/cssnext) to get latest news & [join #cssn
 
 ### @todo
 
-Any omissions of the CSS specifications (even in draft) that are subject to be handled bye cssnext are not intentional.  
+Any omissions of the CSS specifications (even in draft) that are subject to be handled by cssnext are not intentional.  
 Feel free to [open a new issue](issues) if you find something that should be handled.  
 Keep in mind that, as of right now, this project is intended to support new CSS *syntax* only.
 
@@ -179,7 +179,7 @@ _Note: nested `@import` will additionally benefit of the relative dirname of imp
 
 ### Usage with other tools
 
-Here are some tools that will help you to use cssnext in your current workflow
+Here are some tools that will help you use cssnext in your current workflow
 
 * [gulp-cssnext](https://github.com/putaindecode/gulp-cssnext)
 * [grunt-cssnext](https://github.com/putaindecode/grunt-cssnext)
@@ -192,7 +192,7 @@ Here are some tools that will help you to use cssnext in your current workflow
 
 ## Contributing
 
-_cssnext use a lot of [postcss](https://github.com/postcss) plugins, so you might take a look to them if you found an issue or want to create or enhance a feature._
+_cssnext uses a lot of [postcss](https://github.com/postcss) plugins, so you might need to take a look at them if you found an issue or want to create or enhance a feature._
 
 Otherwise, work on a branch, install dev-dependencies, respect coding style & run tests before submitting a bug fix or a feature.
 
