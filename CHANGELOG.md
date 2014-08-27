@@ -1,3 +1,7 @@
+# 0.3.1 - 2014-08-27
+
+- fix nested custom properties usages ([#25](https://github.com/putaindecode/cssnext/issues/25))
+
 # 0.3.0 - 2014-08-26
 
 - better custom properties fallbacks (thanks to postcss-custom-properties 0.3.0)
