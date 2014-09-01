@@ -101,7 +101,7 @@ var fs = require("fs")
 
 var input = fs.readFileSync("index.css", "utf8")
 
-var output = cssnext(css)
+var output = cssnext(input)
 fs.writeFileSync("dist/index.css", output)
 ```
 
