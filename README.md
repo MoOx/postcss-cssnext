@@ -6,8 +6,8 @@
 
 > Use tomorrow's CSS syntax, today.
 
-_This is not a CSS preprocessor, but can replace one._
-This is a CSS transpiler (CSS4+ to CSS3) that allows you to use tomorrow's CSS syntax today. It transforms CSS specs that are not already implemented in popular browsers into more compatible CSS.
+_This is not a CSS preprocessor, but can replace one._  
+This is a CSS transpiler (CSS4+ to CSS3) that allows you to use tomorrow's CSS syntax today. It transforms CSS specs that are not already implemented in popular browsers into more compatible CSS.  
 Take a look at [available features](available).
 
 **cssnext** is similar to [Myth](http://myth.io/) or [SUIT CSS preprocessor](https://github.com/suitcss/preprocessor) but pushes the concept to the next level by supporting more features.
@@ -47,8 +47,8 @@ _Follow [@cssnext](https://twitter.com/cssnext) to get the latest news & [join #
 
 ### @todo
 
-Any omissions of the CSS specifications (even in draft) that are subject to be handled by cssnext are not intentional.
-Feel free to [open a new issue](issues) if you find something that should be handled.
+Any omissions of the CSS specifications (even in draft) that are subject to be handled by cssnext are not intentional.  
+Feel free to [open a new issue](issues) if you find something that should be handled.  
 Keep in mind that, as of right now, this project is intended to support new CSS *syntax* only.
 
 ---
@@ -113,7 +113,7 @@ _For now, all options are passed to all postcss plugins._ This means you should 
 
 ##### `features` (default: all features)
 
-Object containing key of features to enable/disable.
+Object containing key of features to enable/disable.  
 _No key means feature is enabled_.
 
 ```js
@@ -136,7 +136,7 @@ Here are all available features:
 
 ##### `browsers` (default: autoprefixer default)
 
-Array to specify browsers you want to target (for now only used by [autoprefixer](https://github.com/postcss/autoprefixer)).
+Array to specify browsers you want to target (for now only used by [autoprefixer](https://github.com/postcss/autoprefixer)).  
 See [autoprefixer documentation of this option for more details](https://github.com/postcss/autoprefixer#browsers).
 
 Defaults to something like `["> 1%", "last 2 versions", "Firefox ESR"]`.
@@ -149,8 +149,8 @@ Allows you to compress the output (using [CSSWring](https://github.com/hail2u/no
 
 **If you want an accurate sourcemap, please use the `from` option instead.**
 
-This option is a shortcut to enable inlined sourcemap in the output.
-Just pass `true` to get the sourcemap at the end of the output.
+This option is a shortcut to enable inlined sourcemap in the output.  
+Just pass `true` to get the sourcemap at the end of the output.  
 If you want better control on sourcemap, use [postcss `map` option](https://github.com/postcss/postcss#source-map-1) directly.
 
 ##### `from` (default: `null`)
@@ -171,7 +171,7 @@ fs.writeFileSync("dist/index.css", output)
 
 ##### `path` (default: `dirname(from)` || `process.cwd()`)
 
-A string or an array of paths in which to look for files when inlining using `@import`.
+A string or an array of paths in which to look for files when inlining using `@import`.  
 Defaults to dirname of postcss [`from`](https://github.com/postcss/postcss#node-source) or fallback to `process.cwd()`.
 
 _Note: nested `@import` will additionally benefit of the relative dirname of imported files._
@@ -215,6 +215,6 @@ Huge thanks to all the people that where involved in :
 - [myth](https://github.com/segmentio/myth/graphs/contributors)
 - [autoprefixer](https://github.com/postcss/autoprefixer/graphs/contributors)
 
-Thanks to [Andrey Sitnik](https://github.com/ai) for [postcss](https://github.com/postcss/postcss).
+Thanks to [Andrey Sitnik](https://github.com/ai) for [postcss](https://github.com/postcss/postcss).  
 
 Without all those people, this project would not exist.
