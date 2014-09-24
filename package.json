@@ -14,11 +14,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/putaindecode/cssnext.git"
+    "url": "https://github.com/cssnext/cssnext.git"
   },
-  "homepage": "https://cssnext.putaindecode.io",
+  "homepage": "http://cssnext.github.io",
   "bugs": {
-    "url": "https://github.com/putaindecode/cssnext/issues"
+    "url": "https://github.com/cssnext/cssnext/issues"
   },
   "files": [
     "CHANGELOG.md",

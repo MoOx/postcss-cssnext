@@ -1,6 +1,6 @@
 # 0.3.1 - 2014-08-27
 
-- fix nested custom properties usages ([#25](https://github.com/putaindecode/cssnext/issues/25))
+- fix nested custom properties usages ([#25](https://github.com/cssnext/cssnext/issues/25))
 
 # 0.3.0 - 2014-08-26
 
@@ -8,7 +8,7 @@
 
 # 0.2.3 - 2014-08-26
 
-- Support empty files ([#24](https://github.com/putaindecode/cssnext/issues/24))
+- Support empty files ([#24](https://github.com/cssnext/cssnext/issues/24))
 
 # 0.2.2 - 2014-08-22
 

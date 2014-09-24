@@ -1,7 +1,7 @@
 # ![cssnext](logo/cssnext-256.png)
 
-[![Build Status](http://img.shields.io/travis/putaindecode/cssnext.svg)](https://travis-ci.org/putaindecode/cssnext)
-[![Code Climate](http://img.shields.io/codeclimate/github/putaindecode/cssnext.svg)](https://codeclimate.com/github/putaindecode/cssnext)
+[![Build Status](http://img.shields.io/travis/cssnext/cssnext.svg)](https://travis-ci.org/cssnext/cssnext)
+[![Code Climate](http://img.shields.io/codeclimate/github/cssnext/cssnext.svg)](https://codeclimate.com/github/cssnext/cssnext)
 [![NPM version](http://img.shields.io/npm/v/cssnext.svg)](https://www.npmjs.org/package/cssnext)
 
 > Use tomorrow's CSS syntax, today.
@@ -14,7 +14,7 @@ Take a look to [available features](#available).
 
 **cssnext** works great with [SUIT CSS](http://suitcss.github.io/) and [cssrecipes](https://github.com/cssrecipes).
 
-**tl;dr** : [try cssnext in your browser](http://putaindecode.github.io/cssnext-playground).
+**tl;dr** : [try cssnext in your browser](http://cssnext.github.io/cssnext-playground).
 
 _Follow [@cssnext](https://twitter.com/cssnext) to get latest news & [join #cssnext on irc.freenode.net](irc://irc.freenode.net/cssnext) if you have any questions._
 
@@ -61,7 +61,7 @@ You can install it
 
 - globally (`-g`), to use it through the [CLI](cli)
 - locally ()`--save` or `--save-dev`), to use it through [npm scripts](https://www.npmjs.org/doc/misc/npm-scripts.html) (`npm run`) or via `.node_modules/.bin/csnext`
-- by using [other tools](usage-with-other-tools) like [gulp-cssnext](https://github.com/putaindecode/gulp-cssnext)
+- by using [other tools](usage-with-other-tools) like [gulp-cssnext](https://github.com/cssnext/gulp-cssnext)
 
 ## Usage
 
@@ -181,8 +181,8 @@ _Note: nested `@import` will additionally benefit of the relative dirname of imp
 
 Here are some tools that will help you use cssnext in your current workflow
 
-* [gulp-cssnext](https://github.com/putaindecode/gulp-cssnext)
-* [grunt-cssnext](https://github.com/putaindecode/grunt-cssnext)
+* [gulp-cssnext](https://github.com/cssnext/gulp-cssnext)
+* [grunt-cssnext](https://github.com/cssnext/grunt-cssnext)
 * @todo brunch plugin
 * @todo brocolli plugin
 * @todo component-builder package
@@ -196,7 +196,7 @@ _cssnext uses a lot of [postcss](https://github.com/postcss) plugins, so you mig
 
 Otherwise, work on a branch, install dev-dependencies, respect coding style & run tests before submitting a bug fix or a feature.
 
-    $ git clone https://github.com/putaindecode/cssnext.git
+    $ git clone https://github.com/cssnext/cssnext.git
     $ git checkout -b patch-1
     $ npm install
     $ npm test
