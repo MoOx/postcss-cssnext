@@ -57,7 +57,7 @@
     "jscs": "jscs *.js **/*.js",
     "jshint": "jshint . --exclude-path .gitignore --reporter node_modules/jshint-stylish/stylish.js",
     "lint": "npm run jscs && npm run jshint",
-    "tape": "tape test | tap-colorize",
+    "tape": "bash -c 'set -o pipefail; tape test | tap-colorize'",
     "test": "npm run lint && npm run standalone && npm run tape"
   },
   "bin": {
