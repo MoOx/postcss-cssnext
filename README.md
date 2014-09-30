@@ -7,10 +7,10 @@
 > Use tomorrow's CSS syntax, today.
 
 _This is not a CSS preprocessor, but can replace one._  
-This is a CSS transpiler (CSS4+ to CSS3) that allow you to use tomorrow's CSS syntax today. It transforms CSS specs  that are not already implemented in popular browsers into more compatible CSS.  
-Take a look to [available features](#available).
+This is a CSS transpiler (CSS4+ to CSS3) that allows you to use tomorrow's CSS syntax today. It transforms CSS specs that are not already implemented in popular browsers into more compatible CSS.  
+Take a look at [available features](#available).
 
-**cssnext** is similar to [Myth](http://myth.io/) or [SUIT CSS preprocessor](https://github.com/suitcss/preprocessor) but push the concept to the next level by supporting more features.
+**cssnext** is similar to [Myth](http://myth.io/) or [SUIT CSS preprocessor](https://github.com/suitcss/preprocessor) but pushes the concept to the next level by supporting more features.
 
 **cssnext** works great with [SUIT CSS](http://suitcss.github.io/) and [cssrecipes](https://github.com/cssrecipes).
 
@@ -21,7 +21,7 @@ _Follow [@cssnext](https://twitter.com/cssnext) to get latest news & [join #cssn
 ## Goals
 
 * Allow using future CSS syntax today.
-* Keep code close as possible to the original code.
+* Keep code as close as possible to the original code.
 
 ## Non-Goals
 
@@ -42,7 +42,7 @@ _Follow [@cssnext](https://twitter.com/cssnext) to get latest news & [join #cssn
 
 ### Additionals enhancements
 
-* `@import` inline local files  (via [postcss-import](https://github.com/postcss/postcss-import)) to output an bundled CSS file.
+* `@import` inline local files  (via [postcss-import](https://github.com/postcss/postcss-import)) to output a bundled CSS file.
 
 
 ### @todo
@@ -69,7 +69,7 @@ You can use cssnext using [CLI](cli), as [a JavaScript library](node-js-library)
 
 ### CLI
 
-cssnext offer a command-line interface. Here's how to compile a file and print it to stdout:
+cssnext offers a command-line interface. Here's how to compile a file and print it to stdout:
 
     $ cssnext index.css
 
@@ -105,11 +105,11 @@ var output = cssnext(input)
 fs.writeFileSync("dist/index.css", output)
 ```
 
-cssnext accept 2 arguments: a css string and an object of options.
+cssnext accepts 2 arguments: a css string and an object of options.
 
 #### Node.js options
 
-_For now, all options are passed to all postcss plugins._ This mean you should be able to any specific plugin options.
+_For now, all options are passed to all postcss plugins._ This means you should be able to any specific plugin options.
 
 ##### `features` (default: all features)
 
@@ -125,7 +125,7 @@ var output = cssnext({
 })
 ```
 
-Here is all available features:
+Here are all available features:
 
 - `import`
 - `customProperties`
@@ -139,15 +139,15 @@ Here is all available features:
 Array to specify browsers you want to target (for now only used by [autoprefixer](https://github.com/postcss/autoprefixer)).  
 See [autoprefixer documentation of this option for more details](https://github.com/postcss/autoprefixer#browsers).
 
-Default to something like `["> 1%", "last 2 versions", "Firefox ESR"]`.
+Defaults to something like `["> 1%", "last 2 versions", "Firefox ESR"]`.
 
 ##### `compress` (default: `false`)
 
-Allow you to compress the output (using [CSSWring](https://github.com/hail2u/node-csswring)).
+Allows you to compress the output (using [CSSWring](https://github.com/hail2u/node-csswring)).
 
 ##### `sourcemap` (default: `false`)
 
-**If you want a accurate sourcemap, please use instead the `from` option.**
+**If you want an accurate sourcemap, please use the `from` option instead.**
 
 This option is a shortcut to enable inlined sourcemap in the output.  
 Just pass `true` to get the sourcemap at the end of the output.  
@@ -171,8 +171,8 @@ fs.writeFileSync("dist/index.css", output)
 
 ##### `path` (default: `dirname(from)` || `process.cwd()`)
 
-A string or an array of paths in where to look for files when inlining using `@import`.  
-Default to dirname of postcss [`from`](https://github.com/postcss/postcss#node-source) or fallback to `process.cwd()`.
+A string or an array of paths in which to look for files when inlining using `@import`.  
+Defaults to dirname of postcss [`from`](https://github.com/postcss/postcss#node-source) or fallback to `process.cwd()`.
 
 _Note: nested `@import` will additionally benefit of the relative dirname of imported files._
 
@@ -192,7 +192,7 @@ Here are some tools that will help you use cssnext in your current workflow
 
 ## Contributing
 
-_cssnext uses a lot of [postcss](https://github.com/postcss) plugins, so you might need to take a look at them if you found an issue or want to create or enhance a feature._
+_cssnext uses a lot of [postcss](https://github.com/postcss) plugins, so you might need to take a look at them if you find an issue or want to create or enhance a feature._
 
 Otherwise, work on a branch, install dev-dependencies, respect coding style & run tests before submitting a bug fix or a feature.
 
