@@ -183,7 +183,7 @@ Here are some tools that will help you use cssnext in your current workflow
 
 * [gulp-cssnext](https://github.com/cssnext/gulp-cssnext)
 * [grunt-cssnext](https://github.com/cssnext/grunt-cssnext)
-* @todo brunch plugin
+* [cssnext-brunch](https://github.com/cssnext/cssnext-brunch)
 * @todo brocolli plugin
 * @todo component-builder package
 * @todo meteor package
