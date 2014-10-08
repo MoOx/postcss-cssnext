@@ -216,7 +216,7 @@ Otherwise, work on a branch, install dev-dependencies, respect coding style & ru
 
 ## [Changelog](CHANGELOG.md)
 
-## [License](LICENSE-MIT)
+## [License](LICENSE)
 
 ---
 
