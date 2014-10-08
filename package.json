@@ -46,19 +46,16 @@
   },
   "devDependencies": {
     "browserify": "^5.10.0",
-    "jscs": "^1.5.9",
-    "jshint": "^2.5.2",
-    "jshint-stylish": "^0.4.0",
-    "tap-colorize": "^1.2.0",
-    "tape": "^2.14.0"
+    "jscs": "^1.6.2",
+    "jshint": "^2.5.6",
+    "postcss": "^2.2.5",
+    "tape": "^3.0.0"
   },
   "scripts": {
     "standalone": "rm -rf dist && mkdir dist && browserify index.js --standalone cssnext > dist/cssnext.js",
     "jscs": "jscs *.js **/*.js",
-    "jshint": "jshint . --exclude-path .gitignore --reporter node_modules/jshint-stylish/stylish.js",
-    "lint": "npm run jscs && npm run jshint",
-    "tape": "bash -c 'set -o pipefail; tape test | tap-colorize'",
-    "test": "npm run lint && npm run standalone && npm run tape"
+    "jshint": "jshint . --exclude-path .gitignore",
+    "test": "npm run jscs && npm run jshint && tape test"
   },
   "bin": {
     "cssnext": "bin/cssnext"
