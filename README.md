@@ -223,11 +223,11 @@ Otherwise, work on a branch, install dev-dependencies, respect coding style & ru
 ## Acknowledgements
 
 Huge thanks to all the people that where involved in :
+
 - [rework](https://github.com/reworkcss/rework/graphs/contributors)
 - [rework css parser](https://github.com/reworkcss/css/graphs/contributors)
 - [myth](https://github.com/segmentio/myth/graphs/contributors)
 - [autoprefixer](https://github.com/postcss/autoprefixer/graphs/contributors)
-
-Thanks to [Andrey Sitnik](https://github.com/ai) for [postcss](https://github.com/postcss/postcss).  
+- [postcss](https://github.com/postcss/postcss/graphs/contributors)
 
 Without all those people, this project would not exist.
