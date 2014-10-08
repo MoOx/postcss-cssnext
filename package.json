@@ -55,7 +55,7 @@
     "standalone": "rm -rf dist && mkdir dist && browserify index.js --standalone cssnext > dist/cssnext.js",
     "jscs": "jscs *.js **/*.js",
     "jshint": "jshint . --exclude-path .gitignore",
-    "test": "npm run jscs && npm run jshint && tape test"
+    "test": "npm run jscs && npm run jshint && npm run standalone && tape test"
   },
   "bin": {
     "cssnext": "bin/cssnext"
