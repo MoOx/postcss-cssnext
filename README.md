@@ -54,6 +54,15 @@ Keep in mind that, as of right now, this project is intended to support new CSS 
 
 ---
 
+## Limitations
+
+### Custom properties
+
+The current transformation for custom properties just aims to provide a future-proof way of using a **limited subset (to `:root` selector)** of the features provided by native CSS custom properties.  
+The transformation is not complete and can't be properly. By injecting selectors with new computed rules, we will breaking original cascade & unexpected results might happen.
+
+---
+
 ## Installation
 
     $ npm install cssnext
