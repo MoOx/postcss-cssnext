@@ -35,9 +35,10 @@ _Follow [@cssnext](https://twitter.com/cssnext) to get latest news & [join #cssn
 * [custom properties & `var()`](http://www.w3.org/TR/css-variables/) (via [postcss-custom-properties](https://github.com/postcss/postcss-custom-properties))
 * [reduced `calc()`](https://github.com/MoOx/reduce-css-calc#readme) (via [postcss-calc](https://github.com/postcss/postcss-calc), to optimize previously parsed `var()` references)
 * [custom media queries](http://dev.w3.org/csswg/mediaqueries/#custom-mq) (via [postcss-custom-media](https://github.com/postcss/postcss-custom-media)), a nice way to avoid repeating media queries
-* [`color()`](http://dev.w3.org/csswg/css-color/#modifying-colors) (via [postcss-color](https://github.com/postcss/postcss-color)), a color function to modify color
-* [`hwb()`](http://dev.w3.org/csswg/css-color/#the-hwb-notation) (via [postcss-color](https://github.com/postcss/postcss-color)), similar to `hsl()` but easier for humans to work with
-* [#rrggbbaa](http://dev.w3.org/csswg/css-color/#hex-notation) (via [postcss-color](https://github.com/postcss/postcss-color))
+* [`color()`](http://dev.w3.org/csswg/css-color/#modifying-colors) (via [postcss-color-function](https://github.com/postcss/postcss-color-function)), a color function to modify color
+* [`hwb()`](http://dev.w3.org/csswg/css-color/#the-hwb-notation) (via [postcss-color-hwb](https://github.com/postcss/postcss-color-hwb)), similar to `hsl()` but easier for humans to work with
+* [#rrggbbaa](http://dev.w3.org/csswg/css-color/#hex-notation) (via [postcss-color-hex-alpha](https://github.com/postcss/postcss-color-hex-alpha))
+* [`rebeccapurple`](http://dev.w3.org/csswg/css-color/#valdef-color-rebeccapurple) (via [postcss-color-rebeccapurple](https://github.com/postcss/postcss-color-rebeccapurple))
 
 
 ### Additionals enhancements
@@ -131,7 +132,10 @@ Here are all available features:
 - `customProperties`
 - `calc`
 - `customMedia`
-- `color`
+- `color-function`
+- `color-hex-alpha`
+- `color-hwb`
+- `color-rebeccapurple`
 - `prefixes`
 
 ##### `browsers` (default: autoprefixer default)
