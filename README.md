@@ -134,7 +134,20 @@ var output = cssnext({
 ```
 
 Each features are based on PostCSS plugins & can get their own options.
-To pass options to a feature, you can
+To pass options to a feature, you can just pass an object to the feature:
+
+```js
+//eg: preserve custom properties
+var output = cssnext({
+  features: {
+    customProperties: {
+      preserve: true
+    }
+  }
+})
+```
+
+To know all available options, please check [available features](#available) list where you will find references to all the plugins used.
 
 Here are all available features:
 
@@ -148,7 +161,7 @@ Here are all available features:
 - `colorRebeccapurple`
 - `prefixes`
 
-##### `browsers` (default: autoprefixer default)
+##### `browsers` (default: _autoprefixer default_)
 
 Array to specify browsers you want to target (for now only used by [autoprefixer](https://github.com/postcss/autoprefixer)).  
 See [autoprefixer documentation of this option for more details](https://github.com/postcss/autoprefixer#browsers).
