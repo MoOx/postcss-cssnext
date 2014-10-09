@@ -1,0 +1,4 @@
+body {
+  background: rgb(102, 51, 153) -webkit-linear-gradient(rgba(102, 51, 153, 0.5), rgb(153, 51, 51), rgba(153, 51, 51, 0.55), rgba(153, 221, 153, 0.9));
+  background: rgb(102, 51, 153) linear-gradient(rgba(102, 51, 153, 0.5), rgb(153, 51, 51), rgba(153, 51, 51, 0.55), rgba(153, 221, 153, 0.9));
+}

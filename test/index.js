@@ -84,6 +84,22 @@ test("sourcemap", function(t) {
 })
 
 /**
+ * Use cases test
+ */
+test("use case: color plugins together", function(t) {
+  t.equal(
+    cssnext(
+      read("cases/color"),
+      {}
+    ).trim(),
+    read("cases/color.expected").trim(),
+    "all color plugins should works together"
+  )
+
+  t.end()
+})
+
+/**
  * CLI tests.
  */
 
