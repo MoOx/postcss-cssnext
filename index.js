@@ -52,7 +52,7 @@ function cssnext(string, options) {
   Object.keys(cssnext.features).forEach(function(key) {
     // if undefined, we use consider feature is wanted (default behavior)
     if (features[key] !== false) {
-      postcss.use(cssnext.features[key](options))
+      postcss.use(cssnext.features[key](typeof features[key] === "object" ? features[key] : undefined))
     }
   })
 

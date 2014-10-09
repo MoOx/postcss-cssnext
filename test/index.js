@@ -99,6 +99,25 @@ test("use case: color plugins together", function(t) {
   t.end()
 })
 
+test("use case: use plugin options", function(t) {
+  t.equal(
+    cssnext(
+      read("cases/plugin-options"),
+      {
+        features: {
+          customProperties: {
+            preserve: true
+          }
+        }
+      }
+    ).trim(),
+    read("cases/plugin-options.expected").trim(),
+    "should be able to pass options to plugins"
+  )
+
+  t.end()
+})
+
 /**
  * CLI tests.
  */

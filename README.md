@@ -119,21 +119,22 @@ cssnext accepts 2 arguments: a css string and an object of options.
 
 #### Node.js options
 
-_For now, all options are passed to all postcss plugins._ This means you should be able to any specific plugin options.
-
 ##### `features` (default: all features)
 
 Object containing key of features to enable/disable.  
-_No key means feature is enabled_.
+_Features are enabled by default: no key means feature is enabled_.
 
 ```js
-//eg: disable color support
+//eg: disable import support
 var output = cssnext({
   features: {
-    color: false
+    import: false
   }
 })
 ```
+
+Each features are based on PostCSS plugins & can get their own options.
+To pass options to a feature, you can
 
 Here are all available features:
 
@@ -141,10 +142,10 @@ Here are all available features:
 - `customProperties`
 - `calc`
 - `customMedia`
-- `color-function`
-- `color-hex-alpha`
-- `color-hwb`
-- `color-rebeccapurple`
+- `colorFunction`
+- `colorHexAlpha`
+- `colorHwb`
+- `colorRebeccapurple`
 - `prefixes`
 
 ##### `browsers` (default: autoprefixer default)

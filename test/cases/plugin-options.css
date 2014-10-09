@@ -1,0 +1,7 @@
+:root {
+  --prop: value;
+}
+
+selector {
+  thing: var(--prop);
+}
