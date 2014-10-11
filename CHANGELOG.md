@@ -5,7 +5,7 @@
 Before
 
 ```js
-var output = cssnext({
+var output = cssnext(input, {
   features: {
     // providing `true` (or omitting this value) instead of the following object was the default behavior
     color: {
@@ -21,7 +21,7 @@ var output = cssnext({
 Now
 
 ```js
-var output = cssnext({
+var output = cssnext(input, {
   // as usual if you where using all features, you can just omit this values
   features: {
     colorFunction: true,
@@ -39,7 +39,7 @@ Before
 
 ```js
 //eg: preserve custom properties
-var output = cssnext({
+var output = cssnext(input, {
   preserve: true
 })
 ```
@@ -48,7 +48,7 @@ Now
 
 ```js
 //eg: preserve custom properties
-var output = cssnext({
+var output = cssnext(input, {
   features: {
     customProperties: {
       preserve: true

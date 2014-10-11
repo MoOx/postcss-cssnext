@@ -126,7 +126,7 @@ _Features are enabled by default: no key means feature is enabled_.
 
 ```js
 //eg: disable import support
-var output = cssnext({
+var output = cssnext(input, {
   features: {
     import: false
   }
@@ -138,7 +138,7 @@ To pass options to a feature, you can just pass an object to the feature:
 
 ```js
 //eg: preserve custom properties
-var output = cssnext({
+var output = cssnext(input, {
   features: {
     customProperties: {
       preserve: true
@@ -161,12 +161,6 @@ Here are all available features:
 - `colorRebeccapurple`
 - `prefixes`
 
-##### `browsers` (default: _autoprefixer default_)
-
-Array to specify browsers you want to target (for now only used by [autoprefixer](https://github.com/postcss/autoprefixer)).  
-See [autoprefixer documentation of this option for more details](https://github.com/postcss/autoprefixer#browsers).
-
-Defaults to something like `["> 1%", "last 2 versions", "Firefox ESR"]`.
 
 ##### `compress` (default: `false`)
 
@@ -195,13 +189,43 @@ var output = cssnext(
 )
 fs.writeFileSync("dist/index.css", output)
 ```
+##### Some feature options
 
-##### `path` (default: `dirname(from)` || `process.cwd()`)
+###### `features.autoprefixer.browsers` (default: _autoprefixer default_)
+
+Array to specify browsers you want to target (for now only used by [autoprefixer](https://github.com/postcss/autoprefixer)).  
+See [autoprefixer documentation of this option for more details](https://github.com/postcss/autoprefixer#browsers).
+
+Defaults to something like `["> 1%", "last 2 versions", "Firefox ESR"]`.
+
+```js
+//eg
+var output = cssnext(input, {
+  features: {
+    autoprefixer: {
+      browsers: ["> 1%", "last 2 versions", "Firefox ESR"]
+    }
+  }
+})
+```
+
+###### `features.import.path` (default: `dirname(from)` || `process.cwd()`)
 
 A string or an array of paths in which to look for files when inlining using `@import`.  
-Defaults to dirname of postcss [`from`](https://github.com/postcss/postcss#node-source) or fallback to `process.cwd()`.
+Defaults to dirname of postcss [`from`](https://github.com/postcss/postcss#node-source) option, or fallback to `process.cwd()`.
 
 _Note: nested `@import` will additionally benefit of the relative dirname of imported files._
+
+```js
+//eg
+var output = cssnext(input, {
+  features: {
+    import: {
+      path: ["node_modules"]
+    }
+  }
+})
+```
 
 
 ### Usage with other tools
