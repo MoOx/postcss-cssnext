@@ -37,15 +37,11 @@ function cssnext(string, options) {
   // default sourcemap
   // if `map` option is passed, `sourcemap` option is ignored
   // if `sourcemap` option is passed, a default map is used (insert content in the output)
-  options.map = options.map ||
-    (
-      options.sourcemap ?
-        {
-          inline: true,
-          sourcesContent: true
-        } :
-        null
-    )
+  var defaultMap = {
+    inline: true,
+    sourcesContent: true
+  }
+  options.map = options.map || (options.sourcemap ? defaultMap : null)
 
   var postcss = Postcss()
 
@@ -61,7 +57,15 @@ function cssnext(string, options) {
     postcss.use(require("csswring").postcss)
   }
 
-  return postcss.process(string, options).css
+  var result = postcss.process(string, options)
+
+  // default behavior, cssnext returns a css string
+  if (options.map === null || options.map === defaultMap) {
+    return result.css
+  }
+
+  // if a specific map has been asked, we are returning css + map
+  return result
 }
 
 /**

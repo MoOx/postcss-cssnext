@@ -168,11 +168,22 @@ Allows you to compress the output (using [CSSWring](https://github.com/hail2u/no
 
 ##### `sourcemap` (default: `false`)
 
-**If you want an accurate sourcemap, please use the `from` option instead.**
-
 This option is a shortcut to enable inlined sourcemap in the output.  
 Just pass `true` to get the sourcemap at the end of the output.  
-If you want better control on sourcemap, use [postcss `map` option](https://github.com/postcss/postcss#source-map-1) directly.
+
+- _If you want an accurate sourcemap, please also use the `from` option._  
+- _If you want more control on the sourcemap, please use the `map` option instead._
+
+##### `map` (default: _depends on `sourcemap`_)
+
+_(default: `undefined` if `sourcemap` is `false`, `inline` if `sourcemap` it true)_
+
+If you want better control on sourcemap, you are at the right place.
+This is the [postcss `map` option](https://github.com/postcss/postcss#source-map-1), so checkout the related documentation directly.
+
+_If you specify this option, `sourcemap` value will be ignored._
+
+**`/!\` Using this option changes the return value of `cssnext()` (`object` instead of css `string`, that contains {css: "{css string}", map: {sourcemap object}})**
 
 ##### `from` (default: `null`)
 
@@ -189,6 +200,7 @@ var output = cssnext(
 )
 fs.writeFileSync("dist/index.css", output)
 ```
+
 ##### Some feature options
 
 ###### `features.autoprefixer.browsers` (default: _autoprefixer default_)

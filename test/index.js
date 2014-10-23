@@ -76,7 +76,21 @@ test("sourcemap", function(t) {
         sourcemap:  true
       }
     ).trim(),
-    read("sourcemap/expected").trim(),
+    read("sourcemap/expected-inline").trim(),
+    "should contain a correct inlined sourcemap"
+  )
+
+  var result = cssnext(
+    read("sourcemap/input"),
+    {
+      from: "./test/sourcemap/input.css",
+      map:  true
+    }
+  )
+
+  t.equal(
+    result.map.toString(),
+    read("sourcemap/expected", ".map").trim(),
     "should contain a correct sourcemap"
   )
 
@@ -180,7 +194,7 @@ test("cli", function(t) {
 
   exec("bin/cssnext --sourcemap test/sourcemap/input.css", function(err, stdout) {
     if (err) { throw err }
-    t.equal(stdout, read("sourcemap/expected").trim(), "should add sourcemap on --sourcemap")
+    t.equal(stdout, read("sourcemap/expected-inline").trim(), "should add sourcemap on --sourcemap")
   })
   planned+=1
 
@@ -220,8 +234,9 @@ test("cli", function(t) {
  * @return {String}
  */
 
-function resolve(filename) {
-  return require("path").resolve(__dirname, filename + ".css")
+function resolve(filename, ext) {
+  ext = (ext !== undefined ? ext : ".css")
+  return require("path").resolve(__dirname, filename + ext)
 }
 
 /**
@@ -231,8 +246,8 @@ function resolve(filename) {
  * @return {String}
  */
 
-function read(filename) {
-  return require("fs").readFileSync(resolve(filename), "utf8")
+function read(filename, ext) {
+  return require("fs").readFileSync(resolve(filename, ext), "utf8")
 }
 
 /**
