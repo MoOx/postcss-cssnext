@@ -1,4 +1,4 @@
-# unreleased
+# 0.4.0 - 2014-10-23
 
 - color feature has been exploded to multiples features ([issue](https://github.com/cssnext/cssnext/issues/40)).
 
@@ -56,6 +56,8 @@ var output = cssnext(input, {
   }
 })
 ```
+
+- more control on sourcemap is possible using the new `map` option (direct postcss option). Using this option make `sourcemap` one to be ignored and change the return value of `cssnext()` (object instead of string)
 
 This change have been made to avoid collision between options (of each features).
 
