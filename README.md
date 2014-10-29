@@ -41,7 +41,7 @@ _Follow [@cssnext](https://twitter.com/cssnext) to get latest news & [join #cssn
 * [`rebeccapurple`](http://dev.w3.org/csswg/css-color/#valdef-color-rebeccapurple) (via [postcss-color-rebeccapurple](https://github.com/postcss/postcss-color-rebeccapurple))
 
 
-### Additionals enhancements
+### Additional enhancements
 
 * `@import` inline local files  (via [postcss-import](https://github.com/postcss/postcss-import)) to output a bundled CSS file.
 
