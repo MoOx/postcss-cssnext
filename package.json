@@ -36,6 +36,7 @@
     "postcss": "^2.2.5",
     "postcss-calc": "^2.0.1",
     "postcss-color-function": "^1.0.0",
+    "postcss-color-gray": "^0.1.0",
     "postcss-color-hex-alpha": "^1.0.0",
     "postcss-color-hwb": "^1.0.0",
     "postcss-color-rebeccapurple": "^1.0.0",

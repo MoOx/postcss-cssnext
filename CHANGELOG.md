@@ -1,3 +1,7 @@
+# 0.4.1 - 2014-11-01
+
+- add gray() support ([ref](https://github.com/cssnext/cssnext/issues/44))
+
 # 0.4.0 - 2014-10-23
 
 - color feature has been exploded to multiples features ([issue](https://github.com/cssnext/cssnext/issues/40)).

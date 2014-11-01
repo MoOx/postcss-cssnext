@@ -10,6 +10,7 @@ var features = {
   customMedia:          function(options) { return require("postcss-custom-media")(options)},
   colorRebeccapurple:   function(options) { return require("postcss-color-rebeccapurple")(options)},
   colorHwb:             function(options) { return require("postcss-color-hwb")(options)},
+  colorGray:            function(options) { return require("postcss-color-gray")(options)},
   colorHexAlpha:        function(options) { return require("postcss-color-hex-alpha")(options)},
   colorFunction:        function(options) { return require("postcss-color-function")(options)},
   prefixes:             function(options) { return require("autoprefixer-core")(options).postcss}
