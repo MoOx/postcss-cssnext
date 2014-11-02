@@ -1,3 +1,6 @@
+- support !important for custom properties ([ref](https://github.com/postcss/postcss-custom-properties/issues/12))
+- echo a warning when using a non root custom properties ([ref](https://github.com/postcss/postcss-custom-properties/issues/13))
+
 # 0.4.1 - 2014-11-01
 
 - add gray() support ([ref](https://github.com/cssnext/cssnext/issues/44))
