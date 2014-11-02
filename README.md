@@ -248,7 +248,7 @@ Here are some tools that will help you use cssnext in your current workflow
 * [grunt-cssnext](https://github.com/cssnext/grunt-cssnext)
 * [cssnext-brunch](https://github.com/cssnext/cssnext-brunch)
 * soon [cssnext-webpack](https://github.com/cssnext/cssnext-webpack)
-* soon in [Prepros 5](http://alphapixels.com/prepros/)
+* [Prepros 5](https://prepros.io/)
 * @todo component-builder package
 * @todo meteor package
 
