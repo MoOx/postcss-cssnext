@@ -26,13 +26,22 @@ module.exports = cssnext
 /**
  * Process a CSS `string`
  *
- * @param {String} string
- * @param {Object} options
- * @return {String}
+ * @param {String} string (optional)
+ * @param {Object} options (optional)
+ * @return {String} if string is given, or {Object} (postcss instance)
  */
 function cssnext(string, options) {
-  // ensure options is an object
-  options = options || {}
+  if (arguments.length === 0) {
+    options = {}
+  }
+  if (arguments.length === 1 && typeof string === "object") {
+    options = string
+    string = undefined
+  }
+  else {
+    options = options || {}
+  }
+
   var features = options.features || {}
 
   // default sourcemap
@@ -58,15 +67,20 @@ function cssnext(string, options) {
     postcss.use(require("csswring").postcss)
   }
 
-  var result = postcss.process(string, options)
+  if (string) {
+    var result = postcss.process(string, options)
 
-  // default behavior, cssnext returns a css string
-  if (options.map === null || options.map === defaultMap) {
-    return result.css
+    // default behavior, cssnext returns a css string
+    if (options.map === null || options.map === defaultMap) {
+      return result.css
+    }
+
+    // if a specific map has been asked, we are returning css + map
+    return result
   }
-
-  // if a specific map has been asked, we are returning css + map
-  return result
+  else {
+    return postcss
+  }
 }
 
 /**

@@ -1,5 +1,8 @@
+# 0.4.2 - 2014-11-02
+
 - support !important for custom properties ([ref](https://github.com/postcss/postcss-custom-properties/issues/12))
 - echo a warning when using a non root custom properties ([ref](https://github.com/postcss/postcss-custom-properties/issues/13))
+- cssnext can return a postcss instance of no string given ([ref](https://github.com/cssnext/cssnext/issues/3))
 
 # 0.4.1 - 2014-11-01
 
