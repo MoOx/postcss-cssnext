@@ -29,8 +29,6 @@ _Follow [@cssnext](https://twitter.com/cssnext) to get latest news & [join #cssn
 
 ## Features
 
-### Available
-
 * automatic vendor prefixes (via [autoprefixer](https://github.com/postcss/autoprefixer))
 * [custom properties & `var()`](http://www.w3.org/TR/css-variables/) (via [postcss-custom-properties](https://github.com/postcss/postcss-custom-properties))
 * [reduced `calc()`](https://github.com/MoOx/reduce-css-calc#readme) (via [postcss-calc](https://github.com/postcss/postcss-calc), to optimize previously parsed `var()` references)
@@ -42,7 +40,7 @@ _Follow [@cssnext](https://twitter.com/cssnext) to get latest news & [join #cssn
 * [`rebeccapurple`](http://dev.w3.org/csswg/css-color/#valdef-color-rebeccapurple) (via [postcss-color-rebeccapurple](https://github.com/postcss/postcss-color-rebeccapurple))
 
 
-### Additional enhancements
+### Bonus (according to primary goals)
 
 * `@import` inline local files  (via [postcss-import](https://github.com/postcss/postcss-import)) to output a bundled CSS file.
 
@@ -50,7 +48,8 @@ _Follow [@cssnext](https://twitter.com/cssnext) to get latest news & [join #cssn
 ### @todo
 
 Any omissions of the CSS specifications (even in draft) that are subject to be handled by cssnext are not intentional.  
-Feel free to [open a new issue](issues) if you find something that should be handled.  
+You can take a look to the [list of features that are waiting to be implemented](https://github.com/cssnext/cssnext/issues?q=is%3Aopen+is%3Aissue+label%3Afeature+label%3Aready).  
+Feel free to work on a feature ready to be added, or [open a new issue](https://github.com/cssnext/cssnext/issues/new) if you find something that should be handled.  
 Keep in mind that, as of right now, this project is intended to support new CSS *syntax* only.
 
 ---
