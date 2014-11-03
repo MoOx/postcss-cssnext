@@ -37,6 +37,7 @@ _Follow [@cssnext](https://twitter.com/cssnext) to get latest news & [join #cssn
 * [custom media queries](http://dev.w3.org/csswg/mediaqueries/#custom-mq) (via [postcss-custom-media](https://github.com/postcss/postcss-custom-media)), a nice way to avoid repeating media queries
 * [`color()`](http://dev.w3.org/csswg/css-color/#modifying-colors) (via [postcss-color-function](https://github.com/postcss/postcss-color-function)), a color function to modify color
 * [`hwb()`](http://dev.w3.org/csswg/css-color/#the-hwb-notation) (via [postcss-color-hwb](https://github.com/postcss/postcss-color-hwb)), similar to `hsl()` but easier for humans to work with
+* [`gray()`](http://dev.w3.org/csswg/css-color/#grays) (via [postcss-color-gray](https://github.com/postcss/postcss-color-gray))
 * [#rrggbbaa](http://dev.w3.org/csswg/css-color/#hex-notation) (via [postcss-color-hex-alpha](https://github.com/postcss/postcss-color-hex-alpha))
 * [`rebeccapurple`](http://dev.w3.org/csswg/css-color/#valdef-color-rebeccapurple) (via [postcss-color-rebeccapurple](https://github.com/postcss/postcss-color-rebeccapurple))
 
