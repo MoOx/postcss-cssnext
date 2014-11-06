@@ -6,7 +6,7 @@
 
 > Use tomorrow's CSS syntax, today.
 
-_This is not a CSS preprocessor, but can replace one._  
+_This is not a classic CSS preprocessor, but can replace one._  
 This is a CSS transpiler (CSS4+ to CSS3) that allows you to use tomorrow's CSS syntax today. It transforms CSS specs that are not already implemented in popular browsers into more compatible CSS.  
 Take a look at [available features](#available).
 
