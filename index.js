@@ -13,6 +13,7 @@ var features = {
   colorGray:            function(options) { return require("postcss-color-gray")(options)},
   colorHexAlpha:        function(options) { return require("postcss-color-hex-alpha")(options)},
   colorFunction:        function(options) { return require("postcss-color-function")(options)},
+  fontVariant:          function(options) { return require("postcss-font-variant")(options)},
   prefixes:             function(options) { return require("autoprefixer-core")(options).postcss}
 }
 

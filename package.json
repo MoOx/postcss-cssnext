@@ -42,6 +42,7 @@
     "postcss-color-rebeccapurple": "^1.0.0",
     "postcss-custom-media": "^1.2.0",
     "postcss-custom-properties": "^1.0.0",
+    "postcss-font-variant": "^1.0.0",
     "postcss-import": "^1.0.2",
     "read-file-stdin": "0.0.4",
     "to-slug-case": "^0.1.2",

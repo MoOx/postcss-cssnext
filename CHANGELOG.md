@@ -1,3 +1,7 @@
+# 0.4.3 - 2014-11-09
+
+- add font-variant support ([ref](https://github.com/cssnext/cssnext/issues/42))
+
 # 0.4.2 - 2014-11-02
 
 - support !important for custom properties ([ref](https://github.com/postcss/postcss-custom-properties/issues/12))

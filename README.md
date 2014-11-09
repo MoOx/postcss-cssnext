@@ -31,7 +31,7 @@ _Follow [@cssnext](https://twitter.com/cssnext) to get latest news & [join #cssn
 
 * automatic vendor prefixes (via [autoprefixer](https://github.com/postcss/autoprefixer)),
 * [custom properties & `var()`](http://www.w3.org/TR/css-variables/)
-(via [postcss-custom-properties](https://github.com/postcss/postcss-custom-properties)), limited to ``:root`,
+(via [postcss-custom-properties](https://github.com/postcss/postcss-custom-properties)), limited to `:root`,
 * [reduced `calc()`](https://github.com/MoOx/reduce-css-calc#readme)
 (via [postcss-calc](https://github.com/postcss/postcss-calc), to optimize previously parsed `var()` references),
 * [custom media queries](http://dev.w3.org/csswg/mediaqueries/#custom-mq)
@@ -46,6 +46,8 @@ _Follow [@cssnext](https://twitter.com/cssnext) to get latest news & [join #cssn
 (via [postcss-color-hex-alpha](https://github.com/postcss/postcss-color-hex-alpha)),
 * [`rebeccapurple`](http://dev.w3.org/csswg/css-color/#valdef-color-rebeccapurple)
 (via [postcss-color-rebeccapurple](https://github.com/postcss/postcss-color-rebeccapurple)),
+* [font-variant](http://dev.w3.org/csswg/css-fonts/#propdef-font-variant) properties,
+(via [postcss-font-variant](https://github.com/postcss/postcss-font-variant))
 
 
 ### Bonus (according to primary goals)
