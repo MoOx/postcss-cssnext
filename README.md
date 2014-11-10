@@ -259,7 +259,7 @@ Here are some tools that will help you use cssnext in your current workflow
 * [duo-cssnext](https://github.com/cssnext/duo-cssnext)
 * [cssnext-brunch](https://github.com/cssnext/cssnext-brunch)
 * soon [cssnext-webpack](https://github.com/cssnext/cssnext-webpack)
-* [Prepros 5](https://prepros.io/)
+* [Prepros 5](https://prepros.io/) (_More options_ dropdown > _Project options_ item > _Compilers_ tab > _Enable cssnext_ checkbox at the bottom)
 * @todo component-builder package
 * @todo meteor package
 
