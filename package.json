@@ -23,7 +23,6 @@
   "files": [
     "CHANGELOG.md",
     "LICENSE",
-    "README.md",
     "bin",
     "index.js"
   ],
