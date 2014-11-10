@@ -256,6 +256,7 @@ Here are some tools that will help you use cssnext in your current workflow
 
 * [gulp-cssnext](https://github.com/cssnext/gulp-cssnext)
 * [grunt-cssnext](https://github.com/cssnext/grunt-cssnext)
+* [duo-cssnext](https://github.com/cssnext/duo-cssnext)
 * [cssnext-brunch](https://github.com/cssnext/cssnext-brunch)
 * soon [cssnext-webpack](https://github.com/cssnext/cssnext-webpack)
 * [Prepros 5](https://prepros.io/)
