@@ -70,17 +70,20 @@ test("compress", function(t) {
  * Sourcemap tests
  */
 test("sourcemap", function(t) {
+  var options = {
+    from: "./test/sourcemap/input.css",
+    sourcemap:  true
+  }
   t.equal(
     cssnext(
       read("sourcemap/input"),
-      {
-        from: "./test/sourcemap/input.css",
-        sourcemap:  true
-      }
+      options
     ).trim(),
     read("sourcemap/expected-inline").trim(),
     "should contain a correct inlined sourcemap"
   )
+
+  t.ok(!options.hasOwnProperty("map"), "doesn't mutate options object")
 
   var result = cssnext(
     read("sourcemap/input"),

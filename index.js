@@ -2,6 +2,7 @@
  * Modules dependencies
  */
 var Postcss = require("postcss")
+var assign = require("object-assign")
 
 var features = {
   import:               function(options) { return require("postcss-import")(options) },
@@ -42,6 +43,8 @@ function cssnext(string, options) {
   else {
     options = options || {}
   }
+
+  options = assign({}, options)
 
   var features = options.features || {}
 
