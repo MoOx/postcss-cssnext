@@ -1,4 +1,4 @@
-# ![cssnext](http://cssnext.github.io/logo/cssnext-256.png)
+# ![cssnext](https://raw.githubusercontent.com/cssnext/cssnext.github.io/src/logo/cssnext-256.png)
 
 [![Build Status](http://img.shields.io/travis/cssnext/cssnext.svg)](https://travis-ci.org/cssnext/cssnext)
 [![Code Climate](http://img.shields.io/codeclimate/github/cssnext/cssnext.svg)](https://codeclimate.com/github/cssnext/cssnext)
