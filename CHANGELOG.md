@@ -1,3 +1,7 @@
+# 0.4.4 - 2014-11-11
+
+- fixed a bug introduced by `options` mutations ([ref](https://github.com/cssnext/gulp-cssnext/issues/1))
+
 # 0.4.3 - 2014-11-09
 
 - add font-variant support ([ref](https://github.com/cssnext/cssnext/issues/42))
