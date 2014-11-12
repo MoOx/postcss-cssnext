@@ -1,3 +1,7 @@
+# unreleased
+
+- upgrade read-file-stdin from 0.0.4 to 0.2.0
+
 # 0.4.4 - 2014-11-11
 
 - fixed a bug introduced by `options` mutations ([ref](https://github.com/cssnext/gulp-cssnext/issues/1))

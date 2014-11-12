@@ -44,7 +44,7 @@
     "postcss-custom-properties": "^1.0.0",
     "postcss-font-variant": "^1.0.0",
     "postcss-import": "^1.0.2",
-    "read-file-stdin": "0.0.4",
+    "read-file-stdin": "^0.2.0",
     "to-slug-case": "^0.1.2",
     "to-space-case": "^0.1.3",
     "write-file-stdout": "0.0.2"
