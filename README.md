@@ -8,11 +8,11 @@
 
 _This is not a classic CSS preprocessor, but can replace one._  
 This is a CSS transpiler (CSS4+ to CSS3) that allows you to use tomorrow's CSS syntax today. It transforms CSS specs that are not already implemented in popular browsers into more compatible CSS.  
-Take a look at [available features](#available).
+Take a look at [available features](#features).
 
 **cssnext** is similar to [Myth](http://myth.io/) or [SUIT CSS preprocessor](https://github.com/suitcss/preprocessor) but pushes the concept to the next level by supporting more features.
 
-**cssnext** works great with [SUIT CSS](https://suitcss.github.io/) and [cssrecipes](https://cssrecipes.github.io/).
+**cssnext** works great with [cssrecipes](https://cssrecipes.github.io/) or [SUIT CSS](https://suitcss.github.io/).
 
 **tl;dr** : [try cssnext in your browser](https://cssnext.github.io/cssnext-playground).
 
@@ -68,7 +68,7 @@ Keep in mind that, as of right now, this project is intended to support new CSS 
 
 ### Custom properties
 
-The current transformation for custom properties just aims to provide a future-proof way of using a **limited subset (to `:root` selector)** of the features provided by native CSS custom properties.  
+The current transformation for custom properties just aims to provide a future-proof way of using a **limited subset (to top-level `:root` selector)** of the features provided by native CSS custom properties.  
 The transformation is not complete and can't be properly. By injecting selectors with new computed rules, we will break original cascade & unexpected results might happen.
 
 ---
@@ -80,8 +80,8 @@ The transformation is not complete and can't be properly. By injecting selectors
 You can install it
 
 - globally (`-g`), to use it through the [CLI](cli)
-- locally ()`--save` or `--save-dev`), to use it through [npm scripts](https://www.npmjs.org/doc/misc/npm-scripts.html) (`npm run`) or via `.node_modules/.bin/csnext`
-- by using [other tools](usage-with-other-tools) like [gulp-cssnext](https://github.com/cssnext/gulp-cssnext)
+- locally (`--save` or `--save-dev`), to use it through [npm scripts](https://www.npmjs.org/doc/misc/npm-scripts.html) (`npm run`) or via `.node_modules/.bin/csnext`
+- by using [other plugins & tools](usage-with-other-tools) like [gulp-cssnext](https://github.com/cssnext/gulp-cssnext)
 
 ## Usage
 
@@ -91,27 +91,37 @@ You can use cssnext using [CLI](cli), as [a JavaScript library](node-js-library)
 
 cssnext offers a command-line interface. Here's how to compile a file and print it to stdout:
 
-    $ cssnext index.css
+```console
+$ cssnext index.css
+```
 
 To create an output file, you can just add a second argument
 
-    $ cssnext index.css output.css
+```console
+$ cssnext index.css output.css
+```
 
 Or use CLI std(in|out) redirection(s)
 
-    $ cat input.css | cssnext > output.css
+```console
+$ cat input.css | cssnext > output.css
+```
 
 ### CLI options
 
 If you don't care about a certain feature, such as custom media queries, you can omit support for them like so:
 
-    $ cssnext --no-custom-media index.css
+```console
+$ cssnext --no-custom-media index.css
+```
 
 To enable source maps for these files, add the `--sourcemap` flag.
 
 **To see all CLI options**
 
-    $ cssnext --help
+```console
+$ cssnext --help
+```
 
 ### Node.js API
 
@@ -271,10 +281,12 @@ _cssnext uses a lot of [postcss](https://github.com/postcss) plugins, so you mig
 
 Otherwise, work on a branch, install dev-dependencies, respect coding style & run tests before submitting a bug fix or a feature.
 
-    $ git clone https://github.com/cssnext/cssnext.git
-    $ git checkout -b patch-1
-    $ npm install
-    $ npm test
+```console
+$ git clone https://github.com/cssnext/cssnext.git
+$ git checkout -b patch-1
+$ npm install
+$ npm test
+```
 
 ## [Changelog](CHANGELOG.md)
 
