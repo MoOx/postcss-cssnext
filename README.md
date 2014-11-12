@@ -1,4 +1,4 @@
-# ![cssnext](https://raw.githubusercontent.com/cssnext/cssnext.github.io/source/logo/cssnext-256.png)
+# [![cssnext](https://raw.githubusercontent.com/cssnext/cssnext.github.io/source/logo/cssnext-256.png)](https://cssnext.github.io)
 
 [![Build Status](http://img.shields.io/travis/cssnext/cssnext.svg)](https://travis-ci.org/cssnext/cssnext)
 [![Code Climate](http://img.shields.io/codeclimate/github/cssnext/cssnext.svg)](https://codeclimate.com/github/cssnext/cssnext)
@@ -12,9 +12,9 @@ Take a look at [available features](#available).
 
 **cssnext** is similar to [Myth](http://myth.io/) or [SUIT CSS preprocessor](https://github.com/suitcss/preprocessor) but pushes the concept to the next level by supporting more features.
 
-**cssnext** works great with [SUIT CSS](http://suitcss.github.io/) and [cssrecipes](https://github.com/cssrecipes).
+**cssnext** works great with [SUIT CSS](https://suitcss.github.io/) and [cssrecipes](https://cssrecipes.github.io/).
 
-**tl;dr** : [try cssnext in your browser](http://cssnext.github.io/cssnext-playground).
+**tl;dr** : [try cssnext in your browser](https://cssnext.github.io/cssnext-playground).
 
 _Follow [@cssnext](https://twitter.com/cssnext) to get latest news & [join #cssnext on irc.freenode.net](irc://irc.freenode.net/cssnext) if you have any questions._
 
@@ -258,7 +258,7 @@ Here are some tools that will help you use cssnext in your current workflow
 * [grunt-cssnext](https://github.com/cssnext/grunt-cssnext)
 * [duo-cssnext](https://github.com/cssnext/duo-cssnext)
 * [cssnext-brunch](https://github.com/cssnext/cssnext-brunch)
-* soon [cssnext-webpack](https://github.com/cssnext/cssnext-webpack)
+* soon [webpack cssnext-loader](https://github.com/cssnext/cssnext-loader)
 * [Prepros 5](https://prepros.io/) (_More options_ dropdown > _Project options_ item > _Compilers_ tab > _Enable cssnext_ checkbox at the bottom)
 * @todo component-builder package
 * @todo meteor package
