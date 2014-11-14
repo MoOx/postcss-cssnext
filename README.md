@@ -203,7 +203,7 @@ This is the [postcss `map` option](https://github.com/postcss/postcss#source-map
 
 _If you specify this option, `sourcemap` value will be ignored._
 
-**`/!\` Using this option changes the return value of `cssnext()` (`object` instead of css `string`, that contains {css: "{css string}", map: {sourcemap object}})**
+**`/!\` Using this option might changes the return value of `cssnext()` (`object` instead of css `string` if map is not inlined. The object will be like {css: "{css string}", map: {sourcemap object}})**
 
 ##### `from` (default: `null`)
 

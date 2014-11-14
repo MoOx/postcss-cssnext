@@ -89,7 +89,7 @@ test("sourcemap", function(t) {
     read("sourcemap/input"),
     {
       from: "./test/sourcemap/input.css",
-      map:  true
+      map: {inline: false}
     }
   )
 

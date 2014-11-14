@@ -50,12 +50,8 @@ function cssnext(string, options) {
 
   // default sourcemap
   // if `map` option is passed, `sourcemap` option is ignored
-  // if `sourcemap` option is passed, a default map is used (insert content in the output)
-  var defaultMap = {
-    inline: true,
-    sourcesContent: true
-  }
-  options.map = options.map || (options.sourcemap ? defaultMap : null)
+  // if `sourcemap` option is passed, a inline map is used
+  options.map = options.map || (options.sourcemap ? true : null)
 
   var postcss = Postcss()
 
@@ -74,8 +70,8 @@ function cssnext(string, options) {
   if (string) {
     var result = postcss.process(string, options)
 
-    // default behavior, cssnext returns a css string
-    if (options.map === null || options.map === defaultMap) {
+    // default behavior, cssnext returns a css string if no or inline sourcemap
+    if (options.map === null || (options.map === true || options.map.inline)) {
       return result.css
     }
 

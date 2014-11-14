@@ -77,13 +77,13 @@ function transform() {
     }
     catch (e) {
       console.error()
-      console.error()
       console.error(colors.bold("cssnext encounters an error:"))
       console.error()
       console.error(colors.red(e.message))
-      console.error()
-      console.error(e.stack.split("\n").slice(1).join("\n").grey)
-      console.error()
+      if (e.stack) {
+        console.error(e.stack.split("\n").slice(1).join("\n").grey)
+        console.error()
+      }
       console.error("If this error looks like a bug, please report it here:")
       console.error(colors.grey("❯ ") + pkg.bugs.url.cyan)
       console.error()
