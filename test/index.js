@@ -4,6 +4,7 @@ var cssnextStandalone = require("../dist/cssnext.js")
 
 test("cssnext", function(t) {
   t.ok(typeof cssnext("html{}") === "string", "should return a string")
+  t.ok(typeof cssnext("") === "string", "should return a string, even if the given string is empty")
   var postcssInstance = cssnext()
   t.ok(typeof postcssInstance === "object" && postcssInstance.process, "should return a postcss instance")
 

@@ -67,7 +67,7 @@ function cssnext(string, options) {
     postcss.use(require("csswring").postcss)
   }
 
-  if (string) {
+  if (typeof string === "string") {
     var result = postcss.process(string, options)
 
     // default behavior, cssnext returns a css string if no or inline sourcemap

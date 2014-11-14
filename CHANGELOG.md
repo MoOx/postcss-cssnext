@@ -1,8 +1,9 @@
-# unreleased
+# 0.5.0 - 2014-11-13
 
 - upgrade to postcss 3
 - if sourcemap is set to true, default map is now true since postcss v3.0.0 have by default `{inline: true, sourceContent: true}`
 - upgrade read-file-stdin from 0.0.4 to 0.2.0
+- cssnext returns a string only if the first parameter is a real string (typeof === string)
 
 # 0.4.4 - 2014-11-11
 
