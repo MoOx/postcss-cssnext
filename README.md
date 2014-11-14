@@ -179,6 +179,7 @@ Here are all available features:
 - `colorHexAlpha`
 - `colorHwb`
 - `colorRebeccapurple`
+- `fontVariant`
 - `prefixes`
 
 
@@ -207,7 +208,7 @@ _If you specify this option, `sourcemap` value will be ignored._
 
 ##### `from` (default: `null`)
 
-Source of the file. Needed for sourcemap.
+Source of the file. Required for accurate sourcemap.
 
 ```js
 var cssnext = require("cssnext")
@@ -268,8 +269,9 @@ Here are some tools that will help you use cssnext in your current workflow
 * [grunt-cssnext](https://github.com/cssnext/grunt-cssnext)
 * [duo-cssnext](https://github.com/cssnext/duo-cssnext)
 * [cssnext-brunch](https://github.com/cssnext/cssnext-brunch)
-* soon [webpack cssnext-loader](https://github.com/cssnext/cssnext-loader)
+* [broccoli-cssnext](https://github.com/cssnext/broccoli-cssnext)
 * [Prepros 5](https://prepros.io/) (_More options_ dropdown > _Project options_ item > _Compilers_ tab > _Enable cssnext_ checkbox at the bottom)
+* soon [webpack cssnext-loader](https://github.com/cssnext/cssnext-loader)
 * @todo component-builder package
 * @todo meteor package
 
