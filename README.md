@@ -52,7 +52,7 @@ _Follow [@cssnext](https://twitter.com/cssnext) to get latest news & [join #cssn
 
 ### Bonus (according to primary goals)
 
-* `@import` inline local files  (via [postcss-import](https://github.com/postcss/postcss-import)) to output a bundled CSS file.
+* `@import` inline local files and node_modules (via [postcss-import](https://github.com/postcss/postcss-import)) to output a bundled CSS file.
 
 
 ### @todo
@@ -254,7 +254,7 @@ _Note: nested `@import` will additionally benefit of the relative dirname of imp
 var output = cssnext(input, {
   features: {
     import: {
-      path: ["node_modules"]
+      path: ["src/stylesheets"]
     }
   }
 })

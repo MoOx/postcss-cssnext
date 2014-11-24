@@ -1,3 +1,7 @@
+# HEAD
+
+- Upgrade to postcss-import v3 which allow to easily consume node_modules
+
 # 0.5.0 - 2014-11-13
 
 - upgrade to postcss 3
