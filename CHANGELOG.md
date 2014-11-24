@@ -1,3 +1,7 @@
+# HEAD
+
+- Standalone version is now uglified (`dist/cssnext.js`)
+
 # 0.6.0 - 2014-11-24
 
 - Upgrade to postcss-import v3 which allow to easily consume node_modules

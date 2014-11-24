@@ -47,6 +47,7 @@
     "read-file-stdin": "^0.2.0",
     "to-slug-case": "^0.1.2",
     "to-space-case": "^0.1.3",
+    "uglify-js": "^2.4.15",
     "write-file-stdout": "0.0.2"
   },
   "devDependencies": {
@@ -56,7 +57,7 @@
     "tape": "^3.0.0"
   },
   "scripts": {
-    "standalone": "rm -rf dist && mkdir dist && browserify index.js --standalone cssnext > dist/cssnext.js",
+    "standalone": "rm -rf dist && mkdir dist && browserify index.js --standalone cssnext | uglifyjs > dist/cssnext.js",
     "jscs": "jscs *.js **/*.js",
     "jshint": "jshint . --exclude-path .gitignore",
     "test": "npm run jscs && npm run jshint && npm run standalone && tape test/*.js"
