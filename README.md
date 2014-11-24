@@ -206,7 +206,7 @@ Here are all available features:
 - `colorHwb`
 - `colorRebeccapurple`
 - `fontVariant`
-- `prefixes`
+- `autoprefixer`
 
 
 ##### `compress` (default: `false`)
