@@ -4,32 +4,32 @@
 
 # 0.5.0 - 2014-11-13
 
-- upgrade to postcss 3
-- if sourcemap is set to true, default map is now true since postcss v3.0.0 have by default `{inline: true, sourceContent: true}`
-- upgrade read-file-stdin from 0.0.4 to 0.2.0
-- cssnext returns a string only if the first parameter is a real string (typeof === string)
+- Upgrade to postcss 3
+- If sourcemap is set to true, default map is now true since postcss v3.0.0 have by default `{inline: true, sourceContent: true}`
+- Upgrade read-file-stdin from 0.0.4 to 0.2.0
+- Cssnext returns a string only if the first parameter is a real string (typeof === string)
 
 # 0.4.4 - 2014-11-11
 
-- fixed a bug introduced by `options` mutations ([ref](https://github.com/cssnext/gulp-cssnext/issues/1))
+- Fixed a bug introduced by `options` mutations ([ref](https://github.com/cssnext/gulp-cssnext/issues/1))
 
 # 0.4.3 - 2014-11-09
 
-- add font-variant support ([ref](https://github.com/cssnext/cssnext/issues/42))
+- Add font-variant support ([ref](https://github.com/cssnext/cssnext/issues/42))
 
 # 0.4.2 - 2014-11-02
 
-- support !important for custom properties ([ref](https://github.com/postcss/postcss-custom-properties/issues/12))
-- echo a warning when using a non root custom properties ([ref](https://github.com/postcss/postcss-custom-properties/issues/13))
-- cssnext can return a postcss instance of no string given ([ref](https://github.com/cssnext/cssnext/issues/3))
+- Support !important for custom properties ([ref](https://github.com/postcss/postcss-custom-properties/issues/12))
+- Echo a warning when using a non root custom properties ([ref](https://github.com/postcss/postcss-custom-properties/issues/13))
+- Cssnext can return a postcss instance of no string given ([ref](https://github.com/cssnext/cssnext/issues/3))
 
 # 0.4.1 - 2014-11-01
 
-- add gray() support ([ref](https://github.com/cssnext/cssnext/issues/44))
+- Add gray() support ([ref](https://github.com/cssnext/cssnext/issues/44))
 
 # 0.4.0 - 2014-10-23
 
-- color feature has been exploded to multiples features ([issue](https://github.com/cssnext/cssnext/issues/40)).
+- Color feature has been exploded to multiples features ([issue](https://github.com/cssnext/cssnext/issues/40)).
 
 Before
 
@@ -62,7 +62,7 @@ var output = cssnext(input, {
 })
 ```
 
-- cssnext options are not passed to all plugins anymore. You know need to specify feature options by passing object to `features` properties  ([issue](https://github.com/cssnext/cssnext/issues/39)).
+- Cssnext options are not passed to all plugins anymore. You know need to specify feature options by passing object to `features` properties  ([issue](https://github.com/cssnext/cssnext/issues/39)).
 
 Before
 
@@ -86,7 +86,7 @@ var output = cssnext(input, {
 })
 ```
 
-- more control on sourcemap is possible using the new `map` option (direct postcss option). Using this option make `sourcemap` one to be ignored and change the return value of `cssnext()` (object instead of string)
+- More control on sourcemap is possible using the new `map` option (direct postcss option). Using this option make `sourcemap` one to be ignored and change the return value of `cssnext()` (object instead of string)
 
 This change have been made to avoid collision between options (of each features).
 
