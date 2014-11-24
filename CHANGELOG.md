@@ -1,6 +1,7 @@
 # HEAD
 
 - Upgrade to postcss-import v3 which allow to easily consume node_modules
+- cssnext can be used as a postcss plugin
 
 # 0.5.0 - 2014-11-13
 

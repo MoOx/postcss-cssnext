@@ -125,9 +125,15 @@ $ cssnext --help
 
 ### Node.js API
 
+cssnext can be used with it's own API
+
+#### `var string = cssnext(string, options)`
+
+cssnext accepts 2 arguments: a css string and an object of options.
+
 ```js
-var cssnext = require("cssnext")
 var fs = require("fs")
+var cssnext = require("cssnext")
 
 var input = fs.readFileSync("index.css", "utf8")
 
@@ -135,7 +141,27 @@ var output = cssnext(input)
 fs.writeFileSync("dist/index.css", output)
 ```
 
-cssnext accepts 2 arguments: a css string and an object of options.
+**`/!\` Note: if you are using non inlined sourcemaps, cssnext will return a object: `{css: string, map: sourcemap}`**
+
+See [sourcemap](#sourcemap-default-false) & [map](#map-default-depends-on-sourcemap) options for more informations.
+
+#### `var postcssPlugin = cssnext(options)`
+
+cssnext can be used as a postcss plugin
+
+```js
+var fs = require("fs")
+var postcss = require("postcss")
+var cssnext = require("cssnext")
+
+var input = fs.readFileSync("index.css", "utf8")
+
+var output = postcss()
+  .use(cssnext())
+  .use(/* your other postcss plugin */)
+  .process(input)
+fs.writeFileSync("dist/index.css", output)
+```
 
 #### Node.js options
 

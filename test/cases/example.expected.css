@@ -1,0 +1,49 @@
+/* custom properties */
+
+/* custom media queries */
+
+
+/* some var() & calc() */
+body {
+  color: rgba(18, 52, 86, 0.47059);
+
+  font-size: 1rem;
+  line-height: 1.5rem;
+  padding: calc(0.5rem + 1px);
+}
+
+
+
+/* custom media query usage */
+@media (max-width: 50rem) {
+  body { font-size: 1.2rem; }
+}
+
+
+
+/* colors stuff */
+a {
+  color: rgb(89, 185, 204);
+  -webkit-transition: color 1s;
+          transition: color 1s /* autoprefixed ! */
+}
+  a:hover { color: rgba(255, 255, 255, 0.5) }
+  a:active { color: rgb(102, 51, 153) }
+  a:visited { color: rgb(89, 142, 153) }
+
+
+
+/* font stuff */
+h2 {
+  -webkit-font-feature-settings: "c2sc";
+     -moz-font-feature-settings: "c2sc";
+          font-feature-settings: "c2sc";
+  font-variant-caps: small-caps;
+}
+
+table {
+  -webkit-font-feature-settings: "lnum";
+     -moz-font-feature-settings: "lnum";
+          font-feature-settings: "lnum";
+  font-variant-numeric: lining-nums;
+}
