@@ -1,5 +1,6 @@
-# HEAD
+# 0.6.1 - 2014-12-01
 
+- Update to postcss-calc v3 (which add `precision` & `preserve`) & some useless minor updates
 - Standalone version is now uglified (`dist/cssnext.js`)
 
 # 0.6.0 - 2014-11-24
