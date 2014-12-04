@@ -37,7 +37,7 @@ _Follow [@cssnext](https://twitter.com/cssnext) to get latest news & [join #cssn
 * [custom media queries](http://dev.w3.org/csswg/mediaqueries/#custom-mq)
 (via [postcss-custom-media](https://github.com/postcss/postcss-custom-media)), a nice way to have semantic media queries,
 * [custom selectors](http://dev.w3.org/csswg/css-extensions/#custom-selectors)
-(via [postcss-custom-media](https://github.com/postcss/postcss-custom-selector)), to create your own selectors,
+(via [postcss-custom-selectors](https://github.com/postcss/postcss-custom-selector)), to create your own selectors,
 * [`color()`](http://dev.w3.org/csswg/css-color/#modifying-colors)
 (via [postcss-color-function](https://github.com/postcss/postcss-color-function)), a color function to modify colors,
 * [`hwb()`](http://dev.w3.org/csswg/css-color/#the-hwb-notation)
