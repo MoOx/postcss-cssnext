@@ -1,3 +1,7 @@
+# 0.6.2 - 2014-12-04
+
+- add [custom selectors](http://dev.w3.org/csswg/css-extensions/#custom-selectors) feature ([ref](https://github.com/postcss/postcss-custom-selector)).
+
 # 0.6.1 - 2014-12-01
 
 - Update to postcss-calc v3 (which add `precision` & `preserve`) & some useless minor updates

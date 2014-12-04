@@ -5,17 +5,18 @@ var Postcss = require("postcss")
 var assign = require("object-assign")
 
 var features = {
-  import:               function(options) { return require("postcss-import")(options) },
-  customProperties:     function(options) { return require("postcss-custom-properties")(options) },
-  calc:                 function(options) { return require("postcss-calc")(options)},
-  customMedia:          function(options) { return require("postcss-custom-media")(options)},
-  colorRebeccapurple:   function(options) { return require("postcss-color-rebeccapurple")(options)},
-  colorHwb:             function(options) { return require("postcss-color-hwb")(options)},
-  colorGray:            function(options) { return require("postcss-color-gray")(options)},
-  colorHexAlpha:        function(options) { return require("postcss-color-hex-alpha")(options)},
-  colorFunction:        function(options) { return require("postcss-color-function")(options)},
-  fontVariant:          function(options) { return require("postcss-font-variant")(options)},
-  autoprefixer:         function(options) { return require("autoprefixer-core")(options).postcss}
+  import: function(options) { return require("postcss-import")(options) },
+  customProperties: function(options) { return require("postcss-custom-properties")(options) },
+  calc: function(options) { return require("postcss-calc")(options)},
+  customMedia: function(options) { return require("postcss-custom-media")(options)},
+  customSelectors: function(options) { return require("postcss-custom-selector")(options)},
+  colorRebeccapurple: function(options) { return require("postcss-color-rebeccapurple")(options)},
+  colorHwb: function(options) { return require("postcss-color-hwb")(options)},
+  colorGray: function(options) { return require("postcss-color-gray")(options)},
+  colorHexAlpha: function(options) { return require("postcss-color-hex-alpha")(options)},
+  colorFunction: function(options) { return require("postcss-color-function")(options)},
+  fontVariant: function(options) { return require("postcss-font-variant")(options)},
+  autoprefixer: function(options) { return require("autoprefixer-core")(options).postcss}
 }
 
 /**
