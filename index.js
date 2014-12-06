@@ -9,7 +9,7 @@ var features = {
   customProperties: function(options) { return require("postcss-custom-properties")(options) },
   calc: function(options) { return require("postcss-calc")(options)},
   customMedia: function(options) { return require("postcss-custom-media")(options)},
-  customSelectors: function(options) { return require("postcss-custom-selector")(options)},
+  customSelectors: function(options) { return require("postcss-custom-selectors")(options)},
   colorRebeccapurple: function(options) { return require("postcss-color-rebeccapurple")(options)},
   colorHwb: function(options) { return require("postcss-color-hwb")(options)},
   colorGray: function(options) { return require("postcss-color-gray")(options)},
