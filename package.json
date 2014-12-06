@@ -52,17 +52,19 @@
   },
   "devDependencies": {
     "browserify": "^6.0.3",
+    "glob": "^4.3.1",
     "jscs": "^1.6.2",
     "jshint": "^2.5.6",
     "tape": "^3.0.0",
     "uglify-js": "^2.4.15"
   },
   "scripts": {
-    "standalone": "rm -rf dist && mkdir dist && browserify index.js --standalone cssnext | uglifyjs > dist/cssnext.js",
+    "standalone": "browserify --standalone cssnext index.js -o dist/cssnext.js",
+    "poststandalone": "uglifyjs dist/cssnext.js -o dist/cssnext.js",
     "jscs": "jscs .",
     "jshint": "jshint . --exclude-path .gitignore",
-    "pretest": "npm i",
-    "test": "npm run jscs && npm run jshint && npm run standalone && tape test/*.js"
+    "pretest": "npm run jscs && npm run jshint && npm run standalone",
+    "test": "tape test/*.js"
   },
   "bin": {
     "cssnext": "bin/cssnext"
