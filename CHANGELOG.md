@@ -1,6 +1,10 @@
+# 0.6.3 - 2014-12-08
+
+- Update csswring (postcss 3 ready). This is removing the boring warnings.
+
 # 0.6.2 - 2014-12-04
 
-- add [custom selectors](http://dev.w3.org/csswg/css-extensions/#custom-selectors) feature ([ref](https://github.com/postcss/postcss-custom-selector)).
+- Add [custom selectors](http://dev.w3.org/csswg/css-extensions/#custom-selectors) feature ([ref](https://github.com/postcss/postcss-custom-selector)).
 
 # 0.6.1 - 2014-12-01
 
