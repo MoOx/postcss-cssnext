@@ -25,7 +25,7 @@ body {
 a {
   color: rgb(89, 185, 204);
   -webkit-transition: color 1s;
-          transition: color 1s /* autoprefixed ! */
+          transition: color 1s; /* autoprefixed ! */
 }
   a:hover { color: rgba(255, 255, 255, 0.5) }
   a:active { color: rgb(102, 51, 153) }
