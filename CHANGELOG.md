@@ -1,4 +1,4 @@
-# 0.6.3 - 2014-12-08
+# HEAD
 
 - Update csswring (postcss 3 ready). This is removing the boring warnings.
 
