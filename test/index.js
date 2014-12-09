@@ -17,7 +17,7 @@ test("cssnext API", function(t) {
   // simple API strings + options
   t.ok(typeof cssnext("html{}") === "string", "should return a string")
   t.ok(typeof cssnext("") === "string", "should return a string, even if the given string is empty")
-  t.equal(cssnext(input).trim(), output, "simple example with multiples features should work with cssnext API")
+  utils.compareFixtures(t, "cases/example", "simple example with multiples features should work with cssnext API")
 
   // as a postcss plugin
   var postcssInstance = cssnext()
