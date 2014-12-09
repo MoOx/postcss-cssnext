@@ -59,7 +59,7 @@
   },
   "scripts": {
     "standalone": "rm -rf dist && mkdir dist && browserify index.js --standalone cssnext | uglifyjs > dist/cssnext.js",
-    "jscs": "jscs *.js **/*.js",
+    "jscs": "jscs .",
     "jshint": "jshint . --exclude-path .gitignore",
     "pretest": "npm i",
     "test": "npm run jscs && npm run jshint && npm run standalone && tape test/*.js"

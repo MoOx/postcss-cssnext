@@ -69,7 +69,7 @@ function remove(filename) {
  * compare fixtures input with expected output
  * @param {Object} t                tape test helper
  * @param {String} name             eg: "cases/color"
- * @param {String} messages         message for tape helper
+ * @param {String} message          message for tape helper
  * @param {Object|Function} options cssnext options
  */
 function compareFixtures(t, name, message, options) {
