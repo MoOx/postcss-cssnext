@@ -1,6 +1,7 @@
-# HEAD
+# 0.6.3 - 2014-12-09
 
-- Update csswring (postcss 3 ready). This is removing the boring warnings.
+- Upgrade to csswring v2.0.0 (postcss 3 ready). This is removing the boring warnings.
+- Update postcss-custom-selectors reference (with an S)
 
 # 0.6.2 - 2014-12-04
 
