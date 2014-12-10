@@ -33,7 +33,7 @@ test("cli", function(t) {
   })
   planned+=1
 
-  var childProcess = exec(cssnextBin + "", function(err, stdout) {
+  var childProcess = exec(cssnextBin, function(err, stdout) {
     if (err) { throw err }
     t.equal(stdout, output, "should read from stdin and write to stdout")
   })
