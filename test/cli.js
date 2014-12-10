@@ -14,7 +14,7 @@ var cssnext = require("..")
 var input = utils.read("cli/input")
 var output = utils.read("cli/input.expected")
 
-var cssnextBin = "./\"bin/cssnext\""
+var cssnextBin = "bin/cssnext"
 
 test("cli", function(t) {
   var planned = 0
