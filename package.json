@@ -52,6 +52,7 @@
   },
   "devDependencies": {
     "browserify": "^6.0.3",
+    "exit": "^0.1.2",
     "glob": "^4.3.1",
     "jscs": "^1.6.2",
     "jshint": "^2.5.6",

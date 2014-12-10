@@ -3,6 +3,11 @@
 var fs = require("fs")
 var path = require("path")
 
+// until this land in a stable version of node,
+// https://github.com/joyent/node/commit/20176a98416353d4596900793f739d5ebf4f0ee1
+// we will this instead of process.exit()
+var exit = require("exit")
+
 var colors = require("colors")
 var program = require("commander")
 
@@ -53,7 +58,7 @@ var verbose = program.verbose
 
 if (input && !fs.existsSync(input)) {
   console.error(colors.red("Unable to read file"), input)
-  process.exit(1)
+  exit(1)
 }
 
 function transform() {
@@ -87,7 +92,7 @@ function transform() {
       console.error("If this error looks like a bug, please report it here:")
       console.error(colors.grey("❯ ") + pkg.bugs.url.cyan)
       console.error()
-      process.exit(2)
+      exit(2)
     }
   })
 }
@@ -97,7 +102,7 @@ transform()
 if (program.watch) {
   if (!input || !output) {
     console.error(colors.red("--watch option need both <input> & <output> files to work"))
-    process.exit(3)
+    exit(3)
   }
   require("node-watch")(input, transform)
   if (verbose) {
