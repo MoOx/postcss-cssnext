@@ -1,3 +1,8 @@
+# HEAD
+
+- Ensure Windows compatibility (by building test on AppVeyor)
+- Upgrade postcss-import to 4.0.0 for windows compatibility
+
 # 0.6.3 - 2014-12-09
 
 - Upgrade to csswring v2.0.0 (postcss 3 ready). This is removing the boring warnings.
