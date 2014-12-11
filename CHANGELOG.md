@@ -1,4 +1,4 @@
-# HEAD
+# 0.6.4 - 2014-12-11
 
 - Ensure Windows compatibility (by building test on AppVeyor)
 - Upgrade postcss-import to 4.0.0 for windows compatibility
