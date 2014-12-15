@@ -43,3 +43,11 @@ h2 {
 table {
   font-variant-numeric: lining-nums;
 }
+
+/* filters */
+.blur {
+  filter: blur(4px);
+}
+.sepia {
+  filter: sepia(.8);
+}

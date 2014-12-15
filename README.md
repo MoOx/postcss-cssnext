@@ -52,6 +52,8 @@ _Follow [@cssnext](https://twitter.com/cssnext) to get latest news & [join #cssn
 (via [postcss-color-rebeccapurple](https://github.com/postcss/postcss-color-rebeccapurple)),
 * [font-variant](http://dev.w3.org/csswg/css-fonts/#propdef-font-variant) properties,
 (via [postcss-font-variant](https://github.com/postcss/postcss-font-variant))
+* [filter](http://www.w3.org/TR/filter-effects/) properties,
+(via [pleeease-filters](https://github.com/iamvdo/pleeease-filters))
 
 
 ### Bonus (according to primary goals)
@@ -213,6 +215,7 @@ Here are all available features:
 - `colorHwb`
 - `colorRebeccapurple`
 - `fontVariant`
+- `filter`
 - `autoprefixer`
 
 _Note: order is important to get everything working correctly._

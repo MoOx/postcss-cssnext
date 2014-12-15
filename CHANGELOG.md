@@ -1,6 +1,7 @@
 # HEAD
 
 - Add [media queries range](http://dev.w3.org/csswg/mediaqueries/#mq-ranges) feature ([ref](https://github.com/postcss/postcss-media-minmax))
+- Add [filter](http://www.w3.org/TR/filter-effects/) feature ([ref](https://github.com/iamvdo/pleeease-filters))
 
 # 0.6.4 - 2014-12-11
 

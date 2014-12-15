@@ -33,6 +33,7 @@
     "csswring": "^2.0.0",
     "node-watch": "^0.3.4",
     "object-assign": "^1.0.0",
+    "pleeease-filters": "^0.1.4",
     "postcss": "^3.0.0",
     "postcss-calc": "^3.0.0",
     "postcss-color-function": "^1.1.0",
