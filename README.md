@@ -36,6 +36,8 @@ _Follow [@cssnext](https://twitter.com/cssnext) to get latest news & [join #cssn
 (via [postcss-calc](https://github.com/postcss/postcss-calc), to optimize previously parsed `var()` references),
 * [custom media queries](http://dev.w3.org/csswg/mediaqueries/#custom-mq)
 (via [postcss-custom-media](https://github.com/postcss/postcss-custom-media)), a nice way to have semantic media queries,
+* [media queries ranges](http://dev.w3.org/csswg/mediaqueries/#mq-ranges)
+(via [postcss-media-minmax](https://github.com/postcss/postcss-media-minmax)), that allows to replace min-/max- with `<=` & `>=` (syntax easier to read),
 * [custom selectors](http://dev.w3.org/csswg/css-extensions/#custom-selectors)
 (via [postcss-custom-selectors](https://github.com/postcss/postcss-custom-selector)), to create your own selectors,
 * [`color()`](http://dev.w3.org/csswg/css-color/#modifying-colors)
@@ -204,6 +206,7 @@ Here are all available features:
 - `customProperties`
 - `calc`
 - `customMedia`
+- `mediaQueriesRange`
 - `customSelectors`
 - `colorFunction`
 - `colorHexAlpha`
