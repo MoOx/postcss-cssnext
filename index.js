@@ -5,6 +5,7 @@ var Postcss = require("postcss")
 var assign = require("object-assign")
 
 var features = {
+  // order is important
   import: function(options) { return require("postcss-import")(options) },
   customProperties: function(options) { return require("postcss-custom-properties")(options) },
   calc: function(options) { return require("postcss-calc")(options)},

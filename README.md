@@ -215,6 +215,7 @@ Here are all available features:
 - `fontVariant`
 - `autoprefixer`
 
+_Note: order is important to get everything working correctly._
 
 ##### `compress` (default: `false`)
 
