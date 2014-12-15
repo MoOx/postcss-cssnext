@@ -56,7 +56,7 @@ _Follow [@cssnext](https://twitter.com/cssnext) to get latest news & [join #cssn
 
 ### Bonus (according to primary goals)
 
-* `@import` inline local files and node_modules (via [postcss-import](https://github.com/postcss/postcss-import)) to output a bundled CSS file.
+* `@import` inline local files and modules - `node_modules` or `web_modules` (via [postcss-import](https://github.com/postcss/postcss-import)) to output a bundled CSS file.
 * minification is available (via [csswring](https://github.com/hail2u/node-csswring)) if you want to compress the output for production.
 
 
