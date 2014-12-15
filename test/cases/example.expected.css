@@ -2,7 +2,6 @@
 
 /* custom media queries */
 
-
 /* some var() & calc() */
 body {
   color: rgba(18, 52, 86, 0.47059);
@@ -12,14 +11,13 @@ body {
   padding: calc(0.5rem + 1px);
 }
 
-
-
 /* custom media query usage */
 @media (max-width: 50rem) {
   body { font-size: 1.2rem; }
 }
 
-
+/* custom selectors */
+h1, h2, h3, h4, h5, h6 { margin-top: 0 }
 
 /* colors stuff */
 a {
@@ -27,11 +25,9 @@ a {
   -webkit-transition: color 1s;
           transition: color 1s; /* autoprefixed ! */
 }
-  a:hover { color: rgba(255, 255, 255, 0.5) }
-  a:active { color: rgb(102, 51, 153) }
-  a:visited { color: rgb(89, 142, 153) }
-
-
+a:hover { color: rgba(255, 255, 255, 0.5) }
+a:active { color: rgb(102, 51, 153) }
+a:visited { color: rgb(89, 142, 153) }
 
 /* font stuff */
 h2 {
