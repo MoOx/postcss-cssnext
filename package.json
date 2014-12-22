@@ -31,6 +31,7 @@
     "colors": "^1.0.2",
     "commander": "^2.3.0",
     "csswring": "^2.0.0",
+    "exit": "^0.1.2",
     "node-watch": "^0.3.4",
     "object-assign": "^1.0.0",
     "pleeease-filters": "^0.1.4",
@@ -54,7 +55,6 @@
   },
   "devDependencies": {
     "browserify": "^6.0.3",
-    "exit": "^0.1.2",
     "jscs": "^1.6.2",
     "jshint": "^2.5.6",
     "tape": "^3.0.0",
