@@ -29,37 +29,37 @@ _Follow [@cssnext](https://twitter.com/cssnext) to get latest news & [join #cssn
 
 ## Features
 
-* automatic vendor prefixes (via [autoprefixer](https://github.com/postcss/autoprefixer)),
+* automatic vendor prefixes ([⇗](https://github.com/postcss/autoprefixer)),
 * [custom properties & `var()`](http://www.w3.org/TR/css-variables/)
-(via [postcss-custom-properties](https://github.com/postcss/postcss-custom-properties)), limited to `:root`,
+([⇗](https://github.com/postcss/postcss-custom-properties)) limited to `:root`,
 * [reduced `calc()`](https://github.com/MoOx/reduce-css-calc#readme)
-(via [postcss-calc](https://github.com/postcss/postcss-calc), to optimize previously parsed `var()` references),
+([⇗](https://github.com/postcss/postcss-calc)) to optimize previously parsed `var()` references),
 * [custom media queries](http://dev.w3.org/csswg/mediaqueries/#custom-mq)
-(via [postcss-custom-media](https://github.com/postcss/postcss-custom-media)), a nice way to have semantic media queries,
+([⇗](https://github.com/postcss/postcss-custom-media)) a nice way to have semantic media queries,
 * [media queries ranges](http://dev.w3.org/csswg/mediaqueries/#mq-ranges)
-(via [postcss-media-minmax](https://github.com/postcss/postcss-media-minmax)), that allows to replace min-/max- with `<=` & `>=` (syntax easier to read),
+([⇗](https://github.com/postcss/postcss-media-minmax)) that allows to replace min-/max- with `<=` & `>=` (syntax easier to read),
 * [custom selectors](http://dev.w3.org/csswg/css-extensions/#custom-selectors)
-(via [postcss-custom-selectors](https://github.com/postcss/postcss-custom-selector)), to create your own selectors,
+([⇗](https://github.com/postcss/postcss-custom-selector)) to create your own selectors,
 * [`color()`](http://dev.w3.org/csswg/css-color/#modifying-colors)
-(via [postcss-color-function](https://github.com/postcss/postcss-color-function)), a color function to modify colors,
+([⇗](https://github.com/postcss/postcss-color-function)) a color function to modify colors,
 * [`hwb()`](http://dev.w3.org/csswg/css-color/#the-hwb-notation)
-(via [postcss-color-hwb](https://github.com/postcss/postcss-color-hwb)), similar to `hsl()` but easier for humans to work with,
+([⇗](https://github.com/postcss/postcss-color-hwb)) similar to `hsl()` but easier for humans to work with,
 * [`gray()`](http://dev.w3.org/csswg/css-color/#grays)
-(via [postcss-color-gray](https://github.com/postcss/postcss-color-gray)),
+([⇗](https://github.com/postcss/postcss-color-gray)),
 * [#rrggbbaa](http://dev.w3.org/csswg/css-color/#hex-notation)
-(via [postcss-color-hex-alpha](https://github.com/postcss/postcss-color-hex-alpha)),
+([⇗](https://github.com/postcss/postcss-color-hex-alpha)),
 * [`rebeccapurple`](http://dev.w3.org/csswg/css-color/#valdef-color-rebeccapurple)
-(via [postcss-color-rebeccapurple](https://github.com/postcss/postcss-color-rebeccapurple)),
-* [font-variant](http://dev.w3.org/csswg/css-fonts/#propdef-font-variant) properties,
-(via [postcss-font-variant](https://github.com/postcss/postcss-font-variant))
-* [filter](http://www.w3.org/TR/filter-effects/) properties,
-(via [pleeease-filters](https://github.com/iamvdo/pleeease-filters))
+([⇗](https://github.com/postcss/postcss-color-rebeccapurple)),
+* [font-variant](http://dev.w3.org/csswg/css-fonts/#propdef-font-variant) properties
+([⇗](https://github.com/postcss/postcss-font-variant)),
+* [filter](http://www.w3.org/TR/filter-effects/) properties
+([⇗](https://github.com/iamvdo/pleeease-filters))
 
 
 ### Bonus (according to primary goals)
 
-* `@import` inline local files and modules - `node_modules` or `web_modules` (via [postcss-import](https://github.com/postcss/postcss-import)) to output a bundled CSS file.
-* minification is available (via [csswring](https://github.com/hail2u/node-csswring)) if you want to compress the output for production.
+* `@import` inline local files and modules - `node_modules` or `web_modules` ([⇗](https://github.com/postcss/postcss-import)) to output a bundled CSS file.
+* minification is available ([⇗](https://github.com/hail2u/node-csswring)) if you want to compress the output for production.
 
 
 ### @todo
