@@ -1,3 +1,7 @@
+# 0.6.6 - 2014-12-22
+
+- Fix `Cannot find module 'exit'` error when an error came out ([#54](https://github.com/cssnext/cssnext/issues/54))
+
 # 0.6.5 - 2014-12-16
 
 - Add [media queries range](http://dev.w3.org/csswg/mediaqueries/#mq-ranges) feature ([ref](https://github.com/postcss/postcss-media-minmax))
