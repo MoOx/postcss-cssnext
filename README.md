@@ -330,16 +330,16 @@ $ npm test
 ### Add a feature
 
 1. Add test files (input + expected output) in [`test/features`](test/features),
-1. If the feature can affect some others, update [`test/cases.example.css`](test/cases.example.css) to test integration with other features,
-2. Run test, & check tests are broken (otherwise feature is useless),
-3. Choose a pretty simple and clear name (that match the specs),
-4. Add the feature in the [README features list](#features) (title, link to spec, link of the plugin, short desc),
-4. Add the feature in the [README node.js options list](#features-default-all-features) (camelCaseName),
-5. Add the dependency in the [`package.json`](package.json),
-6. Add the feature in the source (in [`index.js`](index.js)), in the appropriate place (order matter),
-7. Run test, should be good now :)
-8. Add feature on [the playground](https://github.com/cssnext/cssnext-playground)
-9. Add feature on [the website](https://github.com/cssnext/cssnext.github.io)
+- If the feature can affect some others, update [`test/cases.example.css`](test/cases.example.css) to test integration with other features,
+- Run test, & check tests are broken (otherwise feature is useless),
+- Choose a pretty simple and clear name (that match the specs),
+- Add the feature in the [README features list](#features) (title, link to spec, link of the plugin, short desc),
+- Add the feature in the [README node.js options list](#features-default-all-features) (camelCaseName),
+- Add the dependency in the [`package.json`](package.json),
+- Add the feature in the source (in [`index.js`](index.js)), in the appropriate place (order matter),
+- Run test, should be good now :)
+- Add feature on [the playground](https://github.com/cssnext/cssnext-playground)
+- Add feature on [the website](https://github.com/cssnext/cssnext.github.io)
 
 ## [Changelog](CHANGELOG.md)
 
