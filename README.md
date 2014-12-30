@@ -304,7 +304,7 @@ Here are some tools that will help you use cssnext in your current workflow
 
 * [gulp-cssnext](https://github.com/cssnext/gulp-cssnext)
 * [grunt-cssnext](https://github.com/cssnext/grunt-cssnext)
-* [cssnext-loader (webpack )](https://github.com/cssnext/cssnext-loader)
+* [cssnext-loader (webpack)](https://github.com/cssnext/cssnext-loader)
 * [duo-cssnext](https://github.com/cssnext/duo-cssnext)
 * [cssnext-brunch](https://github.com/cssnext/cssnext-brunch)
 * [broccoli-cssnext](https://github.com/cssnext/broccoli-cssnext)
@@ -338,6 +338,8 @@ $ npm test
 5. Add the dependency in the [`package.json`](package.json),
 6. Add the feature in the source (in [`index.js`](index.js)), in the appropriate place (order matter),
 7. Run test, should be good now :)
+8. Add feature on [the playground](https://github.com/cssnext/cssnext-playground)
+9. Add feature on [the website](https://github.com/cssnext/cssnext.github.io)
 
 ## [Changelog](CHANGELOG.md)
 
