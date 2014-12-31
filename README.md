@@ -1,4 +1,4 @@
-# cssnext [![Travis Build Status](https://travis-ci.org/cssnext/cssnext.svg)](https://travis-ci.org/cssnext/cssnext) [![AppVeyor Build status](https://ci.appveyor.com/api/projects/status/u8l6u3lr6s5u5tpi?svg=true)](https://ci.appveyor.com/project/MoOx/postcss-import) [![Code Climate](http://img.shields.io/codeclimate/github/cssnext/cssnext.svg?style=flat)](https://codeclimate.com/github/cssnext/cssnext) [![NPM version](http://img.shields.io/npm/v/cssnext.svg?style=flat)](https://www.npmjs.org/package/cssnext)
+# cssnext [![Travis Build Status](https://travis-ci.org/cssnext/cssnext.svg)](https://travis-ci.org/cssnext/cssnext) [![AppVeyor Build status](https://ci.appveyor.com/api/projects/status/q12sb37x4fpa7sht?svg=true)](https://ci.appveyor.com/project/MoOx/cssnext) [![Code Climate](http://img.shields.io/codeclimate/github/cssnext/cssnext.svg?style=flat)](https://codeclimate.com/github/cssnext/cssnext) [![NPM version](http://img.shields.io/npm/v/cssnext.svg?style=flat)](https://www.npmjs.org/package/cssnext)
 
 > Use tomorrow's CSS syntax, today.
 
