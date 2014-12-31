@@ -99,7 +99,7 @@ You can install it
 
 ## Usage
 
-You can use cssnext using [CLI](#cli), as [a JavaScript library](#node-js-api) or through [others tools](#usage-with-other-tools).
+You can use cssnext using [CLI](#cli), as [a JavaScript library](#nodejs-api) or through [others tools](#usage-with-other-tools).
 
 ### CLI
 
@@ -337,15 +337,15 @@ $ npm test
 ### Add a feature
 
 1. Add test files (input + expected output) in [`test/features`](test/features),
-- If the feature can affect some others, update [`test/cases.example.css`](test/cases.example.css) to test integration with other features,
+- If the feature can affect some others, update [`test/cases/example.css`](test/cases/example.css) to test integration with other features,
 - Run test, & check tests are broken (otherwise feature is useless),
 - Choose a pretty simple and clear name (that match the specs),
 - Add the feature in the [README features list](#features) (title, link to spec, link of the plugin, short desc),
 - Add the feature in the [README node.js options list](#features-default-all-features) (camelCaseName),
 - Add the dependency in the [`package.json`](package.json),
 - Add the feature in the source (in [`index.js`](index.js)), in the appropriate place (order matter),
-- Run test, should be good now :)
-- Add feature on [the playground](https://github.com/cssnext/cssnext-playground)
+- Run test and be happy,
+- Add feature on [the playground](https://github.com/cssnext/cssnext-playground) example,
 - Add feature on [the website](https://github.com/cssnext/cssnext.github.io)
 
 ## [Changelog](CHANGELOG.md)
