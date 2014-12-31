@@ -63,6 +63,8 @@ Follow [@cssnext on Twitter](https://twitter.com/cssnext) to get latest news & j
 
 ### Bonus features
 
+_<small>The features below are considered as bonus since it's totally not related to CSS specs</small>._
+
 * `@import` inline local files and modules - `node_modules` or `web_modules` ([⇗](https://github.com/postcss/postcss-import)) to output a bundled CSS file.
 * minification is available ([⇗](https://github.com/hail2u/node-csswring)) if you want to compress the output for production.
 
@@ -85,17 +87,19 @@ The transformation is not complete and can't be properly. By injecting selectors
 
 ## Installation
 
-    $ npm install cssnext
+```console
+$ npm install cssnext
+```
 
 You can install it
 
-- globally (`-g`), to use it through the [CLI](cli)
-- locally (`--save` or `--save-dev`), to use it through [npm scripts](https://www.npmjs.org/doc/misc/npm-scripts.html) (`npm run`) or via `.node_modules/.bin/csnext`
-- by using [other plugins & tools](usage-with-other-tools) like [gulp-cssnext](https://github.com/cssnext/gulp-cssnext)
+- locally (`--save` or `--save-dev`), to use it through [npm scripts](https://www.npmjs.org/doc/misc/npm-scripts.html) (`npm run`) or via `.node_modules/.bin/cssnext`
+- globally (`-g`), to use it through the [CLI](cli) (not recommanded)
+- by using [other plugins & tools](#usage-with-other-tools) like [gulp-cssnext](https://github.com/cssnext/gulp-cssnext)
 
 ## Usage
 
-You can use cssnext using [CLI](cli), as [a JavaScript library](node-js-library) or through [others tools](usage-with-other-tools).
+You can use cssnext using [CLI](#cli), as [a JavaScript library](#node-js-api) or through [others tools](#usage-with-other-tools).
 
 ### CLI
 
