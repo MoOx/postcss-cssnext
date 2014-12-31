@@ -61,7 +61,7 @@ Follow [@cssnext on Twitter](https://twitter.com/cssnext) to get latest news & j
 ([⇗](https://github.com/iamvdo/pleeease-filters))
 
 
-### Bonus features (according to primary goals)
+### Bonus features
 
 * `@import` inline local files and modules - `node_modules` or `web_modules` ([⇗](https://github.com/postcss/postcss-import)) to output a bundled CSS file.
 * minification is available ([⇗](https://github.com/hail2u/node-csswring)) if you want to compress the output for production.
