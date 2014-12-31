@@ -1,31 +1,33 @@
-# [![cssnext](https://raw.githubusercontent.com/cssnext/cssnext.github.io/source/logo/cssnext-256.png)](https://cssnext.github.io)
-
-[![Build Status](http://img.shields.io/travis/cssnext/cssnext.svg)](https://travis-ci.org/cssnext/cssnext)
-[![Code Climate](http://img.shields.io/codeclimate/github/cssnext/cssnext.svg)](https://codeclimate.com/github/cssnext/cssnext)
-[![NPM version](http://img.shields.io/npm/v/cssnext.svg)](https://www.npmjs.org/package/cssnext)
+# cssnext [![Travis Build Status](https://travis-ci.org/cssnext/cssnext.svg)](https://travis-ci.org/cssnext/cssnext) [![AppVeyor Build status](https://ci.appveyor.com/api/projects/status/u8l6u3lr6s5u5tpi?svg=true)](https://ci.appveyor.com/project/MoOx/postcss-import) [![Code Climate](http://img.shields.io/codeclimate/github/cssnext/cssnext.svg?style=flat)](https://codeclimate.com/github/cssnext/cssnext) [![NPM version](http://img.shields.io/npm/v/cssnext.svg?style=flat)](https://www.npmjs.org/package/cssnext)
 
 > Use tomorrow's CSS syntax, today.
 
-_This is not a classic CSS preprocessor, but can replace one._  
 This is a CSS transpiler (CSS4+ to CSS3) that allows you to use tomorrow's CSS syntax today. It transforms CSS specs that are not already implemented in popular browsers into more compatible CSS.  
 Take a look at [available features](#features).
 
-**cssnext** is similar to [Myth](http://myth.io/) or [SUIT CSS preprocessor](https://github.com/suitcss/preprocessor) but pushes the concept to the next level by supporting more features.
+_This is not a classic CSS preprocessor, but can totally replace one._
 
-**cssnext** works great with [cssrecipes](https://cssrecipes.github.io/) or [SUIT CSS](https://suitcss.github.io/).
+Check out [the website](https://cssnext.github.io/) or [try cssnext](https://cssnext.github.io/cssnext-playground) in your browser.
 
-**tl;dr** : [try cssnext in your browser](https://cssnext.github.io/cssnext-playground).
+⇒ [Why](#why)
+/ [Features](#features)
+/ [Limitation](#limitation)
+/ [Installation](#installation)
+/ [CLI Usage](#cli)
+/ [Node.js API](#nodejs-api)
+/ [Contribute](#contributing)
 
-_Follow [@cssnext](https://twitter.com/cssnext) to get latest news & [join #cssnext on irc.freenode.net](irc://irc.freenode.net/cssnext) if you have any questions._
+## Why
 
-## Goals
+Prior 2015, CSS was frustrating by not having any specification for features we were looking for. Think about variables, math, color manipulation & even more customization. Things are going to change soon since a lot of work has been made by the W3C to write new specs to make our life easier.
 
-* Allow using future CSS syntax today.
-* Keep code as close as possible to the original code.
+**This project aims to allow using future CSS syntax, today.**
 
-## Non-Goals
+It is similar to [Myth](http://myth.io/) or [SUIT CSS preprocessor](https://github.com/suitcss/preprocessor) but pushes the concept to the next level by supporting more features. It works great with [cssrecipes](https://cssrecipes.github.io/) or [SUIT CSS](https://suitcss.github.io/).
 
-* Provide polyfills for future CSS APIs that depend on the client browser.
+_It's not planned for now to provide polyfills for future CSS APIs that depend on the client browser._
+
+Follow [@cssnext on Twitter](https://twitter.com/cssnext) to get latest news & join [#cssnext on irc.freenode.net](irc://irc.freenode.net/cssnext) if you have any questions.
 
 ## Features
 
@@ -56,7 +58,7 @@ _Follow [@cssnext](https://twitter.com/cssnext) to get latest news & [join #cssn
 ([⇗](https://github.com/iamvdo/pleeease-filters))
 
 
-### Bonus (according to primary goals)
+### Bonus features (according to primary goals)
 
 * `@import` inline local files and modules - `node_modules` or `web_modules` ([⇗](https://github.com/postcss/postcss-import)) to output a bundled CSS file.
 * minification is available ([⇗](https://github.com/hail2u/node-csswring)) if you want to compress the output for production.
@@ -69,9 +71,7 @@ You can take a look to the [list of features that are waiting to be implemented]
 Feel free to work on a feature ready to be added, or [open a new issue](https://github.com/cssnext/cssnext/issues/new) if you find something that should be handled.  
 Keep in mind that, as of right now, this project is intended to support new CSS *syntax* only.
 
----
-
-## Limitations
+## Limitation
 
 ### Custom properties
 
