@@ -3,13 +3,14 @@
 > Use tomorrow's CSS syntax, today.
 
 This is a CSS transpiler (CSS4+ to CSS3) that allows you to use tomorrow's CSS syntax today. It transforms CSS specs that are not already implemented in popular browsers into more compatible CSS.  
-Take a look at [available features](#features).
 
 _This is not a classic CSS preprocessor, but can totally replace one._
 
 Check out [the website](https://cssnext.github.io/) or [try cssnext](https://cssnext.github.io/cssnext-playground) in your browser.
 
-⇒ [Why](#why)
+---
+
+> [Why](#why)
 / [Features](#features)
 / [Limitation](#limitation)
 / [Installation](#installation)
@@ -17,9 +18,11 @@ Check out [the website](https://cssnext.github.io/) or [try cssnext](https://css
 / [Node.js API](#nodejs-api)
 / [Contribute](#contributing)
 
+---
+
 ## Why
 
-Prior 2015, CSS was frustrating by not having any specification for features we were looking for. Think about variables, math, color manipulation & even more customization. Things are going to change soon since a lot of work has been made by the W3C to write new specs to make our life easier.
+Prior 2015, CSS was frustrating by not having any specification for features we were looking for. No variables, no math, no color manipulation & no customization. Things are going to change soon since a lot of work has been made by the W3C to write new specs to make our life easier.
 
 **This project aims to allow using future CSS syntax, today.**
 
