@@ -30,7 +30,7 @@ It is similar to [Myth](http://myth.io/) or [SUIT CSS preprocessor](https://gith
 
 _It's not planned for now to provide polyfills for future CSS APIs that depend on the client browser._
 
-Follow [@cssnext on Twitter](https://twitter.com/cssnext) to get latest news & join [#cssnext on irc.freenode.net](irc://irc.freenode.net/cssnext) if you have any questions.
+Follow [@cssnext on Twitter](https://twitter.com/cssnext) to get latest news & join [#cssnext on irc.freenode.net](http://webchat.freenode.net/?channels=cssnext) if you have any questions.
 
 ## Features
 
