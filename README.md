@@ -8,6 +8,10 @@ _This is not a classic CSS preprocessor, but can totally replace one._
 
 Check out [the website](https://cssnext.github.io/) or [try cssnext](https://cssnext.github.io/cssnext-playground) in your browser.
 
+## Is it cssnext or CSSNext or CSSnext?
+
+The official name is **cssnext**, which should never be capitalized, especially not at the start of a sentence, unless it is being displayed in a location that is customarily all-caps (such as the title of man pages.)
+
 ---
 
 > [Why](#why)
