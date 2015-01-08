@@ -358,6 +358,12 @@ $ npm test
 
 ---
 
+## People
+
+The current lead maintainer is [Maxime Thirouin](http://moox.io/) [![MoOx' Gratipay](https://img.shields.io/gratipay/MoOx.svg)](https://gratipay.com/MoOx/)
+
+See [all contributors](https://github.com/cssnext/cssnext/graphs/contributors)
+
 ## Acknowledgements
 
 Huge thanks to all the people that where involved in :
