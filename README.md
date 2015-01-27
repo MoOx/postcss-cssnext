@@ -13,8 +13,12 @@ Check out [the website](https://cssnext.github.io/) or [try cssnext](https://css
 
 The official name is **cssnext**, which should never be capitalized, especially not at the start of a sentence, unless it is being displayed in a location that is customarily all-caps (such as the title of man pages.)
 
+---
+
 [Why](#why) | [Features](#features) | [Limitation](#limitation) | [Installation](#installation)| [CLI Usage](#cli) | [Node.js API](#nodejs-api) | [Contribute](#contributing)
 --- | --- | --- | --- | --- | --- | ---
+
+--- 
 
 ## Why
 
