@@ -2,13 +2,14 @@
 
 > Use tomorrow's CSS syntax, today.
 
-This is a CSS transpiler (CSS4+ to CSS3) that allows you to use tomorrow's CSS syntax today. It transforms CSS specs that are not already implemented in popular browsers into more compatible CSS.  
+This is a CSS transpiler (CSS4+ to CSS3) that allows you to use tomorrow's CSS syntax today.
+It transforms CSS specs that are not already implemented in popular browsers into more compatible CSS.  
 
 _This is not a classic CSS preprocessor, but can totally replace one._
 
 Check out [the website](https://cssnext.github.io/) or [try cssnext](https://cssnext.github.io/cssnext-playground) in your browser.
 
-## Is it cssnext or CSSNext or CSSnext?
+**Is it cssnext or CSSNext or CSSnext?**
 
 The official name is **cssnext**, which should never be capitalized, especially not at the start of a sentence, unless it is being displayed in a location that is customarily all-caps (such as the title of man pages.)
 
@@ -103,11 +104,15 @@ You can install it
 
 ## Usage
 
-You can use cssnext using [CLI](#cli), as [a JavaScript library](#nodejs-api) or through [others tools](#usage-with-other-tools).
+You can use cssnext using [CLI](#cli),
+as [a JavaScript library](#nodejs-api),
+as a [PostCSS](https://github.com/postcss/postcss) plugin
+or through [others tools](#usage-with-other-tools).
 
 ### CLI
 
-cssnext offers a command-line interface. Here's how to compile a file and print it to stdout:
+cssnext offers a command-line interface.
+Here's how to compile a file and print it to stdout:
 
 ```console
 $ cssnext index.css
@@ -143,7 +148,7 @@ $ cssnext --help
 
 ### Node.js API
 
-cssnext can be used with it's own API
+cssnext can be used with it's own API or as a PostCSS plugin.
 
 #### `var string = cssnext(string, options)`
 
@@ -322,6 +327,8 @@ Here are some tools that will help you use cssnext in your current workflow
 * [Prepros 5](https://prepros.io/) (_More options_ (dropdown) > _Project options_ (item) > _Compilers_ (tab) > _Enable cssnext_ (checkbox at the bottom))
 * @todo component-builder package
 * @todo meteor package
+
+_Note that you can also use cssnext as a PostCSS plugin._
 
 ---
 
