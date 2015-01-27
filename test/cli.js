@@ -19,11 +19,11 @@ var cssnextBin = "node bin/cssnext" // node bin is used to help for windows
 test("cli", function(t) {
   var planned = 0
 
-  exec(cssnextBin + " test/cli/input.css test/cli/output.css", function(err) {
+  exec(cssnextBin + " test/cli/input.css test/cli/output--io.css", function(err) {
     if (err) { throw err }
-    var res = utils.read("cli/output")
+    var res = utils.read("cli/output--io")
     t.equal(res, output, "should read from a file and write to a file")
-    utils.remove("cli/output")
+    utils.remove("cli/output--io")
   })
   planned+=1
 
@@ -54,10 +54,10 @@ test("cli", function(t) {
   })
   planned+=3
 
-  exec(cssnextBin + " --verbose test/cli/input.css test/cli/output.css", function(err, stdout) {
+  exec(cssnextBin + " --verbose test/cli/input.css test/cli/output--verbose.css", function(err, stdout) {
     if (err) { throw err }
     t.ok(utils.contains(stdout, "Output written"), "should log on --verbose")
-    utils.remove("cli/output")
+    utils.remove("cli/output--verbose")
   })
   planned+=1
 
