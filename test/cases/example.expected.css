@@ -27,15 +27,10 @@ h6 { margin-top: 0 }
 /* colors stuff */
 a {
   color: rgb(89, 185, 204);
-  transition: color .1s, -webkit-transform .2s;
-  transition: color .1s, transform .2s;
+  -webkit-transition: color 1s;
+          transition: color 1s; /* autoprefixed ! */
 }
-a:hover {
-  color: rgba(255, 255, 255, 0.5);
-  -webkit-transform: rotate(1deg);
-      -ms-transform: rotate(1deg);
-          transform: rotate(1deg);
-}
+a:hover { color: rgba(255, 255, 255, 0.5) }
 a:active { color: rgb(102, 51, 153) }
 a:visited { color: rgb(89, 142, 153) }
 

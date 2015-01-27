@@ -29,12 +29,9 @@ body {
 /* colors stuff */
 a {
   color: var(--highlightColor);
-  transition: color .1s, transform .2s;
+  transition: color 1s; /* autoprefixed ! */
 }
-a:hover {
-  color: gray(255, 50%);
-  transform: rotate(1deg);
-}
+a:hover { color: gray(255, 50%) }
 a:active { color: rebeccapurple }
 a:visited { color: color(var(--highlightColor) blackness(+20%)) }
 
