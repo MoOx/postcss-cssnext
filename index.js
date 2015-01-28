@@ -69,7 +69,8 @@ function cssnext(string, options) {
 
   // simple minifier plugin
   if (options.compress) {
-    postcss.use(require("csswring").postcss)
+    var csswring = require("csswring")
+    postcss.use(typeof options.compress === "object" ? csswring(options.compress) : csswring)
   }
 
   if (typeof string === "string") {

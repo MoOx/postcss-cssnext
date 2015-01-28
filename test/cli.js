@@ -63,7 +63,7 @@ test("cli", function(t) {
 
   exec(cssnextBin + " --compress test/compress/input.css", function(err, stdout) {
     if (err) { throw err }
-    t.equal(stdout, utils.read("compress/expected").trim(), "should compress on --compress")
+    t.equal(stdout, utils.read("compress/default.expected").trim(), "should compress on --compress")
   })
   planned+=1
 

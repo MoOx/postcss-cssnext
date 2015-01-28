@@ -234,6 +234,7 @@ _Note: order is important to get everything working correctly._
 ##### `compress` (default: `false`)
 
 Allows you to compress the output (using [CSSWring](https://github.com/hail2u/node-csswring)).
+You can enable minification by passing `true` or by providing an object containing [CSSWring options](https://github.com/hail2u/node-csswring#options).
 
 ##### `sourcemap` (default: `false`)
 

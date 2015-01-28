@@ -2,6 +2,7 @@
 
 - Changed: upgraded to postcss v4.x
 - Added: non absolute url() are now rebased according to `from` (and `to` options if provided)
+- Added: `compress` option now accept CSSWring options directly.
 
 # 0.6.6 - 2014-12-22
 

@@ -27,14 +27,3 @@ test("cssnext API", function(t) {
   t.end()
 })
 
-test("cssnext compress option", function(t) {
-  var input = utils.read("compress/input")
-  var output = utils.read("compress/expected").trim()
-  var opts = {compress: true}
-
-  // compress option
-  t.equal(cssnext(input, opts).trim(), output, "should be able to compress")
-  t.equal(postcss().use(cssnext(opts)).process(input, opts).css.trim(), output, "should be able to compress even as a postcss plugin")
-
-  t.end()
-})
