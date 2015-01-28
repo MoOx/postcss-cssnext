@@ -7,6 +7,7 @@ var assign = require("object-assign")
 var features = {
   // Reminder: order is important
   import: function(options) { return require("postcss-import")(options) },
+  url: function(options) { return require("postcss-url")(options) },
   customProperties: function(options) { return require("postcss-custom-properties")(options) },
   calc: function(options) { return require("postcss-calc")(options)},
   customMedia: function(options) { return require("postcss-custom-media")(options)},
@@ -60,7 +61,7 @@ function cssnext(string, options) {
   var postcss = Postcss()
 
   Object.keys(cssnext.features).forEach(function(key) {
-    // if undefined, we use consider feature is wanted (default behavior)
+    // if undefined, we default to assuming this feature is wanted by the user
     if (features[key] !== false) {
       postcss.use(cssnext.features[key](typeof features[key] === "object" ? features[key] : undefined))
     }
