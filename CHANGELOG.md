@@ -1,65 +1,70 @@
+# Unreleased
+
+- Changed: upgraded to postcss v4.x
+- Added: non absolute url() are now rebased according to `from` (and `to` options if provided)
+
 # 0.6.6 - 2014-12-22
 
-- Fix `Cannot find module 'exit'` error when an error came out ([#54](https://github.com/cssnext/cssnext/issues/54))
+- Fixed: `Cannot find module 'exit'` error when an error came out ([#54](https://github.com/cssnext/cssnext/issues/54))
 
 # 0.6.5 - 2014-12-16
 
-- Add [media queries range](http://dev.w3.org/csswg/mediaqueries/#mq-ranges) feature ([ref](https://github.com/postcss/postcss-media-minmax))
-- Add [filter](http://www.w3.org/TR/filter-effects/) feature ([ref](https://github.com/iamvdo/pleeease-filters))
+- Added: [media queries range](http://dev.w3.org/csswg/mediaqueries/#mq-ranges) feature ([ref](https://github.com/postcss/postcss-media-minmax))
+- Added: [filter](http://www.w3.org/TR/filter-effects/) feature ([ref](https://github.com/iamvdo/pleeease-filters))
 
 # 0.6.4 - 2014-12-11
 
-- Ensure Windows compatibility (by building test on AppVeyor)
-- Upgrade postcss-import to 4.0.0 for windows compatibility
+- Changed: upgrade postcss-import to 4.0.0 for windows compatibility
+- Added: Windows compatibility (by building test on AppVeyor)
 
 # 0.6.3 - 2014-12-09
 
-- Upgrade to csswring v2.0.0 (postcss 3 ready). This is removing the boring warnings.
-- Update postcss-custom-selectors reference (with an S)
+- Changed: upgrade to csswring v2.0.0 (postcss 3 ready). This is removing the boring warnings.
+- Changed: update postcss-custom-selectors reference (with an S)
 
 # 0.6.2 - 2014-12-04
 
-- Add [custom selectors](http://dev.w3.org/csswg/css-extensions/#custom-selectors) feature ([ref](https://github.com/postcss/postcss-custom-selector)).
+- Added: [custom selectors](http://dev.w3.org/csswg/css-extensions/#custom-selectors) feature ([ref](https://github.com/postcss/postcss-custom-selector)).
 
 # 0.6.1 - 2014-12-01
 
-- Update to postcss-calc v3 (which add `precision` & `preserve`) & some useless minor updates
-- Standalone version is now uglified (`dist/cssnext.js`)
+- Changed: update to postcss-calc v3 (which add `precision` & `preserve`) & some useless minor updates
+- Changed: standalone version is now uglified (`dist/cssnext.js`)
 
 # 0.6.0 - 2014-11-24
 
-- Upgrade to postcss-import v3 which allow to easily consume node_modules
-- cssnext can be used as a postcss plugin
-- "prefixes" feature is now "autoprefixer"
+- Changed: upgrade to postcss-import v3 which allow to easily consume node_modules
+- Changed: "prefixes" feature is now "autoprefixer"
+- Added: cssnext can be used as a postcss plugin
 
 # 0.5.0 - 2014-11-13
 
-- Upgrade to postcss 3
-- If sourcemap is set to true, default map is now true since postcss v3.0.0 have by default `{inline: true, sourceContent: true}`
-- Upgrade read-file-stdin from 0.0.4 to 0.2.0
-- Cssnext returns a string only if the first parameter is a real string (typeof === string)
+- Fixed: cssnext returns a string only if the first parameter is a real string (typeof === string)
+- Changed: upgrade to postcss 3
+- Changed: if sourcemap is set to true, default map is now true since postcss v3.0.0 have by default `{inline: true, sourceContent: true}`
+- Changed: upgrade read-file-stdin from 0.0.4 to 0.2.0
 
 # 0.4.4 - 2014-11-11
 
-- Fixed a bug introduced by `options` mutations ([ref](https://github.com/cssnext/gulp-cssnext/issues/1))
+- Fixed: bug introduced by `options` mutations ([ref](https://github.com/cssnext/gulp-cssnext/issues/1))
 
 # 0.4.3 - 2014-11-09
 
-- Add font-variant support ([ref](https://github.com/cssnext/cssnext/issues/42))
+- Added: font-variant support ([ref](https://github.com/cssnext/cssnext/issues/42))
 
 # 0.4.2 - 2014-11-02
 
-- Support !important for custom properties ([ref](https://github.com/postcss/postcss-custom-properties/issues/12))
-- Echo a warning when using a non root custom properties ([ref](https://github.com/postcss/postcss-custom-properties/issues/13))
-- Cssnext can return a postcss instance of no string given ([ref](https://github.com/cssnext/cssnext/issues/3))
+- Fixed: support !important for custom properties ([ref](https://github.com/postcss/postcss-custom-properties/issues/12))
+- Added: echo a warning when using a non root custom properties ([ref](https://github.com/postcss/postcss-custom-properties/issues/13))
+- Added: cssnext can return a postcss instance of no string given ([ref](https://github.com/cssnext/cssnext/issues/3))
 
 # 0.4.1 - 2014-11-01
 
-- Add gray() support ([ref](https://github.com/cssnext/cssnext/issues/44))
+- Added: gray() support ([ref](https://github.com/cssnext/cssnext/issues/44))
 
 # 0.4.0 - 2014-10-23
 
-- Color feature has been exploded to multiples features ([issue](https://github.com/cssnext/cssnext/issues/40)).
+- Changed: color feature has been exploded to multiples features ([issue](https://github.com/cssnext/cssnext/issues/40)).
 
 Before
 
@@ -92,7 +97,7 @@ var output = cssnext(input, {
 })
 ```
 
-- Cssnext options are not passed to all plugins anymore. You know need to specify feature options by passing object to `features` properties  ([issue](https://github.com/cssnext/cssnext/issues/39)).
+- Changed: cssnext options are not passed to all plugins anymore. You know need to specify feature options by passing object to `features` properties  ([issue](https://github.com/cssnext/cssnext/issues/39)).
 
 Before
 
@@ -116,34 +121,34 @@ var output = cssnext(input, {
 })
 ```
 
-- More control on sourcemap is possible using the new `map` option (direct postcss option). Using this option make `sourcemap` one to be ignored and change the return value of `cssnext()` (object instead of string)
+- Added: more control on sourcemap is possible using the new `map` option (direct postcss option). Using this option make `sourcemap` one to be ignored and change the return value of `cssnext()` (object instead of string)
 
 This change have been made to avoid collision between options (of each features).
 
 # 0.3.1 - 2014-08-27
 
-- Fix nested custom properties usages ([#25](https://github.com/cssnext/cssnext/issues/25))
+- Fixed: nested custom properties usages ([#25](https://github.com/cssnext/cssnext/issues/25))
 
 # 0.3.0 - 2014-08-26
 
-- Better custom properties fallbacks (thanks to postcss-custom-properties 0.3.0)
+- Added: better custom properties fallbacks (thanks to postcss-custom-properties 0.3.0)
 
 # 0.2.3 - 2014-08-26
 
-- Support empty files ([#24](https://github.com/cssnext/cssnext/issues/24))
+- Fixed: support empty files ([#24](https://github.com/cssnext/cssnext/issues/24))
 
 # 0.2.2 - 2014-08-22
 
-- Add missing `bin` in npm files...
+- Fixed: missing `bin` in npm files...
 
 # 0.2.1 - 2014-08-22
 
-- Add missing `bin` in `package.json` for npm
+- Fixed: missing `bin` in `package.json` for npm
 
 # 0.2.0 - 2014-08-20
 
-- `from` option doesn't enable `sourcemap` automatically anymore
+- Changed: `from` option doesn't enable `sourcemap` automatically anymore
 
 # 0.1.0 - 2014-08-19
 
-First release
+✨ First release
