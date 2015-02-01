@@ -12,10 +12,10 @@ var cssnext = require("..")
 test("use case: color plugins together", function(t) {
   t.equal(
     cssnext(
-      utils.read("cases/color"),
+      utils.readFixture("cases/color"),
       {}
-    ).trim(),
-    utils.read("cases/color.expected").trim(),
+    ),
+    utils.readFixture("cases/color.expected"),
     "all color plugins should works together"
   )
 
@@ -25,7 +25,7 @@ test("use case: color plugins together", function(t) {
 test("use case: use plugin options", function(t) {
   t.equal(
     cssnext(
-      utils.read("cases/plugin-options"),
+      utils.readFixture("cases/plugin-options"),
       {
         features: {
           customProperties: {
@@ -33,8 +33,8 @@ test("use case: use plugin options", function(t) {
           }
         }
       }
-    ).trim(),
-    utils.read("cases/plugin-options.expected").trim(),
+    ),
+    utils.readFixture("cases/plugin-options.expected"),
     "should be able to pass options to plugins"
   )
 

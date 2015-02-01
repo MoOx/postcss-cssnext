@@ -11,23 +11,23 @@ var cssnext = require("..")
 /**
  * CLI tests
  */
-var input = utils.read("cli/input")
-var output = utils.read("cli/input.expected")
+var input = utils.readFixture("cli")
+var output = utils.readFixture("cli.expected")
 
 var cssnextBin = "node bin/cssnext" // node bin is used to help for windows
 
 test("cli", function(t) {
   var planned = 0
 
-  exec(cssnextBin + " test/cli/input.css test/cli/output--io.css", function(err) {
+  exec(cssnextBin + " test/fixtures/cli.css test/fixtures/cli.output--io.css", function(err) {
     if (err) { throw err }
-    var res = utils.read("cli/output--io")
+    var res = utils.readFixture("cli.output--io")
     t.equal(res, output, "should read from a file and write to a file")
-    utils.remove("cli/output--io")
+    utils.remove("cli.output--io")
   })
   planned+=1
 
-  exec(cssnextBin + " test/cli/input.css", function(err, stdout) {
+  exec(cssnextBin + " test/fixtures/cli.css", function(err, stdout) {
     if (err) { throw err }
     t.equal(stdout, output, "should read from a file and write to stdout")
   })
@@ -41,35 +41,47 @@ test("cli", function(t) {
   childProcess.stdin.end()
   planned+=1
 
-  exec(cssnextBin + " test/cli/wtf.css", function(err, stdout, stderr) {
+  exec(cssnextBin + " test/fixtures/cli.wtf.css", function(err, stdout, stderr) {
     t.ok(err && err.code === 1, "should return an error when input file is unreadable")
     t.ok(utils.contains(stderr, "Unable to read file"), "should show that the input file is not found")
   })
   planned+=2
 
-  exec(cssnextBin + " test/cli/error.css", function(err, stdout, stderr) {
+  exec(cssnextBin + " test/fixtures/cli.error.css", function(err, stdout, stderr) {
     t.ok(err && err.code === 2, "should throw an error")
     t.ok(utils.contains(stderr, "encounters an error"), "should output a readable error")
     t.ok(utils.contains(stderr, "If this error looks like a bug, please report it here"), "should show the url where to report bugs")
   })
   planned+=3
 
-  exec(cssnextBin + " --verbose test/cli/input.css test/cli/output--verbose.css", function(err, stdout) {
+  exec(cssnextBin + " --verbose test/fixtures/cli.css test/fixtures/cli.output--verbose.css", function(err, stdout) {
     if (err) { throw err }
     t.ok(utils.contains(stdout, "Output written"), "should log on --verbose")
-    utils.remove("cli/output--verbose")
+    utils.remove("cli.output--verbose")
   })
   planned+=1
 
-  exec(cssnextBin + " --compress test/compress/input.css", function(err, stdout) {
+  exec(cssnextBin + " --no-import test/fixtures/import.css", function(err, stdout) {
     if (err) { throw err }
-    t.equal(stdout, utils.read("compress/default.expected").trim(), "should compress on --compress")
+    t.equal(stdout, utils.readFixture("import"), "should not import on --no-import")
   })
   planned+=1
 
-  exec(cssnextBin + " --sourcemap test/sourcemap/input.css", function(err, stdout) {
+  exec(cssnextBin + " --no-url test/fixtures/url.css", {cwd: process.cwd()}, function(err, stdout) {
     if (err) { throw err }
-    t.equal(stdout, utils.read("sourcemap/expected-inline").trim(), "should add sourcemap on --sourcemap")
+    t.equal(stdout, utils.readFixture("url/dep"), "should not adjust url on --no-url")
+  })
+  planned+=1
+
+  exec(cssnextBin + " --compress test/fixtures/compress.css", function(err, stdout) {
+    if (err) { throw err }
+    t.equal(stdout, utils.readFixture("compress.default.expected").trim(), "should compress on --compress")
+  })
+  planned+=1
+
+  exec(cssnextBin + " --sourcemap test/fixtures/sourcemap.css", function(err, stdout) {
+    if (err) { throw err }
+    t.equal(stdout, utils.readFixture("sourcemap.expected").trim(), "should add sourcemap on --sourcemap")
   })
   planned+=1
 
@@ -79,8 +91,8 @@ test("cli", function(t) {
   var no = "--no-" + features.map(function(feature) { return toSlug(feature)}).join(" --no-")
   features.forEach(function(feature) {
     var slug = toSlug(feature)
-    var output = utils.read("features/" + slug)
-    exec(cssnextBin + " " + no + " test/features/" + slug + ".css", function(err, stdout) {
+    var output = utils.readFixture("features/" + slug)
+    exec(cssnextBin + " " + no + " test/fixtures/features/" + slug + ".css", function(err, stdout) {
       if (err) { throw err }
       t.equal(stdout, output, "should not modify input of '" + toSpace(feature) + "' fixture if all features are disabled")
     })
@@ -93,7 +105,7 @@ test("cli", function(t) {
   })
   planned+=2
 
-  exec(cssnextBin + " --watch test/cli/input.css", function(err, stdout, stderr) {
+  exec(cssnextBin + " --watch test/fixtures/cli.css", function(err, stdout, stderr) {
     t.ok(err && err.code === 3, "should return an error when <output> is missing when `--watch` option passed")
     t.ok(utils.contains(stderr, "--watch option need"), "should show an explanation when <output> is missing when `--watch` option passed")
   })

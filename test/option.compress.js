@@ -8,10 +8,10 @@ var cssnext = require("..")
 var postcss = require("postcss")
 
 test("cssnext compress option", function(t) {
-  var input = utils.read("compress/input")
+  var input = utils.readFixture("compress")
   var expected = {
-    default: utils.read("compress/default.expected").trim(),
-    options: utils.read("compress/options.expected").trim()
+    default: utils.readFixture("compress.default.expected").trim(),
+    options: utils.readFixture("compress.options.expected").trim()
   }
 
   // compress option

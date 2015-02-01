@@ -1,7 +1,32 @@
 # Unreleased
 
 - Changed: upgraded to postcss v4.x
-- Added: non absolute url() are now rebased according to `from` (and `to` options if provided)
+- Changed: `import` is not considered as a `feature` anymore, but is now directly an option for the API.
+It is still enabled by default.
+
+Before
+
+```js
+cssnext({
+  features: {
+    import: {
+      root: "./src"
+    }
+  }
+})
+```
+
+After
+
+```js
+cssnext({
+  import: {
+    root: "./src"
+  }
+})
+```
+
+- Added: `url` option: non absolute url() are now rebased according to `from` (and `to` options if provided). Enabled by default.
 - Added: `compress` option now accept CSSWring options directly.
 
 # 0.6.6 - 2014-12-22

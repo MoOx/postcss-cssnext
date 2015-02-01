@@ -1,1 +1,0 @@
-{"version":3,"sources":["test/sourcemap/imported.css","test/sourcemap/input.css"],"names":[],"mappings":"AAAA;EACE,kBAAiB;EAClB;;ACAD;EACE,YAAW;EACZ","file":"test/sourcemap/input.css","sourcesContent":["html {\n  background: blue;\n}\n","@import \"imported.css\";\n\nbody {\n  color: red;\n}\n"]}

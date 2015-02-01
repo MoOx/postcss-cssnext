@@ -11,31 +11,29 @@ var cssnext = require("..")
  */
 test("sourcemap", function(t) {
   var options = {
-    from: "./test/sourcemap/input.css",
-    sourcemap:  true
+    from: "./test/fixtures/sourcemap.css",
+    sourcemap: true
   }
   t.equal(
     cssnext(
-      utils.read("sourcemap/input"),
+      utils.readFixture("sourcemap"),
       options
-    ).trim(),
-    utils.read("sourcemap/expected-inline").trim(),
+    ),
+    utils.readFixture("sourcemap.expected").trim(),
     "should contain a correct inlined sourcemap"
   )
 
-  t.ok(!options.hasOwnProperty("map"), "doesn't mutate options object")
-
   var result = cssnext(
-    utils.read("sourcemap/input"),
+    utils.readFixture("sourcemap"),
     {
-      from: "./test/sourcemap/input.css",
+      from: "./test/fixtures/sourcemap.css",
       map: {inline: false}
     }
   )
 
   t.equal(
     result.map.toString(),
-    utils.read("sourcemap/expected", ".map").trim(),
+    utils.readFixture("sourcemap.expected", ".map").trim(),
     "should contain a correct sourcemap"
   )
 

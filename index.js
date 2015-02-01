@@ -6,8 +6,6 @@ var assign = require("object-assign")
 
 var features = {
   // Reminder: order is important
-  import: function(options) { return require("postcss-import")(options) },
-  url: function(options) { return require("postcss-url")(options) },
   customProperties: function(options) { return require("postcss-custom-properties")(options) },
   calc: function(options) { return require("postcss-calc")(options)},
   customMedia: function(options) { return require("postcss-custom-media")(options)},
@@ -60,6 +58,21 @@ function cssnext(string, options) {
 
   var postcss = Postcss()
 
+  // only enable import & url if fs module is available
+  var fs = require("fs")
+  if (fs && fs.readFile) {
+    // @import
+    if (options.import !== false) {
+      postcss.use(require("postcss-import")(typeof options.import === "object" ? options.import : undefined))
+    }
+
+    // url() adjustements
+    if (options.url !== false) {
+      postcss.use(require("postcss-url")(typeof options.url === "object" ? options.url : undefined))
+    }
+  }
+
+  // features
   Object.keys(cssnext.features).forEach(function(key) {
     // if undefined, we default to assuming this feature is wanted by the user
     if (features[key] !== false) {
@@ -67,12 +80,13 @@ function cssnext(string, options) {
     }
   })
 
-  // simple minifier plugin
+  // minification
   if (options.compress) {
     var csswring = require("csswring")
     postcss.use(typeof options.compress === "object" ? csswring(options.compress) : csswring)
   }
 
+  // classic API if string is passed
   if (typeof string === "string") {
     var result = postcss.process(string, options)
 
@@ -84,6 +98,7 @@ function cssnext(string, options) {
     // if a specific map has been asked, we are returning css + map
     return result
   }
+  // or return the postcss instance that can be consumed as a postcss plugin
   else {
     return postcss
   }

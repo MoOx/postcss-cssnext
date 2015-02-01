@@ -1,0 +1,5 @@
+@import "sourcemap.imported.css";
+
+body {
+  color: red;
+}

@@ -2,7 +2,6 @@
  * Module dependencies
  */
 var fs = require("fs")
-var path = require("path")
 var cssnext = require("../..")
 
 /**
@@ -11,34 +10,11 @@ var cssnext = require("../..")
  * @type {Object}
  */
 module.exports = {
-  resolve: resolve,
-  read: read,
   contains: contains,
   remove: remove,
-  compareFixtures: compareFixtures
-}
-
-/**
- * Resolve a fixture by `filename`.
- *
- * @param {String} filename
- * @return {String}
- */
-
-function resolve(filename, ext) {
-  ext = (ext !== undefined ? ext : ".css")
-  return path.resolve(__dirname, "..", filename + ext)
-}
-
-/**
- * Read a fixture by `filename`.
- *
- * @param {String} filename
- * @return {String}
- */
-
-function read(filename, ext) {
-  return fs.readFileSync(resolve(filename, ext), "utf8")
+  compareFixtures: compareFixtures,
+  fixturePath: fixturePath,
+  readFixture: readFixture
 }
 
 /**
@@ -58,7 +34,7 @@ function contains(string, piece) {
  * @param {String} filename
  */
 function remove(filename) {
-  var file = resolve(filename)
+  var file = fixturePath(filename)
   if (!fs.existsSync(file)) {
     return
   }
@@ -73,27 +49,40 @@ function remove(filename) {
  * @param {Object|Function} options cssnext options
  */
 function compareFixtures(t, name, message, options) {
-  function fixturePath(name) {
-    return "test/" + name + ".css"
-  }
-
-  function fixture(name) {
-    return fs.readFileSync(fixturePath(name), "utf8").trim()
-  }
-
   var actual
   if (typeof options === "function") {
-    actual = options(fixture(name))
+    actual = options(readFixture(name))
   }
   else {
     options = options || {}
     options.from = fixturePath(name)
-    actual = cssnext(fixture(name), options)
+    actual = cssnext(readFixture(name), options)
   }
 
   // handy thing: checkout actual in the *.actual.css file
   fs.writeFile(fixturePath(name + ".actual"), actual)
 
-  var expected = fixture(name + ".expected")
+  var expected = readFixture(name + ".expected")
   return t.equal(actual.trim(), expected.trim(), message !== undefined ? message : "processed fixture '" + name + "' should be equal to expected output")
+}
+
+/**
+ * get fixture path
+ * @param {String} name
+ * @param {String} ext (optional extension, default to ".css")
+ * @return the fixture filename
+*/
+function fixturePath(name, ext) {
+  ext = (ext !== undefined ? ext : ".css")
+  return "test/fixtures/" + name + ext
+}
+
+/**
+ * read a fixture
+ * @param {String} name
+ * @param {String} ext (optional extension, default to ".css")
+ * @return the fixture content
+ */
+function readFixture(name, ext) {
+  return fs.readFileSync(fixturePath(name, ext), "utf8")
 }

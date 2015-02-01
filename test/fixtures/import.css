@@ -1,0 +1,5 @@
+@import "./import.imported.css";
+
+html {
+  background: #eee;
+}

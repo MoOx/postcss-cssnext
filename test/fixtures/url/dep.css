@@ -1,0 +1,6 @@
+@font-face {
+    src: url('./assets/font.woff?v3#dontcare')
+}
+body {
+    background: url('./assets/pixel.gif')
+}

@@ -17,6 +17,8 @@ var pkg = require("../package")
 program
   .version(pkg.version)
   .usage("[options] [<input> [<output>]]")
+  .option("-I, --no-import", "do not inline @import")
+  .option("-U, --no-url", "do not adjust url()")
   .option("-c, --compress", "compress output")
   .option("-s, --sourcemap", "add sourcemap")
   .option("-w, --watch", "watch the input file for changes")
@@ -71,6 +73,8 @@ function transform() {
       var css = cssnext(buffer.toString(), {
         features: program,
         from: input,
+        import: program.import,
+        url: program.url,
         sourcemap: program.sourcemap,
         compress: program.compress
       })

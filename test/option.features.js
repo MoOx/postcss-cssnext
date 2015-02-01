@@ -34,9 +34,9 @@ var testFeature = function(t, feature, cssnext, version, source, input, expected
 
 Object.keys(cssnext.features).forEach(function(name) {
   var slug = toSlug(name)
-  var source = utils.resolve("features/" + slug)
-  var input = utils.read("features/" + slug)
-  var expected = utils.read("features/" + slug + ".expected")
+  var source = utils.fixturePath("features/" + slug)
+  var input = utils.readFixture("features/" + slug)
+  var expected = utils.readFixture("features/" + slug + ".expected")
 
   test(slug, function(t) {
     testFeature(t, name, cssnext, "node.js", source, input, expected)
