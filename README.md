@@ -65,7 +65,7 @@ Follow [@cssnext on Twitter](https://twitter.com/cssnext) to get latest news & j
 
 _<small>The features below are considered as bonus since it's totally not related to CSS specs</small>._
 
-* `@import` inline local files and modules - `node_modules` or `web_modules` ([⇗](https://github.com/postcss/postcss-import)) to output a bundled CSS file.
+* `@import` inline local files and modules - `node_modules` or `web_modules` ([⇗](https://github.com/postcss/postcss-import)) to output a bundled CSS file. `url()` referenced are also rebased.
 * minification is available ([⇗](https://github.com/hail2u/node-csswring)) if you want to compress the output for production.
 
 
@@ -189,10 +189,10 @@ Object containing key of features to enable/disable.
 _Features are enabled by default: no key means feature is enabled_.
 
 ```js
-//eg: disable import support
+//eg: disable custom properties support
 var output = cssnext(input, {
   features: {
-    import: false
+    customProperties: false
   }
 })
 ```
@@ -215,7 +215,6 @@ To know all available options, please check [available features](#available) lis
 
 Here are all available features:
 
-- `import`
 - `customProperties`
 - `calc`
 - `customMedia`
@@ -230,6 +229,21 @@ Here are all available features:
 - `autoprefixer`
 
 _Note: order is important to get everything working correctly._
+
+##### `import` (default: `true`)
+
+Allows you to inline local `@import` files (thanks to [postcss-import](https://github.com/postcss/postcss-import#readme).
+
+* you can refer to `node_modules` and `web_modules` packages,
+* you can omit .css extension.
+
+_Note: you can pass [postcss-import options](https://github.com/postcss/postcss-import#readme) directly._
+
+##### `url` (default: `true`)
+
+By default, `url()` are rebased according to `from` (and `to`) option(s). This is convenient especially for `@import`ed files.
+
+_Note: you can pass [postcss-url options](https://github.com/postcss/postcss-url#options) directly in order to inline or have more control over urls._
 
 ##### `compress` (default: `false`)
 
@@ -290,25 +304,6 @@ var output = cssnext(input, {
   }
 })
 ```
-
-###### `features.import.path` (default: `dirname(from)` || `process.cwd()`)
-
-A string or an array of paths in which to look for files when inlining using `@import`.  
-Defaults to dirname of postcss [`from`](https://github.com/postcss/postcss#node-source) option, or fallback to `process.cwd()`.
-
-_Note: nested `@import` will additionally benefit of the relative dirname of imported files._
-
-```js
-//eg
-var output = cssnext(input, {
-  features: {
-    import: {
-      path: ["src/stylesheets"]
-    }
-  }
-})
-```
-
 
 ### Usage with other tools
 
