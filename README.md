@@ -15,7 +15,7 @@ The official name is **cssnext**, which should never be capitalized, especially 
 
 ---
 
-[Why](#why) | [Features](#features) | [Limitation](#limitation) | [Installation](#installation)| [CLI Usage](#cli) | [Node.js API](#nodejs-api) | [Contribute](#contributing)
+[Why](#why) | [Features](#features) | [Limitations](#limitations) | [Installation](#installation)| [CLI Usage](#cli) | [Node.js API](#nodejs-api) | [Contribute](#contributing)
 --- | --- | --- | --- | --- | --- | ---
 
 --- 
@@ -76,12 +76,20 @@ You can take a look to the [list of features that are waiting to be implemented]
 Feel free to work on a feature ready to be added, or [open a new issue](https://github.com/cssnext/cssnext/issues/new) if you find something that should be handled.  
 Keep in mind that, as of right now, this project is intended to support new CSS *syntax* only.
 
-## Limitation
+## Limitations
 
 ### Custom properties
 
 The current transformation for custom properties just aims to provide a future-proof way of using a **limited subset (to top-level `:root` selector)** of the features provided by native CSS custom properties.  
 The transformation is not complete and can't be properly. By injecting selectors with new computed rules, we will break original cascade & unexpected results might happen.
+
+## Font variant
+
+`font-variant` are transformed to `font-feature-settings`. You might take a look to the support of [font feature settings](http://caniuse.com/#feat=font-feature).
+
+## Filter
+
+The W3C filters are only transformed as svg filter using `url(data:*)` trick for Firefox < 35.
 
 ---
 
