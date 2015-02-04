@@ -59,7 +59,8 @@ Follow [@cssnext on Twitter](https://twitter.com/cssnext) to get latest news & j
 ([⇗](https://github.com/postcss/postcss-font-variant)),
 * [filter](http://www.w3.org/TR/filter-effects/) properties
 ([⇗](https://github.com/iamvdo/pleeease-filters))
-
+* [rem](http://www.w3.org/TR/css3-values/#rem-unit) units
+([⇗](https://github.com/robwierzbowski/node-pixrem))
 
 ### Bonus features
 
@@ -248,6 +249,7 @@ Here are all available features:
 - `colorRebeccapurple`
 - `fontVariant`
 - `filter`
+- `rem`
 - `autoprefixer`
 
 _Note: order is important to get everything working correctly._

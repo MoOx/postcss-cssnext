@@ -6,7 +6,7 @@
 }
 
 /* custom media queries */
-@custom-media --viewport-medium (width <= 50rem);
+@custom-media --viewport-medium (width <= 50em);
 
 /* some var() & calc() */
 body {
@@ -20,6 +20,7 @@ body {
 /* custom media query usage */
 @media (--viewport-medium) {
   body { font-size: calc(var(--fontSize) * 1.2); }
+  /* no need for px here since browsers that supports media queries support rem already */
 }
 
 /* custom selectors */

@@ -6,14 +6,18 @@
 body {
   color: rgba(18, 52, 86, 0.47059);
 
+  font-size: 16px;
+
   font-size: 1rem;
+  line-height: 24px;
   line-height: 1.5rem;
   padding: calc(0.5rem + 1px);
 }
 
 /* custom media query usage */
-@media (max-width: 50rem) {
+@media (max-width: 50em) {
   body { font-size: 1.2rem; }
+  /* no need for px here since browsers that supports media queries support rem already */
 }
 
 /* custom selectors */

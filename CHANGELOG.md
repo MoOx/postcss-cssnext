@@ -29,6 +29,7 @@ cssnext({
 - Added: `url` option: non absolute url() are now rebased according to `from` (and `to` options if provided). Enabled by default.
 - Added: `compress` option now accept CSSWring options directly.
 - Added: `browsers` option can enable or disable features and is propagated to autoprefixer
+- Added: px fallback for `rem` unit
 
 # 0.6.6 - 2014-12-22
 
