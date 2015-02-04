@@ -191,7 +191,21 @@ fs.writeFileSync("dist/index.css", output)
 
 #### Node.js options
 
+##### `browsers` (default: [browserslist default](https://github.com/ai/browserslist#readme) - `> 1%, last 2 versions, Firefox ESR, Opera 12.1`)
+
+Allow you to specify your browser scope.
+**This option enable or disable `features` according to [caniuse](http://caniuse.com/) database.**
+This is the exact same option that you might know in Autoprefixer.
+Since cssnext includes Autoprefixer, the option is propagated.
+
+See [Browserslist](https://github.com/ai/browserslist#queries) queries syntax to adjust this option to your need.
+
+_Note: if you don't specify this option, Browserslist will automatically try to find `browserslist`
+config file or use its default value._
+
 ##### `features` (default: all features)
+
+**You should probably use `browsers` option instead of this one.**
 
 Object containing key of features to enable/disable.  
 _Features are enabled by default: no key means feature is enabled_.
@@ -291,26 +305,6 @@ var output = cssnext(
   {from: source}
 )
 fs.writeFileSync("dist/index.css", output)
-```
-
-##### Some feature options
-
-###### `features.autoprefixer.browsers` (default: _autoprefixer default_)
-
-Array to specify browsers you want to target (for now only used by [autoprefixer](https://github.com/postcss/autoprefixer)).  
-See [autoprefixer documentation of this option for more details](https://github.com/postcss/autoprefixer#browsers).
-
-Defaults to something like `["> 1%", "last 2 versions", "Firefox ESR"]`.
-
-```js
-//eg
-var output = cssnext(input, {
-  features: {
-    autoprefixer: {
-      browsers: ["> 1%", "last 2 versions", "Firefox ESR"]
-    }
-  }
-})
 ```
 
 ### Usage with other tools

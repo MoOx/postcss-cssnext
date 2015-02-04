@@ -3,6 +3,28 @@
  */
 var Postcss = require("postcss")
 var assign = require("object-assign")
+var caniuse = require("caniuse-api")
+
+// Some features might affect others (eg: var() in a calc()
+// in order to prevent issue, the map contains a sort of dependencies list
+//
+// null == always enable (& no caniuse data)
+var caniuseFeaturesMap = {
+  customProperties: ["css-variables"],
+  // calc: null, // calc() transformation only make sense with transformed custom properties, don't you think ?
+  // @todo open PR on caniuse repo https://github.com/Fyrd/caniuse
+  // customMedia: [null],
+  // mediaQueriesRange: [null],
+  // customSelectors: [null],
+  // colorRebeccapurple: [null], // @todo can be done easily
+  // colorHwb: [null],
+  // colorGray: [null],
+  // colorHexAlpha: [null],
+  // colorFunction:[null],
+  // fontVariant: [null],
+  // filter: [null], // @todo can be done using a callback, this is only used for Firefox < 35
+  // autoprefixer: [null] // will always be null since autoprefixer does the same game as we do
+}
 
 var features = {
   // Reminder: order is important
@@ -51,10 +73,20 @@ function cssnext(string, options) {
 
   var features = options.features || {}
 
+  // options.browsers is deliberately undefined by defaut to inherit browserslist default behavior
+
   // default sourcemap
   // if `map` option is passed, `sourcemap` option is ignored
   // if `sourcemap` option is passed, a inline map is used
   options.map = options.map || (options.sourcemap ? true : null)
+
+  // propagate browsers option to autoprefixer
+  if (features.autoprefixer !== false) {
+    features.autoprefixer = features.autoprefixer || {}
+    features.autoprefixer.browsers = features.autoprefixer.browsers || options.browsers
+    // autoprefixer doesn't like an "undefined" value. Related to coffee ?
+    if (features.autoprefixer.browsers === undefined) {delete features.autoprefixer.browsers}
+  }
 
   var postcss = Postcss()
 
@@ -74,8 +106,15 @@ function cssnext(string, options) {
 
   // features
   Object.keys(cssnext.features).forEach(function(key) {
-    // if undefined, we default to assuming this feature is wanted by the user
-    if (features[key] !== false) {
+    // feature is enabled if: not force disable && (force enabled || no data yet || !supported yet)
+    if (
+      features[key] !== false && // feature is force disabled
+      (
+        features[key] === true || // feature is forced enabled
+        caniuseFeaturesMap[key] === undefined || // feature don't have any browsers data (yet)
+        (caniuseFeaturesMap[key] && caniuseFeaturesMap[key][0] && !caniuse.isSupported(caniuseFeaturesMap[key][0], options.browsers)) // feature is not yet supported by the browsers scope
+      )
+    ) {
       postcss.use(cssnext.features[key](typeof features[key] === "object" ? features[key] : undefined))
     }
   })
