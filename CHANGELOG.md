@@ -1,4 +1,4 @@
-# Unreleased
+# 1.0.0 - 2015-02-06
 
 - Changed: upgraded to postcss v4.x
 - Changed: `import` is not considered as a `feature` anymore, but is now directly an option for the API.
