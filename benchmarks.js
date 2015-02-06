@@ -19,5 +19,5 @@ keys.forEach(function(k) {
   cssnext(input, {features: enable})
   var stop = t.now()
 
-  console.log(k + " takes " + ((stop - start) / 100000) + "s") // , enable)
+  console.log(k + " takes " + ((stop - start) / 1000000) + "s") // , enable)
 })
