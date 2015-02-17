@@ -111,5 +111,13 @@ test("cli", function(t) {
   })
   planned+=2
 
+  var childProcess = exec(cssnextBin + " --watch test/fixtures/cli.error.css test/fixtures/cli.output--watch.css", function(err, stdout, stderr) {
+    t.ok(utils.contains(stderr, "encounters an error"), "should output error messages when `--watch` option passed")
+    t.ok(err && err.signal === "SIGTERM", "should only be killed by an interrupt when `--watch` option passed")
+    if (err && !err.killed) { throw err }
+  })
+  setTimeout(function() { childProcess.kill("SIGTERM") }, 2000)
+  planned+=2
+
   t.plan(planned)
 })
