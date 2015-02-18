@@ -1,9 +1,6 @@
 language: node_js
 node_js:
-  - 0.10
-  - 0.11
-  #- iojs # not ready yet, wait for an update here http://docs.travis-ci.com/user/build-environment-updates/2015-02-03/#Schedule
-  
+  - 0.12
 notifications:
   irc:
     channels:
