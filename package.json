@@ -1,6 +1,6 @@
 {
   "name": "cssnext",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Use tomorrow's CSS syntax, today",
   "keywords": [
     "css",
@@ -71,6 +71,6 @@
     "test": "tape test/*.js"
   },
   "bin": {
-    "cssnext": "bin/cssnext"
+    "cssnext": "bin/cssnext.js"
   }
 }

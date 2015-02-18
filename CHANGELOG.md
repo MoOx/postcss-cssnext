@@ -1,3 +1,7 @@
+# 1.0.1 - 2015-02-18
+
+- Fixed: cssnext binary doesn't exit on an error if --watch is enabled ([#69](https://github.com/cssnext/cssnext/pull/69))
+
 # 1.0.0 - 2015-02-06
 
 - Changed: upgraded to postcss v4.x
