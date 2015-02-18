@@ -96,7 +96,9 @@ function transform() {
       console.error("If this error looks like a bug, please report it here:")
       console.error(colors.grey("❯ ") + pkg.bugs.url.cyan)
       console.error()
-      exit(2)
+      if (!program.watch) {
+        exit(2)
+      }
     }
   })
 }
