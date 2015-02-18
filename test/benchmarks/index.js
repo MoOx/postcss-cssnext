@@ -5,7 +5,7 @@ var assign = require("object-assign")
 var input = require("fs").readFileSync("./test/benchmarks.css", {encoding: "utf8"})
 
 // make a 2MB input
-for(var i=0;i<=10;i++) {
+for (var i = 0; i <= 10; i++) {
   input += input
 }
 // check the real input
@@ -25,7 +25,7 @@ keys.forEach(function(k) {
   var enable = assign({}, allOff)
   enable[k] = true
   var start = t.now()
-  var out = cssnext(input, {features: enable})
+  cssnext(input, {features: enable})
   var stop = t.now()
 
   console.log(k + " takes " + ((stop - start) / 1000000) + "s") // , enable)
