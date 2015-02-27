@@ -1,0 +1,11 @@
+{
+  "features": {
+    "customProperties": {
+      "variables": {
+        "--color": "#e00"
+      }
+    }
+  },
+  "input": "test/fixtures/config.css",
+  "output": "test/fixtures/config.output--io.css"
+}

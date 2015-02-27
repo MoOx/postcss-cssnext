@@ -54,6 +54,14 @@ test("cli", function(t) {
   })
   planned+=3
 
+  exec(cssnextBin + " --config test/fixtures/config.json", function(err) {
+    if (err) { throw err }
+    var res = utils.readFixture("config.output--io")
+    t.equal(res, utils.readFixture("config.expected"), "should read config file on --config")
+    utils.remove("config.output--io")
+  })
+  planned+=1
+
   exec(cssnextBin + " --verbose test/fixtures/cli.css test/fixtures/cli.output--verbose.css", function(err, stdout) {
     if (err) { throw err }
     t.ok(utils.contains(stdout, "Output written"), "should log on --verbose")
