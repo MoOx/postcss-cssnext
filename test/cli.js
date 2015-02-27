@@ -54,11 +54,9 @@ test("cli", function(t) {
   })
   planned+=3
 
-  exec(cssnextBin + " --config test/fixtures/config.json", function(err) {
+  exec(cssnextBin + " --config test/fixtures/config.json test/fixtures/config.css", function(err, stdout) {
     if (err) { throw err }
-    var res = utils.readFixture("config.output--io")
-    t.equal(res, utils.readFixture("config.expected"), "should read config file on --config")
-    utils.remove("config.output--io")
+    t.equal(stdout, utils.readFixture("config.expected"), "should read config file on --config")
   })
   planned+=1
 

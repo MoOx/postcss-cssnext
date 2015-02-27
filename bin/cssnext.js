@@ -76,8 +76,8 @@ if ("sourcemap" in program) { config.sourcemap = program.sourcemap }
 if ("compress" in program) { config.compress = program.compress }
 if ("watch" in program) { config.watch = program.watch }
 
-var input = program.args[0] ? path.resolve(program.args[0]) : config.input
-var output = program.args[1] ? path.resolve(program.args[1]) : config.output
+var input = program.args[0] ? path.resolve(program.args[0]) : null
+var output = program.args[1] ? path.resolve(program.args[1]) : null
 var verbose = program.verbose
 
 if (input && !fs.existsSync(input)) {
