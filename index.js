@@ -110,11 +110,21 @@ function cssnext(string, options) {
   Object.keys(cssnext.features).forEach(function(key) {
     // feature is enabled if: not force disable && (force enabled || no data yet || !supported yet)
     if (
-      features[key] !== false && // feature is force disabled
+      // feature is force disabled
+      features[key] !== false &&
       (
-        features[key] === true || // feature is forced enabled
-        caniuseFeaturesMap[key] === undefined || // feature don't have any browsers data (yet)
-        (caniuseFeaturesMap[key] && caniuseFeaturesMap[key][0] && !caniuse.isSupported(caniuseFeaturesMap[key][0], options.browsers)) // feature is not yet supported by the browsers scope
+        // feature is forced enabled
+        features[key] === true ||
+
+        // feature don't have any browsers data (yet)
+        caniuseFeaturesMap[key] === undefined ||
+
+        // feature is not yet supported by the browsers scope
+        (
+          caniuseFeaturesMap[key] &&
+          caniuseFeaturesMap[key][0] &&
+          !caniuse.isSupported(caniuseFeaturesMap[key][0], options.browsers)
+        )
       )
     ) {
       postcss.use(cssnext.features[key](typeof features[key] === "object" ? features[key] : undefined))
