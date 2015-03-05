@@ -18,6 +18,7 @@ program
   .version(pkg.version)
   .usage("[options] [<input> [<output>]]")
   .option("-C, --config <file>", "use the config file")
+  .option("-b, --browsers <items>", "browsers list (comma separated)")
   .option("-I, --no-import", "do not inline @import")
   .option("-U, --no-url", "do not adjust url()")
   .option("-c, --compress", "compress output")
@@ -61,15 +62,11 @@ if (!config.features) {
 }
 // command line flags override config file
 Object.keys(cssnext.features).forEach(function(feature) {
-  if (typeof config.features[feature] === "object") {
-    if (program[feature] === false) {
-      config.features[feature] = false
-    }
-  }
-  else {
-    config.features[feature] = program[feature]
+  if (program[feature] === false) {
+    config.features[feature] = false
   }
 })
+if ("browsers" in program) { config.browsers = program.browsers }
 if ("import" in program) { config.import = program.import }
 if ("url" in program) { config.url = program.url }
 if ("sourcemap" in program) { config.sourcemap = program.sourcemap }

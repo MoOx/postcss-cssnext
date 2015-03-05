@@ -60,6 +60,15 @@ test("cli", function(t) {
   })
   planned+=1
 
+  var noCustomPropInput = ":root{--foo:bar}baz{qux:var(--foo)}"
+  var childProcessBrowsers = exec(cssnextBin + " --browsers \"Firefox >= 31\"", function(err, stdout) {
+    if (err) { throw err }
+    t.equal(stdout, noCustomPropInput, "should have a --browsers option")
+  })
+  childProcessBrowsers.stdin.write(new Buffer(noCustomPropInput))
+  childProcessBrowsers.stdin.end()
+  planned+=1
+
   exec(cssnextBin + " --verbose test/fixtures/cli.css test/fixtures/cli.output--verbose.css", function(err, stdout) {
     if (err) { throw err }
     t.ok(utils.contains(stdout, "Output written"), "should log on --verbose")

@@ -1,6 +1,7 @@
 # Unreleased
 
 - Added: `--config` CLI option
+- Added: `--browsers`CLI option
 
 # 1.0.1 - 2015-02-18
 
