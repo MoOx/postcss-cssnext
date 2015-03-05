@@ -17,6 +17,7 @@ var pkg = require("../package")
 program
   .version(pkg.version)
   .usage("[options] [<input> [<output>]]")
+  .option("-C, --config <file>", "use the config file")
   .option("-I, --no-import", "do not inline @import")
   .option("-U, --no-url", "do not adjust url()")
   .option("-c, --compress", "compress output")
@@ -54,6 +55,27 @@ program.on("--help", function() {
 
 program.parse(process.argv)
 
+var config = program.config ? require(path.resolve(program.config)) : {}
+if (!config.features) {
+  config.features = {}
+}
+// command line flags override config file
+Object.keys(cssnext.features).forEach(function(feature) {
+  if (typeof config.features[feature] === "object") {
+    if (program[feature] === false) {
+      config.features[feature] = false
+    }
+  }
+  else {
+    config.features[feature] = program[feature]
+  }
+})
+if ("import" in program) { config.import = program.import }
+if ("url" in program) { config.url = program.url }
+if ("sourcemap" in program) { config.sourcemap = program.sourcemap }
+if ("compress" in program) { config.compress = program.compress }
+if ("watch" in program) { config.watch = program.watch }
+
 var input = program.args[0] ? path.resolve(program.args[0]) : null
 var output = program.args[1] ? path.resolve(program.args[1]) : null
 var verbose = program.verbose
@@ -63,6 +85,8 @@ if (input && !fs.existsSync(input)) {
   exit(1)
 }
 
+config.from = input
+
 function transform() {
   require("read-file-stdin")(input, function(err, buffer) {
     if (err) {
@@ -70,14 +94,7 @@ function transform() {
     }
 
     try {
-      var css = cssnext(buffer.toString(), {
-        features: program,
-        from: input,
-        import: program.import,
-        url: program.url,
-        sourcemap: program.sourcemap,
-        compress: program.compress
-      })
+      var css = cssnext(buffer.toString(), config)
 
       require("write-file-stdout")(output, css)
       if (verbose && output) {
@@ -96,7 +113,7 @@ function transform() {
       console.error("If this error looks like a bug, please report it here:")
       console.error(colors.grey("❯ ") + pkg.bugs.url.cyan)
       console.error()
-      if (!program.watch) {
+      if (!config.watch) {
         exit(2)
       }
     }
@@ -105,7 +122,7 @@ function transform() {
 
 transform()
 
-if (program.watch) {
+if (config.watch) {
   if (!input || !output) {
     console.error(colors.red("--watch option need both <input> & <output> files to work"))
     exit(3)
