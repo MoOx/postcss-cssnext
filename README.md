@@ -11,7 +11,7 @@ Check out [the website](https://cssnext.github.io/) or [try cssnext](https://css
 
 **Is it cssnext or CSSNext or CSSnext?**
 
-The official name is **cssnext**, which should never be capitalized, especially not at the start of a sentence, unless it is being displayed in a location that is customarily all-caps (such as the title of man pages.)
+The official name is **cssnext**, which should never be capitalized, especially not at the start of a sentence, unless it is being displayed in a location that is customarily all-caps (such as the title of man pages).
 
 ---
 
@@ -24,13 +24,13 @@ The official name is **cssnext**, which should never be capitalized, especially 
 
 Prior 2015, CSS was frustrating by not having any specification for features we were looking for. No variables, no math, no color manipulation & no customization. Things are going to change soon since a lot of work has been made by the W3C to write new specs to make our life easier.
 
-**This project aims to allow using future CSS syntax, today.**
+**This project aims to allow you to use future CSS syntax, today.**
 
 It is similar to [Myth](http://myth.io/) or [SUIT CSS preprocessor](https://github.com/suitcss/preprocessor) but pushes the concept to the next level by supporting more features. It works great with [cssrecipes](https://cssrecipes.github.io/) or [SUIT CSS](https://suitcss.github.io/).
 
 _It's not planned for now to provide polyfills for future CSS APIs that depend on the client browser._
 
-Follow [@cssnext on Twitter](https://twitter.com/cssnext) to get latest news & join [#cssnext on irc.freenode.net](http://webchat.freenode.net/?channels=cssnext) if you have any questions.
+Follow [@cssnext on Twitter](https://twitter.com/cssnext) to get the latest news & join [#cssnext on irc.freenode.net](http://webchat.freenode.net/?channels=cssnext) if you have any questions.
 
 ## Features
 
@@ -38,7 +38,7 @@ Follow [@cssnext on Twitter](https://twitter.com/cssnext) to get latest news & j
 * [custom properties & `var()`](http://www.w3.org/TR/css-variables/)
 ([⇗](https://github.com/postcss/postcss-custom-properties)) limited to `:root`,
 * [reduced `calc()`](https://github.com/MoOx/reduce-css-calc#readme)
-([⇗](https://github.com/postcss/postcss-calc)) to optimize previously parsed `var()` references),
+([⇗](https://github.com/postcss/postcss-calc)) to optimize previously parsed `var()` references,
 * [custom media queries](http://dev.w3.org/csswg/mediaqueries/#custom-mq)
 ([⇗](https://github.com/postcss/postcss-custom-media)) a nice way to have semantic media queries,
 * [media queries ranges](http://dev.w3.org/csswg/mediaqueries/#mq-ranges)
@@ -73,7 +73,7 @@ _<small>The features below are considered as bonus since it's totally not relate
 ### @todo
 
 Any omissions of the CSS specifications (even in draft) that are subject to be handled by cssnext are not intentional.  
-You can take a look to the [list of features that are waiting to be implemented](https://github.com/cssnext/cssnext/issues?q=is%3Aopen+is%3Aissue+label%3Afeature+label%3Aready).  
+You can take a look at the [list of features that are waiting to be implemented](https://github.com/cssnext/cssnext/issues?q=is%3Aopen+is%3Aissue+label%3Afeature+label%3Aready).  
 Feel free to work on a feature ready to be added, or [open a new issue](https://github.com/cssnext/cssnext/issues/new) if you find something that should be handled.  
 Keep in mind that, as of right now, this project is intended to support new CSS *syntax* only.
 
@@ -86,11 +86,11 @@ The transformation is not complete and can't be properly. By injecting selectors
 
 ## Font variant
 
-`font-variant` are transformed to `font-feature-settings`. You might take a look to the support of [font feature settings](http://caniuse.com/#feat=font-feature).
+`font-variant` are transformed to `font-feature-settings`. You might take a look at the support of [font feature settings](http://caniuse.com/#feat=font-feature).
 
 ## Filter
 
-The W3C filters are only transformed as svg filter using `url(data:*)` trick for Firefox < 35.
+The W3C filters are only transformed as svg filter using the `url(data:*)` trick for Firefox < 35.
 
 ---
 
@@ -152,7 +152,7 @@ $ cssnext --help
 
 ### Node.js API
 
-cssnext can be used with it's own API or as a PostCSS plugin.
+cssnext can be used with its own API or as a PostCSS plugin.
 
 #### `var string = cssnext(string, options)`
 
@@ -168,13 +168,13 @@ var output = cssnext(input)
 fs.writeFileSync("dist/index.css", output)
 ```
 
-**`/!\` Note: if you are using non inlined sourcemaps, cssnext will return a object: `{css: string, map: sourcemap}`**
+**`/!\` Note: if you are using non inlined sourcemaps, cssnext will return an object: `{css: string, map: sourcemap}`**
 
 See [sourcemap](#sourcemap-default-false) & [map](#map-default-depends-on-sourcemap) options for more informations.
 
 #### `var postcssPlugin = cssnext(options)`
 
-cssnext can be used as a postcss plugin
+cssnext can be used as a postcss plugin:
 
 ```js
 var fs = require("fs")
@@ -194,14 +194,14 @@ fs.writeFileSync("dist/index.css", output)
 
 ##### `browsers` (default: [browserslist default](https://github.com/ai/browserslist#readme) - `> 1%, last 2 versions, Firefox ESR, Opera 12.1`)
 
-Allow you to specify your browser scope.
-**This option enable or disable `features` according to [caniuse](http://caniuse.com/) database.**
-This is the exact same option that you might know in Autoprefixer.
+Allows you to specify your browser scope.
+**This option enables or disables `features` according to [caniuse](http://caniuse.com/) database.**
+This is the exact same option that you might know from Autoprefixer.
 Since cssnext includes Autoprefixer, the option is propagated.
 
-See [Browserslist](https://github.com/ai/browserslist#queries) queries syntax to adjust this option to your need.
+See [Browserslist](https://github.com/ai/browserslist#queries) queries syntax to adjust this option to your needs.
 
-_Note: if you don't specify this option, Browserslist will automatically try to find `browserslist`
+_Note: if you don't specify this option, Browserslist will automatically try to find a `browserslist`
 config file or use its default value._
 
 ##### `features` (default: all features)
@@ -220,7 +220,7 @@ var output = cssnext(input, {
 })
 ```
 
-Each features are based on PostCSS plugins & can get their own options.
+Each feature is based on PostCSS plugins & can get its own options.
 To pass options to a feature, you can just pass an object to the feature:
 
 ```js
@@ -234,9 +234,9 @@ var output = cssnext(input, {
 })
 ```
 
-To know all available options, please check [available features](#available) list where you will find references to all the plugins used.
+To know all available options, please check the [available features](#available) list where you will find references to all the plugins used.
 
-Here are all available features:
+Here are all the available features:
 
 - `customProperties`
 - `calc`
@@ -256,10 +256,10 @@ _Note: order is important to get everything working correctly._
 
 ##### `import` (default: `true`)
 
-Allows you to inline local `@import` files (thanks to [postcss-import](https://github.com/postcss/postcss-import#readme).
+Allows you to inline local `@import` files (thanks to [postcss-import](https://github.com/postcss/postcss-import#readme)):
 
-* you can refer to `node_modules` and `web_modules` packages,
-* you can omit .css extension.
+* you can refer to `node_modules` and `web_modules` packages
+* you can omit .css extension
 
 _Note: you can pass [postcss-import options](https://github.com/postcss/postcss-import#readme) directly._
 
@@ -291,7 +291,7 @@ This is the [postcss `map` option](https://github.com/postcss/postcss#source-map
 
 _If you specify this option, `sourcemap` value will be ignored._
 
-**`/!\` Using this option might changes the return value of `cssnext()` (`object` instead of css `string` if map is not inlined. The object will be like {css: "{css string}", map: {sourcemap object}})**
+**`/!\` Using this option might change the return value of `cssnext()` (`object` instead of css `string` if map is not inlined. The object will be like {css: "{css string}", map: {sourcemap object}})**
 
 ##### `from` (default: `null`)
 
@@ -311,7 +311,7 @@ fs.writeFileSync("dist/index.css", output)
 
 ### Usage with other tools
 
-Here are some tools that will help you use cssnext in your current workflow
+Here are some tools that will help you use cssnext in your current workflow:
 
 * [gulp-cssnext](https://github.com/cssnext/gulp-cssnext)
 * [grunt-cssnext](https://github.com/cssnext/grunt-cssnext)
@@ -342,16 +342,16 @@ $ npm test
 
 ### Add a feature
 
-1. Add test files (input + expected output) in [`test/features`](test/features),
-- If the feature can affect some others, update [`test/cases/example.css`](test/cases/example.css) to test integration with other features,
-- Run test, & check tests are broken (otherwise feature is useless),
-- Choose a pretty simple and clear name (that match the specs),
-- Add the feature in the [README features list](#features) (title, link to spec, link of the plugin, short desc),
-- Add the feature in the [README node.js options list](#features-default-all-features) (camelCaseName),
-- Add the dependency in the [`package.json`](package.json),
-- Add the feature in the source (in [`index.js`](index.js)), in the appropriate place (order matter),
-- Run test and be happy,
-- Add feature on [the playground](https://github.com/cssnext/cssnext-playground) example,
+1. Add test files (input + expected output) in [`test/features`](test/features)
+- If the feature can affect some others, update [`test/cases/example.css`](test/cases/example.css) to test integration with other features
+- Run test, & check tests are broken (otherwise feature is useless)
+- Choose a pretty simple and clear name (that match the specs)
+- Add the feature in the [README features list](#features) (title, link to spec, link of the plugin, short desc)
+- Add the feature in the [README node.js options list](#features-default-all-features) (camelCaseName)
+- Add the dependency in the [`package.json`](package.json)
+- Add the feature in the source (in [`index.js`](index.js)), in the appropriate place (order matter)
+- Run test and be happy
+- Add feature on [the playground](https://github.com/cssnext/cssnext-playground) example
 - Add feature on [the website](https://github.com/cssnext/cssnext.github.io)
 
 ## [Changelog](CHANGELOG.md)
@@ -362,13 +362,13 @@ $ npm test
 
 ## People
 
-The current lead maintainer is [Maxime Thirouin](http://moox.io/) [![MoOx' Gratipay](https://img.shields.io/gratipay/MoOx.svg)](https://gratipay.com/MoOx/)
+The current lead maintainer is [Maxime Thirouin](http://moox.io/). [![MoOx' Gratipay](https://img.shields.io/gratipay/MoOx.svg)](https://gratipay.com/MoOx/)
 
-See [all contributors](https://github.com/cssnext/cssnext/graphs/contributors)
+See [all contributors](https://github.com/cssnext/cssnext/graphs/contributors).
 
 ## Acknowledgements
 
-Huge thanks to all the people that where involved in :
+Huge thanks to all the people that where involved in:
 
 - [rework](https://github.com/reworkcss/rework/graphs/contributors)
 - [rework css parser](https://github.com/reworkcss/css/graphs/contributors)
