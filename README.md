@@ -84,7 +84,7 @@ Keep in mind that, as of right now, this project is intended to support new CSS 
 The current transformation for custom properties just aims to provide a future-proof way of using a **limited subset (to top-level `:root` selector)** of the features provided by native CSS custom properties.  
 The transformation is not complete and can't be properly. By injecting selectors with new computed rules, we will break original cascade & unexpected results might happen.
 
-## Font variant
+### Font variant
 
 `font-variant` are transformed to `font-feature-settings`. You might take a look at the support of [font feature settings](http://caniuse.com/#feat=font-feature).
 
