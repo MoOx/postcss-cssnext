@@ -88,7 +88,7 @@ The transformation is not complete and can't be properly. By injecting selectors
 
 `font-variant` are transformed to `font-feature-settings`. You might take a look at the support of [font feature settings](http://caniuse.com/#feat=font-feature).
 
-## Filter
+### Filter
 
 The W3C filters are only transformed as svg filter using the `url(data:*)` trick for Firefox < 35.
 
