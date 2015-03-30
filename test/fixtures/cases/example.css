@@ -52,3 +52,9 @@ table {
 .sepia {
   filter: sepia(.8);
 }
+
+/* pseudo-elements */
+a::before,
+a::after {
+  content:"pseudo-elements"
+}

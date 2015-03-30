@@ -23,6 +23,7 @@ var caniuseFeaturesMap = {
   // colorFunction:[null],
   // fontVariant: [null],
   // filter: [null], // @todo can be done using a callback, this is only used for Firefox < 35
+  pseudoElements: ["css-gencontent"],
   rem: ["rem"],
   // autoprefixer: [null] // will always be null since autoprefixer does the same game as we do
 }
@@ -42,6 +43,7 @@ var features = {
   fontVariant: function(options) { return require("postcss-font-variant")(options)},
   filter: function(options) { return require("pleeease-filters")(options)},
   rem: function(options) { return require("pixrem")(options)},
+  pseudoElements: function(options) { return require("postcss-pseudoelements")(options)},
   autoprefixer: function(options) { return require("autoprefixer-core")(options).postcss}
 }
 
