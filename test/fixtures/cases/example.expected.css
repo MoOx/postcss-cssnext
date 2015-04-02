@@ -7,7 +7,6 @@ body {
   color: rgba(18, 52, 86, 0.47059);
 
   font-size: 16px;
-
   font-size: 1rem;
   line-height: 24px;
   line-height: 1.5rem;
@@ -63,4 +62,10 @@ table {
   filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feColorMatrix type="matrix" color-interpolation-filters="sRGB" values="0.5144 0.6152000000000001 0.1512 0 0 0.2792 0.7488 0.13440000000000002 0 0 0.21760000000000002 0.4272 0.30479999999999996 0 0 0 0 0 1 0" /></filter></svg>#filter');
   -webkit-filter: sepia(.8);
           filter: sepia(.8);
+}
+
+/* pseudo-elements */
+a:before,
+a:after {
+  content: "pseudo-elements"
 }

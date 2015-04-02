@@ -56,5 +56,5 @@ table {
 /* pseudo-elements */
 a::before,
 a::after {
-  content:"pseudo-elements"
+  content: "pseudo-elements"
 }
