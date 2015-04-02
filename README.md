@@ -18,7 +18,7 @@ The official name is **cssnext**, which should never be capitalized, especially 
 [Why](#why) | [Features](#features) | [Limitations](#limitations) | [Installation](#installation)| [CLI Usage](#cli) | [Node.js API](#nodejs-api) | [Contribute](#contributing)
 --- | --- | --- | --- | --- | --- | ---
 
---- 
+---
 
 ## Why
 
@@ -61,7 +61,8 @@ Follow [@cssnext on Twitter](https://twitter.com/cssnext) to get the latest news
 ([⇗](https://github.com/iamvdo/pleeease-filters))
 * [rem](http://www.w3.org/TR/css3-values/#rem-unit) units
 ([⇗](https://github.com/robwierzbowski/node-pixrem))
-
+* [pseudo-elements](http://www.w3.org/TR/css3-selectors/#pseudo-elements)
+([⇗](https://github.com/axa-ch/postcss-pseudoelements))
 ### Bonus features
 
 _<small>The features below are considered as bonus since it's totally not related to CSS specs</small>._
@@ -250,6 +251,7 @@ Here are all the available features:
 - `fontVariant`
 - `filter`
 - `rem`
+- `pseudoElements`
 - `autoprefixer`
 
 _Note: order is important to get everything working correctly._
