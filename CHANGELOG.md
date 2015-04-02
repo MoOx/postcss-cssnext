@@ -1,3 +1,7 @@
+# 1.2.1 - 2015-03-02
+
+- Fixed: remove some deprecation notice related to postcss 4.1 ([postcss/postcss#272](https://github.com/postcss/postcss/issues/272))
+
 # 1.2.0 - 2015-04-02
 
 - Added: pseudoElements single colon fallback for pseudoElements double colons

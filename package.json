@@ -1,6 +1,6 @@
 {
   "name": "cssnext",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Use tomorrow's CSS syntax, today",
   "keywords": [
     "css",
@@ -51,7 +51,7 @@
     "postcss-import": "^5.0.0",
     "postcss-media-minmax": "^1.1.0",
     "postcss-pseudoelements": "^2.1.1",
-    "postcss-url": "^2.0.0",
+    "postcss-url": "^3.0.0",
     "read-file-stdin": "^0.2.0",
     "to-slug-case": "^0.1.2",
     "to-space-case": "^0.1.3",
