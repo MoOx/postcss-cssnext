@@ -110,12 +110,12 @@ function cssnext(string, options) {
 
   // features
   Object.keys(cssnext.features).forEach(function(key) {
-    // feature is enabled if: not force disable && (force enabled || no data yet || !supported yet)
+    // feature is auto enabled if: not disable && (enabled || no data yet || !supported yet)
     if (
-      // feature is force disabled
+      // feature is not disabled
       features[key] !== false &&
       (
-        // feature is forced enabled
+        // feature is enabled
         features[key] === true ||
 
         // feature don't have any browsers data (yet)

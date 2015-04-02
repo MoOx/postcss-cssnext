@@ -29,11 +29,11 @@
   "dependencies": {
     "autoprefixer-core": "^5.0.0",
     "caniuse-api": "^1.2.1",
+    "chokidar": "^1.0.0-rc4",
     "colors": "^1.0.2",
     "commander": "^2.3.0",
     "csswring": "^3.0.0",
     "exit": "^0.1.2",
-    "node-watch": "^0.3.4",
     "object-assign": "^2.0.0",
     "pixrem": "^1.1.0",
     "pleeease-filters": "^1.0.0",

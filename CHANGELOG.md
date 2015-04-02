@@ -1,6 +1,7 @@
 # 1.2.0 - 2015-04-02
 
 - Added: pseudoElements single colon fallback for pseudoElements double colons
+- Added: `--watch` CLI option now checks for changes in imported files
 
 # 1.1.0 - 2015-03-05
 

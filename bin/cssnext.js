@@ -84,6 +84,55 @@ if (input && !fs.existsSync(input)) {
 
 config.from = input
 
+// init & adjust watcher with postcss-import dependencies
+var watcher
+if (config.watch) {
+  if (!input || !output) {
+    console.error(colors.red("--watch option need both <input> & <output> files to work"))
+    exit(3)
+  }
+
+  watcher = require("chokidar").watch(input, {ignoreInitial: true})
+
+  // watch `@import`ed files
+  if (config.import) {
+    // keep a up to date list of imported files
+    var importedFiles = [input]
+    var arrayDiff = function(array, array2) {
+      return array.filter(function(i) {
+        return array2.indexOf(i) < 0
+      })
+    }
+
+    var watcherOnImport = function(imported) {
+      var filesToUnWatch = arrayDiff(importedFiles, imported)
+      console.log("unwtach: ", filesToUnWatch)
+      watcher.unwatch(filesToUnWatch)
+      importedFiles = imported
+      console.log("add:", importedFiles)
+      watcher.add(importedFiles)
+    }
+
+    // import need an object so we can pass onImport() cb
+    if (typeof config.import !== "object") {
+      config.import = {}
+    }
+
+    // keep the existing onImport callback if any
+    if (config.import.onImport) {
+      config.import.onImport = function(files) {
+        var originalOnImport = config.import.onImport
+        watcherOnImport(files)
+        originalOnImport(files)
+      }
+    }
+    // or just add the watcher updater onImport() cb
+    else {
+      config.import.onImport = watcherOnImport
+    }
+  }
+}
+
 function transform() {
   require("read-file-stdin")(input, function(err, buffer) {
     if (err) {
@@ -119,15 +168,13 @@ function transform() {
 
 transform()
 
-if (config.watch) {
-  if (!input || !output) {
-    console.error(colors.red("--watch option need both <input> & <output> files to work"))
-    exit(3)
-  }
-  require("node-watch")(input, transform)
-  if (verbose) {
-    log(colors.cyan("Watching"), input)
-  }
+if (watcher) {
+  watcher.on("ready", function() {
+    if (verbose) {
+      log(colors.cyan("Watching"), input)
+    }
+    watcher.on("all", transform)
+  })
 }
 
 /**
