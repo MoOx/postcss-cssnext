@@ -1,3 +1,7 @@
+# 1.2.2 - 2015-03-02
+
+- Changed: upgrade chokidar to stable 1.0.0 (used for cssnext --watch)
+
 # 1.2.1 - 2015-03-02
 
 - Fixed: remove some deprecation notice related to postcss 4.1 ([postcss/postcss#272](https://github.com/postcss/postcss/issues/272))
