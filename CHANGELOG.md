@@ -1,4 +1,8 @@
-# 1.2.2 - 2015-03-02
+# 1.2.3 - 2015-04-10
+
+- Fixed: --watch doesn't output console.log() related to watcherd/unwatched files anymore
+
+# 1.2.2 - 2015-04-09
 
 - Changed: upgrade chokidar to stable 1.0.0 (used for cssnext --watch)
 

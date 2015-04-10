@@ -106,10 +106,8 @@ if (config.watch) {
 
     var watcherOnImport = function(imported) {
       var filesToUnWatch = arrayDiff(importedFiles, imported)
-      console.log("unwtach: ", filesToUnWatch)
       watcher.unwatch(filesToUnWatch)
       importedFiles = imported
-      console.log("add:", importedFiles)
       watcher.add(importedFiles)
     }
 
