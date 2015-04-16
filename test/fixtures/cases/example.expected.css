@@ -4,6 +4,7 @@
 
 /* some var() & calc() */
 body {
+  color: #123456;
   color: rgba(18, 52, 86, 0.47059);
 
   font-size: 16px;
@@ -33,7 +34,7 @@ a {
   -webkit-transition: color 1s;
           transition: color 1s; /* autoprefixed ! */
 }
-a:hover { color: rgba(255, 255, 255, 0.5) }
+a:hover { color: #FFFFFF; color: rgba(255, 255, 255, 0.5) }
 a:active { color: rgb(102, 51, 153) }
 a:visited { color: rgb(89, 142, 153) }
 
@@ -68,4 +69,10 @@ table {
 a:before,
 a:after {
   content: "pseudo-elements"
+}
+
+/* rgba() fallback */
+.color {
+  background: #99DD99;
+  background: rgba(153, 221, 153, 0.8);
 }

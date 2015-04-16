@@ -58,3 +58,8 @@ a::before,
 a::after {
   content: "pseudo-elements"
 }
+
+/* rgba() fallback */
+.color {
+  background: rgba(153, 221, 153, 0.8);
+}

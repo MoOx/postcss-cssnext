@@ -1,3 +1,7 @@
+# 1.3.0 - 2015-04-15
+
+- Added: hexadecimal fallback for rgba() color
+
 # 1.2.3 - 2015-04-10
 
 - Fixed: --watch doesn't output console.log() related to watcherd/unwatched files anymore
