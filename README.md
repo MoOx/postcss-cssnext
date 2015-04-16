@@ -63,6 +63,8 @@ Follow [@cssnext on Twitter](https://twitter.com/cssnext) to get the latest news
 ([⇗](https://github.com/robwierzbowski/node-pixrem))
 * [pseudo-elements](http://www.w3.org/TR/css3-selectors/#pseudo-elements)
 ([⇗](https://github.com/axa-ch/postcss-pseudoelements))
+* [rgba()](http://www.w3.org/TR/css3-color/)
+([⇗](https://github.com/postcss/postcss-color-rgba-fallback))
 ### Bonus features
 
 _<small>The features below are considered as bonus since it's totally not related to CSS specs</small>._
@@ -252,6 +254,7 @@ Here are all the available features:
 - `filter`
 - `rem`
 - `pseudoElements`
+- `colorRgba`
 - `autoprefixer`
 
 _Note: order is important to get everything working correctly._
