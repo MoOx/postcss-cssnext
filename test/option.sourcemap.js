@@ -12,7 +12,7 @@ var cssnext = require("..")
 test("sourcemap", function(t) {
   var options = {
     from: "./test/fixtures/sourcemap.css",
-    sourcemap: true
+    sourcemap: true,
   }
   t.equal(
     cssnext(
@@ -27,7 +27,7 @@ test("sourcemap", function(t) {
     utils.readFixture("sourcemap"),
     {
       from: "./test/fixtures/sourcemap.css",
-      map: {inline: false}
+      map: {inline: false},
     }
   )
 

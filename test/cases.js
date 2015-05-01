@@ -29,9 +29,9 @@ test("use case: use plugin options", function(t) {
       {
         features: {
           customProperties: {
-            preserve: true
-          }
-        }
+            preserve: true,
+          },
+        },
       }
     ),
     utils.readFixture("cases/plugin-options.expected"),

@@ -11,7 +11,7 @@ test("cssnext compress option", function(t) {
   var input = utils.readFixture("compress")
   var expected = {
     default: utils.readFixture("compress.default.expected").trim(),
-    options: utils.readFixture("compress.options.expected").trim()
+    options: utils.readFixture("compress.options.expected").trim(),
   }
 
   // compress option
