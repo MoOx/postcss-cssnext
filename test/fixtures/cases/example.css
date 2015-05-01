@@ -59,8 +59,12 @@ a::after {
   content: "pseudo-elements"
 }
 
+/* :matches() and :not() */
 p:matches(:first-child, .specific) {
   color: red;
+}
+p:not(:first-child, .specific) {
+  background: blue;
 }
 
 /* rgba() fallback */

@@ -26,6 +26,7 @@ var caniuseFeaturesMap = {
   rem: ["rem"],
   pseudoElements: ["css-gencontent"],
   // pseudoClassMatches: [null],
+  // pseudoClassNot: [null],
   colorRgba: ["css3-colors"],
   // autoprefixer: [null] // will always be null since autoprefixer does the same game as we do
 }
@@ -47,6 +48,7 @@ var features = {
   rem: function(options) { return require("pixrem")(options)},
   pseudoElements: function(options) { return require("postcss-pseudoelements")(options)},
   pseudoClassMatches: function(options) { return require("postcss-selector-matches")(options)},
+  pseudoClassNot: function(options) { return require("postcss-selector-not")(options)},
   colorRgba: function(options) { return require("postcss-color-rgba-fallback")(options)},
   autoprefixer: function(options) { return require("autoprefixer-core")(options).postcss}
 }

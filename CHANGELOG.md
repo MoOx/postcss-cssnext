@@ -1,5 +1,7 @@
+# 1.4.0 - 2015-05-01
 
 - Added: support for `:matches()` selector pseudo class
+- Added: support for `:not()` selector pseudo class level 4 (transpiled to level 3)
 
 # 1.3.1 - 2015-05-01
 

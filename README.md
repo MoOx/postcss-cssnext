@@ -85,6 +85,8 @@ properties (fallback: inlined `<svg>` filter)
 ([⇗](https://github.com/axa-ch/postcss-pseudoelements))
 * [`:matches` pseudo-class](http://dev.w3.org/csswg/selectors-4/#matches)
 ([⇗](https://github.com/postcss/postcss-selector-matches))
+* [`:not` pseudo-class](http://dev.w3.org/csswg/selectors-4/#negation)
+([⇗](https://github.com/postcss/postcss-selector-NOT))
 * alpha colors for browser that don't understand [css 3 colors](http://www.w3.org/TR/css3-color/)
 (fallback: solid hexa colors)
 ([⇗](https://github.com/postcss/postcss-color-rgba-fallback))
@@ -281,6 +283,7 @@ Here are all the available features:
 - `rem`
 - `pseudoElements`
 - `pseudoClassMatches`
+- `pseudoClassNot`
 - `colorRgba`
 - `autoprefixer`
 
