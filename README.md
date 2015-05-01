@@ -83,6 +83,8 @@ properties (fallback: inlined `<svg>` filter)
 * [pseudo-elements](http://www.w3.org/TR/css3-selectors/#pseudo-elements)
 (adjust `::` to `:`)
 ([⇗](https://github.com/axa-ch/postcss-pseudoelements))
+* [`:matches` pseudo-class](http://dev.w3.org/csswg/selectors-4/#matches)
+([⇗](https://github.com/postcss/postcss-selector-matches))
 * alpha colors for browser that don't understand [css 3 colors](http://www.w3.org/TR/css3-color/)
 (fallback: solid hexa colors)
 ([⇗](https://github.com/postcss/postcss-color-rgba-fallback))
@@ -278,6 +280,7 @@ Here are all the available features:
 - `filter`
 - `rem`
 - `pseudoElements`
+- `pseudoClassMatches`
 - `colorRgba`
 - `autoprefixer`
 
@@ -371,8 +374,8 @@ $ npm test
 
 ### Add a feature
 
-1. Add test files (input + expected output) in [`test/features`](test/features)
-- If the feature can affect some others, update [`test/cases/example.css`](test/cases/example.css) to test integration with other features
+1. Add test files (input + expected output) in [`test/fixtures/features`](test/features)
+- If the feature can affect some others, update [`test/fixtures/cases/example.css`](test/cases/example.css) to test integration with other features
 - Run test, & check tests are broken (otherwise feature is useless)
 - Choose a pretty simple and clear name (that match the specs)
 - Add the feature in the [README features list](#features) (title, link to spec, link of the plugin, short desc)

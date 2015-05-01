@@ -1,3 +1,6 @@
+
+- Added: support for `:matches()` selector pseudo class
+
 # 1.3.1 - 2015-05-01
 
 - Fixed: CLI `--watch` doesn't make some duplicate rebuild anymore.

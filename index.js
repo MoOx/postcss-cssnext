@@ -23,9 +23,10 @@ var caniuseFeaturesMap = {
   // colorFunction:[null],
   // fontVariant: [null],
   // filter: [null], // @todo can be done using a callback, this is only used for Firefox < 35
-  pseudoElements: ["css-gencontent"],
-  colorRgba: ["css3-colors"],
   rem: ["rem"],
+  pseudoElements: ["css-gencontent"],
+  // pseudoClassMatches: [null],
+  colorRgba: ["css3-colors"],
   // autoprefixer: [null] // will always be null since autoprefixer does the same game as we do
 }
 
@@ -45,6 +46,7 @@ var features = {
   filter: function(options) { return require("pleeease-filters")(options)},
   rem: function(options) { return require("pixrem")(options)},
   pseudoElements: function(options) { return require("postcss-pseudoelements")(options)},
+  pseudoClassMatches: function(options) { return require("postcss-selector-matches")(options)},
   colorRgba: function(options) { return require("postcss-color-rgba-fallback")(options)},
   autoprefixer: function(options) { return require("autoprefixer-core")(options).postcss}
 }

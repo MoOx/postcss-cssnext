@@ -52,6 +52,7 @@
     "postcss-import": "^5.0.0",
     "postcss-media-minmax": "^1.1.0",
     "postcss-pseudoelements": "^2.1.1",
+    "postcss-selector-matches": "^1.0.1",
     "postcss-url": "^3.0.0",
     "read-file-stdin": "^0.2.0",
     "to-slug-case": "^0.1.2",
