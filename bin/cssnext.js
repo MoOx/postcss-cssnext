@@ -83,7 +83,6 @@ if (input && !fs.existsSync(input)) {
 }
 
 config.from = input
-
 // init & adjust watcher with postcss-import dependencies
 var watcher
 if (config.watch) {
@@ -104,11 +103,18 @@ if (config.watch) {
       })
     }
 
+    const rebaseFile = function(file) {
+      return path.relative(process.cwd(), file)
+    }
+
     var watcherOnImport = function(imported) {
-      var filesToUnWatch = arrayDiff(importedFiles, imported)
-      watcher.unwatch(filesToUnWatch)
+      arrayDiff(importedFiles, imported).forEach(function(file) {
+        watcher.unwatch(rebaseFile(file))
+      })
+      arrayDiff(imported, importedFiles).forEach(function(file) {
+        watcher.add(rebaseFile(file))
+      })
       importedFiles = imported
-      watcher.add(importedFiles)
     }
 
     // import need an object so we can pass onImport() cb
@@ -171,7 +177,8 @@ if (watcher) {
     if (verbose) {
       log(colors.cyan("Watching"), input)
     }
-    watcher.on("all", transform)
+
+    watcher.on("change", transform)
   })
 }
 

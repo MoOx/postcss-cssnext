@@ -1,3 +1,7 @@
+# 1.3.1 - 2015-05-01
+
+- Fixed: CLI `--watch` doesn't make some duplicate rebuild anymore.
+
 # 1.3.0 - 2015-04-15
 
 - Added: hexadecimal fallback for rgba() color
