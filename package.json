@@ -62,16 +62,14 @@
   },
   "devDependencies": {
     "browserify": "^8.1.1",
-    "jscs": "^1.6.2",
-    "jshint": "^2.5.6",
+    "eslint": "^0.20.0",
     "microtime": "^1.2.0",
     "tape": "^3.0.0"
   },
   "scripts": {
     "standalone": "browserify --standalone cssnext index.js -o dist/cssnext.js",
-    "jscs": "jscs .",
-    "jshint": "jshint . --exclude-path .gitignore",
-    "pretest": "npm run jscs && npm run jshint && npm run standalone",
+    "eslint": "eslint --ignore-path .gitignore -f tap .",
+    "pretest": "npm run eslint && npm run standalone",
     "test": "tape test/*.js"
   },
   "bin": {

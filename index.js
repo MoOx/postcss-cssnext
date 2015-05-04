@@ -1,7 +1,7 @@
 /**
  * Modules dependencies
  */
-var Postcss = require("postcss")
+var postcss = require("postcss")
 var assign = require("object-assign")
 var caniuse = require("caniuse-api")
 
@@ -31,7 +31,7 @@ var caniuseFeaturesMap = {
   // autoprefixer: [null] // will always be null since autoprefixer does the same game as we do
 }
 
-var features = {
+var libraryFeatures = {
   // Reminder: order is important
   customProperties: function(options) { return require("postcss-custom-properties")(options) },
   calc: function(options) { return require("postcss-calc")(options)},
@@ -50,7 +50,7 @@ var features = {
   pseudoClassMatches: function(options) { return require("postcss-selector-matches")(options)},
   pseudoClassNot: function(options) { return require("postcss-selector-not")(options)},
   colorRgba: function(options) { return require("postcss-color-rgba-fallback")(options)},
-  autoprefixer: function(options) { return require("autoprefixer-core")(options).postcss}
+  autoprefixer: function(options) { return require("autoprefixer-core")(options).postcss},
 }
 
 /**
@@ -98,19 +98,19 @@ function cssnext(string, options) {
     if (features.autoprefixer.browsers === undefined) {delete features.autoprefixer.browsers}
   }
 
-  var postcss = Postcss()
+  var postcssInstance = postcss()
 
   // only enable import & url if fs module is available
   var fs = require("fs")
   if (fs && fs.readFile) {
     // @import
     if (options.import !== false) {
-      postcss.use(require("postcss-import")(typeof options.import === "object" ? options.import : undefined))
+      postcssInstance.use(require("postcss-import")(typeof options.import === "object" ? options.import : undefined))
     }
 
     // url() adjustements
     if (options.url !== false) {
-      postcss.use(require("postcss-url")(typeof options.url === "object" ? options.url : undefined))
+      postcssInstance.use(require("postcss-url")(typeof options.url === "object" ? options.url : undefined))
     }
   }
 
@@ -135,19 +135,19 @@ function cssnext(string, options) {
         )
       )
     ) {
-      postcss.use(cssnext.features[key](typeof features[key] === "object" ? features[key] : undefined))
+      postcssInstance.use(cssnext.features[key](typeof features[key] === "object" ? features[key] : undefined))
     }
   })
 
   // minification
   if (options.compress) {
     var csswring = require("csswring")
-    postcss.use(typeof options.compress === "object" ? csswring(options.compress) : csswring)
+    postcssInstance.use(typeof options.compress === "object" ? csswring(options.compress) : csswring)
   }
 
   // classic API if string is passed
   if (typeof string === "string") {
-    var result = postcss.process(string, options)
+    var result = postcssInstance.process(string, options)
 
     // default behavior, cssnext returns a css string if no or inline sourcemap
     if (options.map === null || (options.map === true || options.map.inline)) {
@@ -159,7 +159,7 @@ function cssnext(string, options) {
   }
   // or return the postcss instance that can be consumed as a postcss plugin
   else {
-    return postcss
+    return postcssInstance
   }
 }
 
@@ -168,4 +168,4 @@ function cssnext(string, options) {
  *
  * @type {Object}
  */
-cssnext.features = features
+cssnext.features = libraryFeatures

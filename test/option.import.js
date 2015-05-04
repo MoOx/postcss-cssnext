@@ -11,7 +11,7 @@ test("cssnext import option", function(t) {
   var input = utils.readFixture("import")
   var expected = {
     default: utils.readFixture("import.default.expected").trim(),
-    options: utils.readFixture("import.options.expected").trim()
+    options: utils.readFixture("import.options.expected").trim(),
   }
   var opts = {from: "test/fixtures/here"}
   t.equal(cssnext(input, opts).trim(), expected.default, "should be able to import")

@@ -14,7 +14,7 @@ module.exports = {
   remove: remove,
   compareFixtures: compareFixtures,
   fixturePath: fixturePath,
-  readFixture: readFixture
+  readFixture: readFixture,
 }
 
 /**
@@ -29,6 +29,17 @@ function contains(string, piece) {
 }
 
 /**
+ * get fixture path
+ * @param {String} name
+ * @param {String} ext (optional extension, default to ".css")
+ * @return the fixture filename
+*/
+function fixturePath(name, ext) {
+  ext = (ext !== undefined ? ext : ".css")
+  return "test/fixtures/" + name + ext
+}
+
+/**
  * Remove a fixture by `filename`.
  *
  * @param {String} filename
@@ -39,6 +50,16 @@ function remove(filename) {
     return
   }
   fs.unlinkSync(file)
+}
+
+/**
+ * read a fixture
+ * @param {String} name
+ * @param {String} ext (optional extension, default to ".css")
+ * @return the fixture content
+ */
+function readFixture(name, ext) {
+  return fs.readFileSync(fixturePath(name, ext), "utf8")
 }
 
 /**
@@ -64,25 +85,4 @@ function compareFixtures(t, name, message, options) {
 
   var expected = readFixture(name + ".expected")
   return t.equal(actual.trim(), expected.trim(), message !== undefined ? message : "processed fixture '" + name + "' should be equal to expected output")
-}
-
-/**
- * get fixture path
- * @param {String} name
- * @param {String} ext (optional extension, default to ".css")
- * @return the fixture filename
-*/
-function fixturePath(name, ext) {
-  ext = (ext !== undefined ? ext : ".css")
-  return "test/fixtures/" + name + ext
-}
-
-/**
- * read a fixture
- * @param {String} name
- * @param {String} ext (optional extension, default to ".css")
- * @return the fixture content
- */
-function readFixture(name, ext) {
-  return fs.readFileSync(fixturePath(name, ext), "utf8")
 }
