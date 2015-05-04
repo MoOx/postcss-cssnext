@@ -1,8 +1,8 @@
-# cssnext [![Travis Build Status](https://travis-ci.org/cssnext/cssnext.svg)](https://travis-ci.org/cssnext/cssnext) [![AppVeyor Build status](https://ci.appveyor.com/api/projects/status/q12sb37x4fpa7sht?svg=true)](https://ci.appveyor.com/project/MoOx/cssnext) [![Code Climate](http://img.shields.io/codeclimate/github/cssnext/cssnext.svg?style=flat)](https://codeclimate.com/github/cssnext/cssnext) [![NPM version](http://img.shields.io/npm/v/cssnext.svg?style=flat)](https://www.npmjs.org/package/cssnext)
+# cssnext [![NPM version](http://img.shields.io/npm/v/cssnext.svg?style=flat)](https://www.npmjs.org/package/cssnext) [![Travis Build Status](https://travis-ci.org/cssnext/cssnext.svg)](https://travis-ci.org/cssnext/cssnext) [![AppVeyor Build status](https://ci.appveyor.com/api/projects/status/q12sb37x4fpa7sht?svg=true)](https://ci.appveyor.com/project/MoOx/cssnext) [![Code Climate](http://img.shields.io/codeclimate/github/cssnext/cssnext.svg?style=flat)](https://codeclimate.com/github/cssnext/cssnext) [![Join the chat at https://gitter.im/cssnext/cssnext](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/cssnext/cssnext?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-[![Join the chat at https://gitter.im/cssnext/cssnext](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/cssnext/cssnext?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 > Use tomorrow's CSS syntax, today.
+
 
 This is a CSS transpiler (CSS4+ to CSS3) that allows you to use tomorrow's CSS syntax today.
 It transforms CSS specs that are not already implemented in popular browsers into more compatible CSS.  
