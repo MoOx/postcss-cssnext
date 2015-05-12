@@ -178,7 +178,7 @@ if (watcher) {
       log(colors.cyan("Watching"), input)
     }
   })
-  
+
   watcher.on("change", transform)
 }
 
