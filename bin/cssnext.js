@@ -177,9 +177,9 @@ if (watcher) {
     if (verbose) {
       log(colors.cyan("Watching"), input)
     }
-
-    watcher.on("change", transform)
   })
+  
+  watcher.on("change", transform)
 }
 
 /**
