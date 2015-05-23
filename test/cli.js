@@ -90,7 +90,7 @@ test("cli", function(t) {
 
   exec(cssnextBin + " --compress test/fixtures/compress.css", function(err, stdout) {
     if (err) { throw err }
-    t.equal(stdout, utils.readFixture("compress.default.expected").trim(), "should compress on --compress")
+    t.equal(stdout.trim(), utils.readFixture("compress.default.expected").trim(), "should compress on --compress")
   })
   planned += 1
 

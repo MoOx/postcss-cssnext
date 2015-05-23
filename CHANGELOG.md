@@ -1,3 +1,7 @@
+# 1.5.0 - 2015-05-23
+
+- Added: `compress` option used cssnano instead of CSSWring.
+
 # 1.4.0 - 2015-05-01
 
 - Added: support for `:matches()` selector pseudo class

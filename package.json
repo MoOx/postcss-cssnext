@@ -1,6 +1,6 @@
 {
   "name": "cssnext",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "Use tomorrow's CSS syntax, today",
   "keywords": [
     "css",
@@ -32,7 +32,7 @@
     "chokidar": "^1.0.0",
     "colors": "^1.0.2",
     "commander": "^2.3.0",
-    "csswring": "^3.0.0",
+    "cssnano": "^1.2.0",
     "exit": "^0.1.2",
     "object-assign": "^2.0.0",
     "pixrem": "^1.1.0",
