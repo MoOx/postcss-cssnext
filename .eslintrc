@@ -9,13 +9,41 @@ env:
 
 # 0: off, 1: warning, 2: error
 rules:
-  # semicolons are useless
-  semi: [2, "never"]
-
-  quotes: [2, "double"]
+  # max 80 chars per line
+  max-len: [2, 80, 4]
 
   # 2 spaces indentation
   indent: [2, 2]
+
+  # double quote to match json
+  quotes: [2, "double"]
+
+  # semicolons are useless
+  semi: [2, "never"]
+
+  # consistent whitespace after keywords
+  space-after-keywords: [2, "always"]
+
+  # consistent whitespace before blocks
+  space-before-blocks: [2, "always"]
+
+  # consistent whitespace before function paren
+  space-before-function-paren: [2, "never"]
+
+  # consistent whitespace in brackets
+  space-in-brackets: [2, "never"]
+
+  # consistent whitespace in parens
+  space-in-parens: [2, "never"]
+
+  # consistent whitespace in single line comments
+  spaced-line-comment: [2, "always"]
+
+  # single empty lines only
+  no-multiple-empty-lines: [2, {"max": 1}]
+
+  # one brace per line
+  "brace-style": [2, "stroustrup"]
 
   # trailing coma are cool for diff
   comma-dangle: [2, "always-multiline"]

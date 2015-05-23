@@ -15,9 +15,21 @@ test("cssnext compress option", function(t) {
   }
 
   // compress option
-  t.equal(cssnext(input, {compress: true}).trim(), expected.default, "should be able to compress")
-  t.equal(cssnext(input, {compress: {comments: {removeAll: true}}}).trim(), expected.options, "should be able to compress with options")
-  t.equal(postcss().use(cssnext({compress: true})).process(input).css.trim(), expected.default, "should be able to compress even as a postcss plugin")
+  t.equal(
+    cssnext(input, {compress: true}).trim(),
+    expected.default,
+    "should be able to compress"
+  )
+  t.equal(
+    cssnext(input, {compress: {comments: {removeAll: true}}}).trim(),
+    expected.options,
+    "should be able to compress with options"
+  )
+  t.equal(
+    postcss().use(cssnext({compress: true})).process(input).css.trim(),
+    expected.default,
+    "should be able to compress even as a postcss plugin"
+  )
 
   t.end()
 })

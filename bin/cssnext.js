@@ -3,12 +3,12 @@
 var fs = require("fs")
 var path = require("path")
 
-// until this land in a stable version of node,
-// https://github.com/joyent/node/commit/20176a98416353d4596900793f739d5ebf4f0ee1
+// until this land in a stable version of node (for a while)
+// https://github.com/joyent/node/commit/20176a
 // we will this instead of process.exit()
 var exit = require("exit")
 
-var colors = require("colors")
+var color = require("chalk")
 var program = require("commander")
 
 var cssnext = require("..")
@@ -36,6 +36,7 @@ Object.keys(cssnext.features).forEach(function(feature) {
   program.option(flag, desc)
 })
 
+/* eslint-disable no-multiple-empty-lines */
 program.on("--help", function() {
   console.log(function() {/*
   Examples:
@@ -53,6 +54,7 @@ program.on("--help", function() {
   */
   }.toString().split("\n").slice(1, -2).join("\n"))
 })
+/* eslint-enable no-multiple-empty-lines */
 
 program.parse(process.argv)
 
@@ -66,19 +68,31 @@ Object.keys(cssnext.features).forEach(function(feature) {
     config.features[feature] = false
   }
 })
-if ("browsers" in program) { config.browsers = program.browsers }
-if ("import" in program) { config.import = program.import }
-if ("url" in program) { config.url = program.url }
-if ("sourcemap" in program) { config.sourcemap = program.sourcemap }
-if ("compress" in program) { config.compress = program.compress }
-if ("watch" in program) { config.watch = program.watch }
+if ("browsers" in program) {
+  config.browsers = program.browsers
+}
+if ("import" in program) {
+  config.import = program.import
+}
+if ("url" in program) {
+  config.url = program.url
+}
+if ("sourcemap" in program) {
+  config.sourcemap = program.sourcemap
+}
+if ("compress" in program) {
+  config.compress = program.compress
+}
+if ("watch" in program) {
+  config.watch = program.watch
+}
 
 var input = program.args[0] ? path.resolve(program.args[0]) : null
 var output = program.args[1] ? path.resolve(program.args[1]) : null
 var verbose = program.verbose
 
 if (input && !fs.existsSync(input)) {
-  console.error(colors.red("Unable to read file"), input)
+  console.error(color.red("Unable to read file"), input)
   exit(1)
 }
 
@@ -87,7 +101,9 @@ config.from = input
 var watcher
 if (config.watch) {
   if (!input || !output) {
-    console.error(colors.red("--watch option need both <input> & <output> files to work"))
+    console.error(
+      color.red("--watch option need both <input> & <output> files to work")
+    )
     exit(3)
   }
 
@@ -148,20 +164,20 @@ function transform() {
 
       require("write-file-stdout")(output, css)
       if (verbose && output) {
-        log(colors.cyan("Output written"), output)
+        log(color.cyan("Output written"), output)
       }
     }
     catch (e) {
       console.error()
-      console.error(colors.bold("cssnext encounters an error:"))
+      console.error(color.bold("cssnext encounters an error:"))
       console.error()
-      console.error(colors.red(e.message))
+      console.error(color.red(e.message))
       if (e.stack) {
         console.error(e.stack.split("\n").slice(1).join("\n").grey)
         console.error()
       }
       console.error("If this error looks like a bug, please report it here:")
-      console.error(colors.grey("❯ ") + pkg.bugs.url.cyan)
+      console.error(color.grey("❯ ") + pkg.bugs.url.cyan)
       console.error()
       if (!config.watch) {
         exit(2)
@@ -175,7 +191,7 @@ transform()
 if (watcher) {
   watcher.on("ready", function() {
     if (verbose) {
-      log(colors.cyan("Watching"), input)
+      log(color.cyan("Watching"), input)
     }
 
     watcher.on("change", transform)
@@ -185,10 +201,11 @@ if (watcher) {
 /**
  * log content prefixed by time
  *
- * @return {String} output all given parameters prefixed by the current locale time
+ * @return {String} output all given parameters prefixed by the current locale
+ * time
  */
 function log() {
   var args = [].slice.call(arguments)
-  args.unshift("[" + colors.grey(new Date().toLocaleTimeString()) + "]")
+  args.unshift("[" + color.grey(new Date().toLocaleTimeString()) + "]")
   console.log.apply(console.log, args)
 }

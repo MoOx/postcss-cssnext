@@ -11,15 +11,33 @@ var cssnextStandalone = require("../dist/cssnext.js")
  * Features tests
  */
 var toSlug = require("to-slug-case")
-var testFeature = function(t, feature, cssnextInstance, version, source, input, expected) {
+var testFeature = function(
+  t,
+  feature,
+  cssnextInstance,
+  version,
+  source,
+  input,
+  expected
+) {
   var options = {from: source, sourcemap: false, features: {}}
 
   // disable all features
-  Object.keys(cssnextInstance.features).forEach(function(key) { options.features[key] = false })
+  Object.keys(cssnextInstance.features).forEach(function(key) {
+    options.features[key] = false
+  })
 
   var css = cssnextInstance(input, options)
-  t.notEqual(css, expected, version + ": should not add " + feature + " support if disabled")
-  t.equal(css, input, version + ": should not modify input if  " + feature + " is disabled")
+  t.notEqual(
+    css,
+    expected,
+    version + ": should not add " + feature + " support if disabled"
+  )
+  t.equal(
+    css,
+    input,
+    version + ": should not modify input if  " + feature + " is disabled"
+  )
 
   // enable only the one we want to test...
   options.features[feature] = true
@@ -29,7 +47,11 @@ var testFeature = function(t, feature, cssnextInstance, version, source, input, 
   if (feature === "url") {
     options.features.import = true
   }
-  t.equal(cssnextInstance(input, options).trim(), expected.trim(), version + ": should add " + feature + " support")
+  t.equal(
+    cssnextInstance(input, options).trim(),
+    expected.trim(),
+    version + ": should add " + feature + " support"
+  )
 }
 
 Object.keys(cssnext.features).forEach(function(name) {

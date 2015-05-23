@@ -13,9 +13,21 @@ test("cssnext url option", function(t) {
   }
   var opts = {from: "./test/fixtures/url.css"}
 
-  t.equal(cssnext(input, opts).trim(), expected.default, "should be able to adjust url")
-  t.equal(cssnext(input, assign({}, opts, {url: {url: "inline"}})).trim(), expected.options, "should be able to adjust url with options")
-  t.equal(postcss().use(cssnext(opts)).process(input, opts).css.trim(), expected.default, "should be able to adjust url even as a postcss plugin")
+  t.equal(
+    cssnext(input, opts).trim(),
+    expected.default,
+    "should be able to adjust url"
+  )
+  t.equal(
+    cssnext(input, assign({}, opts, {url: {url: "inline"}})).trim(),
+    expected.options,
+    "should be able to adjust url with options"
+  )
+  t.equal(
+    postcss().use(cssnext(opts)).process(input, opts).css.trim(),
+    expected.default,
+    "should be able to adjust url even as a postcss plugin"
+  )
 
   t.end()
 })

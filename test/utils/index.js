@@ -5,19 +5,6 @@ var fs = require("fs")
 var cssnext = require("../..")
 
 /**
- * Exposes functions
- *
- * @type {Object}
- */
-module.exports = {
-  contains: contains,
-  remove: remove,
-  compareFixtures: compareFixtures,
-  fixturePath: fixturePath,
-  readFixture: readFixture,
-}
-
-/**
  * Check if a string is contained into another
  *
  * @param  {String}  string string to look into
@@ -84,5 +71,25 @@ function compareFixtures(t, name, message, options) {
   fs.writeFile(fixturePath(name + ".actual"), actual)
 
   var expected = readFixture(name + ".expected")
-  return t.equal(actual.trim(), expected.trim(), message !== undefined ? message : "processed fixture '" + name + "' should be equal to expected output")
+
+  return t.equal(
+    actual.trim(),
+    expected.trim(),
+    message !== undefined
+      ? message
+      : "processed fixture '" + name + "' should be equal to expected output"
+  )
+}
+
+/**
+ * Exposes functions
+ *
+ * @type {Object}
+ */
+module.exports = {
+  contains: contains,
+  remove: remove,
+  compareFixtures: compareFixtures,
+  fixturePath: fixturePath,
+  readFixture: readFixture,
 }

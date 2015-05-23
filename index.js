@@ -11,7 +11,9 @@ var caniuse = require("caniuse-api")
 // null == always enable (& no caniuse data)
 var caniuseFeaturesMap = {
   customProperties: ["css-variables"],
-  // calc: null, // calc() transformation only make sense with transformed custom properties, don't you think ?
+  // calc() transformation only make sense with transformed custom properties,
+  // don't you think ?
+  // calc: null,
   // @todo open PR on caniuse repo https://github.com/Fyrd/caniuse
   // customMedia: [null],
   // mediaQueriesRange: [null],
@@ -22,43 +24,74 @@ var caniuseFeaturesMap = {
   // colorHexAlpha: [null],
   // colorFunction:[null],
   // fontVariant: [null],
-  // filter: [null], // @todo can be done using a callback, this is only used for Firefox < 35
+  // @todo can be done using a callback, this is only used for Firefox < 35
+  // filter: [null],
   rem: ["rem"],
   pseudoElements: ["css-gencontent"],
   // pseudoClassMatches: [null],
   // pseudoClassNot: [null],
   colorRgba: ["css3-colors"],
-  // autoprefixer: [null] // will always be null since autoprefixer does the same game as we do
+  // will always be null since autoprefixer does the same game as we do
+  // autoprefixer: [null]
 }
 
 var libraryFeatures = {
   // Reminder: order is important
-  customProperties: function(options) { return require("postcss-custom-properties")(options) },
-  calc: function(options) { return require("postcss-calc")(options)},
-  customMedia: function(options) { return require("postcss-custom-media")(options)},
-  mediaQueriesRange: function(options) { return require("postcss-media-minmax")(options)},
-  customSelectors: function(options) { return require("postcss-custom-selectors")(options)},
-  colorRebeccapurple: function(options) { return require("postcss-color-rebeccapurple")(options)},
-  colorHwb: function(options) { return require("postcss-color-hwb")(options)},
-  colorGray: function(options) { return require("postcss-color-gray")(options)},
-  colorHexAlpha: function(options) { return require("postcss-color-hex-alpha")(options)},
-  colorFunction: function(options) { return require("postcss-color-function")(options)},
-  fontVariant: function(options) { return require("postcss-font-variant")(options)},
-  filter: function(options) { return require("pleeease-filters")(options)},
-  rem: function(options) { return require("pixrem")(options)},
-  pseudoElements: function(options) { return require("postcss-pseudoelements")(options)},
-  pseudoClassMatches: function(options) { return require("postcss-selector-matches")(options)},
-  pseudoClassNot: function(options) { return require("postcss-selector-not")(options)},
-  colorRgba: function(options) { return require("postcss-color-rgba-fallback")(options)},
-  autoprefixer: function(options) { return require("autoprefixer-core")(options).postcss},
+  customProperties: function(options) {
+    return require("postcss-custom-properties")(options)
+  },
+  calc: function(options) {
+    return require("postcss-calc")(options)
+  },
+  customMedia: function(options) {
+    return require("postcss-custom-media")(options)
+  },
+  mediaQueriesRange: function(options) {
+    return require("postcss-media-minmax")(options)
+  },
+  customSelectors: function(options) {
+    return require("postcss-custom-selectors")(options)
+  },
+  colorRebeccapurple: function(options) {
+    return require("postcss-color-rebeccapurple")(options)
+  },
+  colorHwb: function(options) {
+    return require("postcss-color-hwb")(options)
+  },
+  colorGray: function(options) {
+    return require("postcss-color-gray")(options)
+  },
+  colorHexAlpha: function(options) {
+    return require("postcss-color-hex-alpha")(options)
+  },
+  colorFunction: function(options) {
+    return require("postcss-color-function")(options)
+  },
+  fontVariant: function(options) {
+    return require("postcss-font-variant")(options)
+  },
+  filter: function(options) {
+    return require("pleeease-filters")(options)
+  },
+  rem: function(options) {
+    return require("pixrem")(options)
+  },
+  pseudoElements: function(options) {
+    return require("postcss-pseudoelements")(options)
+  },
+  pseudoClassMatches: function(options) {
+    return require("postcss-selector-matches")(options)
+  },
+  pseudoClassNot: function(options) {
+    return require("postcss-selector-not")(options)
+  },
+  colorRgba: function(options) {
+    return require("postcss-color-rgba-fallback")(options)
+  },
+  autoprefixer: function(options) {
+    return require("autoprefixer-core")(options).postcss
+  },
 }
-
-/**
- * Expose cssnext
- *
- * @type {Function}
- */
-module.exports = cssnext
 
 /**
  * Process a CSS `string`
@@ -83,7 +116,8 @@ function cssnext(string, options) {
 
   var features = options.features || {}
 
-  // options.browsers is deliberately undefined by defaut to inherit browserslist default behavior
+  // options.browsers is deliberately undefined by defaut to inherit
+  // browserslist default behavior
 
   // default sourcemap
   // if `map` option is passed, `sourcemap` option is ignored
@@ -93,9 +127,13 @@ function cssnext(string, options) {
   // propagate browsers option to autoprefixer
   if (features.autoprefixer !== false) {
     features.autoprefixer = features.autoprefixer || {}
-    features.autoprefixer.browsers = features.autoprefixer.browsers || options.browsers
+    features.autoprefixer.browsers = features.autoprefixer.browsers ||
+      options.browsers
+
     // autoprefixer doesn't like an "undefined" value. Related to coffee ?
-    if (features.autoprefixer.browsers === undefined) {delete features.autoprefixer.browsers}
+    if (features.autoprefixer.browsers === undefined) {
+      delete features.autoprefixer.browsers
+    }
   }
 
   var postcssInstance = postcss()
@@ -105,18 +143,29 @@ function cssnext(string, options) {
   if (fs && fs.readFile) {
     // @import
     if (options.import !== false) {
-      postcssInstance.use(require("postcss-import")(typeof options.import === "object" ? options.import : undefined))
+      postcssInstance.use(require("postcss-import")(
+        typeof options.import === "object"
+          ? options.import
+          : undefined
+        )
+      )
     }
 
     // url() adjustements
     if (options.url !== false) {
-      postcssInstance.use(require("postcss-url")(typeof options.url === "object" ? options.url : undefined))
+      postcssInstance.use(require("postcss-url")(
+        typeof options.url === "object"
+          ? options.url
+          : undefined
+        )
+      )
     }
   }
 
   // features
   Object.keys(cssnext.features).forEach(function(key) {
-    // feature is auto enabled if: not disable && (enabled || no data yet || !supported yet)
+    // feature is auto enabled if: not disable && (enabled || no data yet ||
+    // !supported yet)
     if (
       // feature is not disabled
       features[key] !== false &&
@@ -135,7 +184,12 @@ function cssnext(string, options) {
         )
       )
     ) {
-      postcssInstance.use(cssnext.features[key](typeof features[key] === "object" ? features[key] : undefined))
+      postcssInstance.use(cssnext.features[key](
+        typeof features[key] === "object"
+          ? features[key]
+          : undefined
+        )
+      )
     }
   })
 
@@ -178,3 +232,10 @@ function cssnext(string, options) {
  * @type {Object}
  */
 cssnext.features = libraryFeatures
+
+/**
+ * Expose cssnext
+ *
+ * @type {Function}
+ */
+module.exports = cssnext

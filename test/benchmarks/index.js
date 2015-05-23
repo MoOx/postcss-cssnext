@@ -2,7 +2,10 @@ var cssnext = require("../")
 var t = require("microtime")
 var assign = require("object-assign")
 
-var input = require("fs").readFileSync("./test/benchmarks.css", {encoding: "utf8"})
+var input = require("fs").readFileSync(
+  "./test/benchmarks.css",
+  {encoding: "utf8"}
+)
 
 // make a 2MB input
 for (var i = 0; i <= 10; i++) {
