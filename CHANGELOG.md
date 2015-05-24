@@ -1,6 +1,6 @@
 # 1.5.0 - 2015-05-23
 
-- Added: `compress` option used cssnano instead of CSSWring.
+- Changed: `compress` option use [cssnano](https://github.com/ben-eb/cssnano) instead of CSSWring.
 
 # 1.4.0 - 2015-05-01
 
