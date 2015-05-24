@@ -196,16 +196,19 @@ function cssnext(string, options) {
   // minification
   if (options.compress) {
     var nano = require("cssnano")
-
-    /* forced calc options to false */
-    if (typeof options.compress === "object") {
-      options.compress.calc = false
-    }
-    else {
-      options.compress = {calc: false}
-    }
-
-    postcssInstance.use(nano(options.compress))
+    postcssInstance.use(
+      nano(
+        assign(
+          {},
+          typeof options.compress === "object"
+            ? options.compress
+            : {},
+          // forced calc options to false
+          // since we already used it
+          {calc: false}
+        )
+      )
+    )
   }
 
   // classic API if string is passed
