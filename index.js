@@ -141,8 +141,17 @@ function cssnext(string, options) {
 
   // minification
   if (options.compress) {
-    var csswring = require("csswring")
-    postcssInstance.use(typeof options.compress === "object" ? csswring(options.compress) : csswring)
+    var nano = require("cssnano")
+
+    /* forced calc options to false */
+    if (typeof options.compress === "object") {
+      options.compress.calc = false
+    }
+    else {
+      options.compress = {calc: false}
+    }
+
+    postcssInstance.use(nano(options.compress))
   }
 
   // classic API if string is passed

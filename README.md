@@ -306,8 +306,8 @@ _Note: you can pass [postcss-url options](https://github.com/postcss/postcss-url
 
 ##### `compress` (default: `false`)
 
-Allows you to compress the output (using [CSSWring](https://github.com/hail2u/node-csswring)).
-You can enable minification by passing `true` or by providing an object containing [CSSWring options](https://github.com/hail2u/node-csswring#options).
+Allows you to compress the output (using [cssnano](https://github.com/ben-eb/cssnano)).
+You can enable minification by passing `true` or by providing an object containing [cssnano options](https://github.com/ben-eb/cssnano#options).
 
 ##### `sourcemap` (default: `false`)
 
