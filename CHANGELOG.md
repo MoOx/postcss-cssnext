@@ -1,3 +1,9 @@
+# 1.5.1 - 2015-05-25
+
+- Fixed: when printing a bug report in CLI, url was not printed, due to a 
+replacement of colors lib by chalk in 1.5.0
+([#129](https://github.com/cssnext/cssnext/pull/129))
+
 # 1.5.0 - 2015-05-23
 
 - Changed: `compress` option use [cssnano](https://github.com/ben-eb/cssnano) instead of CSSWring.
