@@ -177,7 +177,7 @@ function transform() {
         console.error()
       }
       console.error("If this error looks like a bug, please report it here:")
-      console.error(color.grey("❯ ") + pkg.bugs.url.cyan)
+      console.error(color.grey("❯ ") + color.cyan(pkg.bugs.url))
       console.error()
       if (!config.watch) {
         exit(2)
