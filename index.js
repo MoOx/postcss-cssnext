@@ -89,7 +89,7 @@ var libraryFeatures = {
     return require("postcss-color-rgba-fallback")(options)
   },
   autoprefixer: function(options) {
-    return require("autoprefixer-core")(options).postcss
+    return require("autoprefixer-core")(options)
   },
 }
 

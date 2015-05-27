@@ -1,6 +1,10 @@
+# 1.5.2 - 2015-05-27
+
+- Fixed: support for autoprefixer 5.2 ([#131](https://github.com/cssnext/cssnext/issues/131))
+
 # 1.5.1 - 2015-05-25
 
-- Fixed: when printing a bug report in CLI, url was not printed, due to a 
+- Fixed: when printing a bug report in CLI, url was not printed, due to a
 replacement of colors lib by chalk in 1.5.0
 ([#129](https://github.com/cssnext/cssnext/pull/129))
 
