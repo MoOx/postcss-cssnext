@@ -1,0 +1,97 @@
+.cssnext-Playground {
+  flex: 1;
+  display: flex;
+  position: relative;
+  font-family: Menlo, Consolas, Monaco, monospace;
+  color: color(var(--cssnext-Color-blue) b(+20%));
+}
+
+  .cssnext-Playground-console {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: 0;
+    transform: translateY(-50%);
+
+    margin: 1rem;
+    padding: 1rem;
+
+    color: #fff;
+    background-color: color(#000 a(.75));
+    border: 1px solid color(#000 a(.125));
+    border-radius: 3px;
+
+    opacity: .75;
+    transition: .2s;
+
+    background: linear-gradient(160deg, var(--cssnext-Color-blue), var(--cssnext-Color-purple));
+    box-shadow: 0 .2rem .2rem rgba(0,0,0, .2);
+  }
+
+    .cssnext-Playground-console:hover { opacity: .9; }
+    .cssnext-Playground-console:empty { opacity: 0 }
+
+    .cssnext-Playground-console a {
+      color: inherit;
+    }
+
+    .cssnext-Playground-console-footer { opacity: .5 }
+    .cssnext-Playground-console:hover .cssnext-Playground-console-footer { opacity: .75 }
+
+
+  .cssnext-Playground-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+    .cssnext-Playground-section--from {
+
+    }
+
+    .cssnext-Playground-section--to {
+
+    }
+
+  .cssnext-Playground-code {
+    box-sizing: border-box;
+
+    flex: 1;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    padding: 1rem;
+
+    font: inherit;
+    color: inherit;
+    text-shadow: inherit;
+    background: inherit;
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+  }
+
+    .cssnext-Playground-code:focus,
+    .cssnext-Playground-code:active {
+      border: 0;
+      outline: 0;
+    }
+
+    .cssnext-Playground-code--from {
+
+    }
+
+    .cssnext-Playground-code--to {
+      padding-left: 6rem;
+      color: var(--cssnext-Color-blue);
+      border-left: 1px solid !important;
+      border-image:
+        linear-gradient(
+          color(var(--cssnext-Color-blue) a(0)),
+          var(--cssnext-Color-blue) 25%,
+          var(--cssnext-Color-purple) 50%,
+          var(--cssnext-Color-blue) 75%,
+          color(var(--cssnext-Color-blue) a(0))
+        )
+        1 1 stretch !important
+      ;
+    }

@@ -2,6 +2,7 @@ node_modules
 
 # standalone build
 dist
+docs/dist
 
 # fixtures
 test/**/*.actual.css

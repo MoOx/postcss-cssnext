@@ -1,0 +1,6 @@
+.cssnext-Footer {
+  font-size: var(--r-small-fontSize);
+  text-align: center;
+  padding: calc(var(--r-lineHeight) * 2) 0 var(--r-lineHeight);
+  border-top: 1px solid color(#000 a(.1));
+}

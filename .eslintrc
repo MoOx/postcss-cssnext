@@ -1,11 +1,29 @@
 ---
+# babel support more syntax stuff than eslint for now
+parser: babel-eslint
+
 ecmaFeatures:
   modules: true
+  jsx: true
 
 env:
   es6: true
   browser: true
   node: true
+
+globals:
+  # for docs
+  __DEV__: true
+  __PROD__: true
+  __SERVER_PROTOCOL__: true
+  __SERVER_HOSTNAME__: true
+  __SERVER_PORT__: true
+  __SERVER_HOST__: true
+  __SERVER_URL__: true
+  __LR_SERVER_PORT__: true
+
+plugins:
+  - react
 
 # 0: off, 1: warning, 2: error
 rules:
@@ -50,3 +68,16 @@ rules:
 
   # enforce comma at eol (never before)
   comma-style: [2, "last"]
+
+  # see globals
+  no-underscore-dangle: 0
+
+  # eslint-plugin-react rules
+  react/no-multi-comp: 2
+  react/prop-types: 2
+  react/wrap-multilines: 2
+  react/self-closing-comp: 2
+  react/no-did-mount-set-state: 2
+  react/no-did-update-set-state: 2
+  react/jsx-uses-react: 2
+  react/jsx-uses-vars: 2
