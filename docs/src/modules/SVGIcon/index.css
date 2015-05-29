@@ -1,0 +1,25 @@
+.SVGIcon {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* fix webkit/blink poor rendering issues */
+  transform: translate3d(0,0,0);
+
+  /* it's better defined directly because of the cascade shit
+  width: inherit;
+  height: inherit;
+  line-height: inherit;
+  */
+
+  /*vertical-align: middle;*/
+}
+
+  .SVGIcon-svg {
+    width: inherit;
+    height: inherit;
+    line-height: inherit;
+    /*vertical-align: inherit;*/
+
+    color: inherit;
+    fill: currentColor;
+  }
