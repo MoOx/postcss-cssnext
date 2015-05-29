@@ -31,10 +31,6 @@ var config = {
       ".json",
       ".css",
     ],
-
-    alias: {
-      "caniuse-db": path.resolve(__dirname, "../../node_modules/caniuse-db"),
-    },
   },
 
   module: {
