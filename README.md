@@ -12,12 +12,12 @@ This is a CSS transpiler (CSS4+ to CSS3) that allows you to use tomorrow's CSS s
 It transforms CSS specs that are not already implemented in popular browsers into more compatible CSS.  
 
 
-## Check out [cssnext website](https://cssnext.io/)
+## Check out [cssnext website](http://cssnext.io/)
 
-- [Features](https://cssnext.io/features/)
-- [Setup](https://cssnext.io/setup/)
-- [Usage](https://cssnext.io/usage/)
-- [Playground](https://cssnext.io/playground/)
+- [Features](http://cssnext.io/features/)
+- [Setup](http://cssnext.io/setup/)
+- [Usage](http://cssnext.io/usage/)
+- [Playground](http://cssnext.io/playground/)
 
 For questions and support please visit the
 [gitter room](https://gitter.im/cssnext/cssnext).
