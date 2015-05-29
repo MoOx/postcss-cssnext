@@ -46,67 +46,67 @@ title: cssnext
   <div class="r-Grid-cell r-minM--2of3">
   <h2 class="cssnext-Section-title"><a href="/features/">Features</a></h2>
     <ul class="r-Grid cssnext-List cssnext-FeaturesList">
-      <li class="r-Grid-cell r-all--1of2">
+      <li class="r-Grid-cell r-minS--1of2">
         custom properties & `var()`
       </li>
-      <li class="r-Grid-cell r-all--1of2">
+      <li class="r-Grid-cell r-minS--1of2">
         reduced `calc()`
       </li>
-      <li class="r-Grid-cell r-all--1of2">
+      <li class="r-Grid-cell r-minS--1of2">
         custom media queries
       </li>
-      <li class="r-Grid-cell r-all--1of2">
+      <li class="r-Grid-cell r-minS--1of2">
         media queries ranges
       </li>
-      <li class="r-Grid-cell r-all--1of2">
+      <li class="r-Grid-cell r-minS--1of2">
         custom selectors
       </li>
-      <li class="r-Grid-cell r-all--1of2">
+      <li class="r-Grid-cell r-minS--1of2">
         automatic vendor prefixes
       </li>
-      <li class="r-Grid-cell r-all--1of2">
+      <li class="r-Grid-cell r-minS--1of2">
         `color()` support
       </li>
-      <li class="r-Grid-cell r-all--1of2">
+      <li class="r-Grid-cell r-minS--1of2">
         `gray()` support
       </li>
-      <li class="r-Grid-cell r-all--1of2">
+      <li class="r-Grid-cell r-minS--1of2">
         `hwb()` support
       </li>
-      <li class="r-Grid-cell r-all--1of2">
+      <li class="r-Grid-cell r-minS--1of2">
         hexa `#rrggbbaa` support
       </li>
-      <li class="r-Grid-cell r-all--1of2">
+      <li class="r-Grid-cell r-minS--1of2">
         `rebeccapurple`
       </li>
-      <li class="r-Grid-cell r-all--1of2">
+      <li class="r-Grid-cell r-minS--1of2">
         `:matches` pseudo-class
       </li>
-      <li class="r-Grid-cell r-all--1of2">
+      <li class="r-Grid-cell r-minS--1of2">
         `:not` pseudo-class
         <small class="cssnext-FeaturesList-small">
           (to l.3)
         </small>
       </li>
-      <li class="r-Grid-cell r-all--1of2">
+      <li class="r-Grid-cell r-minS--1of2">
         font-variant
         <small class="cssnext-FeaturesList-small">
           (to font-feature-settings)
         </small>
       </li>
-      <li class="r-Grid-cell r-all--1of2">
+      <li class="r-Grid-cell r-minS--1of2">
         filters
         <small class="cssnext-FeaturesList-small">
           (svg fallback)
         </small>
       </li>
-      <li class="r-Grid-cell r-all--1of2">
+      <li class="r-Grid-cell r-minS--1of2">
         `rem` units fallback
         <small class="cssnext-FeaturesList-small">
           (to px)
         </small>
       </li>
-      <li class="r-Grid-cell r-all--1of2">
+      <li class="r-Grid-cell r-minS--1of2">
         ::pseudo syntax
         <small class="cssnext-FeaturesList-small">
           (`:` compat)
