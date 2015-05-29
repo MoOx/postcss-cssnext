@@ -65,7 +65,12 @@
   .cssnext-Header-nav {
 
   }
-
+    @media (--r-maxM) {
+      .cssnext-Header-nav {
+        display: block;
+        text-align: center;
+      }
+    }
     @media (--r-minM) {
       .cssnext-Header-nav {
         text-align: right

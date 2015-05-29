@@ -246,12 +246,16 @@ h3 {
     }
 
 .cssnext-List {
-  margin: 0 4rem var(--r-lineHeight) !important;
+  margin: 0 4rem var(--r-lineHeight);
   /*margin-right: 0 !important  ;*/
 }
 
-
 .cssnext-FeaturesList {
+}
+@media (--r-maxS) {
+  .cssnext-FeaturesList {
+    margin: 0;
+  }
 }
 
   .cssnext-FeaturesList li::before {
@@ -294,6 +298,7 @@ h3 {
 .cssnext-Tools {
   text-align: center;
   font-size: var(--r-h3-fontSize);
+  line-height: calc(var(--r-h3-lineHeight)*2);
   font-weight: 300;
 }
 
