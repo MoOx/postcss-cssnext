@@ -10,11 +10,11 @@ export default class Footer extends Component {
   }
 
   static defaultProps = {
-    plagryound: true,
+    playground: true,
   }
 
   static propTypes = {
-    plagyround: PropTypes.bool,
+    playground: PropTypes.bool,
   }
 
   render() {
@@ -37,14 +37,14 @@ export default class Footer extends Component {
           </a>.
         </p>
         <small>
-          <a href="it-s-cssnext-not-CSSNext">
+          <a href="/it-s-cssnext-not-CSSNext">
             {"Note: it's cssnext, not CSSNext"}
           </a>
           <span style={{
             opacity: ".4",
             marginLeft: "1rem",
           }}>
-            <a href="credits">
+            <a href="/credits">
               Credits
             </a>
             {" | "}
