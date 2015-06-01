@@ -13,7 +13,7 @@ and [npm](https://www.npmjs.org/package/cssnext).
 You can install it:
 
 - locally (`--save` or `--save-dev`), to use it through [npm scripts](https://www.npmjs.org/doc/misc/npm-scripts.html) (`npm run`) or via `.node_modules/.bin/cssnext`
-- globally (`-g`), to use it through the [CLI](cli) _(not recommanded)_
+- globally (`-g`), to use it through the [CLI](cli) _(not recommended)_
 - by using [other plugins & tools](#usage) like [gulp-cssnext](https://github.com/cssnext/gulp-cssnext)
 
 The main package offers
