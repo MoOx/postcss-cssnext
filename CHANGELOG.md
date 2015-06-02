@@ -1,3 +1,7 @@
+# 1.6.0 - 2015-06-02
+
+- Added: prevent mutability issues with frozen options objects ([#147](https://github.com/cssnext/cssnext/pull/147))
+
 # 1.5.2 - 2015-05-27
 
 - Fixed: support for autoprefixer 5.2 ([#131](https://github.com/cssnext/cssnext/issues/131))
