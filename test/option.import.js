@@ -14,6 +14,9 @@ test("cssnext import option", function(t) {
     options: utils.readFixture("import.options.expected").trim(),
   }
   var opts = {from: "test/fixtures/here"}
+  function transformFn(c) {
+    return c + "\n new {}"
+  }
   t.equal(
     cssnext(input, opts).trim(),
     expected.default,
@@ -23,9 +26,7 @@ test("cssnext import option", function(t) {
     cssnext(input, {
       from: opts.from,
       import: {
-        transform: function(c) {
-          return c + "\n new {}"
-        },
+        transform: transformFn,
       },
     }).trim(),
     expected.options,
@@ -36,6 +37,18 @@ test("cssnext import option", function(t) {
     expected.default,
     "should be able to import even as a postcss plugin"
   )
-
+  var importOpt = {
+    transform: transformFn,
+  }
+  Object.freeze(importOpt)
+  t.doesNotThrow(function() {
+      cssnext(input, {
+        from: opts.from,
+        import: importOpt,
+      }).trim()
+    },
+    expected.options,
+    "should not use original object as option"
+  )
   t.end()
 })
