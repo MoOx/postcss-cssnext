@@ -145,7 +145,7 @@ function cssnext(string, options) {
     if (options.import !== false) {
       postcssInstance.use(require("postcss-import")(
         typeof options.import === "object"
-          ? options.import
+          ? assign({}, options.import)
           : undefined
         )
       )
