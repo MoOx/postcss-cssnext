@@ -155,7 +155,7 @@ function cssnext(string, options) {
     if (options.url !== false) {
       postcssInstance.use(require("postcss-url")(
         typeof options.url === "object"
-          ? options.url
+          ? assign({}, options.url)
           : undefined
         )
       )
@@ -186,7 +186,7 @@ function cssnext(string, options) {
     ) {
       postcssInstance.use(cssnext.features[key](
         typeof features[key] === "object"
-          ? features[key]
+          ? assign({}, features[key])
           : undefined
         )
       )
@@ -201,7 +201,7 @@ function cssnext(string, options) {
         assign(
           {},
           typeof options.compress === "object"
-            ? options.compress
+            ? assign({}, options.compress)
             : {},
           // forced calc options to false
           // since we already used it
