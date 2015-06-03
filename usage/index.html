@@ -161,124 +161,106 @@
 	</linearGradient>
 	<path fill="url(#SVGID_12_)" d="M255.475,13.569l-4.391,21.613h-0.932l4.373-21.613H255.475z"/>
 </g>
-</svg></span><span class="cssnext-Header-version">1.6.0</span></a><a href="/features/" class="cssnext-Header-nav-item">Features</a><a href="/setup/" class="cssnext-Header-nav-item">Setup</a><a href="/usage/" class="cssnext-Header-nav-item">Usage</a><a href="/playground/" class="cssnext-Header-nav-item">Playground</a></span></div><div class="r-Grid-cell r-minM--2of6"><div class="cssnext-Header-nav"><a href="https://gitter.im/cssnext/cssnext" class="cssnext-Header-nav-item">Support</a><a href="https://github.com/cssnext/cssnext" title="GitHub" class="cssnext-Header-nav-item">GitHub</a><a href="https://twitter.com/cssnext" title="Twitter" class="cssnext-Header-nav-item">Twitter</a></div></div></div></header><header class="cssnext-Jumbotron cssnext-Jumbotron--default cssnext-Jumbotron--usage-html"><div class="r-Grid"><div class="r-Grid-cell"><h1 class="cssnext-Jumbotron-title cssnext-Center cssnext-Light">How to use cssnext ?</h1></div></div></header><section class="r-Grid cssnext-Callout cssnext-Callout--info"><div class="r-Grid-cell"><div class="cssnext-Callout-title h4">Incomplete</div><p>This documentation is still a work in progress. <br><a href="https://github.com/cssnext/cssnext/issues?q=is%3Aopen+is%3Aissue+label%3A%22type%3A+documentation%22">Pull requests</a> expanding on existing or adding additional content  are <strong>extremely</strong> appreciated.</p></div></section><section class="r-Grid cssnext-Section"><div class="r-Grid-cell"><p>When you have correctly <a href="/setup/" >setup</a> cssnext, you might want to tweak it a
+</svg></span><span class="cssnext-Header-version">1.6.0</span></a><a href="/features/" class="cssnext-Header-nav-item">Features</a><a href="/setup/" class="cssnext-Header-nav-item">Setup</a><a href="/usage/" class="cssnext-Header-nav-item">Usage</a><a href="/playground/" class="cssnext-Header-nav-item">Playground</a></span></div><div class="r-Grid-cell r-minM--2of6"><div class="cssnext-Header-nav"><a href="https://gitter.im/cssnext/cssnext" class="cssnext-Header-nav-item">Support</a><a href="https://github.com/cssnext/cssnext" title="GitHub" class="cssnext-Header-nav-item">GitHub</a><a href="https://twitter.com/cssnext" title="Twitter" class="cssnext-Header-nav-item">Twitter</a></div></div></div></header><header class="cssnext-Jumbotron cssnext-Jumbotron--default cssnext-Jumbotron--usage-html"><div class="r-Grid"><div class="r-Grid-cell"><h1 class="cssnext-Jumbotron-title cssnext-Center cssnext-Light">How to use cssnext ?</h1></div></div></header><section class="r-Grid cssnext-Callout cssnext-Callout--info"><div class="r-Grid-cell"><div class="cssnext-Callout-title h4">Incomplete</div><p>This documentation is still a work in progress. <br><a href="https://github.com/cssnext/cssnext/issues?q=is%3Aopen+is%3Aissue+label%3A%22type%3A+documentation%22">Pull requests</a> expanding on existing or adding additional content  are <strong>extremely</strong> appreciated.</p></div></section><section class="r-Grid cssnext-Section"><div class="r-Grid-cell"><p>When you have correctly <a href="/setup/">setup</a> cssnext, you might want to tweak it a
 little bit. You will find below all the available options.</p>
-<h1 id="options">
-      <a class="cssnext-Title-anchor" href="http://cssnext.io/#options">#</a>
-      Options
-    </h1><h2 id="browsers">
-      <a class="cssnext-Title-anchor" href="http://cssnext.io/#browsers">#</a>
-      <code>browsers</code>
-    </h2><p>(default: <a href="https://github.com/ai/browserslist#readme" >browserslist default</a> - <code>&gt; 1%, last 2 versions, Firefox ESR, Opera 12.1</code>)</p>
+<h1>Options</h1>
+<h2><code>browsers</code></h2>
+<p>(default: <a href="https://github.com/ai/browserslist#readme">browserslist default</a> - <code>&gt; 1%, last 2 versions, Firefox ESR, Opera 12.1</code>)</p>
 <p>Allows you to specify your browser scope.
-<strong>This option enables or disables <code>features</code> according to <a href="http://caniuse.com/" >caniuse</a> database.</strong>
+<strong>This option enables or disables <code>features</code> according to <a href="http://caniuse.com/">caniuse</a> database.</strong>
 This is the exact same option that you might know from Autoprefixer.
 Since cssnext includes Autoprefixer, the option is propagated.</p>
-<p>See <a href="https://github.com/ai/browserslist#queries" >Browserslist</a> queries syntax to adjust this option to your needs.</p>
-<p><em>Note: if you don’t specify this option, Browserslist will automatically try to find a <code>browserslist</code>
+<p>See <a href="https://github.com/ai/browserslist#queries">Browserslist</a> queries syntax to adjust this option to your needs.</p>
+<p><em>Note: if you don't specify this option, Browserslist will automatically try to find a <code>browserslist</code>
 config file or use its default value.</em></p>
-<h2 id="features">
-      <a class="cssnext-Title-anchor" href="http://cssnext.io/#features">#</a>
-      <code>features</code>
-    </h2><p>(default: all features)</p>
+<h2><code>features</code></h2>
+<p>(default: all features)</p>
 <p><strong>You should probably use <code>browsers</code> option instead of this one.</strong></p>
 <p>Object containing key of features to enable/disable.
 <em>Features are enabled by default: no key means feature is enabled</em>.</p>
-<pre><code class="lang-js"><span class="hljs-comment">//eg: disable custom properties support</span>
-<span class="hljs-keyword">var</span> output = cssnext(input, {
+<pre><code class="language-js">//eg: disable custom properties support
+var output = cssnext(input, {
   features: {
-    customProperties: <span class="hljs-literal">false</span>
+    customProperties: false
   }
 })
 </code></pre>
 <p>Each feature is based on PostCSS plugins &amp; can get its own options.
 To pass options to a feature, you can just pass an object to the feature:</p>
-<pre><code class="lang-js"><span class="hljs-comment">//eg: preserve custom properties</span>
-<span class="hljs-keyword">var</span> output = cssnext(input, {
+<pre><code class="language-js">//eg: preserve custom properties
+var output = cssnext(input, {
   features: {
     customProperties: {
-      preserve: <span class="hljs-literal">true</span>
+      preserve: true
     }
   }
 })
 </code></pre>
 <p>To know all available options, please check corresponding postcss plugin:</p>
 <ul>
-<li><code>customProperties</code> <a href="https://www.npmjs.com/package/postcss-custom-properties" >(=&gt; postcss-custom-properties)</a></li>
-<li><code>calc</code> <a href="https://www.npmjs.com/package/postcss-calc" >(=&gt; postcss-calc)</a></li>
-<li><code>customMedia</code> <a href="https://www.npmjs.com/package/postcss-custom-media" >(=&gt; postcss-custom-media)</a></li>
-<li><code>mediaQueriesRange</code> <a href="https://www.npmjs.com/package/postcss-media-minmax" >(=&gt; postcss-media-minmax)</a></li>
-<li><code>customSelectors</code> <a href="https://www.npmjs.com/package/postcss-custom-selectors" >(=&gt; postcss-custom-selectors)</a></li>
-<li><code>colorRebeccapurple</code> <a href="https://www.npmjs.com/package/postcss-color-rebeccapurple" >(=&gt; postcss-color-rebeccapurple)</a></li>
-<li><code>colorHwb</code> <a href="https://www.npmjs.com/package/postcss-color-hwb" >(=&gt; postcss-color-hwb)</a></li>
-<li><code>colorGray</code> <a href="https://www.npmjs.com/package/postcss-color-gray" >(=&gt; postcss-color-gray)</a></li>
-<li><code>colorHexAlpha</code> <a href="https://www.npmjs.com/package/postcss-color-hex-alpha" >(=&gt; postcss-color-hex-alpha)</a></li>
-<li><code>colorFunction</code> <a href="https://www.npmjs.com/package/postcss-color-function" >(=&gt; postcss-color-function)</a></li>
-<li><code>fontVariant</code> <a href="https://www.npmjs.com/package/postcss-font-variant" >(=&gt; postcss-font-variant)</a></li>
-<li><code>filter</code> <a href="https://www.npmjs.com/package/pleeease-filters" >(=&gt; pleeease-filters)</a></li>
-<li><code>rem</code> <a href="https://www.npmjs.com/package/pixrem" >(=&gt; pixrem)</a></li>
-<li><code>pseudoElements</code> <a href="https://www.npmjs.com/package/postcss-pseudoelements" >(=&gt; postcss-pseudoelements)</a></li>
-<li><code>pseudoClassMatches</code> <a href="https://www.npmjs.com/package/postcss-selector-matches" >(=&gt; postcss-selector-matches)</a></li>
-<li><code>pseudoClassNot</code> <a href="https://www.npmjs.com/package/postcss-selector-not" >(=&gt; postcss-selector-not)</a></li>
-<li><code>colorRgba</code> <a href="https://www.npmjs.com/package/postcss-color-rgba-fallback" >(=&gt; postcss-color-rgba-fallback)</a></li>
-<li><code>autoprefixer</code> <a href="https://www.npmjs.com/package/autoprefixer-core" >(=&gt; autoprefixer-core)</a></li>
+<li><code>customProperties</code> <a href="https://www.npmjs.com/package/postcss-custom-properties">(=&gt; postcss-custom-properties)</a></li>
+<li><code>calc</code> <a href="https://www.npmjs.com/package/postcss-calc">(=&gt; postcss-calc)</a></li>
+<li><code>customMedia</code> <a href="https://www.npmjs.com/package/postcss-custom-media">(=&gt; postcss-custom-media)</a></li>
+<li><code>mediaQueriesRange</code> <a href="https://www.npmjs.com/package/postcss-media-minmax">(=&gt; postcss-media-minmax)</a></li>
+<li><code>customSelectors</code> <a href="https://www.npmjs.com/package/postcss-custom-selectors">(=&gt; postcss-custom-selectors)</a></li>
+<li><code>colorRebeccapurple</code> <a href="https://www.npmjs.com/package/postcss-color-rebeccapurple">(=&gt; postcss-color-rebeccapurple)</a></li>
+<li><code>colorHwb</code> <a href="https://www.npmjs.com/package/postcss-color-hwb">(=&gt; postcss-color-hwb)</a></li>
+<li><code>colorGray</code> <a href="https://www.npmjs.com/package/postcss-color-gray">(=&gt; postcss-color-gray)</a></li>
+<li><code>colorHexAlpha</code> <a href="https://www.npmjs.com/package/postcss-color-hex-alpha">(=&gt; postcss-color-hex-alpha)</a></li>
+<li><code>colorFunction</code> <a href="https://www.npmjs.com/package/postcss-color-function">(=&gt; postcss-color-function)</a></li>
+<li><code>fontVariant</code> <a href="https://www.npmjs.com/package/postcss-font-variant">(=&gt; postcss-font-variant)</a></li>
+<li><code>filter</code> <a href="https://www.npmjs.com/package/pleeease-filters">(=&gt; pleeease-filters)</a></li>
+<li><code>rem</code> <a href="https://www.npmjs.com/package/pixrem">(=&gt; pixrem)</a></li>
+<li><code>pseudoElements</code> <a href="https://www.npmjs.com/package/postcss-pseudoelements">(=&gt; postcss-pseudoelements)</a></li>
+<li><code>pseudoClassMatches</code> <a href="https://www.npmjs.com/package/postcss-selector-matches">(=&gt; postcss-selector-matches)</a></li>
+<li><code>pseudoClassNot</code> <a href="https://www.npmjs.com/package/postcss-selector-not">(=&gt; postcss-selector-not)</a></li>
+<li><code>colorRgba</code> <a href="https://www.npmjs.com/package/postcss-color-rgba-fallback">(=&gt; postcss-color-rgba-fallback)</a></li>
+<li><code>autoprefixer</code> <a href="https://www.npmjs.com/package/autoprefixer-core">(=&gt; autoprefixer-core)</a></li>
 </ul>
 <p><em>Note: order is important to get everything working correctly.</em></p>
-<h2 id="import">
-      <a class="cssnext-Title-anchor" href="http://cssnext.io/#import">#</a>
-      <code>import</code>
-    </h2><p>(default: <code>true</code>)</p>
-<p>Allows you to inline local <code>@import</code> files (thanks to <a href="https://github.com/postcss/postcss-import#readme" >postcss-import</a>):</p>
+<h2><code>import</code></h2>
+<p>(default: <code>true</code>)</p>
+<p>Allows you to inline local <code>@import</code> files (thanks to <a href="https://github.com/postcss/postcss-import#readme">postcss-import</a>):</p>
 <ul>
 <li>you can refer to <code>node_modules</code> and <code>web_modules</code> packages</li>
 <li>you can omit .css extension</li>
 </ul>
-<p><em>Note: you can pass <a href="https://github.com/postcss/postcss-import#readme" >postcss-import options</a> directly.</em></p>
-<h2 id="url">
-      <a class="cssnext-Title-anchor" href="http://cssnext.io/#url">#</a>
-      <code>url</code>
-    </h2><p>(default: <code>true</code>)</p>
+<p><em>Note: you can pass <a href="https://github.com/postcss/postcss-import#readme">postcss-import options</a> directly.</em></p>
+<h2><code>url</code></h2>
+<p>(default: <code>true</code>)</p>
 <p>By default, <code>url()</code> are rebased according to <code>from</code> (and <code>to</code>) option(s). This is convenient especially for <code>@import</code>ed files.</p>
-<p><em>Note: you can pass <a href="https://github.com/postcss/postcss-url#options" >postcss-url options</a> directly in order to inline or have more control over urls.</em></p>
-<h2 id="compress">
-      <a class="cssnext-Title-anchor" href="http://cssnext.io/#compress">#</a>
-      <code>compress</code>
-    </h2><p>(default: <code>false</code>)</p>
-<p>Allows you to compress the output (using <a href="https://github.com/ben-eb/cssnano" >cssnano</a>).
-You can enable minification by passing <code>true</code> or by providing an object containing <a href="https://github.com/ben-eb/cssnano#options" >cssnano options</a>.</p>
-<h2 id="sourcemap">
-      <a class="cssnext-Title-anchor" href="http://cssnext.io/#sourcemap">#</a>
-      <code>sourcemap</code>
-    </h2><p>(default: <code>false</code>)</p>
+<p><em>Note: you can pass <a href="https://github.com/postcss/postcss-url#options">postcss-url options</a> directly in order to inline or have more control over urls.</em></p>
+<h2><code>compress</code></h2>
+<p>(default: <code>false</code>)</p>
+<p>Allows you to compress the output (using <a href="https://github.com/ben-eb/cssnano">cssnano</a>).
+You can enable minification by passing <code>true</code> or by providing an object containing <a href="https://github.com/ben-eb/cssnano#options">cssnano options</a>.</p>
+<h2><code>sourcemap</code></h2>
+<p>(default: <code>false</code>)</p>
 <p>This option is a shortcut to enable inlined sourcemap in the output.
 Just pass <code>true</code> to get the sourcemap at the end of the output.</p>
 <ul>
 <li><em>If you want an accurate sourcemap, please also use the <code>from</code> option.</em></li>
 <li><em>If you want more control on the sourcemap, please use the <code>map</code> option instead.</em></li>
 </ul>
-<h2 id="map">
-      <a class="cssnext-Title-anchor" href="http://cssnext.io/#map">#</a>
-      <code>map</code>
-    </h2><p>(default: <em>depends on <code>sourcemap</code></em>)</p>
+<h2><code>map</code></h2>
+<p>(default: <em>depends on <code>sourcemap</code></em>)</p>
 <p><em>(default: <code>undefined</code> if <code>sourcemap</code> is <code>false</code>, <code>inline</code> if <code>sourcemap</code> it true)</em></p>
 <p>If you want better control on sourcemap, you are at the right place.
-This is the <a href="https://github.com/postcss/postcss#source-map-1" >postcss <code>map</code> option</a>, so checkout the related documentation directly.</p>
+This is the <a href="https://github.com/postcss/postcss#source-map-1">postcss <code>map</code> option</a>, so checkout the related documentation directly.</p>
 <p><em>If you specify this option, <code>sourcemap</code> value will be ignored.</em></p>
-<p><strong><code>/!\</code> Using this option might change the return value of <code>cssnext()</code> (<code>object</code> instead of css <code>string</code> if map is not inlined. The object will be like {css: “{css string}”, map: {sourcemap object}})</strong></p>
-<h2 id="from">
-      <a class="cssnext-Title-anchor" href="http://cssnext.io/#from">#</a>
-      <code>from</code>
-    </h2><p>(default: <code>null</code>)</p>
+<p><strong><code>/!\</code> Using this option might change the return value of <code>cssnext()</code> (<code>object</code> instead of css <code>string</code> if map is not inlined. The object will be like {css: &quot;{css string}&quot;, map: {sourcemap object}})</strong></p>
+<h2><code>from</code></h2>
+<p>(default: <code>null</code>)</p>
 <p>Source of the file. Required for accurate sourcemap.</p>
-<pre><code class="lang-js"><span class="hljs-keyword">var</span> cssnext = <span class="hljs-built_in">require</span>(<span class="hljs-string">"cssnext"</span>)
-<span class="hljs-keyword">var</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"fs"</span>)
+<pre><code class="language-js">var cssnext = require(&quot;cssnext&quot;)
+var fs = require(&quot;fs&quot;)
 
-<span class="hljs-keyword">var</span> source = <span class="hljs-string">"./index.css"</span>
-<span class="hljs-keyword">var</span> output = cssnext(
-  fs.readFileSync(source, <span class="hljs-string">"utf8"</span>),
+var source = &quot;./index.css&quot;
+var output = cssnext(
+  fs.readFileSync(source, &quot;utf8&quot;),
   {from: source}
 )
-fs.writeFileSync(<span class="hljs-string">"dist/index.css"</span>, output)
+fs.writeFileSync(&quot;dist/index.css&quot;, output)
 </code></pre>
 </div></section><div class="cssnext-Jumbotron cssnext-Jumbotron--default cssnext-Center cssnext-Light"><div class="cssnext-Jumbotron-title"><a href="/playground/">Try cssnext in your browser now.</a></div></div><footer class="cssnext-Footer"><p><span class="SVGIcon cssnext-Header-logo-img" style="height:1rem;vertical-align:middle;"><?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
