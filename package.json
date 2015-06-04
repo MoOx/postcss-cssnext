@@ -111,6 +111,7 @@
   },
   "scripts": {
     "standalone": "browserify --standalone cssnext index.js -o dist/cssnext.js",
+    "#lint": "even if there is a .eslintignore symlink, we use an explicit command because windows don't like unix symlink",
     "lint": "eslint --ignore-path .gitignore .",
     "tape": "tape test/*.js",
     "test": "npm run lint && npm run standalone && npm run tape",
