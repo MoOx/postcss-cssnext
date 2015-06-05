@@ -1,97 +1,9 @@
-/**
- * Modules dependencies
- */
-var postcss = require("postcss")
-var assign = require("object-assign")
-var caniuse = require("caniuse-api")
+import postcss from "postcss"
+import assign from "object-assign"
+import {isSupported} from "caniuse-api"
 
-// Some features might affect others (eg: var() in a calc()
-// in order to prevent issue, the map contains a sort of dependencies list
-//
-// null == always enable (& no caniuse data)
-var caniuseFeaturesMap = {
-  customProperties: ["css-variables"],
-  // calc() transformation only make sense with transformed custom properties,
-  // don't you think ?
-  // calc: null,
-  // @todo open PR on caniuse repo https://github.com/Fyrd/caniuse
-  // customMedia: [null],
-  // mediaQueriesRange: [null],
-  // customSelectors: [null],
-  // colorRebeccapurple: [null], // @todo can be done easily
-  // colorHwb: [null],
-  // colorGray: [null],
-  // colorHexAlpha: [null],
-  // colorFunction:[null],
-  // fontVariant: [null],
-  // @todo can be done using a callback, this is only used for Firefox < 35
-  // filter: [null],
-  rem: ["rem"],
-  pseudoElements: ["css-gencontent"],
-  // pseudoClassMatches: [null],
-  // pseudoClassNot: [null],
-  colorRgba: ["css3-colors"],
-  // will always be null since autoprefixer does the same game as we do
-  // autoprefixer: [null]
-}
-
-var libraryFeatures = {
-  // Reminder: order is important
-  customProperties: function(options) {
-    return require("postcss-custom-properties")(options)
-  },
-  calc: function(options) {
-    return require("postcss-calc")(options)
-  },
-  customMedia: function(options) {
-    return require("postcss-custom-media")(options)
-  },
-  mediaQueriesRange: function(options) {
-    return require("postcss-media-minmax")(options)
-  },
-  customSelectors: function(options) {
-    return require("postcss-custom-selectors")(options)
-  },
-  colorRebeccapurple: function(options) {
-    return require("postcss-color-rebeccapurple")(options)
-  },
-  colorHwb: function(options) {
-    return require("postcss-color-hwb")(options)
-  },
-  colorGray: function(options) {
-    return require("postcss-color-gray")(options)
-  },
-  colorHexAlpha: function(options) {
-    return require("postcss-color-hex-alpha")(options)
-  },
-  colorFunction: function(options) {
-    return require("postcss-color-function")(options)
-  },
-  fontVariant: function(options) {
-    return require("postcss-font-variant")(options)
-  },
-  filter: function(options) {
-    return require("pleeease-filters")(options)
-  },
-  rem: function(options) {
-    return require("pixrem")(options)
-  },
-  pseudoElements: function(options) {
-    return require("postcss-pseudoelements")(options)
-  },
-  pseudoClassMatches: function(options) {
-    return require("postcss-selector-matches")(options)
-  },
-  pseudoClassNot: function(options) {
-    return require("postcss-selector-not")(options)
-  },
-  colorRgba: function(options) {
-    return require("postcss-color-rgba-fallback")(options)
-  },
-  autoprefixer: function(options) {
-    return require("autoprefixer-core")(options)
-  },
-}
+import libraryFeatures from "./features"
+import featuresActivationMap from "./features-activation-map"
 
 /**
  * Process a CSS `string`
@@ -179,13 +91,13 @@ function cssnext(string, options) {
         features[key] === true ||
 
         // feature don't have any browsers data (yet)
-        caniuseFeaturesMap[key] === undefined ||
+        featuresActivationMap[key] === undefined ||
 
         // feature is not yet supported by the browsers scope
         (
-          caniuseFeaturesMap[key] &&
-          caniuseFeaturesMap[key][0] &&
-          !caniuse.isSupported(caniuseFeaturesMap[key][0], options.browsers)
+          featuresActivationMap[key] &&
+          featuresActivationMap[key][0] &&
+          !isSupported(featuresActivationMap[key][0], options.browsers)
         )
       )
     ) {
