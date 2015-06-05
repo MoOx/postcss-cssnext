@@ -14,13 +14,16 @@ var cssnext = require("..")
 var input = utils.readFixture("cli")
 var output = utils.readFixture("cli.expected")
 
-var cssnextBin = "node bin/cssnext" // node bin is used to help for windows
+// node bin is used to help for windows
+var cssnextBin = "node dist/bin"
 
 test("cli", function(t) {
   var planned = 0
 
   exec(
-    cssnextBin + " test/fixtures/cli.css test/fixtures/cli.output--io.css",
+    cssnextBin +
+      " src/__tests__/fixtures/cli.css" +
+      " src/__tests__/fixtures/cli.output--io.css",
     function(err) {
       if (err) {
         throw err
@@ -32,7 +35,7 @@ test("cli", function(t) {
   )
   planned += 1
 
-  exec(cssnextBin + " test/fixtures/cli.css", function(err, stdout) {
+  exec(cssnextBin + " src/__tests__/fixtures/cli.css", function(err, stdout) {
     if (err) {
       throw err
     }
@@ -54,7 +57,7 @@ test("cli", function(t) {
   planned += 1
 
   exec(
-    cssnextBin + " test/fixtures/cli.dont-exist.css",
+    cssnextBin + " src/__tests__/fixtures/cli.dont-exist.css",
     function(err, stdout, stderr) {
       t.ok(
         err && err.code === 1,
@@ -69,7 +72,7 @@ test("cli", function(t) {
   planned += 2
 
   exec(
-    cssnextBin + " test/fixtures/cli.error.css",
+    cssnextBin + " src/__tests__/fixtures/cli.error.css",
     function(err, stdout, stderr) {
     t.ok(err && err.code === 2, "should throw an error")
     t.ok(
@@ -86,7 +89,9 @@ test("cli", function(t) {
   planned += 3
 
   exec(
-    cssnextBin + " --config test/fixtures/config.json test/fixtures/config.css",
+    cssnextBin +
+      " --config src/__tests__/fixtures/config.json" +
+      " src/__tests__/fixtures/config.css",
     function(err, stdout) {
     if (err) {
       throw err
@@ -114,7 +119,8 @@ test("cli", function(t) {
 
   exec(
     cssnextBin +
-      " --verbose test/fixtures/cli.css test/fixtures/cli.output--verbose.css"
+      " --verbose src/__tests__/fixtures/cli.css" +
+      " src/__tests__/fixtures/cli.output--verbose.css"
     ,
     function(err, stdout) {
       if (err) {
@@ -127,7 +133,7 @@ test("cli", function(t) {
   planned += 1
 
   exec(
-    cssnextBin + " --no-import test/fixtures/import.css",
+    cssnextBin + " --no-import src/__tests__/fixtures/import.css",
     function(err, stdout) {
     if (err) {
       throw err
@@ -141,45 +147,51 @@ test("cli", function(t) {
   planned += 1
 
   exec(
-    cssnextBin + " --no-url test/fixtures/url.css", {cwd: process.cwd()},
+    cssnextBin + " --no-url src/__tests__/fixtures/url.css",
+    {cwd: process.cwd()},
     function(err, stdout) {
-    if (err) {
-      throw err
+      if (err) {
+        throw err
+      }
+      t.equal(
+        stdout,
+        utils.readFixture("url/dep"),
+        "should not adjust url on --no-url"
+      )
     }
-    t.equal(
-      stdout,
-      utils.readFixture("url/dep"),
-      "should not adjust url on --no-url"
-    )
-  })
+  )
   planned += 1
 
   exec(
-    cssnextBin + " --compress test/fixtures/compress.css",
+    cssnextBin + " --compress src/__tests__/fixtures/compress.css",
     function(err, stdout) {
-    if (err) {
-      throw err
+      if (err) {
+        throw err
+      }
+      t.equal(
+        stdout.trim(),
+        utils.readFixture("compress.default.expected").trim(),
+        "should compress on --compress"
+      )
     }
-    t.equal(
-      stdout.trim(),
-      utils.readFixture("compress.default.expected").trim(),
-      "should compress on --compress"
-    )
-  })
+  )
   planned += 1
 
   exec(
-    cssnextBin + " --sourcemap test/fixtures/sourcemap.css",
+    cssnextBin + " --sourcemap src/__tests__/fixtures/sourcemap.css",
     function(err, stdout) {
-    if (err) {
-      throw err
+      if (err) {
+        throw err
+      }
+      t.ok(
+        stdout
+          .indexOf("/*# sourceMappingURL=data:application/json;base64,")
+          > -1
+        ,
+        "should add sourcemap on --sourcemap"
+      )
     }
-    t.equal(
-      stdout,
-      utils.readFixture("sourcemap.expected").trim(),
-      "should add sourcemap on --sourcemap"
-    )
-  })
+  )
   planned += 1
 
   var toSpace = require("to-space-case")
@@ -192,50 +204,54 @@ test("cli", function(t) {
     var slug = toSlug(feature)
     var featureOutput = utils.readFixture("features/" + slug)
     exec(
-      cssnextBin + " " + no + " test/fixtures/features/" + slug + ".css",
+      cssnextBin + " " + no +
+        " src/__tests__/fixtures/features/" + slug + ".css",
       function(err, stdout) {
-      if (err) {
-        throw err
+        if (err) {
+          throw err
+        }
+        t.equal(
+          stdout,
+          featureOutput,
+          "should not modify input of '" + toSpace(feature) +
+            "' fixture if all features are disabled"
+        )
       }
-      t.equal(
-        stdout,
-        featureOutput,
-        "should not modify input of '" + toSpace(feature) +
-          "' fixture if all features are disabled"
-      )
-    })
+    )
   })
   planned += features.length
 
   exec(
     cssnextBin + " --watch",
     function(err, stdout, stderr) {
-    t.ok(err && err.code === 3,
-      "should return an error when <input> or <output> are missing when " +
-        "`--watch` option passed"
-    )
-    t.ok(
-      utils.contains(stderr, "--watch option need"),
-      "should show an explanation when <input> or <output> are missing when " +
-        "`--watch` option passed"
-    )
-  })
+      t.ok(err && err.code === 3,
+        "should return an error when <input> or <output> are missing when " +
+          "`--watch` option passed"
+      )
+      t.ok(
+        utils.contains(stderr, "--watch option need"),
+        "should show an explanation when <input> or <output> are missing when" +
+          " `--watch` option passed"
+      )
+    }
+  )
   planned += 2
 
   exec(
-    cssnextBin + " --watch test/fixtures/cli.css",
+    cssnextBin + " --watch src/__tests__/fixtures/cli.css",
     function(err, stdout, stderr) {
-    t.ok(
-      err && err.code === 3,
-      "should return an error when <output> is missing when `--watch` option " +
-        "passed"
-    )
-    t.ok(
-      utils.contains(stderr, "--watch option need"),
-      "should show an explanation when <output> is missing when `--watch` " +
-        "option passed"
-    )
-  })
+      t.ok(
+        err && err.code === 3,
+        "should return an error when <output> is missing when `--watch`" +
+          "option passed"
+      )
+      t.ok(
+        utils.contains(stderr, "--watch option need"),
+        "should show an explanation when <output> is missing when `--watch` " +
+          "option passed"
+      )
+    }
+  )
   planned += 2
 
   t.plan(planned)

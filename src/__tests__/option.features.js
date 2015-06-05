@@ -5,7 +5,7 @@ var test = require("tape")
 
 var utils = require("./utils")
 var cssnext = require("..")
-var cssnextStandalone = require("../dist/cssnext.js")
+var cssnextStandalone = require("../cssnext")
 
 /**
  * Features tests

@@ -16,8 +16,8 @@ $ git checkout -b fix.bug423
 
 ### Add a feature
 
-1. Add test files (input + expected output) in [`test/fixtures/features`](test/features)
-- If the feature can affect some others, update [`test/fixtures/cases/example.css`](test/cases/example.css) to test integration with other features
+1. Add test files (input + expected output) in [`src/__tests__/fixtures/features`](src/__tests__/features)
+- If the feature can affect some others, update [`src/__tests__/fixtures/cases/example.css`](src/__tests__/cases/example.css) to test integration with other features
 - Run test, & check tests are broken (otherwise feature is useless)
 - Choose a pretty simple and clear name (that match the specs)
 - Add the feature in the [README features list](#features) (title, link to spec, link of the plugin, short desc)

@@ -23,7 +23,7 @@ function contains(string, piece) {
 */
 function fixturePath(name, ext) {
   ext = (ext !== undefined ? ext : ".css")
-  return "test/fixtures/" + name + ext
+  return "src/__tests__/fixtures/" + name + ext
 }
 
 /**

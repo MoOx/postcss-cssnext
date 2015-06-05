@@ -12,14 +12,16 @@ var utils = require("./utils")
 // I don't success to call the kill() process from node and both Travis CI and
 // Appveyor so we avoid this test on this environnements
 if (!(process.env.TRAVIS || process.env.APPVEYOR)) {
-  var cssnextBin = "node bin/cssnext" // node bin is used to help for windows
+  // node bin is used to help for windows
+  var cssnextBin = "node dist/bin"
 
   test("cli/watcher", function(t) {
     var planned = 0
 
     var watchProcess = exec(
-      cssnextBin + " --watch test/fixtures/cli.error.css test/fixtures/" +
-        "cli.output--watch.css",
+      cssnextBin +
+        " --watch src/__tests__/fixtures/cli.error.css" +
+        " src/__tests__/fixtures/cli.output--watch.css",
       function(err) {
         t.ok(
           err && err.signal === "SIGTERM",
@@ -46,14 +48,14 @@ if (!(process.env.TRAVIS || process.env.APPVEYOR)) {
     planned += 2
 
     // watch/import tests
-    var watchOut = "test/fixtures/cli.output--watch-import.css"
+    var watchOut = "src/__tests__/fixtures/cli.output--watch-import.css"
 
     var watchImportProcess = spawn(
       "node",
       [
-        "bin/cssnext",
+        "dist/bin",
         "--watch",
-        "test/fixtures/cli.watch-import.css",
+        "src/__tests__/fixtures/cli.watch-import.css",
         watchOut,
       ],
       {stdio: "inherit"}
@@ -66,7 +68,7 @@ if (!(process.env.TRAVIS || process.env.APPVEYOR)) {
     // trigger a change in cli.import.css to add a new watched file
     // cli.import2.css
     fs.writeFileSync(
-      "test/fixtures/cli.watch-import.css",
+      "src/__tests__/fixtures/cli.watch-import.css",
       "/**/ @import 'cli.watch-import-import.css';"
     )
 
@@ -83,7 +85,7 @@ if (!(process.env.TRAVIS || process.env.APPVEYOR)) {
       )
 
       // remove this newly imported file
-      fs.writeFileSync("test/fixtures/cli.watch-import.css", "/**/")
+      fs.writeFileSync("src/__tests__/fixtures/cli.watch-import.css", "/**/")
 
       // check the output has been update
       setTimeout(function() {
@@ -103,7 +105,11 @@ if (!(process.env.TRAVIS || process.env.APPVEYOR)) {
 
           // trigger a change in previously imported file
           var now = (new Date()).getTime()
-          fs.utimesSync("test/fixtures/cli.watch-import-import.css", now, now)
+          fs.utimesSync(
+            "src/__tests__/fixtures/cli.watch-import-import.css",
+            now,
+            now
+          )
 
           // not sure why but it's better with the statSync on the watched file
           // in this delayed call

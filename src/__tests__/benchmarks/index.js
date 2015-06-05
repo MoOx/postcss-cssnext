@@ -3,7 +3,7 @@ var t = require("microtime")
 var assign = require("object-assign")
 
 var input = require("fs").readFileSync(
-  "./test/benchmarks.css",
+  "./src/__tests__/benchmarks.css",
   {encoding: "utf8"}
 )
 
@@ -12,7 +12,7 @@ for (var i = 0; i <= 10; i++) {
   input += input
 }
 // check the real input
-// require("fs").writeFileSync("./test/fixtures/bench.css", input)
+// require("fs").writeFileSync("./src/__tests__/fixtures/bench.css", input)
 
 // test each features
 var keys = Object.keys(cssnext.features)

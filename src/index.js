@@ -126,9 +126,14 @@ function cssnext(string, options) {
 
   // propagate browsers option to autoprefixer
   if (features.autoprefixer !== false) {
-    features.autoprefixer = features.autoprefixer || {}
-    features.autoprefixer.browsers = features.autoprefixer.browsers ||
-      options.browsers
+    features.autoprefixer = {
+      browsers: (
+        features.autoprefixer && features.autoprefixer.browsers
+          ? features.autoprefixer.browsers
+          : options.browsers
+      ),
+      ...(features.autoprefixer || {}),
+    }
 
     // autoprefixer doesn't like an "undefined" value. Related to coffee ?
     if (features.autoprefixer.browsers === undefined) {

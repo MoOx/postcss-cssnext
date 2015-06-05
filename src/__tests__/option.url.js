@@ -11,7 +11,7 @@ test("cssnext url option", function(t) {
     default: utils.readFixture("url.default.expected").trim(),
     options: utils.readFixture("url.options.expected").trim(),
   }
-  var opts = {from: "./test/fixtures/url.css"}
+  var opts = {from: "./src/__tests__/fixtures/url.css"}
 
   t.equal(
     cssnext(input, opts).trim(),

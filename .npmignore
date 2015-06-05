@@ -1,0 +1,7 @@
+# no need for compiled tests
+dist/__tests__
+
+# no need for website sources on npm
+docs/dist
+docs/scripts
+docs/src

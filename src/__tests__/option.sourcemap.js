@@ -11,29 +11,34 @@ var cssnext = require("..")
  */
 test("sourcemap", function(t) {
   var options = {
-    from: "./test/fixtures/sourcemap.css",
+    from: "./src/__tests__/fixtures/sourcemap.css",
     sourcemap: true,
   }
-  t.equal(
+  t.ok(
     cssnext(
       utils.readFixture("sourcemap"),
       options
-    ),
-    utils.readFixture("sourcemap.expected").trim(),
+    )
+      .indexOf("/*# sourceMappingURL=data:application/json;base64,")
+      > -1,
     "should contain a correct inlined sourcemap"
   )
 
   var result = cssnext(
     utils.readFixture("sourcemap"),
     {
-      from: "./test/fixtures/sourcemap.css",
+      from: "./src/__tests__/fixtures/sourcemap.css",
       map: {inline: false},
     }
   )
 
-  t.equal(
-    result.map.toString(),
-    utils.readFixture("sourcemap.expected", ".map").trim(),
+  t.ok(
+    /* eslint-disable max-len */
+    result.map.toString()
+      .indexOf(utils.readFixture("sourcemap.expected-start", "").trim())
+      > -1
+    ,
+    /* eslint-enable max-len */
     "should contain a correct sourcemap"
   )
 

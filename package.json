@@ -20,12 +20,10 @@
   "bugs": {
     "url": "https://github.com/cssnext/cssnext/issues"
   },
-  "files": [
-    "CHANGELOG.md",
-    "LICENSE",
-    "bin",
-    "index.js"
-  ],
+  "main": "dist/index.js",
+  "bin": {
+    "cssnext": "dist/bin.js"
+  },
   "dependencies": {
     "autoprefixer-core": "^5.0.0",
     "caniuse-api": "^1.3.1",
@@ -110,18 +108,18 @@
     "webpack-nano-logs": "^1.0.0"
   },
   "scripts": {
-    "standalone": "browserify --standalone cssnext index.js -o dist/cssnext.js",
+    "babelify": "babel src --out-dir dist",
+    "prepublish": "npm run babelify",
+    "standalone": "browserify --standalone cssnext dist/index.js -o dist/cssnext.js",
     "#lint": "even if there is a .eslintignore symlink, we use an explicit command because windows don't like unix symlink",
     "lint": "eslint --ignore-path .gitignore .",
-    "tape": "tape test/*.js",
-    "test": "npm run lint && npm run standalone && npm run tape",
+    "#tape": "to avoid really slow tests, we run babel once & run tests on the result",
+    "tape": "tape 'dist/__tests__/*.js'",
+    "test": "npm run lint && npm run standalone && npm run babelify && npm run tape",
     "docs-build": "babel-node docs/scripts/build",
     "docs-start": "npm run docs-build -- --dev-server --open",
     "docs-test": "npm run docs-build -- --production",
     "_docs-deploy": "GIT_DEPLOY_DIR=docs/dist ./docs/scripts/deploy-to-gh-pages.sh -v",
     "docs-deploy": "npm run docs-test && npm run _docs-deploy"
-  },
-  "bin": {
-    "cssnext": "bin/cssnext.js"
   }
 }

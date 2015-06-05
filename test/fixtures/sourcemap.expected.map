@@ -1,1 +1,0 @@
-{"version":3,"sources":["test/fixtures/sourcemap.imported.css","test/fixtures/sourcemap.css"],"names":[],"mappings":"AAAA;EACE,iBAAiB;CAClB;;ACAD;EACE,WAAW;CACZ","file":"test/fixtures/sourcemap.css","sourcesContent":["html {\n  background: blue;\n}\n","@import \"sourcemap.imported.css\";\n\nbody {\n  color: red;\n}\n"]}

@@ -13,7 +13,7 @@ test("cssnext import option", function(t) {
     default: utils.readFixture("import.default.expected").trim(),
     options: utils.readFixture("import.options.expected").trim(),
   }
-  var opts = {from: "test/fixtures/here"}
+  var opts = {from: "src/__tests__/fixtures/here"}
   function transformFn(c) {
     return c + "\n new {}"
   }
