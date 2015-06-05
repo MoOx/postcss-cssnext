@@ -3,7 +3,6 @@ var test = require("tape")
 var utils = require("./utils")
 var cssnext = require("..")
 var postcss = require("postcss")
-var assign = require("object-assign")
 
 test("cssnext url option", function(t) {
   var input = utils.readFixture("url")
@@ -19,7 +18,7 @@ test("cssnext url option", function(t) {
     "should be able to adjust url"
   )
   t.equal(
-    cssnext(input, assign({}, opts, {url: {url: "inline"}})).trim(),
+    cssnext(input, {...opts, url: {url: "inline"}}).trim(),
     expected.options,
     "should be able to adjust url with options"
   )

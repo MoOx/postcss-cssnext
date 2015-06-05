@@ -125,7 +125,7 @@ You can enable minification by passing `true` or by providing an object containi
 
 ## `messages`
 
-(default: true)
+(default: `true`)
 
 Allows you to show/hide some warnings messages.
 Passing a boolean will enable/disable messages on all interfaces (console + css)

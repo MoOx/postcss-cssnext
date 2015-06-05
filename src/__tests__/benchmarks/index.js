@@ -1,6 +1,5 @@
 var cssnext = require("../")
 var t = require("microtime")
-var assign = require("object-assign")
 
 var input = require("fs").readFileSync(
   "./src/__tests__/benchmarks.css",
@@ -25,7 +24,7 @@ keys.forEach(function(k) {
 console.log("Each features is tested on a 2MB input (>100 000 lines)\n")
 
 keys.forEach(function(k) {
-  var enable = assign({}, allOff)
+  var enable = {...allOff}
   enable[k] = true
   var start = t.now()
   cssnext(input, {features: enable})
