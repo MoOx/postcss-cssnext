@@ -96,6 +96,26 @@ By default, `url()` are rebased according to `from` (and `to`) option(s). This i
 
 _Note: you can pass [postcss-url options](https://github.com/postcss/postcss-url#options) directly in order to inline or have more control over urls._
 
+## `plugins`
+
+(default: undefined)
+
+Allows you to pass your own array of transformations. You can just pass your own
+[PostCSS](https://github.com/postcss/postcss) plugins.
+
+```js
+{
+  plugins: [
+    require("postcss-sass-stuff"),
+    require("postcss-more-crazy-stuff"),
+    // custom transformation code
+    function(styles) {
+
+    },
+  ],
+}
+```
+
 ## `compress`
 
 (default: `false`)

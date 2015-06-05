@@ -198,6 +198,17 @@ function cssnext(string, options) {
     }
   })
 
+  if (options.plugins) {
+    if (!Array.isArray(options.plugins)) {
+      throw new Error(
+        "cssnext 'plugins' option expect an array of PostCSS plugins. " +
+        "You provided " + (typeof options.plugins)
+      )
+    }
+
+    options.plugins.forEach(plugin => postcssInstance.use(plugin))
+  }
+
   // minification
   if (options.compress) {
     var nano = require("cssnano")

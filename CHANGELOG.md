@@ -1,3 +1,6 @@
+
+- Added: `plugins` option that allows you to pipe your own transformation ([#118](https://github.com/cssnext/cssnext/issues/118))
+
 # 1.6.0 - 2015-06-02
 
 - Added: prevent mutability issues with frozen options objects ([#147](https://github.com/cssnext/cssnext/pull/147))
