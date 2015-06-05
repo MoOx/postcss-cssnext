@@ -1,5 +1,6 @@
 
-- Added: `plugins` option that allows you to pipe your own transformation ([#118](https://github.com/cssnext/cssnext/issues/118))
+- Added: `plugins` option that allows you to pipe your own transformations ([#118](https://github.com/cssnext/cssnext/issues/118))
+- Added: `messages` option that allows you to see messages of transformations ([#88](https://github.com/cssnext/cssnext/issues/88))
 
 # 1.6.0 - 2015-06-02
 

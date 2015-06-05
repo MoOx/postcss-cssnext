@@ -123,6 +123,27 @@ Allows you to pass your own array of transformations. You can just pass your own
 Allows you to compress the output (using [cssnano](https://github.com/ben-eb/cssnano)).
 You can enable minification by passing `true` or by providing an object containing [cssnano options](https://github.com/ben-eb/cssnano#options).
 
+## `messages`
+
+(default: true)
+
+Allows you to show/hide some warnings messages.
+Passing a boolean will enable/disable messages on all interfaces (console + css)
+You can also pass a object to enable or disable some interfaces only:
+
+
+```js
+{
+  messages: {
+    // if you want only messages in console
+    console: true,
+
+    // if you want only messages in CSS
+    css: true
+  }
+}
+```
+
 ## `sourcemap`
 
 (default: `false`)

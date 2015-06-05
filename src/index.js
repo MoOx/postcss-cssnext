@@ -1,9 +1,11 @@
-import postcss from "postcss"
-import assign from "object-assign"
+import postCSS from "postcss"
 import {isSupported} from "caniuse-api"
 
 import libraryFeatures from "./features"
 import featuresActivationMap from "./features-activation-map"
+
+import postcssMessagesConsole from "postcss-log-warnings"
+import postcssMessagesCSS from "postcss-messages"
 
 /**
  * Process a CSS `string`
@@ -24,7 +26,7 @@ function cssnext(string, options) {
     options = options || {}
   }
 
-  options = assign({}, options)
+  options = {...options}
 
   var features = options.features || {}
 
@@ -53,16 +55,16 @@ function cssnext(string, options) {
     }
   }
 
-  var postcssInstance = postcss()
+  var postcss = postCSS()
 
   // only enable import & url if fs module is available
   var fs = require("fs")
   if (fs && fs.readFile) {
     // @import
     if (options.import !== false) {
-      postcssInstance.use(require("postcss-import")(
+      postcss.use(require("postcss-import")(
         typeof options.import === "object"
-          ? assign({}, options.import)
+          ? {...options.import}
           : undefined
         )
       )
@@ -70,9 +72,9 @@ function cssnext(string, options) {
 
     // url() adjustements
     if (options.url !== false) {
-      postcssInstance.use(require("postcss-url")(
+      postcss.use(require("postcss-url")(
         typeof options.url === "object"
-          ? assign({}, options.url)
+          ? {...options.url}
           : undefined
         )
       )
@@ -101,9 +103,9 @@ function cssnext(string, options) {
         )
       )
     ) {
-      postcssInstance.use(cssnext.features[key](
+      postcss.use(cssnext.features[key](
         typeof features[key] === "object"
-          ? assign({}, features[key])
+          ? {...features[key]}
           : undefined
         )
       )
@@ -118,30 +120,53 @@ function cssnext(string, options) {
       )
     }
 
-    options.plugins.forEach(plugin => postcssInstance.use(plugin))
+    options.plugins.forEach(plugin => postcss.use(plugin))
   }
 
   // minification
   if (options.compress) {
     var nano = require("cssnano")
-    postcssInstance.use(
-      nano(
-        assign(
-          {},
+    postcss.use(
+      nano({
+        ...(
           typeof options.compress === "object"
-            ? assign({}, options.compress)
-            : {},
-          // forced calc options to false
-          // since we already used it
-          {calc: false}
-        )
+          ? options.compress
+          : {}
+        ),
+        // forced calc options to false
+        // since we already used it
+        calc: false,
+      })
+    )
+  }
+
+  if (options.messages) {
+    const messagesPlugins = (
+      // true === all interfaces
+      options.messages === true
+      ? [
+        postcssMessagesConsole,
+        postcssMessagesCSS,
+      ]
+      : (
+        // object: only the one you want
+        typeof options.messages === "object"
+        ? [
+          ...options.messages.console ? [postcssMessagesConsole] : [],
+          ...options.messages.css ? [postcssMessagesCSS] : [],
+        ]
+        // otherwise nothing :)
+        : []
       )
     )
+    messagesPlugins.forEach(plugin => {
+      postcss.use(plugin)
+    })
   }
 
   // classic API if string is passed
   if (typeof string === "string") {
-    var result = postcssInstance.process(string, options)
+    var result = postcss.process(string, options)
 
     // default behavior, cssnext returns a css string if no or inline sourcemap
     if (options.map === null || (options.map === true || options.map.inline)) {
@@ -153,7 +178,7 @@ function cssnext(string, options) {
   }
   // or return the postcss instance that can be consumed as a postcss plugin
   else {
-    return postcssInstance
+    return postcss
   }
 }
 
