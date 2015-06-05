@@ -8,9 +8,8 @@
 
 > Use tomorrow's CSS syntax, today.
 
-This is a CSS transpiler (CSS4+ to CSS3) that allows you to use tomorrow's CSS syntax today.
-It transforms CSS specs that are not already implemented in popular browsers into more compatible CSS.  
-
+cssnext is a CSS transpiler that allows you to use the latest CSS syntax today.
+It transforms CSS specs into more compatible CSS so you don’t need to wait for browser support. 
 
 ## Check out [cssnext website](http://cssnext.io/)
 
