@@ -135,11 +135,28 @@ You can also pass a object to enable or disable some interfaces only:
 ```js
 {
   messages: {
-    // if you want only messages in console
-    console: true,
-
     // if you want only messages in CSS
     css: true
+
+    // if you want only messages in console
+    console: true,
+  }
+}
+```
+
+By default, messages are removed when they have been displayed.
+If you want, you can pass option to the PostCSS plugins used
+
+```js
+{
+  messages: {
+    css: {
+      // see https://github.com/postcss/postcss-messages
+    }
+
+    console: {
+      // see https://github.com/davidtheclark/postcss-log-warnings
+    },
   }
 }
 ```

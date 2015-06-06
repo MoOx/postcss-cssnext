@@ -141,19 +141,38 @@ function cssnext(string, options) {
   }
 
   if (options.messages) {
+    // console plugins MUST be called after others because
+    // by default it remove messages from the registry
+    // (which make sense)
     const messagesPlugins = (
       // true === all interfaces
       options.messages === true
       ? [
-        postcssMessagesConsole,
         postcssMessagesCSS,
+        postcssMessagesConsole,
       ]
       : (
         // object: only the one you want
         typeof options.messages === "object"
         ? [
-          ...options.messages.console ? [postcssMessagesConsole] : [],
-          ...options.messages.css ? [postcssMessagesCSS] : [],
+          ...options.messages.css
+            ? [
+              postcssMessagesCSS(
+                typeof options.messages.css === "object"
+                ? {...options.messages.css}
+                : undefined
+              ),
+            ]
+            : [],
+          ...options.messages.console
+            ? [
+              postcssMessagesConsole(
+                typeof options.messages.console === "object"
+                ? {...options.messages.console}
+                : undefined
+              ),
+            ]
+            : [],
         ]
         // otherwise nothing :)
         : []
