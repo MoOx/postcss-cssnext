@@ -34,7 +34,7 @@ test("cssnext option: messages", (t) => {
     })
       .process("test{}")
       .css
-      .indexOf(`content: "${ msg }"`) > -1
+      .indexOf(`content: "\\0232A  ${ msg }"`) > -1
     ,
     "should add messages in css"
   )

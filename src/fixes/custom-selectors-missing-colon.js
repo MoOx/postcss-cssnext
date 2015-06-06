@@ -18,7 +18,7 @@ export default postcss.plugin(
               `syntax ':'. Now you must use '${ cs } :--{name}' syntax ` +
               `instead of '${ cs } --{name}'. The support of ` +
               `syntax without ':' and this warning will be remove in the ` +
-              `next major release`
+              `next major release.`
             )
           }
 
@@ -27,7 +27,7 @@ export default postcss.plugin(
               `Incorrect syntax for ${ cs }, should be ` +
               `'${ cs } :${ rule.params }' instead of ` +
               `'${ cs } ${ rule.params }'. ` +
-              `Please adjust this value to remove this message`
+              `Please adjust this value to remove this message.`
             ),
             {node: rule}
           )
