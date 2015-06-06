@@ -33,7 +33,7 @@ export default {
   "box-shadow": "0 0 .6em rgba(0,0,0, .25)",
 
   // nice font
-  "white-space": "pre",
+  "white-space": "pre-wrap",
   "font-family": "Menlo, Monaco, monospace",
   "text-shadow": "0 1px #fff",
 }

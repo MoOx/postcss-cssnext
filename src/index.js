@@ -3,11 +3,15 @@ import fs from "fs"
 import postCSS from "postcss"
 import {isSupported} from "caniuse-api"
 
+import fixes from "./fixes"
+
 import libraryFeatures from "./features"
 import featuresActivationMap from "./features-activation-map"
 
 import postcssMessagesConsole from "postcss-log-warnings"
-import postcssMessagesCSS from "postcss-messages"
+// https://github.com/postcss/postcss-messages/issues/16
+// import postcssMessagesCSS from "postcss-messages"
+import postcssMessagesCSS from "./plugins/messages"
 import postcssMessageCSSstyles from "./messages.css.js"
 
 /**
@@ -85,8 +89,11 @@ function cssnext(string, options) {
     }
   }
 
+  // tmp fixes
+  Object.keys(fixes).forEach(key => postcss.use(fixes[key]))
+
   // features
-  Object.keys(cssnext.features).forEach(function(key) {
+  Object.keys(cssnext.features).forEach(key => {
     // feature is auto enabled if: not disable && (enabled || no data yet ||
     // !supported yet)
     if (

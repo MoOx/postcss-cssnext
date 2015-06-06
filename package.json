@@ -44,7 +44,7 @@
     "postcss-color-rgba-fallback": "^1.0.0",
     "postcss-custom-media": "^1.3.0",
     "postcss-custom-properties": "^3.0.0",
-    "postcss-custom-selectors": "^1.1.0",
+    "postcss-custom-selectors": "^2.0.1",
     "postcss-font-variant": "^1.0.0",
     "postcss-import": "^5.0.0",
     "postcss-log-warnings": "^0.3.1",

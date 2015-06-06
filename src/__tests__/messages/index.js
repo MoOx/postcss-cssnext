@@ -7,20 +7,19 @@ import cssnext from "../.."
 
 console.log("cssnext renderering test for messages styles")
 
-const msg = "This is a message"
+const msg = "This is a test message"
 const page = path.join("dist", "__tests__styles.html")
 
-const css = cssnext("body{}", {
-  plugins: [
-    (styles, result) => {
-      result.warn(msg)
-      result.warn(msg)
-      result.warn(msg)
-      result.warn(msg)
-      result.warn(msg)
-    },
-  ],
-})
+const css = cssnext(
+  "@custom-selector --h h1, h2; @custom-selector --H h3, h4; body{}",
+  {
+    plugins: [
+      (styles, result) => {
+        result.warn(msg)
+      },
+    ],
+  }
+)
 
 fs.writeFileSync(
   page,
