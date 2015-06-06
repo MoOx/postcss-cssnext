@@ -1,4 +1,4 @@
-## Contributing
+# Contributing
 
 _cssnext uses a lot of [postcss](https://github.com/postcss) plugins,
 so you might need to take a look at them if you find an issue or want to create
@@ -14,6 +14,8 @@ $ npm test
 $ git checkout -b fix.bug423
 ```
 
+## Details
+
 ### Add a feature
 
 1. Add test files (input + expected output) in [`src/__tests__/fixtures/features`](src/__tests__/features)
@@ -27,3 +29,11 @@ $ git checkout -b fix.bug423
 - Run test and be happy
 - Add feature in [the docs](docs/content)
 - Add feature on [the playground](https://github.com/cssnext/playground) example
+
+
+### Edit messages styles
+
+- default styles are in src/messages.css.js
+- test render by running: `babel-node src/__tests__/messages`.
+Styles will be compiled, rendered in a web page & the webpage will be opened for
+you.

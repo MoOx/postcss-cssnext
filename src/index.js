@@ -1,3 +1,5 @@
+import fs from "fs"
+
 import postCSS from "postcss"
 import {isSupported} from "caniuse-api"
 
@@ -6,6 +8,7 @@ import featuresActivationMap from "./features-activation-map"
 
 import postcssMessagesConsole from "postcss-log-warnings"
 import postcssMessagesCSS from "postcss-messages"
+import postcssMessageCSSstyles from "./messages.css.js"
 
 /**
  * Process a CSS `string`
@@ -26,17 +29,19 @@ function cssnext(string, options) {
     options = options || {}
   }
 
-  options = {...options}
+  options = {
+    features: {},
+    // options.browsers is deliberately undefined by defaut to inherit
+    // browserslist default behavior
+    // default sourcemap
+    // if `map` option is passed, `sourcemap` option is ignored
+    // if `sourcemap` option is passed, a inline map is used
+    map: (options.sourcemap ? true : null),
+    messages: true,
+    ...options,
+  }
 
-  var features = options.features || {}
-
-  // options.browsers is deliberately undefined by defaut to inherit
-  // browserslist default behavior
-
-  // default sourcemap
-  // if `map` option is passed, `sourcemap` option is ignored
-  // if `sourcemap` option is passed, a inline map is used
-  options.map = options.map || (options.sourcemap ? true : null)
+  const features = options.features
 
   // propagate browsers option to autoprefixer
   if (features.autoprefixer !== false) {
@@ -58,7 +63,6 @@ function cssnext(string, options) {
   var postcss = postCSS()
 
   // only enable import & url if fs module is available
-  var fs = require("fs")
   if (fs && fs.readFile) {
     // @import
     if (options.import !== false) {
@@ -148,7 +152,7 @@ function cssnext(string, options) {
       // true === all interfaces
       options.messages === true
       ? [
-        postcssMessagesCSS,
+        postcssMessagesCSS({styles: postcssMessageCSSstyles}),
         postcssMessagesConsole,
       ]
       : (
@@ -159,7 +163,10 @@ function cssnext(string, options) {
             ? [
               postcssMessagesCSS(
                 typeof options.messages.css === "object"
-                ? {...options.messages.css}
+                ? {
+                  styles: postcssMessageCSSstyles,
+                  ...options.messages.css,
+                }
                 : undefined
               ),
             ]
