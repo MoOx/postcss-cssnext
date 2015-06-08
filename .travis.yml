@@ -1,19 +1,9 @@
-# http://blog.travis-ci.com/2014-12-17-faster-builds-with-container-based-infrastructure/
 sudo: false
 
 language: node_js
 
 node_js:
   - 0.12
-
-notifications:
-  irc:
-    channels:
-      - "irc.freenode.org#cssnext"
-    on_success: change
-    on_failure: always
-    use_notice: true
-    skip_join: true
 
 script:
   - npm run test
