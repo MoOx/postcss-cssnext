@@ -64,13 +64,7 @@ renderer.heading = function(text, level, raw) {
 
   return (
     `<h${level} id="${id}">
-      <a class="cssnext-Title-anchor" href="${
-        rebaseUrl(
-          this.options.__metalsmith.baseHref,
-          path.dirname(this.options.__metalsmith.__filename),
-          "#" + id
-        )
-      }">#</a>
+      <a class="cssnext-Title-anchor" href="#${id}">#</a>
       ${text}
     </h${level}>`
   )
