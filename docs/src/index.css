@@ -344,6 +344,27 @@ pre {
   border-radius: 0.3em;
   background: color(#fafafa a(.6));
 }
+
+  .hljs-comment {
+    opacity: .4;
+  }
+
+    .hljs-comment:hover {
+      opacity: .6;
+    }
+
+  .hljs-keyword {
+    font-weight: bold;
+  }
+
+  .hljs-class,
+  .hljs-tag,
+  .hljs-keyword,
+  .hljs-pseudo,
+  .hljs-function {
+    color: var(--cssnext-Color-purple);
+  }
+
 .markdownIt-Anchor {
   margin-left: -1.5rem;
   opacity: .4;
