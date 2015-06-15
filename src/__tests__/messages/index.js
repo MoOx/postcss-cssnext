@@ -5,7 +5,7 @@ import opn from "opn"
 
 import cssnext from "../.."
 
-console.log("cssnext renderering test for messages styles")
+console.log("# cssnext renderering test for messages styles")
 
 const msg = "This is a test message"
 const page = path.join("dist", "__tests__styles.html")
@@ -18,6 +18,9 @@ const css = cssnext(
         result.warn(msg)
       },
     ],
+    messages: {
+      browser: true,
+    },
   }
 )
 

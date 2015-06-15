@@ -128,7 +128,8 @@ You can enable minification by passing `true` or by providing an object containi
 (default: `true`)
 
 Allows you to show/hide some warnings messages.
-Passing a boolean will enable/disable messages on all interfaces (console + css)
+Passing a boolean will enable/disable messages on all interfaces
+(console + browser).
 You can also pass a object to enable or disable some interfaces only:
 
 
@@ -136,7 +137,7 @@ You can also pass a object to enable or disable some interfaces only:
 {
   messages: {
     // if you want only messages in CSS
-    css: true
+    browser: true
 
     // if you want only messages in console
     console: true,
@@ -150,7 +151,7 @@ If you want, you can pass option to the PostCSS plugins used
 ```js
 {
   messages: {
-    css: {
+    browser: {
       // see https://github.com/postcss/postcss-messages
     }
 
@@ -182,7 +183,9 @@ This is the [postcss `map` option](https://github.com/postcss/postcss#source-map
 
 _If you specify this option, `sourcemap` value will be ignored._
 
-**`/!\` Using this option might change the return value of `cssnext()` (`object` instead of css `string` if map is not inlined. The object will be like {css: "{css string}", map: {sourcemap object}})**
+**`/!\` Using this option might change the return value of `cssnext()` (`object`
+instead of css `string` if map is not inlined. The object will be like
+`{css: "{css string}", map: {sourcemap object}})`**
 
 ## `from`
 

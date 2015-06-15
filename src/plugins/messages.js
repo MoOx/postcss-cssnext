@@ -2,54 +2,104 @@
 // https://github.com/postcss/postcss-messages/issues/16
 
 import postcss from "postcss"
+import colors from "chalk"
 
-export default postcss.plugin("postcss-messages", function(opts) {
-  if (opts && opts.disabled === true) {
-    return function() {}
+// http://www.w3.org/TR/CSS2/syndata.html#characters
+// tl;dr: escape as utf-16 all non ascii chars + new lines & quotes
+function escapeForCSS(string) {
+  let newString = ""
+  for (let i = 0; i < string.length; i++) {
+    const ch = string.charAt(i)
+    switch (ch) {
+      case "\n":
+      case "\r":
+        newString += "\\A "
+        break
+
+      case "\\":
+      case "\'":
+      case "\"":
+        newString += "\\" + ch
+        break
+
+      default:
+        // non ascii
+        if (!ch.match(/^[\x00-\x7F]*$/)) {
+          let hexCh = string.charCodeAt(i).toString(16)
+          while (hexCh.length < 4) {
+            hexCh = "0" + hexCh
+          }
+          // space at the end is required
+          newString += "\\" + hexCh + " "
+          continue
+        }
+        newString += string[i]
+    }
   }
 
-  var defaultStyles = {}
+  return newString
+}
 
-  var styles = (opts && opts.styles ? opts.styles : defaultStyles)
-
-  return function(css, result) {
-    var warnings = result.warnings()
-    if (warnings.length === 0) {
-      return
+export default postcss.plugin(
+  "postcss-messages",
+  (options) => {
+    options = {
+      ...options,
     }
 
-    var selector = "html::before"
-    if (opts && opts.selector) {
-      selector = opts.selector
+    if (options.disabled) {
+      return function() {}
     }
-    else {
-      css.eachRule(function(rule) {
-        if (
-          rule.selector === "html::before" ||
-          rule.selector === "html:before"
-        ) {
-          selector = "html::after"
-        }
+
+    const defaultStyles = {
+      // ...
+    }
+    const styles = options.styles
+      ? options.styles
+      : defaultStyles
+
+    return (css, result) => {
+      const warnings = result.warnings()
+      if (warnings.length === 0) {
+        return
+      }
+
+      var selector = "html::before"
+      if (options.selector) {
+        selector = options.selector
+      }
+      else {
+        css.eachRule(rule => {
+          if (
+            rule.selector === "html::before" ||
+            rule.selector === "html:before"
+          ) {
+            selector = "html::after"
+          }
+        })
+      }
+
+      css.append({selector: selector})
+      Object.keys(styles).forEach(key => {
+        css.last.append({
+          prop: key,
+          value: styles[key],
+        })
+      })
+
+      const bullet = "〉"
+      const content = warnings.map(function(message) {
+        return message.toString()
+      }).join(`\n\n\n${ bullet } `)
+
+      css.last.append({
+        prop: "content",
+        value: (
+          "\"" +
+          escapeForCSS(`${ bullet } ${ colors.stripColor(content) }`) +
+          "\""
+        ),
       })
     }
-
-    css.append({selector: selector})
-    for (var style in styles) {
-      if (styles.hasOwnProperty(style)) {
-        css.last.append({prop: style, value: styles[style]})
-      }
-    }
-
-    // http://www.evotech.net/articles/testjsentities.html
-    // 〉
-    const bullet = "\\0232A  "
-    var content = warnings.map(function(message) {
-      return message.toString().replace(/"/g, "\\\"")
-    }).join("\\00000a\\00000a" + bullet)
-
-    css.last.append({
-      prop: "content",
-      value: "\"" + bullet + content + "\"",
-    })
   }
-})
+)

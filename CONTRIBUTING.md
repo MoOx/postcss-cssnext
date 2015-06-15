@@ -33,7 +33,7 @@ $ git checkout -b fix.bug423
 
 ### Edit messages styles
 
-- default styles are in src/messages.css.js
+- default styles are in src/messages.browser.js
 - test render by running: `babel-node src/__tests__/messages`.
 Styles will be compiled, rendered in a web page & the webpage will be opened for
 you.

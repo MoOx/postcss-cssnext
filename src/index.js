@@ -12,7 +12,7 @@ import postcssMessagesConsole from "postcss-log-warnings"
 // https://github.com/postcss/postcss-messages/issues/16
 // import postcssMessagesCSS from "postcss-messages"
 import postcssMessagesCSS from "./plugins/messages"
-import postcssMessageCSSstyles from "./messages.css.js"
+import postcssMessageCSSstyles from "./messages.browser.js"
 
 /**
  * Process a CSS `string`
@@ -166,25 +166,27 @@ function cssnext(string, options) {
         // object: only the one you want
         typeof options.messages === "object"
         ? [
-          ...options.messages.css
+          ...options.messages.browser
             ? [
-              postcssMessagesCSS(
-                typeof options.messages.css === "object"
-                ? {
-                  styles: postcssMessageCSSstyles,
-                  ...options.messages.css,
-                }
-                : undefined
-              ),
+              postcssMessagesCSS({
+                styles: postcssMessageCSSstyles,
+                ...(
+                  typeof options.messages.browser === "object"
+                  ? options.messages.browser
+                  : {}
+                ),
+              }),
             ]
             : [],
           ...options.messages.console
             ? [
-              postcssMessagesConsole(
-                typeof options.messages.console === "object"
-                ? {...options.messages.console}
-                : undefined
-              ),
+              postcssMessagesConsole({
+                ...(
+                  typeof options.messages.console === "object"
+                  ? options.messages.console
+                  : {}
+                ),
+              }),
             ]
             : [],
         ]

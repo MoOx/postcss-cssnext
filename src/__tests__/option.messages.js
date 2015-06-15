@@ -29,12 +29,12 @@ test("cssnext option: messages", (t) => {
     cssnext({
       ...defaultOptions,
       messages: {
-        css: true,
+        browser: true,
       },
     })
       .process("test{}")
       .css
-      .indexOf(`content: "\\0232A  ${ msg }"`) > -1
+      .indexOf(`${ msg }`) > -1
     ,
     "should add messages in css"
   )
@@ -43,7 +43,7 @@ test("cssnext option: messages", (t) => {
     cssnext({
       ...defaultOptions,
       messages: {
-        css: false,
+        browser: false,
       },
     })
       .process("test{}")
