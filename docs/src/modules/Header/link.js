@@ -3,10 +3,6 @@ import cx from "classnames"
 
 export default class HeaderLink extends Component {
 
-  static contextTypes = {
-    file: PropTypes.object.isRequired,
-  }
-
   static propTypes = {
     href: PropTypes.string.isRequired,
     className: PropTypes.oneOfType([
@@ -19,6 +15,10 @@ export default class HeaderLink extends Component {
       PropTypes.array,
       PropTypes.object,
     ]).isRequired,
+  }
+
+  static contextTypes = {
+    file: PropTypes.object.isRequired,
   }
 
   render() {

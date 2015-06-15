@@ -6,16 +6,6 @@ import Analytics from "../Analytics"
 
 export default class Body extends Component {
 
-  static defaultProps = {
-    scripts: [],
-    footer: true,
-  }
-
-  static contextTypes = {
-    pkg: PropTypes.object.isRequired,
-    file: PropTypes.object.isRequired,
-  }
-
   static propTypes = {
     children: PropTypes.oneOfType([
       PropTypes.array,
@@ -23,6 +13,16 @@ export default class Body extends Component {
     ]).isRequired,
     scripts: PropTypes.array,
     footer: PropTypes.bool,
+  }
+
+  static contextTypes = {
+    pkg: PropTypes.object.isRequired,
+    file: PropTypes.object.isRequired,
+  }
+
+  static defaultProps = {
+    scripts: [],
+    footer: true,
   }
 
   render() {

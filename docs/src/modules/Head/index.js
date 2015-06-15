@@ -2,10 +2,6 @@ import React, {Component, PropTypes} from "react"
 
 export default class Head extends Component {
 
-  static defaultProps = {
-    stylesheets: [],
-  }
-
   static propTypes = {
     title: PropTypes.string.isRequired,
     children: PropTypes.oneOfType([
@@ -13,6 +9,10 @@ export default class Head extends Component {
       PropTypes.object,
     ]),
     stylesheets: PropTypes.array,
+  }
+
+  static defaultProps = {
+    stylesheets: [],
   }
 
   render() {
