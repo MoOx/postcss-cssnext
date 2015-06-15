@@ -34,7 +34,7 @@ a {
 }
 a:hover { color: gray(255, 50%) }
 a:active { color: rebeccapurple }
-a:visited { color: color(var(--highlightColor) blackness(+20%)) }
+a:any-link { color: color(var(--highlightColor) blackness(+20%)) }
 
 /* font stuff */
 h2 {

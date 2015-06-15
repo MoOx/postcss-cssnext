@@ -48,6 +48,9 @@ export default {
   pseudoClassNot(options) {
     return require("postcss-selector-not")(options)
   },
+  pseudoClassAnyLink(options) {
+    return require("postcss-pseudo-class-any-link")(options)
+  },
   colorRgba(options) {
     return require("postcss-color-rgba-fallback")(options)
   },

@@ -251,6 +251,21 @@ h1 {
 |
 [Plugin documentation](https://github.com/robwierzbowski/node-pixrem)
 
+## `:any-link` pseudo-class
+
+Allows you to use `:any-link` pseudo class.
+
+```css
+nav :any-link {
+  background-color: yellow;
+}
+```
+
+[Specification](http://dev.w3.org/csswg/selectors/#any-link-pseudo)
+|
+[Plugin documentation](https://github.com/jonathantneal/postcss-pseudo-class-any-link)
+
+
 ## `:matches` pseudo-class
 
 Allows you to use `:matches()`.

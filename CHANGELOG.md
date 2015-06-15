@@ -4,8 +4,11 @@ Previously they were working with **and without** pseudo syntax ':'
 Now you must use `@custom-selector :--{name}` syntax instead of `@custom-selector --{name}`
 The support of syntax without : and the warning message will be remove in the next major release
 ([#97](https://github.com/cssnext/cssnext/issues/97))
-- Added: `plugins` option that allows you to pipe your own transformations ([#118](https://github.com/cssnext/cssnext/issues/118))
-- Added: `messages` option that allows you to see messages of transformations ([#88](https://github.com/cssnext/cssnext/issues/88))
+- Added: `plugins` option that allows you to pipe your own transformations
+([#118](https://github.com/cssnext/cssnext/issues/118))
+- Added: `messages` option that allows you to see messages of transformations
+([#88](https://github.com/cssnext/cssnext/issues/88))
+- Added: `:any-link` pseudo class support
 
 # 1.6.0 - 2015-06-02
 

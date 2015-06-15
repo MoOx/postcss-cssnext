@@ -36,7 +36,7 @@ a {
 }
 a:hover { color: #FFFFFF; color: rgba(255, 255, 255, 0.5) }
 a:active { color: rgb(102, 51, 153) }
-a:visited { color: rgb(89, 142, 153) }
+a:link,a:visited { color: rgb(89, 142, 153) }
 
 /* font stuff */
 h2 {

@@ -20,15 +20,18 @@ $ git checkout -b fix.bug423
 
 1. Add test files (input + expected output) in [`src/__tests__/fixtures/features`](src/__tests__/features)
 - If the feature can affect some others, update [`src/__tests__/fixtures/cases/example.css`](src/__tests__/cases/example.css) to test integration with other features
-- Run test, & check tests are broken (otherwise feature is useless)
+
 - Choose a pretty simple and clear name (that match the specs)
 - Add the feature in the [README features list](#features) (title, link to spec, link of the plugin, short desc)
 - Add the feature in the [README node.js options list](#features-default-all-features) (camelCaseName)
 - Add the dependency in the [`package.json`](package.json)
 - Add the feature in the source (in [`index.js`](index.js)), in the appropriate place (order matter)
+For now, use a empty function instead of the right module
+- Run test, & check tests are broken (otherwise feature is useless)
+Now, call the right plugin
 - Run test and be happy
 - Add feature in [the docs](docs/content)
-- Add feature on [the playground](https://github.com/cssnext/playground) example
+- Add feature on [the playground](docs/content/playground.html) example
 
 
 ### Edit messages styles
