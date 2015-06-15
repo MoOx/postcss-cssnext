@@ -9,14 +9,6 @@ export default class Footer extends Component {
     file: PropTypes.object.isRequired,
   }
 
-  static defaultProps = {
-    playground: true,
-  }
-
-  static propTypes = {
-    playground: PropTypes.bool,
-  }
-
   render() {
     return (
       <footer className="cssnext-Footer">

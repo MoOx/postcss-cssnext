@@ -36,7 +36,6 @@ title: cssnext
       the latest CSS syntax today.
       It transforms CSS specs into more compatible CSS
       so you don't need to wait for browser support.
-
       <em class="cssnext-Section-highlight">
         You can literally write future-proof CSS
         and forget old preprocessor specific syntax.
@@ -182,7 +181,6 @@ title: cssnext
         &amp;
         <a href="https://github.com/postcss/postcss/graphs/contributors">PostCSS</a>.
         activities graphs.
-
         <br />
         cssnext uses lots of PostCSS plugins,
         <a href="https://github.com/postcss/">so check them out too.</a>

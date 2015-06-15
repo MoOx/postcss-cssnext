@@ -14,6 +14,10 @@ import rename from "metalsmith-rename"
 // import rss from "metalsmith-rss"
 import react from "metalsmith-react"
 
+import markdownIt from "markdown-it"
+import markdownOptions from "./markdown"
+import markdownItTocAndAnchor from "markdown-it-toc-and-anchor"
+
 import webpack from "webpack"
 import webpackConfig from "./webpack.config"
 
@@ -23,9 +27,6 @@ import copyWithContentHash from "copy-with-content-hash/hash-file"
 // dev
 import watch from "metalsmith-watch"
 import devServer from "./webpack-dev-server"
-
-// customize marked
-import "./marked"
 
 import pkg from "../../package"
 
@@ -55,7 +56,10 @@ smith
 // convert markdown
 .use(
   markdown({
-    baseHref: `${__SERVER_URL__}/`,
+    markdownIt: markdownIt(markdownOptions)
+      .use(markdownItTocAndAnchor, {
+        tocFirstLevel: 2,
+      }),
   })
 )
 

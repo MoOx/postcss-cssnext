@@ -4,27 +4,33 @@ backgroundModifier: darkTeam
 incomplete: true
 ---
 
+
+@[toc]
+
+
 ## Installation
 
 cssnext is available on
 [github](https://github.com/cssnext/cssnext)
 and [npm](https://www.npmjs.org/package/cssnext).
 
+```console
+$ npm install cssnext
+```
+
 You can install it:
 
 - locally (`--save` or `--save-dev`), to use it through [npm scripts](https://www.npmjs.org/doc/misc/npm-scripts.html) (`npm run`) or via `.node_modules/.bin/cssnext`
 - globally (`-g`), to use it through the [CLI](cli) _(not recommended)_
-- by using [other plugins & tools](#usage) like [gulp-cssnext](https://github.com/cssnext/gulp-cssnext)
+- by using [other plugins & tools](#usage) like
+[gulp-cssnext](https://github.com/cssnext/gulp-cssnext)
+or
+[cssnext-loader](https://github.com/cssnext/cssnext-loader)
 
 The main package offers
 [a CLI](https://github.com/cssnext/cssnext#cli) and
 [a Node.js/io.js API](https://github.com/cssnext/cssnext#nodejs-api").
 
-<p class="cssnext-Center">
-```
-$ npm install cssnext
-```
-</p>
 
 ## Usage
 
@@ -34,23 +40,22 @@ as a [PostCSS](https://github.com/postcss/postcss) plugin
 or through others tools below:
 
 <p class="cssnext-Tools">
-[webpack](https://github.com/cssnext/cssnext-loader)
-,
-[gulp](https://github.com/cssnext/gulp-cssnext)
-,
-[grunt](https://github.com/cssnext/grunt-cssnext)
-,
-[brunch](https://github.com/cssnext/cssnext-brunch)
-,
-[broccoli](https://github.com/cssnext/broccoli-cssnext)
-,
-[connect](https://github.com/cssnext/cssnext-connect)
-,
-[duo](https://github.com/cssnext/duo-cssnext)
-or in
-[prepros 5](https://prepros.io/)
+  <a href="https://github.com/cssnext/cssnext-loader">webpack</a>
+  ,
+  <a href="https://github.com/cssnext/gulp-cssnext">gulp</a>
+  ,
+  <a href="https://github.com/cssnext/grunt-cssnext">grunt</a>
+  ,
+  <a href="https://github.com/cssnext/cssnext-brunch">brunch</a>
+  ,
+  <a href="https://github.com/cssnext/broccoli-cssnext">broccoli</a>
+  ,
+  <a href="https://github.com/cssnext/cssnext-connect">connect</a>
+  ,
+  <a href="https://github.com/cssnext/duo-cssnext">duo</a>
+  or in
+  <a href="https://prepros.io/">Prepros</a>
 </p>
-
 
 ### CLI
 
@@ -73,7 +78,7 @@ Or use CLI std(in|out) redirection(s)
 $ cat input.css | cssnext > output.css
 ```
 
-### CLI options
+#### CLI options
 
 If you don't care about a certain feature, such as custom media queries, you can omit support for them like so:
 
@@ -83,7 +88,7 @@ $ cssnext --no-custom-media index.css
 
 To enable source maps for these files, add the `--sourcemap` flag.
 
-**To see all CLI options**
+_To see all CLI options_
 
 ```console
 $ cssnext --help
@@ -93,7 +98,9 @@ $ cssnext --help
 
 cssnext can be used with its own API or as a PostCSS plugin.
 
-#### `var string = cssnext(string, options)`
+#### As a JavaScript library
+
+`var string = cssnext(string, options)`
 
 cssnext accepts 2 arguments: a css string and an object of options.
 
@@ -109,9 +116,14 @@ fs.writeFileSync("dist/index.css", output)
 
 **`/!\` Note: if you are using non inlined sourcemaps, cssnext will return an object: `{css: string, map: sourcemap}`**
 
-See [sourcemap](#sourcemap-default-false) & [map](#map-default-depends-on-sourcemap) options for more informations.
+See
+[sourcemap](/usage/#sourcemap) &
+[map](/usage/#map)
+options for more informations.
 
-#### `var postcssPlugin = cssnext(options)`
+#### As a PostCSS plugin
+
+`var postcssPlugin = cssnext(options)`
 
 cssnext can be used as a postcss plugin:
 

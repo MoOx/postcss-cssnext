@@ -108,8 +108,15 @@ export default class Default extends Component {
               className={cx({
                 [file.className]: file.className,
                 "r-Grid-cell": true,
+                "js-markdownIt-TOCOriginalContainer": true,
               })}
               dangerouslySetInnerHTML={{__html: file.contents}}
+            />
+            <div
+              className={cx({
+                "r-Grid-cell": true,
+                "js-markdownIt-TOCPlaceholder": true,
+              })}
             />
           </section>
 

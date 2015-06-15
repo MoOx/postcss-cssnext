@@ -3,10 +3,10 @@ title: How to use cssnext ?
 incomplete: true
 ---
 
-When you have correctly [setup](/setup/) cssnext, you might want to tweak it a
-little bit. You will find below all the available options.
+@[toc]
 
-# Options
+When you have correctly [setup](/setup/) cssnext, you might want to tweak it a
+little bit. You will find below all the available **options**.
 
 ## `browsers`
 

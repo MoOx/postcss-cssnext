@@ -86,6 +86,12 @@ h3 {
   font-weight: 300;
 }
 
+h4,
+h5,
+h6 {
+  font-weight: 400;
+}
+
 /**
  * customise recipes
  */
@@ -337,4 +343,45 @@ pre {
   border: 1px solid #DDD;
   border-radius: 0.3em;
   background: color(#fafafa a(.6));
+}
+.markdownIt-Anchor {
+  margin-left: -1.5rem;
+  opacity: .4;
+}
+
+  .markdownIt-Anchor:hover {
+    opacity: .8;
+  }
+
+.markdownIt-TOC {
+  padding: 1rem 1rem 1rem 2rem;
+
+  font-size: var(--r-small-fontSize);
+
+  border: 1px solid color(#000 a(.2));
+  border-radius: 3px;
+  opacity: .6;
+}
+
+  .markdownIt-TOC:hover {
+    opacity: .8;
+  }
+
+  .markdownIt-TOC ul {
+    margin: 0;
+    padding: 0 1rem;
+  }
+
+@media (--r-minM) {
+  /* use sticky when it's on the right */
+  .js-markdownIt-TOCPlaceholder {
+    position: sticky;
+    top: 3rem;
+  }
+
+  .js-markdownIt-TOCPlaceholder .markdownIt-TOC {
+    margin: 2rem 0 2rem 1rem;
+    /* cheat a little about t he layout */
+    width: 120%;
+  }
 }
