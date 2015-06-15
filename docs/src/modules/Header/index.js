@@ -14,7 +14,7 @@ export default class Header extends Component {
 
   render() {
     return (
-      <header className="cssnext-Header">
+      <header className="cssnext-Header js-Headroom">
         <div className="r-Grid">
           <div className="r-Grid-cell r-minM--4of6">
             <span className="cssnext-Header-nav">

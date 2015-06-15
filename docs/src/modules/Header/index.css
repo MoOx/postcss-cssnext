@@ -105,3 +105,15 @@
           )
         ;
       }
+
+.js-Headroom {
+  transition: .2s;
+}
+
+  .js-Headroom--show {
+
+  }
+
+  .js-Headroom--hide {
+    transform: translateY(-100%);
+  }
