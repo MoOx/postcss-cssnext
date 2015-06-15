@@ -1,10 +1,10 @@
-var test = require("tape")
+const test = require("tape")
 
-var cssnext = require("..")
+const cssnext = require("..")
 
 test("cssnext browsers option", function(t) {
-  var input = ":root{--foo:bar}baz{qux:var(--foo)}"
-  var output = "baz{qux: bar}"
+  const input = ":root{--foo:bar}baz{qux:var(--foo)}"
+  const output = "baz{qux: bar}"
 
   // fx 30 doesn't handle custom prop
   t.equal(
@@ -32,8 +32,8 @@ test("cssnext browsers option", function(t) {
 })
 
 test("cssnext browsers option propagation", function(t) {
-  var input = "body{transition: 1s}"
-  var output = "body{-webkit-transition: 1s;transition: 1s}"
+  const input = "body{transition: 1s}"
+  const output = "body{-webkit-transition: 1s;transition: 1s}"
 
   // Safari 6 need -webkit prefix
   t.equal(

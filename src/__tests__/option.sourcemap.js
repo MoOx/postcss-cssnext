@@ -1,16 +1,16 @@
 /**
  * Test dependencies
  */
-var test = require("tape")
+const test = require("tape")
 
-var utils = require("./utils")
-var cssnext = require("..")
+const utils = require("./utils")
+const cssnext = require("..")
 
 /**
  * Sourcemap tests
  */
 test("sourcemap", function(t) {
-  var options = {
+  const options = {
     from: "./src/__tests__/fixtures/sourcemap.css",
     sourcemap: true,
   }
@@ -24,7 +24,7 @@ test("sourcemap", function(t) {
     "should contain a correct inlined sourcemap"
   )
 
-  var result = cssnext(
+  const result = cssnext(
     utils.readFixture("sourcemap"),
     {
       from: "./src/__tests__/fixtures/sourcemap.css",

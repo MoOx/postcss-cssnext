@@ -1,5 +1,5 @@
-var cssnext = require("../../../../")
-var cssnextVersion = require("../../../../package").version
+const cssnext = require("../../../../")
+const cssnextVersion = require("../../../../package").version
 
 function playground(opts) {
   opts.options = opts.options || {}
@@ -11,10 +11,10 @@ function playground(opts) {
   }
 
   function cssnextify() {
-    var css = opts.from.value
+    const css = opts.from.value
 
     opts.console.innerHTML = ""
-    var converted = opts.to.value
+    const converted = opts.to.value
 
     try {
       converted = cssnext(css, opts.options)

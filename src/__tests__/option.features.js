@@ -1,17 +1,17 @@
 /**
  * Test dependencies
  */
-var test = require("tape")
+const test = require("tape")
 
-var utils = require("./utils")
-var cssnext = require("..")
-var cssnextStandalone = require("../cssnext")
+const utils = require("./utils")
+const cssnext = require("..")
+const cssnextStandalone = require("../cssnext")
 
 /**
  * Features tests
  */
-var toSlug = require("to-slug-case")
-var testFeature = function(
+const toSlug = require("to-slug-case")
+const testFeature = function(
   t,
   feature,
   cssnextInstance,
@@ -20,14 +20,14 @@ var testFeature = function(
   input,
   expected
 ) {
-  var options = {from: source, sourcemap: false, features: {}}
+  const options = {from: source, sourcemap: false, features: {}}
 
   // disable all features
   Object.keys(cssnextInstance.features).forEach(function(key) {
     options.features[key] = false
   })
 
-  var css = cssnextInstance(input, options)
+  const css = cssnextInstance(input, options)
   t.notEqual(
     css,
     expected,
@@ -55,10 +55,10 @@ var testFeature = function(
 }
 
 Object.keys(cssnext.features).forEach(function(name) {
-  var slug = toSlug(name)
-  var source = utils.fixturePath("features/" + slug)
-  var input = utils.readFixture("features/" + slug)
-  var expected = utils.readFixture("features/" + slug + ".expected")
+  const slug = toSlug(name)
+  const source = utils.fixturePath("features/" + slug)
+  const input = utils.readFixture("features/" + slug)
+  const expected = utils.readFixture("features/" + slug + ".expected")
 
   test(slug, function(t) {
     testFeature(t, name, cssnext, "node.js", source, input, expected)

@@ -8,7 +8,7 @@ defineGlobalVariables()
 
 const production = __PROD__ || process.argv.includes("--production")
 
-var config = {
+const config = {
   entry: {
     index: [
       "./docs/src/index",

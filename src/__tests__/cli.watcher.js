@@ -1,24 +1,24 @@
 /**
  * Test dependencies
  */
-var exec = require("child_process").exec
-var spawn = require("child_process").spawn
-var fs = require("fs")
+const exec = require("child_process").exec
+const spawn = require("child_process").spawn
+const fs = require("fs")
 
-var test = require("tape")
+const test = require("tape")
 
-var utils = require("./utils")
+const utils = require("./utils")
 
 // I don't success to call the kill() process from node and both Travis CI and
 // Appveyor so we avoid this test on this environnements
 if (!(process.env.TRAVIS || process.env.APPVEYOR)) {
   // node bin is used to help for windows
-  var cssnextBin = "node dist/bin"
+  const cssnextBin = "node dist/bin"
 
   test("cli/watcher", function(t) {
-    var planned = 0
+    let planned = 0
 
-    var watchProcess = exec(
+    const watchProcess = exec(
       cssnextBin +
         " --watch src/__tests__/fixtures/cli.error.css" +
         " src/__tests__/fixtures/cli.output--watch.css",
@@ -33,8 +33,8 @@ if (!(process.env.TRAVIS || process.env.APPVEYOR)) {
       }
     )
 
-    var msgWatch = "should output error messages when `--watch` option passed"
-    var watchTimeout = setTimeout(function() {
+    const msgWatch = "should output error messages when `--watch` option passed"
+    const watchTimeout = setTimeout(function() {
       t.fail(msgWatch)
       watchProcess.kill()
     }, 5000)
@@ -48,9 +48,9 @@ if (!(process.env.TRAVIS || process.env.APPVEYOR)) {
     planned += 2
 
     // watch/import tests
-    var watchOut = "src/__tests__/fixtures/cli.output--watch-import.css"
+    const watchOut = "src/__tests__/fixtures/cli.output--watch-import.css"
 
-    var watchImportProcess = spawn(
+    const watchImportProcess = spawn(
       "node",
       [
         "dist/bin",
@@ -104,7 +104,7 @@ if (!(process.env.TRAVIS || process.env.APPVEYOR)) {
           // be watched and check back that the output file has the same mtime
 
           // trigger a change in previously imported file
-          var now = (new Date()).getTime()
+          const now = (new Date()).getTime()
           fs.utimesSync(
             "src/__tests__/fixtures/cli.watch-import-import.css",
             now,
@@ -114,11 +114,11 @@ if (!(process.env.TRAVIS || process.env.APPVEYOR)) {
           // not sure why but it's better with the statSync on the watched file
           // in this delayed call
           setTimeout(function() {
-            var outStat = fs.statSync(watchOut)
+            const outStat = fs.statSync(watchOut)
 
             setTimeout(function() {
               // this time, it should not trigger anything
-              var outStatAfter = fs.statSync(watchOut)
+              const outStatAfter = fs.statSync(watchOut)
               t.equal(
                 outStat.mtime.getTime(),
                 outStatAfter.mtime.getTime(),

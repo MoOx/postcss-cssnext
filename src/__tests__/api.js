@@ -1,18 +1,18 @@
 /**
  * Test dependencies
  */
-var test = require("tape")
+const test = require("tape")
 
-var utils = require("./utils")
-var cssnext = require("..")
-var postcss = require("postcss")
+const utils = require("./utils")
+const cssnext = require("..")
+const postcss = require("postcss")
 
 /**
  * Global API tests
  */
 test("cssnext API", function(t) {
-  var input = utils.readFixture("cases/example")
-  var output = utils.readFixture("cases/example.expected")
+  const input = utils.readFixture("cases/example")
+  const output = utils.readFixture("cases/example.expected")
 
   // simple API strings + options
   t.ok(
@@ -30,7 +30,7 @@ test("cssnext API", function(t) {
   )
 
   // as a postcss plugin
-  var postcssInstance = cssnext()
+  const postcssInstance = cssnext()
   t.ok(
     typeof postcssInstance === "object" && postcssInstance.process,
     "should return a postcss instance"
@@ -41,7 +41,7 @@ test("cssnext API", function(t) {
     "simple example with multiples features should work with postcss API"
   )
 
-  var opts = {}
+  const opts = {}
   cssnext("html{}", opts)
   t.ok(!opts.hasOwnProperty("map"), "doesn't mutate options object")
 

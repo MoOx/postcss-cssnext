@@ -1,16 +1,16 @@
-var test = require("tape")
+const test = require("tape")
 
-var utils = require("./utils")
-var cssnext = require("..")
-var postcss = require("postcss")
+const utils = require("./utils")
+const cssnext = require("..")
+const postcss = require("postcss")
 
 test("cssnext url option", function(t) {
-  var input = utils.readFixture("url")
-  var expected = {
+  const input = utils.readFixture("url")
+  const expected = {
     default: utils.readFixture("url.default.expected").trim(),
     options: utils.readFixture("url.options.expected").trim(),
   }
-  var opts = {from: "./src/__tests__/fixtures/url.css"}
+  const opts = {from: "./src/__tests__/fixtures/url.css"}
 
   t.equal(
     cssnext(input, opts).trim(),

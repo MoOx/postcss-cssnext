@@ -86,7 +86,7 @@ smith
     defaultTemplate: "Default",
     before: "<!doctype html>",
     data: {
-      pkg: pkg,
+      pkg,
       metadata: smith.metadata(),
     },
   })

@@ -1,18 +1,18 @@
 #!/usr/bin/env node
 
-var fs = require("fs")
-var path = require("path")
+const fs = require("fs")
+const path = require("path")
 
 // until this land in a stable version of node (for a while)
 // https://github.com/joyent/node/commit/20176a
 // we will this instead of process.exit()
-var exit = require("exit")
+const exit = require("exit")
 
-var color = require("chalk")
-var program = require("commander")
+const color = require("chalk")
+const program = require("commander")
 
-var cssnext = require("..")
-var pkg = require("../package")
+const cssnext = require("..")
+const pkg = require("../package")
 
 program
   .version(pkg.version)
@@ -27,12 +27,12 @@ program
   .option("-v, --verbose", "verbose output")
 
 // register features as flag
-var format = require("util").format
-var toSlug = require("to-slug-case")
-var toSpace = require("to-space-case")
+const format = require("util").format
+const toSlug = require("to-slug-case")
+const toSpace = require("to-space-case")
 Object.keys(cssnext.features).forEach(function(feature) {
-  var flag = format("--no-%s", toSlug(feature))
-  var desc = format("disable %s support", toSpace(feature))
+  const flag = format("--no-%s", toSlug(feature))
+  const desc = format("disable %s support", toSpace(feature))
   program.option(flag, desc)
 })
 
@@ -58,7 +58,7 @@ program.on("--help", function() {
 
 program.parse(process.argv)
 
-var config = program.config ? require(path.resolve(program.config)) : {}
+const config = program.config ? require(path.resolve(program.config)) : {}
 if (!config.features) {
   config.features = {}
 }
@@ -87,9 +87,9 @@ if ("watch" in program) {
   config.watch = program.watch
 }
 
-var input = program.args[0] ? path.resolve(program.args[0]) : null
-var output = program.args[1] ? path.resolve(program.args[1]) : null
-var verbose = program.verbose
+const input = program.args[0] ? path.resolve(program.args[0]) : null
+const output = program.args[1] ? path.resolve(program.args[1]) : null
+const verbose = program.verbose
 
 if (input && !fs.existsSync(input)) {
   console.error(color.red("Unable to read file"), input)
@@ -98,7 +98,7 @@ if (input && !fs.existsSync(input)) {
 
 config.from = input
 // init & adjust watcher with postcss-import dependencies
-var watcher
+let watcher
 if (config.watch) {
   if (!input || !output) {
     console.error(
@@ -112,8 +112,8 @@ if (config.watch) {
   // watch `@import`ed files
   if (config.import) {
     // keep a up to date list of imported files
-    var importedFiles = [input]
-    var arrayDiff = function(array, array2) {
+    let importedFiles = [input]
+    const arrayDiff = function(array, array2) {
       return array.filter(function(i) {
         return array2.indexOf(i) < 0
       })
@@ -123,7 +123,7 @@ if (config.watch) {
       return path.relative(process.cwd(), file)
     }
 
-    var watcherOnImport = function(imported) {
+    const watcherOnImport = function(imported) {
       arrayDiff(importedFiles, imported).forEach(function(file) {
         watcher.unwatch(rebaseFile(file))
       })
@@ -141,7 +141,7 @@ if (config.watch) {
     // keep the existing onImport callback if any
     if (config.import.onImport) {
       config.import.onImport = function(files) {
-        var originalOnImport = config.import.onImport
+        const originalOnImport = config.import.onImport
         watcherOnImport(files)
         originalOnImport(files)
       }
@@ -160,7 +160,7 @@ function transform() {
     }
 
     try {
-      var css = cssnext(buffer.toString(), config)
+      const css = cssnext(buffer.toString(), config)
 
       require("write-file-stdout")(output, css)
       if (verbose && output) {
@@ -205,7 +205,7 @@ if (watcher) {
  * time
  */
 function log() {
-  var args = [].slice.call(arguments)
+  const args = [].slice.call(arguments)
   args.unshift("[" + color.grey(new Date().toLocaleTimeString()) + "]")
   console.log.apply(console.log, args)
 }

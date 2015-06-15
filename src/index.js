@@ -64,7 +64,7 @@ function cssnext(string, options) {
     }
   }
 
-  var postcss = postCSS()
+  const postcss = postCSS()
 
   // only enable import & url if fs module is available
   if (fs && fs.readFile) {
@@ -136,7 +136,7 @@ function cssnext(string, options) {
 
   // minification
   if (options.compress) {
-    var nano = require("cssnano")
+    const nano = require("cssnano")
     postcss.use(
       nano({
         ...(
@@ -201,7 +201,7 @@ function cssnext(string, options) {
 
   // classic API if string is passed
   if (typeof string === "string") {
-    var result = postcss.process(string, options)
+    const result = postcss.process(string, options)
 
     // default behavior, cssnext returns a css string if no or inline sourcemap
     if (options.map === null || (options.map === true || options.map.inline)) {

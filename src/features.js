@@ -1,57 +1,57 @@
 export default {
   // Reminder: order is important
-  customProperties: function(options) {
+  customProperties(options) {
     return require("postcss-custom-properties")(options)
   },
-  calc: function(options) {
+  calc(options) {
     return require("postcss-calc")(options)
   },
-  customMedia: function(options) {
+  customMedia(options) {
     return require("postcss-custom-media")(options)
   },
-  mediaQueriesRange: function(options) {
+  mediaQueriesRange(options) {
     return require("postcss-media-minmax")(options)
   },
-  customSelectors: function(options) {
+  customSelectors(options) {
     return require("postcss-custom-selectors")(options)
   },
-  colorRebeccapurple: function(options) {
+  colorRebeccapurple(options) {
     return require("postcss-color-rebeccapurple")(options)
   },
-  colorHwb: function(options) {
+  colorHwb(options) {
     return require("postcss-color-hwb")(options)
   },
-  colorGray: function(options) {
+  colorGray(options) {
     return require("postcss-color-gray")(options)
   },
-  colorHexAlpha: function(options) {
+  colorHexAlpha(options) {
     return require("postcss-color-hex-alpha")(options)
   },
-  colorFunction: function(options) {
+  colorFunction(options) {
     return require("postcss-color-function")(options)
   },
-  fontVariant: function(options) {
+  fontVariant(options) {
     return require("postcss-font-variant")(options)
   },
-  filter: function(options) {
+  filter(options) {
     return require("pleeease-filters")(options)
   },
-  rem: function(options) {
+  rem(options) {
     return require("pixrem")(options)
   },
-  pseudoElements: function(options) {
+  pseudoElements(options) {
     return require("postcss-pseudoelements")(options)
   },
-  pseudoClassMatches: function(options) {
+  pseudoClassMatches(options) {
     return require("postcss-selector-matches")(options)
   },
-  pseudoClassNot: function(options) {
+  pseudoClassNot(options) {
     return require("postcss-selector-not")(options)
   },
-  colorRgba: function(options) {
+  colorRgba(options) {
     return require("postcss-color-rgba-fallback")(options)
   },
-  autoprefixer: function(options) {
+  autoprefixer(options) {
     return require("autoprefixer-core")(options)
   },
 }

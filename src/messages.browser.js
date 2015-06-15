@@ -8,7 +8,7 @@ const svgGradient = `
   <stop  offset="0.325" style="stop-color:#507DBF"/>
   <stop  offset="1" style="stop-color:#5C71B6"/>
 </linearGradient>`
-let warningSVG = `
+const warningSVG = `
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
   width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
   ${ svgGradient }

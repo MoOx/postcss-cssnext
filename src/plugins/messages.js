@@ -64,7 +64,7 @@ export default postcss.plugin(
         return
       }
 
-      var selector = "html::before"
+      let selector = "html::before"
       if (options.selector) {
         selector = options.selector
       }
@@ -79,7 +79,7 @@ export default postcss.plugin(
         })
       }
 
-      css.append({selector: selector})
+      css.append({selector})
       Object.keys(styles).forEach(key => {
         css.last.append({
           prop: key,

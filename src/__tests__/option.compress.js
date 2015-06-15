@@ -1,15 +1,15 @@
 /**
  * Test dependencies
  */
-var test = require("tape")
+const test = require("tape")
 
-var utils = require("./utils")
-var cssnext = require("..")
-var postcss = require("postcss")
+const utils = require("./utils")
+const cssnext = require("..")
+const postcss = require("postcss")
 
 test("cssnext compress option", function(t) {
-  var input = utils.readFixture("compress")
-  var expected = {
+  const input = utils.readFixture("compress")
+  const expected = {
     default: utils.readFixture("compress.default.expected").trim(),
     options: utils.readFixture("compress.options.expected").trim(),
   }

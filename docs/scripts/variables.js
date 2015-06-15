@@ -33,7 +33,7 @@ variables.__SERVER_URL__ =
 
 export default variables
 
-// define some global var like __DEV__
+// define some global const like __DEV__
 export function defineGlobalVariables() {
   Object.keys(variables).forEach((k) => global[k] = variables[k])
 }

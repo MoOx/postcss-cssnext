@@ -1,19 +1,19 @@
 /**
  * Test dependencies
  */
-var test = require("tape")
+const test = require("tape")
 
-var utils = require("./utils")
-var cssnext = require("..")
-var postcss = require("postcss")
+const utils = require("./utils")
+const cssnext = require("..")
+const postcss = require("postcss")
 
 test("cssnext import option", function(t) {
-  var input = utils.readFixture("import")
-  var expected = {
+  const input = utils.readFixture("import")
+  const expected = {
     default: utils.readFixture("import.default.expected").trim(),
     options: utils.readFixture("import.options.expected").trim(),
   }
-  var opts = {from: "src/__tests__/fixtures/here"}
+  const opts = {from: "src/__tests__/fixtures/here"}
   function transformFn(c) {
     return c + "\n new {}"
   }
@@ -37,7 +37,7 @@ test("cssnext import option", function(t) {
     expected.default,
     "should be able to import even as a postcss plugin"
   )
-  var importOpt = {
+  const importOpt = {
     transform: transformFn,
   }
   Object.freeze(importOpt)

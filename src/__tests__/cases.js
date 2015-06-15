@@ -1,10 +1,10 @@
 /**
  * Test dependencies
  */
-var test = require("tape")
+const test = require("tape")
 
-var utils = require("./utils")
-var cssnext = require("..")
+const utils = require("./utils")
+const cssnext = require("..")
 
 /**
  * Use cases test

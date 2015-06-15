@@ -85,9 +85,12 @@ export default class SVGIcon extends Component {
       }
     )
 
-    let {
+    const {
       width,
-      height
+    } = this.props
+
+    let {
+      height,
     } = this.props
 
     if (width && height === undefined) {

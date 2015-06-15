@@ -1,24 +1,24 @@
 /**
  * Test dependencies
  */
-var exec = require("child_process").exec
+const exec = require("child_process").exec
 
-var test = require("tape")
+const test = require("tape")
 
-var utils = require("./utils")
-var cssnext = require("..")
+const utils = require("./utils")
+const cssnext = require("..")
 
 /**
  * CLI tests
  */
-var input = utils.readFixture("cli")
-var output = utils.readFixture("cli.expected")
+const input = utils.readFixture("cli")
+const output = utils.readFixture("cli.expected")
 
 // node bin is used to help for windows
-var cssnextBin = "node dist/bin"
+const cssnextBin = "node dist/bin"
 
 test("cli", function(t) {
-  var planned = 0
+  let planned = 0
 
   exec(
     cssnextBin +
@@ -28,7 +28,7 @@ test("cli", function(t) {
       if (err) {
         throw err
       }
-      var res = utils.readFixture("cli.output--io")
+      const res = utils.readFixture("cli.output--io")
       t.equal(res, output, "should read from a file and write to a file")
       utils.remove("cli.output--io")
     }
@@ -46,7 +46,7 @@ test("cli", function(t) {
   })
   planned += 1
 
-  var childProcess = exec(cssnextBin, function(err, stdout) {
+  const childProcess = exec(cssnextBin, function(err, stdout) {
     if (err) {
       throw err
     }
@@ -104,8 +104,8 @@ test("cli", function(t) {
   })
   planned += 1
 
-  var noCustomPropInput = ":root{--foo:bar}baz{qux:var(--foo)}"
-  var childProcessBrowsers = exec(
+  const noCustomPropInput = ":root{--foo:bar}baz{qux:var(--foo)}"
+  const childProcessBrowsers = exec(
     cssnextBin + " --browsers \"Firefox >= 31\"",
     function(err, stdout) {
     if (err) {
@@ -194,15 +194,15 @@ test("cli", function(t) {
   )
   planned += 1
 
-  var toSpace = require("to-space-case")
-  var toSlug = require("to-slug-case")
-  var features = Object.keys(cssnext.features)
-  var no = "--no-" + features.map(function(feature) {
+  const toSpace = require("to-space-case")
+  const toSlug = require("to-slug-case")
+  const features = Object.keys(cssnext.features)
+  const no = "--no-" + features.map(function(feature) {
     return toSlug(feature)
   }).join(" --no-")
   features.forEach(function(feature) {
-    var slug = toSlug(feature)
-    var featureOutput = utils.readFixture("features/" + slug)
+    const slug = toSlug(feature)
+    const featureOutput = utils.readFixture("features/" + slug)
     exec(
       cssnextBin + " " + no +
         " src/__tests__/fixtures/features/" + slug + ".css",

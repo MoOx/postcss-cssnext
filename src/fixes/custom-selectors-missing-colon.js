@@ -1,7 +1,7 @@
 import postcss from "postcss"
 
 export default postcss.plugin(
-  "cssnext:custom-selectors:missing-colon-fix",
+  "cssnext",
   () => {
     const cs = "@custom-selector"
 
@@ -23,12 +23,12 @@ export default postcss.plugin(
           }
 
           result.warn(
-            (
-              `Incorrect syntax for ${ cs }, should be ` +
-              `'${ cs } :${ rule.params }' instead of ` +
-              `'${ cs } ${ rule.params }'. ` +
-              `Please adjust this value to remove this message.`
-            ),
+            [
+              `Incorrect syntax for ${ cs }.`,
+              `  ${ cs } ${ rule.params }`,
+              `Should be:`,
+              `  ${ cs } :${ rule.params }`,
+            ].join("\n\n"),
             {node: rule}
           )
 

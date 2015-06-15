@@ -1,8 +1,8 @@
 /**
  * Module dependencies
  */
-var fs = require("fs")
-var cssnext = require("../..")
+const fs = require("fs")
+const cssnext = require("../..")
 
 /**
  * Check if a string is contained into another
@@ -32,7 +32,7 @@ function fixturePath(name, ext) {
  * @param {String} filename
  */
 function remove(filename) {
-  var file = fixturePath(filename)
+  const file = fixturePath(filename)
   if (!fs.existsSync(file)) {
     return
   }
@@ -57,7 +57,7 @@ function readFixture(name, ext) {
  * @param {Object|Function} options cssnext options
  */
 function compareFixtures(t, name, message, options) {
-  var actual
+  let actual
   if (typeof options === "function") {
     actual = options(readFixture(name))
   }
@@ -70,7 +70,7 @@ function compareFixtures(t, name, message, options) {
   // handy thing: checkout actual in the *.actual.css file
   fs.writeFile(fixturePath(name + ".actual"), actual)
 
-  var expected = readFixture(name + ".expected")
+  const expected = readFixture(name + ".expected")
 
   return t.equal(
     actual.trim(),
