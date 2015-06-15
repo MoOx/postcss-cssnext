@@ -6,121 +6,337 @@ incomplete: true
 
 ## automatic vendor prefixes
 
-(via [autoprefixer](https://github.com/postcss/autoprefixer)),
+Vendor prefixes are automatically added (and removed if deprecated/useless
+depending on your browser scope) using
+[autoprefixer](https://github.com/postcss/autoprefixer))
 
 
-## [custom properties & `var()`](http://www.w3.org/TR/css-variables/)
+## custom properties & `var()`
 
-limited to `:root`
-([⇗](https://github.com/postcss/postcss-custom-properties)),
+The current transformation for custom properties aims to provide a
+future-proof way of using a **limited subset (to top-level `:root` selector)**
+of the features provided by native CSS custom properties.
 
-## [reduced `calc()`](https://github.com/MoOx/reduce-css-calc#readme)
+```css
+:root {
+  --mainColor: red;
+}
 
-to optimize previously parsed `var()` references
-([⇗](https://github.com/postcss/postcss-calc)),
+a {
+  color: var(--mainColor);
+}
+```
 
-## [custom media queries](http://dev.w3.org/csswg/mediaqueries/#custom-mq)
+(The transformation is not complete and can't be properly. By injecting selectors
+with new computed rules, we will break original cascade & unexpected results
+might happen).
 
-a nice way to have semantic media queries
-([⇗](https://github.com/postcss/postcss-custom-media)),
+[Specification](http://www.w3.org/TR/css-variables/)
+|
+[Plugin documentation](https://github.com/postcss/postcss-custom-properties)
 
-## [media queries ranges](http://dev.w3.org/csswg/mediaqueries/#mq-ranges)
+## reduced `calc()`
 
-that allows to replace min-/max- with `<=` & `>=` (syntax easier to read)
-([⇗](https://github.com/postcss/postcss-media-minmax)),
+Allows you to use safely calc with custom properties by optimizing previously
+parsed `var()` references.
 
-## [custom selectors](http://dev.w3.org/csswg/css-extensions/#custom-selectors)
+```css
+:root {
+  --fontSize: 1rem;
+}
 
-to create your own selectors
-([⇗](https://github.com/postcss/postcss-custom-selector)),
+h1 {
+  font-size: calc(var(--fontSize) * 2);
+}
+```
 
-## [`color()`](http://dev.w3.org/csswg/css-color/#modifying-colors)
+[Specification](https://github.com/MoOx/reduce-css-calc#readme)
+|
+[Plugin documentation](https://github.com/postcss/postcss-calc)
+
+## custom media queries
+
+A nice way to have semantic media queries
+
+```css
+@custom-media --small-viewport (max-width: 30em);
+/* check out media queries ranges for a better syntax !*/
+
+@media (--small-viewport) {
+  /* styles for small viewport */
+}
+```
+
+[Specification](http://dev.w3.org/csswg/mediaqueries/#custom-mq)
+|
+[Plugin documentation](https://github.com/postcss/postcss-custom-media)
+
+## media queries ranges
+
+Allows to replace min-/max- with `<=` & `>=` (syntax easier to read)
+
+```css
+@media (width >= 500px) and (width <= 1200px) {
+  /* your styles */
+}
+
+/* or coupled with custom media queries */
+@custom-media --only-medium-screen (width >= 500px) and (width <= 1200px);
+
+@media (--only-medium-screen) {
+  /* your styles */
+}
+```
+
+[Specification](http://dev.w3.org/csswg/mediaqueries/#mq-ranges)
+|
+[Plugin documentation](https://github.com/postcss/postcss-media-minmax)
+
+## custom selectors
+
+Alows you to create your own selectors
+
+```css
+@custom-selector :--button button, .button;
+
+:--button {
+  /* styles for your buttons */
+}
+:--button:hover {
+  /* hover styles for your button */
+}
+```
+
+[Specification](http://dev.w3.org/csswg/css-extensions/#custom-selectors)
+|
+[Plugin documentation](https://github.com/postcss/postcss-custom-selector)
+
+## `color()`
 
 a color function to modify colors (transpiled to: `rgba()`)
-([⇗](https://github.com/postcss/postcss-color-function)),
 
-## [`hwb()`](http://dev.w3.org/csswg/css-color/#the-hwb-notation)
+```css
+a {
+  color: color(red alpha(-10%));
+}
 
-similar to `hsl()` but easier for humans to work with (transpiled to: `rgba()`)
-([⇗](https://github.com/postcss/postcss-color-hwb)) ,
+  a:hover {
+    color: color(red blackness(80%));
+  }
+```
 
-## [`gray()`](http://dev.w3.org/csswg/css-color/#grays)
+There is a
+[lot of color modifiers available](https://github.com/postcss/postcss-color-function#list-of-color-adjuster),
+so be sure to check them !
 
-(transpiled to: `rgba()`)
-([⇗](https://github.com/postcss/postcss-color-gray)),
+[Specification](http://dev.w3.org/csswg/css-color/#modifying-colors)
+|
+[Plugin documentation](https://github.com/postcss/postcss-color-function)
 
-## [#rrggbbaa](http://dev.w3.org/csswg/css-color/#hex-notation)
+## `hwb()`
 
-(transpiled to: `rgba()`)
-([⇗](https://github.com/postcss/postcss-color-hex-alpha)),
+Similar to `hsl()` but easier for humans to work with (transpiled to: `rgba()`).
 
-## [`rebeccapurple`](http://dev.w3.org/csswg/css-color/#valdef-color-rebeccapurple)
+```css
+body {
+  color: hwb(90, 0%, 0%, 0.5);
+}
+```
 
-([⇗](https://github.com/postcss/postcss-color-rebeccapurple)),
+[Specification](http://dev.w3.org/csswg/css-color/#the-hwb-notation)
+|
+[Plugin documentation](https://github.com/postcss/postcss-color-hwb)
+
+## `gray()`
+
+Allow you to use more than 50 shades of gray (transpiled to: `rgba()`).
+For the first argument, you can use a number between 0 and 255 or a percentage.
+
+```css
+.foo {
+  color: gray(85);
+}
+
+.bar {
+  color: gray(10%, 50%);
+}
+```
+
+[Specification](http://dev.w3.org/csswg/css-color/#grays)
+|
+[Plugin documentation](https://github.com/postcss/postcss-color-gray)
+
+## #rrggbbaa
+
+Allows use to use 4 or 8 digits hexadecimal notation (transpiled to: `rgba()`).
+
+```css
+body {
+  background: #9d9c;
+}
+```
+
+[Specification](http://dev.w3.org/csswg/css-color/#hex-notation)
+|
+[Plugin documentation](https://github.com/postcss/postcss-color-hex-alpha)
+
+## `rebeccapurple`
+
+Allows you to use the new color keyword as a homage to
+[Eric Meyer’s daughter](https://github.com/postcss/postcss-color-rebeccapurple#why-this-plugin-)
+
+```css
+body {
+  color: rebeccapurple;
+}
+```
+
+[Specification](http://dev.w3.org/csswg/css-color/#valdef-color-rebeccapurple)
+|
+[Plugin documentation](https://github.com/postcss/postcss-color-rebeccapurple)
 
 
-## [font-variant](http://dev.w3.org/csswg/css-fonts/#propdef-font-variant)
+## font-variant
 
 properties (fallback: `font-feature-settings`)
-([⇗](https://github.com/postcss/postcss-font-variant)),
 
-## [filter](http://www.w3.org/TR/filter-effects/)
+```css
+h2 {
+  font-variant-caps: small-caps;
+}
 
-properties (fallback: inlined `<svg>` filter)
-([⇗](https://github.com/iamvdo/pleeease-filters))
+table {
+  font-variant-numeric: lining-nums;
+}
+```
 
-## [`rem` units](http://www.w3.org/TR/css3-values/#rem-unit)
-
-(fallback: `px`)
-([⇗](https://github.com/robwierzbowski/node-pixrem))
-
-## [pseudo-elements](http://www.w3.org/TR/css3-selectors/#pseudo-elements)
-
-(adjust `::` to `:`)
-([⇗](https://github.com/axa-ch/postcss-pseudoelements))
-
-## [`:matches` pseudo-class](http://dev.w3.org/csswg/selectors-4/#matches)
-
-([⇗](https://github.com/postcss/postcss-selector-matches))
+`font-variant` are transformed to `font-feature-settings`. You might take a look
+at the support of
+[font feature settings](http://caniuse.com/#feat=font-feature).
 
 
-## [`:not` pseudo-class](http://dev.w3.org/csswg/selectors-4/#negation)
+[Specification](http://dev.w3.org/csswg/css-fonts/#propdef-font-variant)
+|
+[Plugin documentation](https://github.com/postcss/postcss-font-variant)
 
-([⇗](https://github.com/postcss/postcss-selector-NOT))
+## filter
+
+The W3C filters are only transformed as svg filter using the `url(data:*)` trick
+for Firefox < 35.
+
+```css
+.blur {
+    filter: blur(4px);
+}
+```
+
+[Specification](http://www.w3.org/TR/filter-effects/)
+|
+[Plugin documentation](https://github.com/iamvdo/pleeease-filters)
+
+## `rem` units
+
+`rem` fallback to `px`
+(if you browser scope cover old browsers).
+
+```css
+h1 {
+  font-size: 1.5rem;
+}
+```
+
+[Specification](http://www.w3.org/TR/css3-values/#rem-unit)
+|
+[Plugin documentation](https://github.com/robwierzbowski/node-pixrem)
+
+## `:matches` pseudo-class
+
+Allows you to use `:matches()`.
+
+```css
+p:matches(:first-child, .special) {
+  color: red;
+}
+```
+
+[Specification](http://dev.w3.org/csswg/selectors-4/#matches)
+|
+[Plugin documentation](https://github.com/postcss/postcss-selector-matches)
 
 
-## alpha colors for browser that don't understand [css 3 colors](http://www.w3.org/TR/css3-color/)
- (fallback: solid hexa colors)
-([⇗](https://github.com/postcss/postcss-color-rgba-fallback))
+## `:not` pseudo-class
 
-_Note that according to your [browser scope](#nodejs-options) some might be not transpiled to avoid extra useless output._
+Allows you to use `:not()` level 4 (which allows multiples selector).
+Transformed to `:not()` level 3 (which allow only one selector)`.
+
+```css
+p:not(:first-child, .special) {
+  color: red;
+}
+```
+
+[Specification](http://dev.w3.org/csswg/selectors-4/#negation)
+|
+[Plugin documentation](https://github.com/postcss/postcss-selector-NOT)
+
+## pseudo-elements
+
+Adjust `::` to `:`
+(if you browser scope cover old browsers)
+
+```css
+a::before {
+  /* ... */
+}
+```
+
+[Specification](http://www.w3.org/TR/css3-selectors/#pseudo-elements)
+|
+[Plugin documentation](https://github.com/axa-ch/postcss-pseudoelements)
+
+## Alpha colors
+
+Add solid colors fallback for rgba colors
+(if you browser scope cover old browsers)
+
+```css
+body {
+  background: rgba(153, 221, 153, 0.8);
+  /* you will have the same value without alpha as a fallback */
+}
+```
+
+[Specification](http://www.w3.org/TR/css3-color/)
+|
+[Plugin documentation](https://github.com/postcss/postcss-color-rgba-fallback)
+
+_Note that according to your [browser scope](#nodejs-options) some might be not
+transpiled to avoid extra useless output._
 
 ## Bonus features
 
-_<small>The features below are considered as bonus since it's totally not related to CSS specs</small>._
+_The features below are considered as bonus since it's totally not
+related to CSS specs._
 
-* `@import` inline local files and modules - `node_modules` or `web_modules` ([⇗](https://github.com/postcss/postcss-import)) to output a bundled CSS file. `url()` referenced are also rebased.
-* minification is available ([⇗](https://github.com/hail2u/node-csswring)) if you want to compress the output for production.
+### `@import`
+
+`@import` inline local files and modules - `node_modules` or `web_modules`
+([⇗](https://github.com/postcss/postcss-import)) to output a bundled CSS file.
+`url()` referenced are also rebased.
+
+### minification
+
+minification/compression is available ([⇗](https://github.com/ben-eb/cssnano))
+if you want to compress the output for production.
 
 
 ## @todo
 
-Any omissions of the CSS specifications (even in draft) that are subject to be handled by cssnext are not intentional.
+Any omissions of the CSS specifications (even in draft) that are subject to be
+handled by cssnext are not intentional.
 You can take a look at the [list of features that are waiting to be implemented](https://github.com/cssnext/cssnext/issues?q=is%3Aopen+is%3Aissue+label%3Afeature+label%3Aready).
-Feel free to work on a feature ready to be added, or [open a new issue](https://github.com/cssnext/cssnext/issues/new) if you find something that should be handled.
-Keep in mind that, as of right now, this project is intended to support new CSS *syntax* only.
-
-## Limitations
-
-### Custom properties
-
-The current transformation for custom properties just aims to provide a future-proof way of using a **limited subset (to top-level `:root` selector)** of the features provided by native CSS custom properties.
-The transformation is not complete and can't be properly. By injecting selectors with new computed rules, we will break original cascade & unexpected results might happen.
-
-### Font variant
-
-`font-variant` are transformed to `font-feature-settings`. You might take a look at the support of [font feature settings](http://caniuse.com/#feat=font-feature).
-
-### Filter
-
-The W3C filters are only transformed as svg filter using the `url(data:*)` trick for Firefox < 35.
+Feel free to work on a feature ready to be added, or
+[open a new issue](https://github.com/cssnext/cssnext/issues/new)
+if you find something that should be handled.
+Keep in mind that, as of right now, this project is intended to support new CSS
+*syntax* only.
