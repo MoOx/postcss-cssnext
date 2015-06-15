@@ -1,3 +1,5 @@
+# 1.7.0 - 2015-06-17
+
 - Added: warning to deprecate previous (wrong) custom selectors syntax.
 Previously they were working with **and without** pseudo syntax ':'
 [which is incorrect according to specs](https://github.com/postcss/postcss-custom-selectors/issues/5#issuecomment-90774654)
