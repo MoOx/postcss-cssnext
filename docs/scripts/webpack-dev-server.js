@@ -67,6 +67,10 @@ export default (options) => {
       hot: true,
       stats: {
         colors: true,
+        // hide all chunk dependencies because it's unreadable
+        chunkModules: false,
+        // noize
+        assets: true,
       },
       noInfo: true,
     })
