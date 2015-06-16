@@ -1,3 +1,3 @@
-p:not(:first-child), p:not(.specific) {
+p:not(:first-child):not(.specific) {
   background: blue;
 }

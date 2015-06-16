@@ -75,7 +75,7 @@ a:after {
 p:first-child, p.specific {
   color: red;
 }
-p:not(:first-child), p:not(.specific) {
+p:not(:first-child):not(.specific) {
   background: blue;
 }
 
