@@ -50,5 +50,10 @@ Array.prototype.slice.call(
     from: elPlayground.querySelector(".js-cssnext-Playground-from"),
     to: elPlayground.querySelector(".js-cssnext-Playground-to"),
     console: elPlayground.querySelector(".js-cssnext-Playground-console"),
+    options: {
+      messages: {
+        console: true,
+      },
+    },
   })
 })
