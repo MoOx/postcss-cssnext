@@ -1,5 +1,6 @@
 ---
 title: Install & setup cssnext
+subtitle: How to use cssnext in your workflow
 backgroundModifier: darkTeam
 incomplete: true
 ---

@@ -63,15 +63,28 @@ export default class Default extends Component {
           >
             <div className="r-Grid">
               <div className="r-Grid-cell">
-                <h1
-                  className={cx(
-                    "cssnext-Jumbotron-title",
-                    "cssnext-Center",
-                    "cssnext-Light"
-                  )}
-                >
-                  {file.title}
-                </h1>
+                {
+                  file.title &&
+                  <h1
+                    className={cx(
+                      "cssnext-Jumbotron-title",
+                      "cssnext-Light"
+                    )}
+                  >
+                    {file.title}
+                  </h1>
+                }
+                {
+                  file.subtitle &&
+                  <strong
+                    className={cx(
+                      "cssnext-Jumbotron-subtitle",
+                      "cssnext-Light"
+                    )}
+                  >
+                    {file.subtitle}
+                  </strong>
+                }
               </div>
             </div>
           </header>

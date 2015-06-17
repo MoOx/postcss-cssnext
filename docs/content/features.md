@@ -1,7 +1,8 @@
 ---
-title: Discover cssnext features
+title: cssnext features
+subtitle: Discover the future of CSS
+
 backgroundModifier: darkRoad
-incomplete: true
 ---
 
 @[toc]
