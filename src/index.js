@@ -70,22 +70,24 @@ function cssnext(string, options) {
   if (fs && fs.readFile) {
     // @import
     if (options.import !== false) {
-      postcss.use(require("postcss-import")(
+      const plugin = require("postcss-import")(
         typeof options.import === "object"
           ? {...options.import}
           : undefined
         )
-      )
+      plugin.postcssPlugin = "cssnext"
+      postcss.use(plugin)
     }
 
     // url() adjustements
     if (options.url !== false) {
-      postcss.use(require("postcss-url")(
+      const plugin = require("postcss-url")(
         typeof options.url === "object"
           ? {...options.url}
           : undefined
         )
-      )
+      plugin.postcssPlugin = "cssnext"
+      postcss.use(plugin)
     }
   }
 
@@ -114,12 +116,13 @@ function cssnext(string, options) {
         )
       )
     ) {
-      postcss.use(cssnext.features[key](
+      const plugin = cssnext.features[key](
         typeof features[key] === "object"
           ? {...features[key]}
           : undefined
         )
-      )
+      plugin.postcssPlugin = "cssnext"
+      postcss.use(plugin)
     }
   })
 

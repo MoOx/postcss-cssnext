@@ -11,7 +11,16 @@ const msg = "This is a test message"
 const page = path.join("dist", "__tests__styles.html")
 
 const css = cssnext(
-  "@custom-selector --h h1, h2; @custom-selector --H h3, h4; body{}",
+  `
+@import url(http://)
+:root {
+  --var: test;
+}
+@custom-selector --h h1, h2;
+body {
+  color: var(--test);
+}
+  `,
   {
     plugins: [
       (styles, result) => {
