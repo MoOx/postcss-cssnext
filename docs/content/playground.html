@@ -1,14 +1,14 @@
 ---
 template: Simple
-title: Playground
+title: cssnext Playground
 className: js-cssnext-Playground cssnext-Playground
 footer: false
 scripts:
   - /playground.js
 ---
-<div class="cssnext-Playground-section cssnext-Playground-section--from">
-  <div class="js-cssnext-Playground-console cssnext-Playground-console"></div>
-  <textarea class="js-cssnext-Playground-from cssnext-Playground-code cssnext-Playground-code--from" spellcheck="false">
+<div class="cssnext-Playground-container">
+  <div class="cssnext-Playground-section cssnext-Playground-section--from">
+    <textarea class="js-cssnext-Playground-from cssnext-Playground-code cssnext-Playground-code--from" spellcheck="false">
 /* custom properties */
 :root {
 --fontSize: 1rem;
@@ -63,8 +63,11 @@ filter: blur(4px);
 filter: sepia(.8);
 }
 
-  </textarea>
+    </textarea>
+  </div>
+  <div class="cssnext-Playground-section cssnext-Playground-section--to">
+    <textarea class="js-cssnext-Playground-to cssnext-Playground-code cssnext-Playground-code--to" spellcheck="false"></textarea>
+  </div>
 </div>
-<div class="cssnext-Playground-section cssnext-Playground-section--to">
-  <textarea class="js-cssnext-Playground-to cssnext-Playground-code cssnext-Playground-code--to" spellcheck="false"></textarea>
-</div>
+<div class="js-cssnext-Playground-messages cssnext-Playground-messages"></div>
+<div class="js-cssnext-Playground-console cssnext-Playground-console"></div>

@@ -2,11 +2,7 @@ import postcssMessagesConsole from "postcss-log-warnings"
 // https://github.com/postcss/postcss-messages/issues/16
 // import postcssMessagesCSS from "postcss-messages"
 import postcssMessagesCSS from "./plugins/messages"
-import postcssMessageCSSstyles from "./messages.browser.js"
-
-// hacking plugins
-postcssMessagesConsole.postcssPlugin = "cssnext"
-postcssMessagesCSS.postcssPlugin = "cssnext"
+import postcssMessageCSSstyles from "./option.messages.browser.styles.js"
 
 export default (options) => {
     // true === all interfaces

@@ -1,5 +1,10 @@
-const cssnext = require("../../../../")
-const cssnextVersion = require("../../../../package").version
+import cssnext from "../../../../src/index"
+import {version as cssnextVersion} from "../../../../package"
+import messagesStyles from "../../../../src/option.messages.browser.styles"
+
+const bullet = "〉"
+
+import colors from "chalk"
 
 function playground(opts) {
   opts.options = opts.options || {}
@@ -10,15 +15,24 @@ function playground(opts) {
     )
   }
 
-  function cssnextify() {
+  const transformer = cssnext(opts.options)
+
+  function transformCSS() {
     const css = opts.from.value
 
     opts.console.innerHTML = ""
-    let converted = opts.to.value
+    opts.messages.textContent = ""
 
     try {
-      converted = cssnext(css, opts.options)
-      opts.to.value = converted.trim()
+      const result = transformer.process(css)
+      opts.to.value = result.css.trim()
+      const messages = result.warnings()
+      if (messages.length) {
+        opts.messages.textContent =
+          `${ bullet } ${ colors.stripColor(
+            messages.map(message => message.toString())
+          ).join("\n\n\n" + bullet + " ") }`
+      }
     }
     catch (e) {
       console.error(e)
@@ -37,10 +51,10 @@ function playground(opts) {
     }
   }
 
-  opts.from.addEventListener("change", cssnextify)
-  opts.from.addEventListener("keyup", cssnextify)
+  opts.from.addEventListener("change", transformCSS)
+  opts.from.addEventListener("keyup", transformCSS)
 
-  cssnextify()
+  transformCSS()
 }
 
 Array.prototype.slice.call(
@@ -50,10 +64,30 @@ Array.prototype.slice.call(
     from: elPlayground.querySelector(".js-cssnext-Playground-from"),
     to: elPlayground.querySelector(".js-cssnext-Playground-to"),
     console: elPlayground.querySelector(".js-cssnext-Playground-console"),
+    messages: elPlayground.querySelector(".js-cssnext-Playground-messages"),
     options: {
-      messages: {
-        console: true,
-      },
+      messages: false,
     },
   })
 })
+
+const messagesStylesElement = document.createElement("style")
+const adjustedMessagesStyles = {
+  ...messagesStyles,
+  position: undefined,
+  "border-top": messagesStyles["border-bottom"],
+  "border-bottom": undefined,
+  "box-shadow": undefined,
+}
+messagesStylesElement.innerHTML = `.cssnext-Playground-messages {
+  ${
+    Object.keys(adjustedMessagesStyles).map(
+      prop => adjustedMessagesStyles[prop] !== undefined
+        ? prop + ": " + adjustedMessagesStyles[prop]
+        : null
+    ).filter(couple => couple !== null).join(";\n  ")
+  }
+}
+
+.cssnext-Playground-messages:empty { display: none }`
+document.body.appendChild(messagesStylesElement)

@@ -1,6 +1,6 @@
 ---
 template: Simple
-title: cssnext
+title: cssnext - Use tomorrow's CSS syntax, today.
 ---
 <div class="cssnext-Jumbotron cssnext-Jumbotron--default cssnext-Center cssnext-Light">
   <section class="r-Grid">

@@ -1,6 +1,7 @@
 .cssnext-Playground {
   flex: 1;
   display: flex;
+  flex-direction: column;
   position: relative;
   font-family: Menlo, Consolas, Monaco, monospace;
   color: color(var(--cssnext-Color-blue) b(+20%));
@@ -38,60 +39,64 @@
     .cssnext-Playground-console-footer { opacity: .5 }
     .cssnext-Playground-console:hover .cssnext-Playground-console-footer { opacity: .75 }
 
-
-  .cssnext-Playground-section {
+  .cssnext-Playground-container {
     flex: 1;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
   }
 
-    .cssnext-Playground-section--from {
-
+    .cssnext-Playground-section {
+      flex: 1;
+      display: flex;
     }
 
-    .cssnext-Playground-section--to {
+      .cssnext-Playground-section--from {
 
-    }
+      }
 
-  .cssnext-Playground-code {
-    box-sizing: border-box;
+      .cssnext-Playground-section--to {
 
-    flex: 1;
-    border: 0;
-    margin: 0;
-    padding: 0;
-    padding: 1rem;
+      }
 
-    font: inherit;
-    color: inherit;
-    text-shadow: inherit;
-    background: inherit;
-    -webkit-font-smoothing: inherit;
-    -moz-osx-font-smoothing: inherit;
-  }
+    .cssnext-Playground-code {
+      box-sizing: border-box;
 
-    .cssnext-Playground-code:focus,
-    .cssnext-Playground-code:active {
+      flex: 1;
       border: 0;
-      outline: 0;
+      margin: 0;
+      padding: 0;
+      padding: 1rem;
+
+      font: inherit;
+      color: inherit;
+      text-shadow: inherit;
+      background: inherit;
+      -webkit-font-smoothing: inherit;
+      -moz-osx-font-smoothing: inherit;
     }
 
-    .cssnext-Playground-code--from {
+      .cssnext-Playground-code:focus,
+      .cssnext-Playground-code:active {
+        border: 0;
+        outline: 0;
+      }
 
-    }
+      .cssnext-Playground-code--from {
 
-    .cssnext-Playground-code--to {
-      padding-left: 6rem;
-      color: var(--cssnext-Color-blue);
-      border-left: 1px solid !important;
-      border-image:
-        linear-gradient(
-          color(var(--cssnext-Color-blue) a(0)),
-          var(--cssnext-Color-blue) 25%,
-          var(--cssnext-Color-purple) 50%,
-          var(--cssnext-Color-blue) 75%,
-          color(var(--cssnext-Color-blue) a(0))
-        )
-        1 1 stretch !important
-      ;
-    }
+      }
+
+      .cssnext-Playground-code--to {
+        padding-left: 6rem;
+        color: var(--cssnext-Color-blue);
+        border-left: 1px solid !important;
+        border-image:
+          linear-gradient(
+            color(var(--cssnext-Color-blue) a(0)),
+            var(--cssnext-Color-blue) 25%,
+            var(--cssnext-Color-purple) 50%,
+            var(--cssnext-Color-blue) 75%,
+            color(var(--cssnext-Color-blue) a(0))
+          )
+          1 1 stretch !important
+        ;
+      }

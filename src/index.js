@@ -155,6 +155,7 @@ function cssnext(string, options) {
   // (which make sense)
   if (options.messages) {
     optionMessages(options).forEach(plugin => {
+      plugin.postcssPlugin = "cssnext"
       postcss.use(plugin)
     })
   }

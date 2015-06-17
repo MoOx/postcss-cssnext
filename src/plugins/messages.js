@@ -59,8 +59,8 @@ export default postcss.plugin(
       : defaultStyles
 
     return (css, result) => {
-      const warnings = result.warnings()
-      if (warnings.length === 0) {
+      const messages = result.warnings()
+      if (messages.length === 0) {
         return
       }
 
@@ -88,9 +88,8 @@ export default postcss.plugin(
       })
 
       const bullet = "〉"
-      const content = warnings.map(function(message) {
-        return message.toString()
-      }).join(`\n\n\n${ bullet } `)
+      const content = messages.map(message => message.toString())
+        .join(`\n\n\n${ bullet } `)
 
       css.last.append({
         prop: "content",
