@@ -34,7 +34,9 @@ title: cssnext
     <p class="cssnext-Section-content">
       cssnext is a CSS transpiler that allows you to use
       the latest CSS syntax today.
-      It transforms CSS specs into more compatible CSS
+      It transforms
+      <a href="http://www.xanthir.com/b4Ko0">new CSS specs</a>
+      into more compatible CSS
       so you don't need to wait for browser support.
       <em class="cssnext-Section-highlight">
         You can literally write future-proof CSS

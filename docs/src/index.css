@@ -52,8 +52,9 @@ body {
 
 a,
 a:visited {
-  color: inherit;
+  display: inline-block;
   position: relative;
+  color: inherit;
   text-decoration: none;
 }
 
