@@ -14,7 +14,7 @@ function playground(opts) {
     const css = opts.from.value
 
     opts.console.innerHTML = ""
-    const converted = opts.to.value
+    let converted = opts.to.value
 
     try {
       converted = cssnext(css, opts.options)
