@@ -1,4 +1,4 @@
-<!doctype html><html lang="fr" class="r-VerticalRhythm"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui"><title>Install &amp; setup cssnext</title><link rel="stylesheet" href="/index.864fc3a1.css"><link rel="alternate" href="/feed.xml" title="Install &amp; setup cssnext" type="application/atom+xml"></head><body class="cssnext-Body"><header class="cssnext-Header"><div class="r-Grid"><div class="r-Grid-cell r-minM--4of6"><span class="cssnext-Header-nav"><a class="cssnext-Header-logo" href="/"><span class="SVGIcon SVGIcon--cleaned cssnext-Header-logo-img"><?xml version="1.0" encoding="utf-8"?>
+<!doctype html><html lang="fr" class="r-VerticalRhythm"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui"><title>Install &amp; setup cssnext</title><link rel="stylesheet" href="/index.12032aef.css"><link rel="alternate" href="/feed.xml" title="Install &amp; setup cssnext" type="application/atom+xml"></head><body class="cssnext-Body"><header class="cssnext-Header js-Headroom"><div class="r-Grid"><div class="r-Grid-cell r-minM--4of6"><span class="cssnext-Header-nav"><a class="cssnext-Header-logo" href="/"><span class="SVGIcon SVGIcon--cleaned cssnext-Header-logo-img"><?xml version="1.0" encoding="utf-8"?>
 
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg class="SVGIcon-svg SVGIcon--cleaned-svg cssnext-Header-logo-img-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -161,97 +161,111 @@
 	</linearGradient>
 	<path fill="url(#SVGID_12_)" d="M255.475,13.569l-4.391,21.613h-0.932l4.373-21.613H255.475z"/>
 </g>
-</svg></span><span class="cssnext-Header-version">1.6.0</span></a><a href="/features/" class="cssnext-Header-nav-item">Features</a><a href="/setup/" class="cssnext-Header-nav-item">Setup</a><a href="/usage/" class="cssnext-Header-nav-item">Usage</a><a href="/playground/" class="cssnext-Header-nav-item">Playground</a></span></div><div class="r-Grid-cell r-minM--2of6"><div class="cssnext-Header-nav"><a href="https://gitter.im/cssnext/cssnext" class="cssnext-Header-nav-item">Support</a><a href="https://github.com/cssnext/cssnext" title="GitHub" class="cssnext-Header-nav-item">GitHub</a><a href="https://twitter.com/cssnext" title="Twitter" class="cssnext-Header-nav-item">Twitter</a></div></div></div></header><header class="cssnext-Jumbotron cssnext-Jumbotron--default cssnext-Jumbotron--setup-html cssnext-Jumbotron--darkTeam"><div class="r-Grid"><div class="r-Grid-cell"><h1 class="cssnext-Jumbotron-title cssnext-Center cssnext-Light">Install &amp; setup cssnext</h1></div></div></header><section class="r-Grid cssnext-Callout cssnext-Callout--info"><div class="r-Grid-cell"><div class="cssnext-Callout-title h4">Incomplete</div><p>This documentation is still a work in progress. <br><a href="https://github.com/cssnext/cssnext/issues?q=is%3Aopen+is%3Aissue+label%3A%22type%3A+documentation%22">Pull requests</a> expanding on existing or adding additional content  are <strong>extremely</strong> appreciated.</p></div></section><section class="r-Grid cssnext-Section"><div class="r-Grid-cell"><h2 id="installation">
-      <a class="cssnext-Title-anchor" href="http://cssnext.io/#installation">#</a>
-      Installation
-    </h2><p>cssnext is available on
-<a href="https://github.com/cssnext/cssnext" >github</a>
-and <a href="https://www.npmjs.org/package/cssnext" >npm</a>.</p>
+</svg></span><span class="cssnext-Header-version">1.7.0</span></a><a href="/features/" class="cssnext-Header-nav-item">Features</a><a href="/setup/" class="cssnext-Header-nav-item">Setup</a><a href="/usage/" class="cssnext-Header-nav-item">Usage</a><a href="/playground/" class="cssnext-Header-nav-item">Playground</a></span></div><div class="r-Grid-cell r-minM--2of6"><div class="cssnext-Header-nav"><a href="https://gitter.im/cssnext/cssnext" class="cssnext-Header-nav-item">Support</a><a href="https://github.com/cssnext/cssnext" title="GitHub" class="cssnext-Header-nav-item">GitHub</a><a href="https://twitter.com/cssnext" title="Twitter" class="cssnext-Header-nav-item">Twitter</a></div></div></div></header><header class="cssnext-Jumbotron cssnext-Jumbotron--default cssnext-Jumbotron--setup-html cssnext-Jumbotron--darkTeam"><div class="r-Grid"><div class="r-Grid-cell"><h1 class="cssnext-Jumbotron-title cssnext-Center cssnext-Light">Install &amp; setup cssnext</h1></div></div></header><section class="r-Grid cssnext-Callout cssnext-Callout--info"><div class="r-Grid-cell"><div class="cssnext-Callout-title h4">Incomplete</div><p>This documentation is still a work in progress. <br><a href="https://github.com/cssnext/cssnext/issues?q=is%3Aopen+is%3Aissue+label%3A%22type%3A+documentation%22">Pull requests</a> expanding on existing or adding additional content  are <strong>extremely</strong> appreciated.</p></div></section><section class="r-Grid cssnext-Section"><div class="r-Grid-cell js-markdownIt-TOCOriginalContainer"><p>
+<ul class="markdownIt-TOC">
+  <li>
+    <a href="#installation">Installation</a>
+  </li>
+  <li>
+    <a href="#usage">Usage</a>
+    <ul>
+      <li>
+        <a href="#cli">CLI</a>
+        <ul>
+          <li>
+            <a href="#cli-options">CLI options</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#node-js-api">Node.js API</a>
+        <ul>
+          <li>
+            <a href="#as-a-javascript-library">As a JavaScript library</a>
+          </li>
+          <li>
+            <a href="#as-a-postcss-plugin">As a PostCSS plugin</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+</p>
+<h2 id="installation"><a class="markdownIt-Anchor" href="#installation">#</a> Installation</h2>
+<p>cssnext is available on
+<a href="https://github.com/cssnext/cssnext">github</a>
+and <a href="https://www.npmjs.org/package/cssnext">npm</a>.</p>
+<pre><code class="language-console">$ npm <span class="hljs-keyword">install</span> cssnext</code></pre>
 <p>You can install it:</p>
 <ul>
-<li>locally (<code>--save</code> or <code>--save-dev</code>), to use it through <a href="https://www.npmjs.org/doc/misc/npm-scripts.html" >npm scripts</a> (<code>npm run</code>) or via <code>.node_modules/.bin/cssnext</code></li>
-<li>globally (<code>-g</code>), to use it through the <a href="http://cssnext.io/cli" >CLI</a> <em>(not recommended)</em></li>
-<li>by using <a href="http://cssnext.io/#usage" >other plugins &amp; tools</a> like <a href="https://github.com/cssnext/gulp-cssnext" >gulp-cssnext</a></li>
+<li>locally (<code>--save</code> or <code>--save-dev</code>), to use it through <a href="https://www.npmjs.org/doc/misc/npm-scripts.html">npm scripts</a> (<code>npm run</code>) or via <code>.node_modules/.bin/cssnext</code></li>
+<li>globally (<code>-g</code>), to use it through the <a href="cli">CLI</a> <em>(not recommended)</em></li>
+<li>by using <a href="#usage">other plugins &amp; tools</a> like
+<a href="https://github.com/cssnext/gulp-cssnext">gulp-cssnext</a>
+or
+<a href="https://github.com/cssnext/cssnext-loader">cssnext-loader</a></li>
 </ul>
 <p>The main package offers
-<a href="https://github.com/cssnext/cssnext#cli" >a CLI</a> and
-<a href="https://github.com/cssnext/cssnext#nodejs-api&quot;" >a Node.js/io.js API</a>.</p>
-<p class="cssnext-Center">
-<code>$ npm install cssnext</code>
-</p>
-
-<h2 id="usage">
-      <a class="cssnext-Title-anchor" href="http://cssnext.io/#usage">#</a>
-      Usage
-    </h2><p>You can use cssnext using <a href="http://cssnext.io/#cli" >CLI</a>,
-as <a href="http://cssnext.io/#nodejs-api" >a JavaScript library</a>,
-as a <a href="https://github.com/postcss/postcss" >PostCSS</a> plugin
+<a href="https://github.com/cssnext/cssnext#cli">a CLI</a> and
+<a href="https://github.com/cssnext/cssnext#nodejs-api%22">a Node.js/io.js API</a>.</p>
+<h2 id="usage"><a class="markdownIt-Anchor" href="#usage">#</a> Usage</h2>
+<p>You can use cssnext using <a href="#cli">CLI</a>,
+as <a href="#nodejs-api">a JavaScript library</a>,
+as a <a href="https://github.com/postcss/postcss">PostCSS</a> plugin
 or through others tools below:</p>
 <p class="cssnext-Tools">
-<a href="https://github.com/cssnext/cssnext-loader" >webpack</a>
-,
-<a href="https://github.com/cssnext/gulp-cssnext" >gulp</a>
-,
-<a href="https://github.com/cssnext/grunt-cssnext" >grunt</a>
-,
-<a href="https://github.com/cssnext/cssnext-brunch" >brunch</a>
-,
-<a href="https://github.com/cssnext/broccoli-cssnext" >broccoli</a>
-,
-<a href="https://github.com/cssnext/cssnext-connect" >connect</a>
-,
-<a href="https://github.com/cssnext/duo-cssnext" >duo</a>
-or in
-<a href="https://prepros.io/" >prepros 5</a>
+  <a href="https://github.com/cssnext/cssnext-loader">webpack</a>
+  ,
+  <a href="https://github.com/cssnext/gulp-cssnext">gulp</a>
+  ,
+  <a href="https://github.com/cssnext/grunt-cssnext">grunt</a>
+  ,
+  <a href="https://github.com/cssnext/cssnext-brunch">brunch</a>
+  ,
+  <a href="https://github.com/cssnext/broccoli-cssnext">broccoli</a>
+  ,
+  <a href="https://github.com/cssnext/cssnext-connect">connect</a>
+  ,
+  <a href="https://github.com/cssnext/duo-cssnext">duo</a>
+  or in
+  <a href="https://prepros.io/">Prepros</a>
 </p>
-
-
-<h3 id="cli">
-      <a class="cssnext-Title-anchor" href="http://cssnext.io/#cli">#</a>
-      CLI
-    </h3><p>cssnext offers a command-line interface.
+<h3 id="cli"><a class="markdownIt-Anchor" href="#cli">#</a> CLI</h3>
+<p>cssnext offers a command-line interface.
 Here’s how to compile a file and print it to stdout:</p>
-<pre><code class="lang-console">$ cssnext <span class="hljs-keyword">index</span>.css
-</code></pre>
+<pre><code class="language-console">$ cssnext <span class="hljs-keyword">index</span>.css</code></pre>
 <p>To create an output file, you can just add a second argument</p>
-<pre><code class="lang-console">$ cssnext index<span class="hljs-class">.css</span> output.css
-</code></pre>
+<pre><code class="language-console">$ cssnext index<span class="hljs-class">.css</span> output.css</code></pre>
 <p>Or use CLI std(in|out) redirection(s)</p>
-<pre><code class="lang-console">$ <span class="hljs-keyword">cat</span> <span class="hljs-keyword">input</span>.css | cssnext &gt; output.css
-</code></pre>
-<h3 id="cli-options">
-      <a class="cssnext-Title-anchor" href="http://cssnext.io/#cli-options">#</a>
-      CLI options
-    </h3><p>If you don’t care about a certain feature, such as custom media queries, you can omit support for them like so:</p>
-<pre><code class="lang-console">$ cssnext --<span class="hljs-keyword">no</span>-custom-media <span class="hljs-keyword">index</span>.css
-</code></pre>
+<pre><code class="language-console">$ <span class="hljs-keyword">cat</span> <span class="hljs-keyword">input</span>.css | cssnext &gt; output.css</code></pre>
+<h4 id="cli-options"><a class="markdownIt-Anchor" href="#cli-options">#</a> CLI options</h4>
+<p>If you don’t care about a certain feature, such as custom media queries, you can omit support for them like so:</p>
+<pre><code class="language-console">$ cssnext --<span class="hljs-keyword">no</span>-custom-media <span class="hljs-keyword">index</span>.css</code></pre>
 <p>To enable source maps for these files, add the <code>--sourcemap</code> flag.</p>
-<p><strong>To see all CLI options</strong></p>
-<pre><code class="lang-console">$ cssnext <span class="hljs-comment">--help</span>
-</code></pre>
-<h3 id="node-js-api">
-      <a class="cssnext-Title-anchor" href="http://cssnext.io/#node-js-api">#</a>
-      Node.js API
-    </h3><p>cssnext can be used with its own API or as a PostCSS plugin.</p>
-<h4 id="var-string-cssnext-string-options">
-      <a class="cssnext-Title-anchor" href="http://cssnext.io/#var-string-cssnext-string-options">#</a>
-      <code>var string = cssnext(string, options)</code>
-    </h4><p>cssnext accepts 2 arguments: a css string and an object of options.</p>
-<pre><code class="lang-js"><span class="hljs-keyword">var</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"fs"</span>)
+<p><em>To see all CLI options</em></p>
+<pre><code class="language-console">$ cssnext <span class="hljs-comment">--help</span></code></pre>
+<h3 id="node-js-api"><a class="markdownIt-Anchor" href="#node-js-api">#</a> Node.js API</h3>
+<p>cssnext can be used with its own API or as a PostCSS plugin.</p>
+<h4 id="as-a-javascript-library"><a class="markdownIt-Anchor" href="#as-a-javascript-library">#</a> As a JavaScript library</h4>
+<p><code>var string = cssnext(string, options)</code></p>
+<p>cssnext accepts 2 arguments: a css string and an object of options.</p>
+<pre><code class="language-js"><span class="hljs-keyword">var</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"fs"</span>)
 <span class="hljs-keyword">var</span> cssnext = <span class="hljs-built_in">require</span>(<span class="hljs-string">"cssnext"</span>)
 
 <span class="hljs-keyword">var</span> input = fs.readFileSync(<span class="hljs-string">"index.css"</span>, <span class="hljs-string">"utf8"</span>)
 
 <span class="hljs-keyword">var</span> output = cssnext(input)
-fs.writeFileSync(<span class="hljs-string">"dist/index.css"</span>, output)
-</code></pre>
+fs.writeFileSync(<span class="hljs-string">"dist/index.css"</span>, output)</code></pre>
 <p><strong><code>/!\</code> Note: if you are using non inlined sourcemaps, cssnext will return an object: <code>{css: string, map: sourcemap}</code></strong></p>
-<p>See <a href="http://cssnext.io/#sourcemap-default-false" >sourcemap</a> &amp; <a href="http://cssnext.io/#map-default-depends-on-sourcemap" >map</a> options for more informations.</p>
-<h4 id="var-postcssplugin-cssnext-options">
-      <a class="cssnext-Title-anchor" href="http://cssnext.io/#var-postcssplugin-cssnext-options">#</a>
-      <code>var postcssPlugin = cssnext(options)</code>
-    </h4><p>cssnext can be used as a postcss plugin:</p>
-<pre><code class="lang-js"><span class="hljs-keyword">var</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"fs"</span>)
+<p>See
+<a href="/usage/#sourcemap">sourcemap</a> &amp;
+<a href="/usage/#map">map</a>
+options for more informations.</p>
+<h4 id="as-a-postcss-plugin"><a class="markdownIt-Anchor" href="#as-a-postcss-plugin">#</a> As a PostCSS plugin</h4>
+<p><code>var postcssPlugin = cssnext(options)</code></p>
+<p>cssnext can be used as a postcss plugin:</p>
+<pre><code class="language-js"><span class="hljs-keyword">var</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"fs"</span>)
 <span class="hljs-keyword">var</span> postcss = <span class="hljs-built_in">require</span>(<span class="hljs-string">"postcss"</span>)
 <span class="hljs-keyword">var</span> cssnext = <span class="hljs-built_in">require</span>(<span class="hljs-string">"cssnext"</span>)
 
@@ -261,9 +275,8 @@ fs.writeFileSync(<span class="hljs-string">"dist/index.css"</span>, output)
   .use(cssnext())
   .use(<span class="hljs-comment">/* your other postcss plugin */</span>)
   .process(input)
-fs.writeFileSync(<span class="hljs-string">"dist/index.css"</span>, output)
-</code></pre>
-</div></section><div class="cssnext-Jumbotron cssnext-Jumbotron--default cssnext-Center cssnext-Light"><div class="cssnext-Jumbotron-title"><a href="/playground/">Try cssnext in your browser now.</a></div></div><footer class="cssnext-Footer"><p><span class="SVGIcon cssnext-Header-logo-img" style="height:1rem;vertical-align:middle;"><?xml version="1.0" encoding="utf-8"?>
+fs.writeFileSync(<span class="hljs-string">"dist/index.css"</span>, output)</code></pre>
+</div><div class="r-Grid-cell js-markdownIt-TOCPlaceholder"></div></section><div class="cssnext-Jumbotron cssnext-Jumbotron--default cssnext-Center cssnext-Light"><div class="cssnext-Jumbotron-title"><a href="/playground/">Try cssnext in your browser now.</a></div></div><footer class="cssnext-Footer"><p><span class="SVGIcon cssnext-Header-logo-img" style="height:1rem;vertical-align:middle;"><?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg class="SVGIcon-svg cssnext-Header-logo-img-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -426,5 +439,5 @@ fs.writeFileSync(<span class="hljs-string">"dist/index.css"</span>, output)
 	</linearGradient>
 	<path fill="url(#SVGID_12_)" d="M255.475,13.569l-4.391,21.613h-0.932l4.373-21.613H255.475z"/>
 </g>
-</svg></span> is brought to you by <a href="https://twitter.com/MoOx">@MoOx</a> &amp; <a href="https://github.com/cssnext/cssnext/graphs/contributors">some other contributors</a>.</p><small><a href="/it-s-cssnext-not-CSSNext">Note: it&#x27;s cssnext, not CSSNext</a><span style="opacity:.4;margin-left:1rem;"><a href="/credits">Credits</a> | <a href="https://github.com/cssnext/cssnext/edit/master/docs/content/setup.md">Edit this page</a></span></small></footer><script src="/index.e2e031d2.js"></script><script>
+</svg></span> is brought to you by <a href="https://twitter.com/MoOx">@MoOx</a> &amp; <a href="https://github.com/cssnext/cssnext/graphs/contributors">some other contributors</a>.</p><small><a href="/it-s-cssnext-not-CSSNext">Note: it&#x27;s cssnext, not CSSNext</a><span style="opacity:.4;margin-left:1rem;"><a href="/credits">Credits</a> | <a href="https://github.com/cssnext/cssnext/edit/master/docs/content/setup.md">Edit this page</a></span></small></footer><script src="/index.a9fb61ab.js"></script><script>
 !function(c,s,S,n,e,x,t){c.GoogleAnalyticsObject=S;c[S]||(c[S]=function(){(c[S].q=c[S].q||[]).push(arguments)});c[S].l=+new Date;x=s.createElement(n);t=s.getElementsByTagName(n)[0];x.src=e;t.parentNode.insertBefore(x,t)}(window,document,'ga','script','//www.google-analytics.com/analytics.js');ga('create','UA-55403963-1','auto');ga('send','pageview');</script></body></html>
