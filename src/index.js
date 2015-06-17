@@ -8,11 +8,7 @@ import fixes from "./fixes"
 import libraryFeatures from "./features"
 import featuresActivationMap from "./features-activation-map"
 
-import postcssMessagesConsole from "postcss-log-warnings"
-// https://github.com/postcss/postcss-messages/issues/16
-// import postcssMessagesCSS from "postcss-messages"
-import postcssMessagesCSS from "./plugins/messages"
-import postcssMessageCSSstyles from "./messages.browser.js"
+import optionMessages from "./option.messages"
 
 /**
  * Process a CSS `string`
@@ -154,50 +150,11 @@ function cssnext(string, options) {
     )
   }
 
+  // console plugins MUST be called after others because
+  // by default it remove messages from the registry
+  // (which make sense)
   if (options.messages) {
-    // console plugins MUST be called after others because
-    // by default it remove messages from the registry
-    // (which make sense)
-    const messagesPlugins = (
-      // true === all interfaces
-      options.messages === true
-      ? [
-        postcssMessagesCSS({styles: postcssMessageCSSstyles}),
-        postcssMessagesConsole,
-      ]
-      : (
-        // object: only the one you want
-        typeof options.messages === "object"
-        ? [
-          ...options.messages.browser
-            ? [
-              postcssMessagesCSS({
-                styles: postcssMessageCSSstyles,
-                ...(
-                  typeof options.messages.browser === "object"
-                  ? options.messages.browser
-                  : {}
-                ),
-              }),
-            ]
-            : [],
-          ...options.messages.console
-            ? [
-              postcssMessagesConsole({
-                ...(
-                  typeof options.messages.console === "object"
-                  ? options.messages.console
-                  : {}
-                ),
-              }),
-            ]
-            : [],
-        ]
-        // otherwise nothing :)
-        : []
-      )
-    )
-    messagesPlugins.forEach(plugin => {
+    optionMessages(options).forEach(plugin => {
       postcss.use(plugin)
     })
   }
