@@ -101,7 +101,7 @@ h6 {
  */
 
 .r-Grid {
-  width: auto;
+  width: 100%;
   margin: 0 auto;
   padding: 0 1rem;
 }
