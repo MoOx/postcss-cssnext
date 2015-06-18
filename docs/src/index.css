@@ -370,9 +370,14 @@ pre {
   }
 
 .markdownIt-Anchor {
-  margin-left: -1.5rem;
   opacity: .4;
 }
+
+  @media (--r-minL) {
+    .markdownIt-Anchor {
+      margin-left: -1.5rem;
+    }
+  }
 
   .markdownIt-Anchor:hover {
     opacity: .8;
