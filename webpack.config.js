@@ -49,12 +49,12 @@ module.exports = {
   plugins: (
     [
       new webpack.DefinePlugin(buildConfig),
-      new webpack.optimize.DedupePlugin(),
       new ExtractTextPlugin("[name].css", {disable: !buildConfig.__PROD__}),
     ]
     .concat(
       buildConfig.__PROD__
       ? [
+        new webpack.optimize.DedupePlugin(),
         new webpack.optimize.UglifyJsPlugin({
           compress: {
             warnings: false,
