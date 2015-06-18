@@ -388,6 +388,8 @@ pre {
 
   font-size: var(--r-small-fontSize);
 
+  list-style-type: "⟩ ";
+
   border: 1px solid color(#000 a(.2));
   border-radius: 3px;
   opacity: .6;
