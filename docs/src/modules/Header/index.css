@@ -124,6 +124,10 @@
       transform: translateY(100%);
       top: 0;
       left: 2rem;
+      filter:
+        drop-shadow(0 0 1px #fff)
+        drop-shadow(0 0 6px #fff)
+      ;
     }
 
     .js-Headroom--hide .cssnext-Header-version {
