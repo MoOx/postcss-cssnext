@@ -15,6 +15,9 @@
 @import "./modules/SVGIcon";
 @import "./modules/playground";
 
+@custom-media --r-maxXL (max-width: 90em);
+@custom-media --r-minXL (min-width: 90.01em);
+
 :root {
   --cssnext-Color-blue: #318edf;
   --cssnext-Color-purple: #8053ca;

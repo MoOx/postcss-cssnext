@@ -22,6 +22,9 @@ if (headroom) {
     return true
   }
 
+  // order is kind of important
+  // scroll, hashchange & onload
+
   window.addEventListener(
     "scroll",
     () => onAnimationFrame(update),
@@ -31,7 +34,43 @@ if (headroom) {
   // force hide when url hash is updated
   window.addEventListener(
     "hashchange",
-    () => headroom.classList.add("js-Headroom--hide"),
+    () => {
+      // hashchange can be triggered just after or BEFORE scroll event
+      // ... so poor hack
+      setTimeout(() => onAnimationFrame(
+        () => {
+          headroom.classList.add("js-Headroom--hide")
+          return true
+        }),
+        10
+      )
+    },
     false
+  )
+
+  // hide onload if there is a hash (not the top of the page)
+  // since page loaded with hash can trigger scroll event...
+  // again... poor hack
+  setTimeout(() => onAnimationFrame(
+    () => {
+      if (window.location.hash) {
+        // check that the browser is really near the anchor
+        // you can scroll up/down & refresh, your browser might keep the scroll
+        // so you are not really at the exact place of the anchor
+        // and you might be at the top of the page
+        // AND WE DONT WANT TO HIDE THE HEADER IN THIS CASE
+        const hashElement = document.getElementById(
+          window.location.hash.slice(1)
+        )
+        if (
+          hashElement.getBoundingClientRect().top < step &&
+          hashElement.getBoundingClientRect().top > -step
+        ) {
+          headroom.classList.add("js-Headroom--hide")
+        }
+      }
+      return true
+    }),
+    10
   )
 }

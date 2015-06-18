@@ -53,12 +53,12 @@
 
         line-height: 1;
         color: #fff;
-        opacity: .2;
+        opacity: .4;
       }
 
 
       .cssnext-Header-logo:hover .cssnext-Header-version {
-          opacity: .6;
+          opacity: .8;
       }
     }
 
@@ -116,4 +116,17 @@
 
   .js-Headroom--hide {
     transform: translateY(-100%);
+  }
+
+  @media (--r-minXL) {
+    .js-Headroom--hide .cssnext-Header-logo {
+      position: fixed;
+      transform: translateY(100%);
+      top: 0;
+      left: 2rem;
+    }
+
+    .js-Headroom--hide .cssnext-Header-version {
+      color: #000
+    }
   }
