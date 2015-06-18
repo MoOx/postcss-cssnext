@@ -12,6 +12,7 @@ export default class Body extends Component {
       PropTypes.object,
     ]).isRequired,
     scripts: PropTypes.array,
+    version: PropTypes.string,
     footer: PropTypes.bool,
   }
 
@@ -26,6 +27,12 @@ export default class Body extends Component {
   }
 
   render() {
+    const {
+      version,
+      scripts,
+      footer,
+    } = this.props
+
     return (
       <body className="cssnext-Body">
 
@@ -33,10 +40,10 @@ export default class Body extends Component {
 
         {this.props.children}
 
-        <Footer playground={this.props.footer} />
+        <Footer playground={footer} />
         {
-          this.props.scripts.map(script => (
-            <script key={script} src={script}></script>
+          scripts.map(script => (
+            <script key={script} src={`${ script }?${ version }`}></script>
           ))
         }
 

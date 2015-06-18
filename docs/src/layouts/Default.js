@@ -50,6 +50,7 @@ export default class Default extends Component {
             ...file.scripts || [],
             ...this.props.metadata.assets.scripts || [],
           ]}
+          version={this.props.metadata.assets.version}
           footer={footer}
         >
           <header

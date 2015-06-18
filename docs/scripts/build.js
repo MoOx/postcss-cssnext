@@ -1,9 +1,7 @@
 import path from "path"
 
 import {sync as rm} from "rimraf"
-import async from "async"
 import color from "chalk"
-import nanoLogger from "nano-logger"
 
 import Metalsmith from "metalsmith"
 import markdown from "metalsmith-md"
@@ -18,26 +16,19 @@ import markdownIt from "markdown-it"
 import markdownOptions from "./markdown"
 import markdownItTocAndAnchor from "markdown-it-toc-and-anchor"
 
-import webpack from "webpack"
-import webpackConfig from "./webpack.config"
-
-// prod
-import copyWithContentHash from "copy-with-content-hash/hash-file"
+import webpack from "./webpack"
+import pkg from "../../package"
+import buildConfig from "../../build.config"
+import webpackConfig from "../../webpack.config"
 
 // dev
 import watch from "metalsmith-watch"
 import devServer from "./webpack-dev-server"
 
-import pkg from "../../package"
-
-import variables, {defineGlobalVariables} from "./variables"
-defineGlobalVariables()
-const DEV_SERVER = process.argv.includes("--dev-server")
-
+import nanoLogger from "nano-logger"
 const log = nanoLogger("./build")
 
-log(color.cyan("- Variables"))
-JSON.stringify(variables, null, 2).split("\n").forEach(l => log(l))
+JSON.stringify(buildConfig, null, 2).split("\n").forEach(l => log(l))
 
 const mdToHtmlReplacement = [/\.md$/, ".html"]
 
@@ -102,13 +93,38 @@ smith
   ])
 )
 
+const webpackComputedConfig = {
+  ...webpackConfig,
+  entry: {
+    index: [
+      "./docs/src/index",
+    ],
+    playground: [
+      "./docs/src/modules/playground/index",
+    ],
+  },
+
+  output: {
+    path: path.join(__dirname, "..", "dist"),
+    filename: "[name].js",
+    publicPath: "/",
+  },
+}
+
 // for development, we build metalsmith first, then we serve via
 // webpack-dev-server which build assets too (no hashes involved)
-if (DEV_SERVER) {
+if (buildConfig.__DEV_SERVER__) {
   smith.metadata().assets = {
+    version: String((new Date()).getTime()),
     scripts: [
       "/index.js",
-      `http://${__SERVER_HOSTNAME__}:${__LR_SERVER_PORT__}/livereload.js`,
+      (
+        `http://${
+          buildConfig.__SERVER_HOSTNAME__
+        }:${
+          buildConfig.__LR_SERVER_PORT__
+        }/livereload.js`
+      ),
     ],
     // css is handled by the js via webpack style-loader
   }
@@ -116,7 +132,7 @@ if (DEV_SERVER) {
     .use(
       watch({
         log: nanoLogger("watcher"),
-        livereload: __LR_SERVER_PORT__,
+        livereload: buildConfig.__LR_SERVER_PORT__,
         paths: {
           "${source}/**/*": true,
           "src/layouts/**/*": "**/*.md",
@@ -129,10 +145,10 @@ if (DEV_SERVER) {
         throw err
       }
 
-      devServer({
-        protocol: __SERVER_PROTOCOL__,
-        host: __SERVER_HOSTNAME__,
-        port: __SERVER_PORT__,
+      devServer(webpackComputedConfig, {
+        protocol: buildConfig.__SERVER_PROTOCOL__,
+        host: buildConfig.__SERVER_HOSTNAME__,
+        port: buildConfig.__SERVER_PORT__,
         open: process.argv.includes("--open"),
       })
     })
@@ -141,49 +157,29 @@ if (DEV_SERVER) {
 // for production we build assets first to be able to pass some assets hashes
 // to metalsmith
 else {
-  webpack(webpackConfig, (err, stats) => {
-    if (err) {
-      throw err
-    }
+  webpack(webpackComputedConfig, log, (stats) => {
+    log(color.green("✓ Assets build completed"))
 
-    if (stats.hasErrors()) {
-      stats.compilation.errors.forEach(
-        item => log(...[color.red("Error:"), ...item.message.split("\n")])
-      )
-      throw new Error("webpack build failed with errors")
-    }
-    if (stats.hasWarnings()) {
-      stats.compilation.warnings.forEach(
-        item => log(...[color.yellow("Warning:"), ...item.message.split("\n")])
-      )
-    }
-
-    console.log(color.green("\n✓ Assets build completed"))
-
-    async.map(
-      [
-        "index.js",
-        ...(__PROD__ ? ["index.css"] : []),
+    smith.metadata().assets = {
+      version: stats.hash,
+      scripts: [
+        "/index.js",
       ],
-      (file, cb) => copyWithContentHash(`./docs/dist/${file}`, false, cb),
-      (asynErr, results) => {
-        if (asynErr) {
-          throw asynErr
+      ...buildConfig.__PROD__
+        ? {
+          stylesheets: [
+            "/index.css",
+          ],
         }
+        : {},
+    }
 
-        smith.metadata().assets = {
-          scripts: ["/" + results[0]],
-          ...(__PROD__ ? {stylesheets: ["/" + results[1]]} : {}),
-        }
-        smith
-          .build(buildErr => {
-            if (buildErr) {
-              throw buildErr
-            }
-
-            console.log(color.green("\n✓ Static build completed"))
-          })
+    smith.build(buildErr => {
+      if (buildErr) {
+        throw buildErr
       }
-    )
+
+      log(color.green("✓ Static build completed"))
+    })
   })
 }

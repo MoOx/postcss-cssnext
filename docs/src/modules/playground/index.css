@@ -86,8 +86,9 @@
       }
 
       .cssnext-Playground-code--to {
-        padding-left: 6rem;
         color: var(--cssnext-Color-blue);
+
+        /* border */
         border-left: 1px solid !important;
         border-image:
           linear-gradient(
