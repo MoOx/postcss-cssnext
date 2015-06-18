@@ -352,7 +352,7 @@ if you want to compress the output for production.
 
 Any omissions of the CSS specifications (even in draft) that are subject to be
 handled by cssnext are not intentional.
-You can take a look at the [list of features that are waiting to be implemented](https://github.com/cssnext/cssnext/issues?q=is%3Aopen+is%3Aissue+label%3Afeature+label%3Aready).
+You can take a look at the [list of features that are waiting to be implemented](https://github.com/cssnext/cssnext/issues?q=is%3Aopen+is%3Aissue+label%3A%22type%3A+feature+request%22).
 Feel free to work on a feature ready to be added, or
 [open a new issue](https://github.com/cssnext/cssnext/issues/new)
 if you find something that should be handled.
