@@ -105,7 +105,7 @@ h6 {
   margin: 0 auto;
   padding: 0 1rem;
 }
-  @media (--r-minM) {
+  @media (--r-minL) {
     .r-Grid {
       max-width: 65rem;
       padding: 0;
