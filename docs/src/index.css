@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /* base */
 @import "normalize.css/normalize.css";
 @import "cssrecipes-defaults";
@@ -114,6 +116,67 @@ h6 {
   /*@media (--r-minM) { .r-Grid { width: 70rem } }*/
   /*@media (--r-minXL) { .r-Grid { width: 70rem } }*/
 
+/**
+ * mardown plugins
+ */
+.markdownIt-Anchor {
+  opacity: .4;
+}
+
+  @media (--r-minL) {
+    .markdownIt-Anchor {
+      margin-left: -1.5rem;
+    }
+  }
+
+  .markdownIt-Anchor:hover {
+    opacity: .8;
+  }
+
+.markdownIt-TOC {
+  list-style: none;
+  padding: .8rem 1rem;
+
+  font-size: var(--r-small-fontSize);
+
+  border: 1px solid color(#000 a(.2));
+  border-radius: 3px;
+  opacity: .7;
+
+  transition: .2s;
+}
+
+  .markdownIt-TOC:hover {
+    opacity: .85;
+  }
+
+  .markdownIt-TOC li::before {
+    content: "› ";
+    padding-right: .4rem;
+    opacity: .6;
+    font-size: var(--r-small-fontSize);
+  }
+
+  .markdownIt-TOC ul {
+    list-style: none;
+    margin: 0;
+    padding: 0 1rem;
+  }
+
+@media (--r-minM) {
+  /* use sticky when it's on the right */
+  .js-markdownIt-TOCPlaceholder {
+    position: sticky;
+    top: 3rem;
+  }
+
+  .js-markdownIt-TOCPlaceholder .markdownIt-TOC {
+    margin: 2rem 0 2rem 1rem;
+    /* cheat a little about t he layout */
+    width: 120%;
+  }
+}
+
 
 /**
  * cssnext stuff
@@ -147,8 +210,6 @@ h6 {
 @media (--r-minM) {
   .cssnext-Body {padding-top: var(--cssnext-Header-height)}
 }
-
-
 
 .cssnext-Center { text-align: center }
 
@@ -261,6 +322,7 @@ h6 {
 }
 
 .cssnext-FeaturesList {
+
 }
 @media (--r-maxS) {
   .cssnext-FeaturesList {
@@ -269,14 +331,14 @@ h6 {
 }
 
   .cssnext-FeaturesList li::before {
-    content: "〉 ";
+    content: "› ";
     padding-right: .4rem;
-    opacity: .4;
+    opacity: .6;
     font-size: var(--r-small-fontSize);
   }
 
   .cssnext-FeaturesList-small {
-    opacity: .4;
+    opacity: .6;
     font-size: var(--r-small-fontSize);
   }
 
@@ -368,52 +430,3 @@ pre {
   .hljs-function {
     color: var(--cssnext-Color-purple);
   }
-
-.markdownIt-Anchor {
-  opacity: .4;
-}
-
-  @media (--r-minL) {
-    .markdownIt-Anchor {
-      margin-left: -1.5rem;
-    }
-  }
-
-  .markdownIt-Anchor:hover {
-    opacity: .8;
-  }
-
-.markdownIt-TOC {
-  padding: 1rem 1rem 1rem 2rem;
-
-  font-size: var(--r-small-fontSize);
-
-  list-style-type: "⟩ ";
-
-  border: 1px solid color(#000 a(.2));
-  border-radius: 3px;
-  opacity: .6;
-}
-
-  .markdownIt-TOC:hover {
-    opacity: .8;
-  }
-
-  .markdownIt-TOC ul {
-    margin: 0;
-    padding: 0 1rem;
-  }
-
-@media (--r-minM) {
-  /* use sticky when it's on the right */
-  .js-markdownIt-TOCPlaceholder {
-    position: sticky;
-    top: 3rem;
-  }
-
-  .js-markdownIt-TOCPlaceholder .markdownIt-TOC {
-    margin: 2rem 0 2rem 1rem;
-    /* cheat a little about t he layout */
-    width: 120%;
-  }
-}

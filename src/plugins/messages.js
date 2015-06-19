@@ -87,7 +87,7 @@ export default postcss.plugin(
         })
       })
 
-      const bullet = "〉"
+      const bullet = "›"
       const content = messages.map(message => message.toString())
         .join(`\n\n\n${ bullet } `)
 
