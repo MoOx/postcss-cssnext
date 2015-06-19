@@ -1,3 +1,8 @@
+# 1.7.1 - 2015-06-19
+
+- Fixed: bullet for browser messages should be visible on Chrome Windows.
+Changed from `〉` to `›`
+
 # 1.7.0 - 2015-06-17
 
 - Added: warning to deprecate previous (wrong) custom selectors syntax.
