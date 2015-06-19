@@ -22,7 +22,7 @@ export default class Head extends Component {
         <meta httpEquiv="X-UA-Compatible" content="IE=Edge" />
         <meta
           name="viewport"
-          content="width=device-width, initial-scale=1.0, minimal-ui"
+          content="width=device-width, initial-scale=1.0"
         />
         <link
           rel="icon"
