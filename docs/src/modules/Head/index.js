@@ -24,6 +24,11 @@ export default class Head extends Component {
           name="viewport"
           content="width=device-width, initial-scale=1.0, minimal-ui"
         />
+        <link
+          rel="icon"
+          type="image/png"
+          href="/favicon.png"
+        />
         <title>{this.props.title}</title>
         {
           this.props.stylesheets.map(stylesheet => (
