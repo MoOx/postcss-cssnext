@@ -16,10 +16,6 @@ export default class Footer extends Component {
           <SVGIcon
             svg={requireRaw("./src/assets/cssnext.svg")}
             className="cssnext-Header-logo-img"
-            style={{
-              height: "1rem",
-              verticalAlign: "middle",
-            }}
           />
           {" is brought to you by "}
           <a href="https://twitter.com/MoOx">@MoOx</a>

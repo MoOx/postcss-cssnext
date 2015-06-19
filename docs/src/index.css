@@ -198,17 +198,13 @@ h6 {
   transform: translate3d(0,0,0); /* fix webkit/blink poor rendering issues */
 }
 
-:root {
-  --cssnext-Header-height: calc(var(--r-lineHeight) * 2.5);
-}
-
 .r-VerticalRhythm {font-size: .8333rem}
 @media (--r-minM) {
   .r-VerticalRhythm {font-size: 1rem}
 }
 
 @media (--r-minM) {
-  .cssnext-Body {padding-top: var(--cssnext-Header-height)}
+  .cssnext-Body {padding-top: calc(var(--r-lineHeight) * 2.5)}
 }
 
 .cssnext-Center { text-align: center }

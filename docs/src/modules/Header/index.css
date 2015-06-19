@@ -1,3 +1,10 @@
+@import "cssrecipes-vertical-rhythm/lib/base.css";
+
+:root {
+  --cssnext-Header-height: calc(var(--r-lineHeight) * 2.5);
+  --cssnextLogo-ratio: calc(256 / 48);
+}
+
 .cssnext-Header {
   line-height: var(--cssnext-Header-height);
 }
@@ -17,11 +24,13 @@
   .cssnext-Header-logo {
     display: block;
     text-align: center;
+    font-size: 1.5rem;
   }
+
   @media (--r-minM) {
     .cssnext-Header-logo {
       display: inline-block;
-      margin: 0 1.5rem 0 0 !important;
+      margin: 0 1rem 0 0;
     }
   }
 
@@ -29,10 +38,11 @@
     .cssnext-Header-logo::before {display: none}
 
     .cssnext-Header-logo-img {
-      height: var(--r-lineHeight);
-      width: auto;
-      vertical-align: middle;
       display: inline-block;
+      vertical-align: middle;
+      height: 1em;
+      width: calc(1em * var(--cssnextLogo-ratio));
+      margin-right: .2rem;
     }
 
       .cssnext-Header-logo-img-svg {
@@ -48,11 +58,11 @@
     @media (--r-minM) {
       .cssnext-Header-version {
         position: absolute;
-        bottom: -1.2rem;
-        right: 4rem;
+        bottom: -1.5rem;
+        left: calc(.5em * var(--cssnextLogo-ratio));
 
         line-height: 1;
-        color: #fff;
+        color: #ccc;
         opacity: .4;
       }
 
@@ -120,17 +130,23 @@
 
   @media (--r-minXL) {
     .js-Headroom--hide .cssnext-Header-logo {
-      position: fixed;
-      transform: translateY(100%);
-      top: 0;
-      left: 2rem;
+      position: absolute;
+      top: calc(var(--cssnext-Header-height) + 1rem);
+      left: 1rem;
+
+      height: 1em;
+
       filter:
         drop-shadow(0 0 1px #fff)
         drop-shadow(0 0 6px #fff)
       ;
     }
 
+    .js-Headroom--hide .cssnext-Header-logo-img {
+      vertical-align: top;
+    }
+
     .js-Headroom--hide .cssnext-Header-version {
-      color: #000
+      color: #000;
     }
   }
