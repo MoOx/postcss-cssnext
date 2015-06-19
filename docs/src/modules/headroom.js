@@ -11,6 +11,12 @@ if (headroom) {
 
   const update = () => {
     const scroll = getScrollTop()
+
+    // ignore scroll out of the page (hi Safari!)
+    if (scroll < 0) {
+      return true
+    }
+
     if (scroll > previousScroll + step) {
       headroom.classList.add("js-Headroom--hide")
       previousScroll = scroll
