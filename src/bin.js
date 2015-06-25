@@ -1,18 +1,18 @@
 #!/usr/bin/env node
 
-const fs = require("fs")
-const path = require("path")
+import fs from "fs"
+import path from "path"
 
 // until this land in a stable version of node (for a while)
 // https://github.com/joyent/node/commit/20176a
 // we will this instead of process.exit()
-const exit = require("exit")
+import exit from "exit"
 
-const color = require("chalk")
-const program = require("commander")
+import color from "chalk"
+import program from "commander"
 
-const cssnext = require("..")
-const pkg = require("../package")
+import cssnext from ".."
+import pkg from "../package"
 
 program
   .version(pkg.version)
