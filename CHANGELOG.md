@@ -1,3 +1,7 @@
+
+- Fixed: replacement of `postcss-log-warnings` (deprecated) by `postcss-reporter`
+([#162](https://github.com/cssnext/cssnext/issues/162))
+
 # 1.7.1 - 2015-06-19
 
 - Fixed: bullet for browser messages should be visible on Chrome Windows.

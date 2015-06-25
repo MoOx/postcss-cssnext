@@ -67,6 +67,18 @@ test("cssnext option: messages", (t) => {
 
   // we should do the same for "console" value, but we need to test stdout
   // and I am lazy atm. Finger crossed.
+  // t.ok(
+  //   cssnext({
+  //     ...defaultOptions,
+  //     messages: {
+  //       console: true,
+  //     },
+  //   })
+  //     .process("test{}")
+  //     .css
+  //   ,
+  //   "should show messages in the console"
+  // )
 
   t.end()
 })

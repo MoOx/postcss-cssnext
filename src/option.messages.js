@@ -1,4 +1,4 @@
-import postcssMessagesConsole from "postcss-log-warnings"
+import postcssMessagesConsole from "postcss-reporter"
 // https://github.com/postcss/postcss-messages/issues/16
 // import postcssMessagesCSS from "postcss-messages"
 import postcssMessagesCSS from "./plugins/messages"

@@ -14,6 +14,16 @@ $ npm test
 $ git checkout -b fix.bug423
 ```
 
+`npm test` will compile what is need to be and run all tests.
+If you want to work on one test only, you can run something like
+
+```console
+$ babel-tape-runner src/__tests__/option.browsers.js
+```
+
+_Be sure to have in your PATH `./node_modules/.bin` so you can use local
+module directly in console._
+
 ## Details
 
 ### Add a feature

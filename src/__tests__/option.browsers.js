@@ -3,27 +3,39 @@ const test = require("tape")
 const cssnext = require("..")
 
 test("cssnext browsers option", function(t) {
-  const input = ":root{--foo:bar}baz{qux:var(--foo)}"
-  const output = "baz{qux: bar}"
+
+  // no recent browser need pixrem
+  const remInput = "body{font-size:2rem}"
+  t.equal(
+    cssnext(
+      remInput,
+      {browsers: "last 1 version"}
+    ),
+    remInput,
+    "should not enable px fallback when all browsers support it"
+  )
+
+  const customPropsInput = ":root{--foo:bar}baz{qux:var(--foo)}"
+  const customPropsOutput = "baz{qux: bar}"
 
   // fx 30 doesn't handle custom prop
   t.equal(
-    cssnext(input, {browsers: "Firefox >= 30"}),
-    output,
+    cssnext(customPropsInput, {browsers: "Firefox >= 30"}),
+    customPropsOutput,
     "should enable custom properties when browsers do not support it"
   )
 
   // fx 31 handle custom prop
   t.equal(
-    cssnext(input, {browsers: "Firefox >= 31"}),
-    input,
+    cssnext(customPropsInput, {browsers: "Firefox >= 31"}),
+    customPropsInput,
     "should NOT enable custom properties when browsers support it"
   )
 
   // fx 31 support but not IE 8
   t.equal(
-    cssnext(input, {browsers: "Firefox >= 31, IE 8"}),
-    output,
+    cssnext(customPropsInput, {browsers: "Firefox >= 31, IE 8"}),
+    customPropsOutput,
     "should enable custom properties when at least one browsers do not " +
       "support it"
   )
