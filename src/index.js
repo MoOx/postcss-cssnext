@@ -143,9 +143,6 @@ function cssnext(string, options) {
           ? options.compress
           : {}
         ),
-        // forced calc options to false
-        // since we already used it
-        calc: false,
       })
     )
   }
