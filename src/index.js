@@ -137,13 +137,11 @@ function cssnext(string, options) {
   if (options.compress) {
     const nano = require("cssnano")
     postcss.use(
-      nano({
-        ...(
-          typeof options.compress === "object"
-          ? options.compress
-          : {}
-        ),
-      })
+      nano(
+        typeof options.compress === "object"
+        ? options.compress
+        : {}
+      )
     )
   }
 

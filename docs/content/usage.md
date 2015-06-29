@@ -187,7 +187,7 @@ If you want, you can pass option to the PostCSS plugins used
     }
 
     console: {
-      // see https://github.com/davidtheclark/postcss-log-warnings
+      // see https://github.com/postcss/postcss-reporter
     },
   }
 }
