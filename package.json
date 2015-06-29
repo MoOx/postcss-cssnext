@@ -32,6 +32,7 @@
     "commander": "^2.3.0",
     "cssnano": "^2.0.1",
     "exit": "^0.1.2",
+    "mkdirp": "^0.5.1",
     "pixrem": "^1.1.0",
     "pleeease-filters": "^1.0.0",
     "postcss": "^4.0.2",

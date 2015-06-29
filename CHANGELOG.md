@@ -1,6 +1,11 @@
 
 - Fixed: replacement of `postcss-log-warnings` (deprecated) by `postcss-reporter`
 ([#162](https://github.com/cssnext/cssnext/issues/162))
+- Fixed: CLI now add `to` option automatically
+([#159](https://github.com/cssnext/cssnext/issues/159))
+If you were happy with the previous CLI behavior (which was not rebasing url), you should probably just add the `--no-url` to keep the CSS as it was.
+- Added: CLI output file dirname is now automatically created (using `mkdirp`)
+([#146](https://github.com/cssnext/cssnext/issues/146))
 
 # 1.7.1 - 2015-06-19
 

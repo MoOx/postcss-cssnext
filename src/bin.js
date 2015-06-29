@@ -8,6 +8,7 @@ import path from "path"
 // we will this instead of process.exit()
 import exit from "exit"
 
+import mkdirp from "mkdirp"
 import color from "chalk"
 import program from "commander"
 
@@ -97,6 +98,12 @@ if (input && !fs.existsSync(input)) {
 }
 
 config.from = input
+config.to = output
+
+if (output) {
+  mkdirp.sync(path.dirname(output))
+}
+
 // init & adjust watcher with postcss-import dependencies
 let watcher
 if (config.watch) {

@@ -35,6 +35,25 @@ test("cli", function(t) {
   )
   planned += 1
 
+  exec(
+    cssnextBin +
+      " src/__tests__/fixtures/cli.css" +
+      " src/__tests__/fixtures/cli/output--io.css",
+    function(err) {
+      if (err) {
+        throw err
+      }
+      const res = utils.readFixture("cli/output--io")
+      t.equal(
+        res,
+        "body {\n  color: #e00;\n  background: url(../url);\n}\n",
+        "should rebase url"
+      )
+      utils.remove("cli/output--io")
+    }
+  )
+  planned += 1
+
   exec(cssnextBin + " src/__tests__/fixtures/cli.css", function(err, stdout) {
     if (err) {
       throw err
