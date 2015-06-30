@@ -1,0 +1,6 @@
+:root {
+  --width: 1px;
+  --width: calc(1px + 1px);
+  --width2: var(--width);
+}
+@custom-media --mq (max-width: 30em);

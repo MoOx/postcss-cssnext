@@ -22,6 +22,7 @@ program
   .option("-b, --browsers <items>", "browsers list (comma separated)")
   .option("-I, --no-import", "do not inline @import")
   .option("-U, --no-url", "do not adjust url()")
+  .option("-e, --extract", "output values of custom properties")
   .option("-c, --compress", "compress output")
   .option("-s, --sourcemap", "add sourcemap")
   .option("-w, --watch", "watch the input file for changes")
@@ -87,6 +88,7 @@ if ("compress" in program) {
 if ("watch" in program) {
   config.watch = program.watch
 }
+config.extract = program.extract
 
 const input = program.args[0] ? path.resolve(program.args[0]) : null
 const output = program.args[1] ? path.resolve(program.args[1]) : null
