@@ -47,7 +47,7 @@
     "postcss-custom-properties": "^4.0.0",
     "postcss-custom-selectors": "^2.0.1",
     "postcss-font-variant": "^1.0.0",
-    "postcss-import": "^6.0.0",
+    "postcss-import": "^6.1.1",
     "postcss-media-minmax": "^1.1.0",
     "postcss-messages": "^0.2.2",
     "postcss-pseudo-class-any-link": "^0.2.1",
