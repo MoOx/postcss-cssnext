@@ -43,6 +43,8 @@ or through others tools below:
 <p class="cssnext-Tools">
   <a href="https://github.com/cssnext/cssnext-loader">webpack</a>
   ,
+  <a href="https://github.com/cssnext/cssnextify">browserify</a>
+  ,
   <a href="https://github.com/cssnext/gulp-cssnext">gulp</a>
   ,
   <a href="https://github.com/cssnext/grunt-cssnext">grunt</a>
