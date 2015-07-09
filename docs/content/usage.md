@@ -211,7 +211,7 @@ _(default: _depends on `sourcemap`: `undefined` if `sourcemap` is `false`,
 
 If you want better control on sourcemap, you are at the right place.
 This is the
-[postcss `map` option](https://github.com/postcss/postcss#source-map-1),
+[postcss `map` option](https://github.com/postcss/postcss#source-map),
 so checkout the related documentation directly.
 
 _If you specify this option, `sourcemap` value will be ignored._
