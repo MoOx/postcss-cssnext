@@ -31,11 +31,13 @@ The support of syntax without : and the warning message will be remove in the ne
 
 # 1.6.0 - 2015-06-02
 
-- Added: prevent mutability issues with frozen options objects ([#147](https://github.com/cssnext/cssnext/pull/147))
+- Added: prevent mutability issues with frozen options objects
+([#147](https://github.com/cssnext/cssnext/pull/147))
 
 # 1.5.2 - 2015-05-27
 
-- Fixed: support for autoprefixer 5.2 ([#131](https://github.com/cssnext/cssnext/issues/131))
+- Fixed: support for autoprefixer 5.2
+([#131](https://github.com/cssnext/cssnext/issues/131))
 
 # 1.5.1 - 2015-05-25
 
@@ -70,7 +72,8 @@ replacement of colors lib by chalk in 1.5.0
 
 # 1.2.1 - 2015-03-02
 
-- Fixed: remove some deprecation notice related to postcss 4.1 ([postcss/postcss#272](https://github.com/postcss/postcss/issues/272))
+- Fixed: remove some deprecation notice related to postcss 4.1
+([postcss#272](https://github.com/postcss/postcss/issues/272))
 
 # 1.2.0 - 2015-04-02
 
@@ -84,7 +87,8 @@ replacement of colors lib by chalk in 1.5.0
 
 # 1.0.1 - 2015-02-18
 
-- Fixed: cssnext binary doesn't exit on an error if --watch is enabled ([#69](https://github.com/cssnext/cssnext/pull/69))
+- Fixed: cssnext binary doesn't exit on an error if --watch is enabled
+([#69](https://github.com/cssnext/cssnext/pull/69))
 
 # 1.0.0 - 2015-02-06
 
@@ -121,7 +125,8 @@ cssnext({
 
 # 0.6.6 - 2014-12-22
 
-- Fixed: `Cannot find module 'exit'` error when an error came out ([#54](https://github.com/cssnext/cssnext/issues/54))
+- Fixed: `Cannot find module 'exit'` error when an error came out
+([#54](https://github.com/cssnext/cssnext/issues/54))
 
 # 0.6.5 - 2014-12-16
 
@@ -162,25 +167,32 @@ cssnext({
 
 # 0.4.4 - 2014-11-11
 
-- Fixed: bug introduced by `options` mutations ([ref](https://github.com/cssnext/gulp-cssnext/issues/1))
+- Fixed: bug introduced by `options` mutations
+([gulp-cssnext#1](https://github.com/cssnext/gulp-cssnext/issues/1))
 
 # 0.4.3 - 2014-11-09
 
-- Added: font-variant support ([ref](https://github.com/cssnext/cssnext/issues/42))
+- Added: font-variant support
+([#42](https://github.com/cssnext/cssnext/issues/42))
 
 # 0.4.2 - 2014-11-02
 
-- Fixed: support !important for custom properties ([ref](https://github.com/postcss/postcss-custom-properties/issues/12))
-- Added: echo a warning when using a non root custom properties ([ref](https://github.com/postcss/postcss-custom-properties/issues/13))
-- Added: cssnext can return a postcss instance of no string given ([ref](https://github.com/cssnext/cssnext/issues/3))
+- Fixed: support !important for custom properties
+([#12](https://github.com/postcss/postcss-custom-properties/issues/12))
+- Added: echo a warning when using a non root custom properties
+([#13](https://github.com/postcss/postcss-custom-properties/issues/13))
+- Added: cssnext can return a postcss instance of no string given
+([#3](https://github.com/cssnext/cssnext/issues/3))
 
 # 0.4.1 - 2014-11-01
 
-- Added: gray() support ([ref](https://github.com/cssnext/cssnext/issues/44))
+- Added: gray() support
+([#44](https://github.com/cssnext/cssnext/issues/44))
 
 # 0.4.0 - 2014-10-23
 
-- Changed: color feature has been exploded to multiples features ([issue](https://github.com/cssnext/cssnext/issues/40)).
+- Changed: color feature has been exploded to multiples features
+([#40](https://github.com/cssnext/cssnext/issues/40)).
 
 Before
 
@@ -213,7 +225,8 @@ var output = cssnext(input, {
 })
 ```
 
-- Changed: cssnext options are not passed to all plugins anymore. You know need to specify feature options by passing object to `features` properties  ([issue](https://github.com/cssnext/cssnext/issues/39)).
+- Changed: cssnext options are not passed to all plugins anymore. You know need to specify feature options by passing object to `features` properties  
+([#39](https://github.com/cssnext/cssnext/issues/39)).
 
 Before
 
@@ -243,7 +256,8 @@ This change have been made to avoid collision between options (of each features)
 
 # 0.3.1 - 2014-08-27
 
-- Fixed: nested custom properties usages ([#25](https://github.com/cssnext/cssnext/issues/25))
+- Fixed: nested custom properties usages
+([#25](https://github.com/cssnext/cssnext/issues/25))
 
 # 0.3.0 - 2014-08-26
 
@@ -251,7 +265,8 @@ This change have been made to avoid collision between options (of each features)
 
 # 0.2.3 - 2014-08-26
 
-- Fixed: support empty files ([#24](https://github.com/cssnext/cssnext/issues/24))
+- Fixed: support empty files
+([#24](https://github.com/cssnext/cssnext/issues/24))
 
 # 0.2.2 - 2014-08-22
 
