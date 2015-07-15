@@ -86,7 +86,7 @@
     "json-loader": "^0.5.2",
     "markdown-it": "^4.2.1",
     "markdown-it-toc-and-anchor": "^1.0.1",
-    "metalsmith": "segmentio/metalsmith#wider-node-support",
+    "metalsmith": "^2.0.1",
     "metalsmith-collections": "^0.7.0",
     "metalsmith-filenames": "^1.0.0",
     "metalsmith-md": "^2.0.1",
