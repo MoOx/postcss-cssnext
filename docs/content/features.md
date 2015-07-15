@@ -101,12 +101,18 @@ Alows you to create your own selectors
 
 ```css
 @custom-selector :--button button, .button;
+@custom-selector :--enter :hover, :focus;
 
 :--button {
   /* styles for your buttons */
 }
-:--button:hover {
-  /* hover styles for your button */
+:--button:--enter {
+  /*
+    hover/focus styles for your button
+
+    Read more about :enter proposal
+    http://discourse.specifiction.org/t/a-common-pseudo-class-for-hover-and-focus/877
+   */
 }
 ```
 
