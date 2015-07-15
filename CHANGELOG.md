@@ -1,3 +1,5 @@
+# 1.8.1 - 2015-07-15
+
 - Added: cssnext now throw an error if used as a webpack loader to prevent
 unexpected usage with a recommendation for
 [cssnext-loader](https://github.com/cssnext/cssnext-loader)
