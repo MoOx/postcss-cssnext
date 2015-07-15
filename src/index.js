@@ -18,6 +18,18 @@ import optionMessages from "./option.messages"
  * @return {String} if string is given, or {Object} (postcss instance)
  */
 function cssnext(string, options) {
+  // prevent usage as a webpack loader
+  // webpack run loader as function with an object as context
+  // this object contains a "webpack" key set to true if used as a loader
+  // https://github.com/cssnext/cssnext/issues/61
+  if (typeof this === "object" && this.webpack === true) {
+    throw new Error(
+      "⚠︎ Don't use directly cssnext as a webpack loader. " +
+      "Please use `cssnext-loader` instead: " +
+      "https://github.com/cssnext/cssnext-loader"
+    )
+  }
+
   if (arguments.length === 0) {
     options = {}
   }

@@ -1,3 +1,8 @@
+- Added: cssnext now throw an error if used as a webpack loader to prevent
+unexpected usage with a recommendation for
+[cssnext-loader](https://github.com/cssnext/cssnext-loader)
+([#61](https://github.com/cssnext/cssnext/issues/61))
+
 # 1.8.0 - 2015-06-29
 
 - Fixed: replacement of `postcss-log-warnings` (deprecated) by `postcss-reporter`
