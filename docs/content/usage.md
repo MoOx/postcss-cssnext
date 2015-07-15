@@ -49,11 +49,14 @@ Each feature is based on PostCSS plugins & can get its own options.
 To pass options to a feature, you can just pass an object to the feature:
 
 ```js
-//eg: preserve custom properties
+//eg: pass variables
 var output = cssnext(input, {
   features: {
     customProperties: {
-      preserve: true
+      variables: {
+        mainColor: "red",
+        altColor: "blue",
+      }
     }
   }
 })
@@ -107,12 +110,19 @@ _(default: `true`)_
 Allows you to inline local `@import` files
 (thanks to [postcss-import](https://github.com/postcss/postcss-import#readme)):
 
-* you can refer to `node_modules` and `web_modules` packages
-* you can omit .css extension
+* you can refer to
+  * `node_modules` packages
+  * `web_modules` packages
+  * `bower_components` packages
+  * local packages or files
+* for packages, this will automatically
+  * look for `"style"` entry in `package.json`
+  * or will try to call `index.css`
+* you can omit `.css` extension of filename
 
 _Note: you can pass
 [postcss-import options](https://github.com/postcss/postcss-import#readme)
-directly._
+directly if needed._
 
 ## `url`
 
@@ -127,7 +137,7 @@ directly in order to inline or have more control over urls._
 
 ## `plugins`
 
-_(default: undefined)_
+_(default: `[]`)_
 
 Allows you to pass your own array of transformations. You can just pass your own
 [PostCSS](https://github.com/postcss/postcss) plugins.
@@ -135,11 +145,11 @@ Allows you to pass your own array of transformations. You can just pass your own
 ```js
 {
   plugins: [
-    require("postcss-sass-stuff"),
-    require("postcss-more-crazy-stuff"),
+    require("postcss-stuff"),
+    require("postcss-more-stuff"),
     // custom transformation code
-    function(styles) {
-
+    function(cssAst, result) {
+      // see https://github.com/postcss/postcss
     },
   ],
 }
