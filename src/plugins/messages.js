@@ -11,29 +11,29 @@ function escapeForCSS(string) {
   for (let i = 0; i < string.length; i++) {
     const ch = string.charAt(i)
     switch (ch) {
-      case "\n":
-      case "\r":
-        newString += "\\A "
-        break
+    case "\n":
+    case "\r":
+      newString += "\\A "
+      break
 
-      case "\\":
-      case "\'":
-      case "\"":
-        newString += "\\" + ch
-        break
+    case "\\":
+    case "\'":
+    case "\"":
+      newString += "\\" + ch
+      break
 
-      default:
-        // non ascii
-        if (!ch.match(/^[\x00-\x7F]*$/)) {
-          let hexCh = string.charCodeAt(i).toString(16)
-          while (hexCh.length < 4) {
-            hexCh = "0" + hexCh
-          }
-          // space at the end is required
-          newString += "\\" + hexCh + " "
-          continue
+    default:
+      // non ascii
+      if (!ch.match(/^[\x00-\x7F]*$/)) {
+        let hexCh = string.charCodeAt(i).toString(16)
+        while (hexCh.length < 4) {
+          hexCh = "0" + hexCh
         }
-        newString += string[i]
+        // space at the end is required
+        newString += "\\" + hexCh + " "
+        continue
+      }
+      newString += string[i]
     }
   }
 

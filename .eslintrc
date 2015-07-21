@@ -29,9 +29,9 @@ plugins:
 rules:
   indent: [2, 2] # 2 spaces indentation
   max-len: [2, 80, 4]
+  no-multiple-empty-lines: [2, {"max": 1}]
   quotes: [2, "double"]
   semi: [2, "never"]
-  no-multiple-empty-lines: [2, {"max": 1}]
 
   brace-style: [2, "stroustrup"]
   comma-dangle: [2, "always-multiline"]
@@ -39,18 +39,20 @@ rules:
   computed-property-spacing: [2, "never"]
   dot-location: [2, "property"]
 
-  one-var: [2, "never"]
   no-var: [2]
-  prefer-const: [2]
   no-bitwise: [2]
+  one-var: [2, "never"]
+  prefer-const: [2]
 
+  array-bracket-spacing: [2, "never"]
   object-shorthand: [2, "methods"]
+  object-curly-spacing: [2, "never"]
   space-after-keywords: [2, "always"]
   space-before-blocks: [2, "always"]
   space-before-function-paren: [2, "never"]
-  space-in-brackets: [2, "never"]
   space-in-parens: [2, "never"]
-  spaced-line-comment: [2, "always"]
+  space-unary-ops: [2, {"words": true, "nonwords": false}]
+  spaced-comment: [2, "always"]
 
   # see globals
   no-underscore-dangle: 0

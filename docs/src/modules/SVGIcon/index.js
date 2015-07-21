@@ -64,7 +64,7 @@ export default class SVGIcon extends Component {
       className,
       component,
       svg,
-      fill
+      fill,
     } = this.props
 
     let cleanup = this.props.cleanup

@@ -118,13 +118,11 @@ if (buildConfig.__DEV_SERVER__) {
     version: String((new Date()).getTime()),
     scripts: [
       "/index.js",
-      (
-        `http://${
-          buildConfig.__SERVER_HOSTNAME__
-        }:${
-          buildConfig.__LR_SERVER_PORT__
-        }/livereload.js`
-      ),
+      `http://${
+        buildConfig.__SERVER_HOSTNAME__
+      }:${
+        buildConfig.__LR_SERVER_PORT__
+      }/livereload.js`,
     ],
     // css is handled by the js via webpack style-loader
   }
