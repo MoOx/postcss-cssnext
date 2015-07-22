@@ -369,6 +369,24 @@ h6 {
   line-height: calc(var(--r-h3-lineHeight)*2);
   font-weight: 300;
 }
+  @media (--r-minM) {
+    .cssnext-Tools {
+      width: 75%;
+      margin: auto;
+    }
+  }
+
+  .cssnext-Tools a {
+    font-weight: 400;
+  }
+
+  .cssnext-Tools a:nth-child(2n+1) {
+    color: var(--cssnext-Color-blue);
+  }
+
+  .cssnext-Tools a:nth-child(2n) {
+    color: var(--cssnext-Color-purple);
+  }
 
 .cssnext-INeedSpace {
   margin-top: calc(var(--r-lineHeight) * 2);

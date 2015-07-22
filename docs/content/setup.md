@@ -51,22 +51,14 @@ as a [PostCSS](https://github.com/postcss/postcss) plugin
 or through others tools below:
 
 <p class="cssnext-Tools">
-  <a href="https://github.com/cssnext/cssnext-loader">webpack</a>
-  ,
-  <a href="https://github.com/cssnext/cssnextify">browserify</a>
-  ,
-  <a href="https://github.com/cssnext/gulp-cssnext">gulp</a>
-  ,
-  <a href="https://github.com/cssnext/grunt-cssnext">grunt</a>
-  ,
-  <a href="https://github.com/cssnext/cssnext-brunch">brunch</a>
-  ,
-  <a href="https://github.com/cssnext/broccoli-cssnext">broccoli</a>
-  ,
-  <a href="https://github.com/cssnext/fly-cssnext">fly</a>
-  ,
-  <a href="https://github.com/cssnext/cssnext-connect">connect</a>
-  ,
+  <a href="https://github.com/cssnext/cssnext-loader">webpack</a>,
+  <a href="https://github.com/cssnext/cssnextify">browserify</a>,
+  <a href="https://github.com/cssnext/gulp-cssnext">gulp</a>,
+  <a href="https://github.com/cssnext/grunt-cssnext">grunt</a>,
+  <a href="https://github.com/cssnext/cssnext-brunch">brunch</a>,
+  <a href="https://github.com/cssnext/broccoli-cssnext">broccoli</a>,
+  <a href="https://github.com/cssnext/fly-cssnext">fly</a>,
+  <a href="https://github.com/cssnext/cssnext-connect">connect</a>,
   <a href="https://github.com/cssnext/duo-cssnext">duo</a>
   or in
   <a href="https://prepros.io/">Prepros</a>
