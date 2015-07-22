@@ -1,12 +1,14 @@
 /**
  * Test dependencies
  */
-const exec = require("child_process").exec
+import {exec} from "child_process"
 
-const test = require("tape")
+import test from "tape"
 
-const utils = require("./utils")
-const cssnext = require("..")
+import utils from "./utils"
+import cssnext from ".."
+
+import isBabel from "./utils/isBabel"
 
 /**
  * CLI tests
@@ -15,7 +17,7 @@ const input = utils.readFixture("cli")
 const output = utils.readFixture("cli.expected")
 
 // node bin is used to help for windows
-const cssnextBin = "node dist/bin"
+const cssnextBin = isBabel ? "babel-node src/bin" : "node dist/bin"
 
 test("cli", function(t) {
   let planned = 0

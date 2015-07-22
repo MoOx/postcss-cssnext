@@ -1,3 +1,8 @@
+# 1.8.2 - 2015-07-23
+
+- Fixed: CLI watcher now works watchs correctl multiples `@import`
+([#123](https://github.com/cssnext/cssnext/issues/123))
+
 # 1.8.1 - 2015-07-15
 
 - Added: cssnext now throw an error if used as a webpack loader to prevent

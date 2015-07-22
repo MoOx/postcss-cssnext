@@ -116,6 +116,20 @@ if (config.watch) {
 
   watcher = require("chokidar").watch(input, {ignoreInitial: true})
 
+  if (verbose) {
+    log(color.cyan("Watching"), input)
+  }
+
+  // https://github.com/paulmillr/chokidar/issues/288
+  // ready event might not be triggered at all
+  // watcher.on("ready", function() {
+  //   if (verbose) {
+  //     log(color.cyan("Watcher ready"), input)
+  //   }
+  // })
+
+  watcher.on("change", transform)
+
   // watch `@import`ed files
   if (config.import) {
     // keep a up to date list of imported files
@@ -131,10 +145,12 @@ if (config.watch) {
     }
 
     const watcherOnImport = function(imported) {
-      arrayDiff(importedFiles, imported).forEach(function(file) {
+      const toUnwatch = arrayDiff(importedFiles, imported)
+      const toWatch = arrayDiff(imported, importedFiles)
+      toUnwatch.forEach(function(file) {
         watcher.unwatch(rebaseFile(file))
       })
-      arrayDiff(imported, importedFiles).forEach(function(file) {
+      toWatch.forEach(function(file) {
         watcher.add(rebaseFile(file))
       })
       importedFiles = imported
@@ -194,16 +210,6 @@ function transform() {
 }
 
 transform()
-
-if (watcher) {
-  watcher.on("ready", function() {
-    if (verbose) {
-      log(color.cyan("Watching"), input)
-    }
-
-    watcher.on("change", transform)
-  })
-}
 
 /**
  * log content prefixed by time

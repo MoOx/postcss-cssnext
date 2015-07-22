@@ -1,25 +1,27 @@
 /**
  * Test dependencies
  */
-const exec = require("child_process").exec
-const spawn = require("child_process").spawn
-const fs = require("fs")
+import {exec, spawn} from "child_process"
+import fs from "fs"
 
-const test = require("tape")
+import test from "tape"
 
-const utils = require("./utils")
+import utils from "./utils"
+
+import isBabel from "./utils/isBabel"
 
 // I don't success to call the kill() process from node and both Travis CI and
 // Appveyor so we avoid this test on this environnements
 if (!(process.env.TRAVIS || process.env.APPVEYOR)) {
   // node bin is used to help for windows
-  const cssnextBin = "node dist/bin"
+  const nodeBin = isBabel ? "babel-node" : "node"
+  const cssnextBin = isBabel ? "src/bin" : "dist/bin"
 
   test("cli/watcher", function(t) {
     let planned = 0
 
     const watchProcess = exec(
-      cssnextBin +
+      `${ nodeBin } ${ cssnextBin }` +
         " --watch src/__tests__/fixtures/cli.error.css" +
         " src/__tests__/fixtures/cli.output--watch.css",
       function(err) {
@@ -51,9 +53,10 @@ if (!(process.env.TRAVIS || process.env.APPVEYOR)) {
     const watchOut = "src/__tests__/fixtures/cli.output--watch-import.css"
 
     const watchImportProcess = spawn(
-      "node",
+      nodeBin,
       [
-        "dist/bin",
+        cssnextBin,
+        // "--verbose",
         "--watch",
         "src/__tests__/fixtures/cli.watch-import.css",
         watchOut,
@@ -69,7 +72,9 @@ if (!(process.env.TRAVIS || process.env.APPVEYOR)) {
     // cli.import2.css
     fs.writeFileSync(
       "src/__tests__/fixtures/cli.watch-import.css",
-      "/**/ @import 'cli.watch-import-import.css';"
+      "/**/ " +
+        "@import 'cli.watch-import-import.css';" +
+        "@import 'cli.watch-import-import2.css';"
     )
 
     // we are using setTimeout for the watcher to do his job
@@ -80,7 +85,7 @@ if (!(process.env.TRAVIS || process.env.APPVEYOR)) {
           watchOut,
           {encoding: "utf8"}
         ),
-        "/**/ watch{}",
+        "/**/ watch{}er{}",
         "should update the file"
       )
 
