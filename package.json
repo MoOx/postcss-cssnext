@@ -4,11 +4,16 @@
   "description": "Use tomorrow's CSS syntax, today",
   "keywords": [
     "css",
+    "w3c",
+    "cssnext",
     "preprocessor",
     "postprocessor",
     "rework",
     "postcss",
-    "autoprefixer"
+    "postcss-plugin",
+    "autoprefixer",
+    "babel",
+    "transpiler"
   ],
   "author": "Maxime Thirouin",
   "license": "MIT",
