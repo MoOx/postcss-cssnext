@@ -32,6 +32,16 @@ The main package offers
 [a CLI](https://github.com/cssnext/cssnext#cli) and
 [a Node.js/io.js API](https://github.com/cssnext/cssnext#nodejs-api").
 
+### Install from git
+
+In order to install cssnext from the git repository (eg: if you want to try
+the _master_ branch of the git repository),
+you will need to build the package after the installation from git repository.
+You can easily do this:
+
+```console
+$ npm i -D cssnext/cssnext && cd node_modules/cssnext && npm i && cd ../..
+```
 
 ## Usage
 
