@@ -162,7 +162,7 @@ _(default: `false`)_
 Allows you to compress the output
 (using [cssnano](https://github.com/ben-eb/cssnano)).
 You can enable minification by passing `true` or by providing an object
-containing [cssnano options](https://github.com/ben-eb/cssnano#options).
+containing [cssnano options](http://cssnano.co/options/).
 
 ## `messages`
 
