@@ -1,0 +1,15 @@
+{
+  "features": {
+    "customProperties": {
+      "variables": {
+        "color": "#e00",
+        "color2": "var(--color)"
+      }
+    },
+    "customMedia": {
+      "extensions": {
+        "mq2": "screen"
+      }
+    }
+  }
+}

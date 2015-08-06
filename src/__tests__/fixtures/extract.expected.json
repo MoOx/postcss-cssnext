@@ -1,0 +1,12 @@
+{
+  "customProperties":{
+    "width": "2px",
+    "width2": "2px",
+    "color": "#e00",
+    "color2": "#e00"
+  },
+  "customMedias":{
+    "mq": "(max-width: 30em)",
+    "mq2": "screen"
+  }
+}

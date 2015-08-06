@@ -184,6 +184,22 @@ test("cli", function(t) {
   planned += 1
 
   exec(
+    cssnextBin + " --extract src/__tests__/fixtures/extract.css " +
+      "--config src/__tests__/fixtures/extract.json",
+    function(err, stdout) {
+      if (err) {
+        throw err
+      }
+      t.deepEqual(
+        JSON.parse(stdout),
+        JSON.parse(utils.readFixture("extract.expected", ".json")),
+        "should extract custom properties and custom medias on --extract"
+      )
+    }
+  )
+  planned += 1
+
+  exec(
     cssnextBin + " --compress src/__tests__/fixtures/compress.css",
     function(err, stdout) {
       if (err) {

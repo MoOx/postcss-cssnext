@@ -124,11 +124,28 @@ function cssnext(string, options) {
         )
       )
     ) {
-      const plugin = cssnext.features[key](
-        typeof features[key] === "object"
-          ? {...features[key]}
-          : undefined
-        )
+      let pluginOpts = typeof features[key] === "object"
+        ? {...features[key]}
+        : undefined
+      if (options.extract) {
+        switch (key) {
+        case "customProperties":
+          if (!pluginOpts) {
+            pluginOpts = {}
+          }
+          pluginOpts.preserve = "computed"
+          pluginOpts.appendVariables = true
+          break
+        case "customMedia":
+          if (!pluginOpts) {
+            pluginOpts = {}
+          }
+          pluginOpts.preserve = true
+          pluginOpts.appendExtensions = true
+          break
+        }
+      }
+      const plugin = cssnext.features[key](pluginOpts)
       plugin.postcssPlugin = "cssnext"
       postcss.use(plugin)
     }
@@ -170,6 +187,44 @@ function cssnext(string, options) {
   // classic API if string is passed
   if (typeof string === "string") {
     const result = postcss.process(string, options)
+
+    // extract customProperties and customMedias
+    if (options.extract) {
+      const map = {
+        customProperties: {},
+        customMedias: {},
+      }
+      result.root.eachRule(function(rule) {
+        if (
+          rule.selectors.length !== 1 ||
+          rule.selectors[0] !== ":root" ||
+          rule.parent.type !== "root"
+        ) {
+          return
+        }
+        rule.each(function(decl) {
+          let name = decl.prop
+          if (name.slice(0, 2) !== "--") {
+            return
+          }
+          name = name.slice(2)
+          map.customProperties[name] = decl.value
+        })
+      })
+      result.root.eachAtRule(function(atRule) {
+        if (atRule.name !== "custom-media") {
+          return
+        }
+        const params = atRule.params.split(" ")
+        let name = params.shift()
+        if (name.slice(0, 2) !== "--") {
+          return
+        }
+        name = name.slice(2)
+        map.customMedias[name] = params.join(" ")
+      })
+      return JSON.stringify(map) + "\n"
+    }
 
     // default behavior, cssnext returns a css string if no or inline sourcemap
     if (options.map === null || (options.map === true || options.map.inline)) {
