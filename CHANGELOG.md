@@ -1,3 +1,8 @@
+# 1.8.3 - 2015-08-06
+
+- Fixed: `url` option (postcss-url) have been updated in order to benefit from
+severals fixes.
+
 # 1.8.2 - 2015-07-23
 
 - Fixed: CLI watcher now works watchs correctl multiples `@import`
@@ -12,11 +17,13 @@ unexpected usage with a recommendation for
 
 # 1.8.0 - 2015-06-29
 
-- Fixed: replacement of `postcss-log-warnings` (deprecated) by `postcss-reporter`
+- Fixed: replacement of `postcss-log-warnings` (deprecated) by
+`postcss-reporter`
 ([#162](https://github.com/cssnext/cssnext/issues/162))
 - Fixed: CLI now add `to` option automatically
 ([#159](https://github.com/cssnext/cssnext/issues/159))
-If you were happy with the previous CLI behavior (which was not rebasing url), you should probably just add the `--no-url` to keep the CSS as it was.
+If you were happy with the previous CLI behavior (which was not rebasing url),
+you should probably just add the `--no-url` to keep the CSS as it was.
 - Changed: `compress` option now use cssnano v2.x
 ([#166](https://github.com/cssnext/cssnext/issues/166))
 - Added: CLI output file dirname is now automatically created (using `mkdirp`)
@@ -32,8 +39,10 @@ Changed from `〉` to `›`
 - Added: warning to deprecate previous (wrong) custom selectors syntax.
 Previously they were working with **and without** pseudo syntax ':'
 [which is incorrect according to specs](https://github.com/postcss/postcss-custom-selectors/issues/5#issuecomment-90774654)
-Now you must use `@custom-selector :--{name}` syntax instead of `@custom-selector --{name}`
-The support of syntax without : and the warning message will be remove in the next major release
+Now you must use `@custom-selector :--{name}` syntax instead of
+`@custom-selector --{name}`
+The support of syntax without : and the warning message will be remove in the
+next major release
 ([#97](https://github.com/cssnext/cssnext/issues/97))
 - Added: `plugins` option that allows you to pipe your own transformations
 ([#118](https://github.com/cssnext/cssnext/issues/118))
@@ -59,12 +68,14 @@ replacement of colors lib by chalk in 1.5.0
 
 # 1.5.0 - 2015-05-23
 
-- Changed: `compress` option use [cssnano](https://github.com/ben-eb/cssnano) instead of CSSWring.
+- Changed: `compress` option use [cssnano](https://github.com/ben-eb/cssnano)
+instead of CSSWring.
 
 # 1.4.0 - 2015-05-01
 
 - Added: support for `:matches()` selector pseudo class
-- Added: support for `:not()` selector pseudo class level 4 (transpiled to level 3)
+- Added: support for `:not()` selector pseudo class level 4
+(transpiled to level 3)
 
 # 1.3.1 - 2015-05-01
 
@@ -76,7 +87,8 @@ replacement of colors lib by chalk in 1.5.0
 
 # 1.2.3 - 2015-04-10
 
-- Fixed: --watch doesn't output console.log() related to watcherd/unwatched files anymore
+- Fixed: --watch doesn't output console.log() related to watcherd/unwatched
+files anymore
 
 # 1.2.2 - 2015-04-09
 
@@ -105,7 +117,8 @@ replacement of colors lib by chalk in 1.5.0
 # 1.0.0 - 2015-02-06
 
 - Changed: upgraded to postcss v4.x
-- Changed: `import` is not considered as a `feature` anymore, but is now directly an option for the API.
+- Changed: `import` is not considered as a `feature` anymore, but is now
+directly an option for the API.
 It is still enabled by default.
 
 Before
@@ -130,9 +143,11 @@ cssnext({
 })
 ```
 
-- Added: `url` option: non absolute url() are now rebased according to `from` (and `to` options if provided). Enabled by default.
+- Added: `url` option: non absolute url() are now rebased according to `from`
+(and `to` options if provided). Enabled by default.
 - Added: `compress` option now accept CSSWring options directly.
-- Added: `browsers` option can enable or disable features and is propagated to autoprefixer
+- Added: `browsers` option can enable or disable features and is propagated to
+autoprefixer
 - Added: px fallback for `rem` unit
 
 # 0.6.6 - 2014-12-22
@@ -142,8 +157,10 @@ cssnext({
 
 # 0.6.5 - 2014-12-16
 
-- Added: [media queries range](http://dev.w3.org/csswg/mediaqueries/#mq-ranges) feature ([ref](https://github.com/postcss/postcss-media-minmax))
-- Added: [filter](http://www.w3.org/TR/filter-effects/) feature ([ref](https://github.com/iamvdo/pleeease-filters))
+- Added: [media queries range](http://dev.w3.org/csswg/mediaqueries/#mq-ranges)
+feature ([ref](https://github.com/postcss/postcss-media-minmax))
+- Added: [filter](http://www.w3.org/TR/filter-effects/) feature
+([ref](https://github.com/iamvdo/pleeease-filters))
 
 # 0.6.4 - 2014-12-11
 
@@ -152,7 +169,8 @@ cssnext({
 
 # 0.6.3 - 2014-12-09
 
-- Changed: upgrade to csswring v2.0.0 (postcss 3 ready). This is removing the boring warnings.
+- Changed: upgrade to csswring v2.0.0 (postcss 3 ready). This is removing the
+boring warnings.
 - Changed: update postcss-custom-selectors reference (with an S)
 
 # 0.6.2 - 2014-12-04
@@ -161,20 +179,24 @@ cssnext({
 
 # 0.6.1 - 2014-12-01
 
-- Changed: update to postcss-calc v3 (which add `precision` & `preserve`) & some useless minor updates
+- Changed: update to postcss-calc v3 (which add `precision` & `preserve`) &
+some useless minor updates
 - Changed: standalone version is now uglified (`dist/cssnext.js`)
 
 # 0.6.0 - 2014-11-24
 
-- Changed: upgrade to postcss-import v3 which allow to easily consume node_modules
+- Changed: upgrade to postcss-import v3 which allow to easily consume
+node_modules
 - Changed: "prefixes" feature is now "autoprefixer"
 - Added: cssnext can be used as a postcss plugin
 
 # 0.5.0 - 2014-11-13
 
-- Fixed: cssnext returns a string only if the first parameter is a real string (typeof === string)
+- Fixed: cssnext returns a string only if the first parameter is a real string
+(typeof === string)
 - Changed: upgrade to postcss 3
-- Changed: if sourcemap is set to true, default map is now true since postcss v3.0.0 have by default `{inline: true, sourceContent: true}`
+- Changed: if sourcemap is set to true, default map is now true since postcss
+v3.0.0 have by default `{inline: true, sourceContent: true}`
 - Changed: upgrade read-file-stdin from 0.0.4 to 0.2.0
 
 # 0.4.4 - 2014-11-11
@@ -211,7 +233,8 @@ Before
 ```js
 var output = cssnext(input, {
   features: {
-    // providing `true` (or omitting this value) instead of the following object was the default behavior
+    // providing `true` (or omitting this value) instead of the following object
+    //  was the default behavior
     color: {
       color: true
       hexAlpha: true
@@ -237,7 +260,8 @@ var output = cssnext(input, {
 })
 ```
 
-- Changed: cssnext options are not passed to all plugins anymore. You know need to specify feature options by passing object to `features` properties  
+- Changed: cssnext options are not passed to all plugins anymore. You know need
+to specify feature options by passing object to `features` properties  
 ([#39](https://github.com/cssnext/cssnext/issues/39)).
 
 Before
@@ -262,9 +286,13 @@ var output = cssnext(input, {
 })
 ```
 
-- Added: more control on sourcemap is possible using the new `map` option (direct postcss option). Using this option make `sourcemap` one to be ignored and change the return value of `cssnext()` (object instead of string)
+- Added: more control on sourcemap is possible using the new `map` option
+(direct postcss option).
+Using this option make `sourcemap` one to be ignored and change the return value
+ of `cssnext()` (object instead of string)
 
-This change have been made to avoid collision between options (of each features).
+This change have been made to avoid collision between options
+(of each features).
 
 # 0.3.1 - 2014-08-27
 
@@ -273,7 +301,8 @@ This change have been made to avoid collision between options (of each features)
 
 # 0.3.0 - 2014-08-26
 
-- Added: better custom properties fallbacks (thanks to postcss-custom-properties 0.3.0)
+- Added: better custom properties fallbacks
+(thanks to postcss-custom-properties 0.3.0)
 
 # 0.2.3 - 2014-08-26
 
