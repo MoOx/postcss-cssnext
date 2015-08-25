@@ -83,7 +83,6 @@ function cssnext(string, options) {
           ? {...options.import}
           : undefined
         )
-      plugin.postcssPlugin = "cssnext"
       postcss.use(plugin)
     }
 
@@ -94,7 +93,6 @@ function cssnext(string, options) {
           ? {...options.url}
           : undefined
         )
-      plugin.postcssPlugin = "cssnext"
       postcss.use(plugin)
     }
   }
@@ -129,7 +127,6 @@ function cssnext(string, options) {
           ? {...features[key]}
           : undefined
         )
-      plugin.postcssPlugin = "cssnext"
       postcss.use(plugin)
     }
   })
@@ -147,9 +144,8 @@ function cssnext(string, options) {
 
   // minification
   if (options.compress) {
-    const nano = require("cssnano")
     postcss.use(
-      nano(
+      require("cssnano")(
         typeof options.compress === "object"
         ? options.compress
         : {}
@@ -162,7 +158,6 @@ function cssnext(string, options) {
   // (which make sense)
   if (options.messages) {
     optionMessages(options).forEach(plugin => {
-      plugin.postcssPlugin = "cssnext"
       postcss.use(plugin)
     })
   }

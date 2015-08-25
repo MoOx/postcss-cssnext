@@ -1,6 +1,6 @@
 {
   "name": "cssnext",
-  "version": "1.8.3",
+  "version": "1.8.4",
   "description": "Use tomorrow's CSS syntax, today",
   "keywords": [
     "css",
@@ -35,7 +35,7 @@
     "chalk": "^1.0.0",
     "chokidar": "^1.0.0",
     "commander": "^2.3.0",
-    "cssnano": "^2.0.1",
+    "cssnano": "^2.6.1",
     "exit": "^0.1.2",
     "mkdirp": "^0.5.1",
     "pixrem": "^1.1.0",
@@ -80,8 +80,8 @@
     "cssrecipes-grid": "^0.4.0",
     "cssrecipes-utils": "^0.5.0",
     "cssrecipes-vertical-rhythm": "^0.6.0",
-    "eslint": "^1.0.0-rc-1",
-    "eslint-loader": "^0.14.2",
+    "eslint": "^1.0.0",
+    "eslint-loader": "^1.0.0",
     "eslint-plugin-react": "^3.0.0",
     "extract-text-webpack-plugin": "^0.8.0",
     "file-loader": "^0.8.3",

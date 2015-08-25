@@ -1,3 +1,12 @@
+# 1.8.4 - 2015-08-24
+
+- Fixed: `compress` option now works again correctly. A recent update in cssnano
+has introduced some minor breaking changes the way cssnext changed plugins
+metadata (`pluginName`).
+A direct minor change is that `messages` (in console or in css output) now show
+real origin (postcss plugin name) instead of a vague "cssnext" origin.
+([#195](https://github.com/cssnext/cssnext/issues/195))
+
 # 1.8.3 - 2015-08-06
 
 - Fixed: `url` option (postcss-url) have been updated in order to benefit from

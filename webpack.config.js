@@ -46,12 +46,10 @@ module.exports = {
     ],
   },
 
-  plugins: (
-    [
-      new webpack.DefinePlugin(buildConfig),
-      new ExtractTextPlugin("[name].css", {disable: !buildConfig.__PROD__}),
-    ]
-    .concat(
+  plugins: ([
+    new webpack.DefinePlugin(buildConfig),
+    new ExtractTextPlugin("[name].css", {disable: !buildConfig.__PROD__}),
+  ].concat(
       buildConfig.__PROD__
       ? [
         new webpack.optimize.DedupePlugin(),
