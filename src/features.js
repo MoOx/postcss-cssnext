@@ -55,6 +55,6 @@ export default {
     return require("postcss-color-rgba-fallback")(options)
   },
   autoprefixer(options) {
-    return require("autoprefixer-core")(options)
+    return require("autoprefixer")(options)
   },
 }

@@ -99,7 +99,7 @@ To know all available options, please check corresponding postcss plugin:
 - `colorRgba`
 [(=> postcss-color-rgba-fallback)](https://www.npmjs.com/package/postcss-color-rgba-fallback)
 - `autoprefixer`
-[(=> autoprefixer-core)](https://www.npmjs.com/package/autoprefixer-core)
+[(=> autoprefixer)](https://www.npmjs.com/package/autoprefixer)
 
 _Note: order is important to get everything working correctly._
 
@@ -193,7 +193,7 @@ If you want, you can pass option to the PostCSS plugins used
 {
   messages: {
     browser: {
-      // see https://github.com/postcss/postcss-messages
+      // see https://github.com/postcss/postcss-browser-reporter
     }
 
     console: {

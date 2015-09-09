@@ -1,5 +1,5 @@
 // why this plugin ?
-// https://github.com/postcss/postcss-messages/issues/16
+// https://github.com/postcss/postcss-browser-reporter/issues/16
 
 import postcss from "postcss"
 import colors from "chalk"
@@ -41,7 +41,7 @@ function escapeForCSS(string) {
 }
 
 export default postcss.plugin(
-  "postcss-messages",
+  "postcss-browser-reporter",
   (options) => {
     options = {
       ...options,
@@ -69,7 +69,7 @@ export default postcss.plugin(
         selector = options.selector
       }
       else {
-        css.eachRule(rule => {
+        css.walkRules(rule => {
           if (
             rule.selector === "html::before" ||
             rule.selector === "html:before"
