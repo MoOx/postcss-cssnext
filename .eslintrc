@@ -1,5 +1,8 @@
 ---
-# babel support more syntax stuff than eslint for now
+root: true
+extends: eslint:recommended
+
+# babel-eslint support more syntax stuff than eslint for now
 parser: babel-eslint
 
 ecmaFeatures:
@@ -27,31 +30,33 @@ plugins:
 
 # 0: off, 1: warning, 2: error
 rules:
+  no-console: 0
+
   indent: [2, 2] # 2 spaces indentation
   max-len: [2, 80, 4]
-  no-multiple-empty-lines: [2, {"max": 1}]
   quotes: [2, "double"]
   semi: [2, "never"]
+  no-multiple-empty-lines: [2, {"max": 1}]
 
   brace-style: [2, "stroustrup"]
   comma-dangle: [2, "always-multiline"]
   comma-style: [2, "last"]
-  computed-property-spacing: [2, "never"]
   dot-location: [2, "property"]
 
-  no-var: [2]
-  no-bitwise: [2]
   one-var: [2, "never"]
+  no-var: [2]
   prefer-const: [2]
+  no-bitwise: [2]
 
-  array-bracket-spacing: [2, "never"]
-  object-shorthand: [2, "methods"]
-  object-curly-spacing: [2, "never"]
+  object-curly-spacing: [2, "always"]
+  array-bracket-spacing: [2, "always"]
+  #computed-property-spacing: [2, "always"]
+
+  space-unary-ops: [2, {"words": true, "nonwords": false}]
   space-after-keywords: [2, "always"]
   space-before-blocks: [2, "always"]
   space-before-function-paren: [2, "never"]
   space-in-parens: [2, "never"]
-  space-unary-ops: [2, {"words": true, "nonwords": false}]
   spaced-comment: [2, "always"]
 
   # see globals

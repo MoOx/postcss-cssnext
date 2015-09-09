@@ -1,8 +1,0 @@
-article h1 + p,
-article h2 + p,
-article h3 + p,
-article h4 + p,
-article h5 + p,
-article h6 + p{
-  margin-top: 0;
-}

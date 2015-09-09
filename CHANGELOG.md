@@ -1,3 +1,12 @@
+# 2.0.0 - Unreleased
+
+- Added: support for PostCSS v5.x
+- Removed: support for PostCSS v4.x
+
+---
+
+**pre 2.0.0 information was related to `cssnext` package.**
+
 # 1.8.4 - 2015-08-24
 
 - Fixed: `compress` option now works again correctly. A recent update in cssnano

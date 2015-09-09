@@ -1,4 +1,6 @@
+# npm
 node_modules
 
-dist
+# build
+lib
 docs/dist

@@ -1,15 +1,19 @@
-# cssnext
+# postcss-cssnext
 
-[![NPM version](http://img.shields.io/npm/v/cssnext.svg?style=flat)](https://www.npmjs.org/package/cssnext)
-[![Travis Build Status](https://img.shields.io/travis/cssnext/cssnext.svg?label=unix%20build)](https://travis-ci.org/cssnext/cssnext)
-[![AppVeyor Build Status](https://img.shields.io/appveyor/ci/MoOx/cssnext.svg?label=windows%20build)](https://ci.appveyor.com/project/MoOx/cssnext)
+[![NPM version](http://img.shields.io/npm/v/postcss-cssnext.svg?style=flat)](https://www.npmjs.org/package/postcss-cssnext)
+[![Travis Build Status](https://img.shields.io/travis/cssnext/postcss-cssnext.svg?label=unix%20build)](https://travis-ci.org/cssnext/postcss-cssnext)
+[![AppVeyor Build Status](https://img.shields.io/appveyor/ci/MoOx/postcss-cssnext.svg?label=windows%20build)](https://ci.appveyor.com/project/MoOx/postcss-cssnext)
 [![Join the chat at https://gitter.im/cssnext/cssnext](https://img.shields.io/badge/gitter%20-join%20chat%20%E2%9E%9E-1dce73.svg)](https://gitter.im/cssnext/cssnext)
 
 
 > Use tomorrow's CSS syntax, today.
 
 cssnext is a CSS transpiler that allows you to use the latest CSS syntax today.
-It transforms CSS specs into more compatible CSS so you don’t need to wait for browser support. 
+It transforms CSS specs into more compatible CSS so you don’t need to wait for browser support.
+
+**This repository contains the PostCSS plugin.**
+
+---
 
 ## Check out [cssnext website](http://cssnext.io/)
 

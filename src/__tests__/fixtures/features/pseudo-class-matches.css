@@ -1,3 +1,0 @@
-p:matches(:first-child, .specific) {
-  color: red;
-}

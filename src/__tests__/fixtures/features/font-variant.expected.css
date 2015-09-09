@@ -1,9 +1,0 @@
-h2 {
-  font-feature-settings: "c2sc";
-  font-variant-caps: small-caps;
-}
-
-table {
-  font-feature-settings: "lnum";
-  font-variant-numeric: lining-nums;
-}
