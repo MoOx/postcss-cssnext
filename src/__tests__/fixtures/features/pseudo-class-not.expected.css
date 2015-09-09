@@ -1,0 +1,3 @@
+p:not(:first-child):not(.specific) {
+  background: blue;
+}
