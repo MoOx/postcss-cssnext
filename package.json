@@ -1,0 +1,55 @@
+{
+  "name": "postcss-cssnext",
+  "version": "2.0.0",
+  "description": "Use tomorrow's CSS syntax, today",
+  "keywords": [
+    "css",
+    "w3c",
+    "cssnext",
+    "preprocessor",
+    "postprocessor",
+    "rework",
+    "postcss",
+    "postcss-plugin",
+    "autoprefixer",
+    "babel",
+    "transpiler"
+  ],
+  "author": "Maxime Thirouin",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cssnext/postcss-cssnext.git"
+  },
+  "homepage": "http://cssnext.io/",
+  "bugs": {
+    "url": "https://github.com/cssnext/postcss-cssnext/issues"
+  },
+  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "src",
+    "!**/__tests__"
+  ],
+  "dependencies": {
+    "postcss": "^5.0.4"
+  },
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "babel-eslint": "^4.1.1",
+    "babel-tape-runner": "^1.2.0",
+    "eslint": "^1.3.1",
+    "rimraf": "^2.4.3",
+    "tape": "^4.2.0"
+  },
+  "scripts": {
+    "prebabelify": "rimraf lib",
+    "babelify": "babel src --out-dir lib",
+    "prepublish": "npm run babelify",
+    "#lint": "even if there is a .eslintignore symlink, we use an explicit command because windows don't like unix symlink",
+    "lint": "eslint --ignore-path .gitignore .",
+    "#tape": "to avoid really slow tests, we run babel once & run tests on the result",
+    "tape": "tape 'lib/__tests__/*.js'",
+    "test": "npm run lint && npm run babelify && npm run tape"
+  }
+}
