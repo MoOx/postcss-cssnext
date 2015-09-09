@@ -7,7 +7,7 @@ export default postcss.plugin(
 
     return (styles, result) => {
       let alert = false
-      styles.eachAtRule("custom-selector", rule => {
+      styles.walkAtRules("custom-selector", rule => {
         if (rule.params.indexOf("--") === 0) {
 
           // display big warning once
