@@ -1,0 +1,6 @@
+.foo::after {
+	content:"pseudoelement"
+}
+.foo::before {
+	content:"pseudoelement"
+}
