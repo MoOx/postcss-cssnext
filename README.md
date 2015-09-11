@@ -18,24 +18,24 @@ It transforms CSS specs into more compatible CSS so you don’t need to wait for
 ## Why **postcss-cssnext** ? What is the difference with **cssnext** ?
 
 cssnext was at first designed to be a complete tool, before PostCSS became
-popular and so includes some options that does not really belong in a PostCSS
-plugin (options like `import`, `url`, `compress`, `plugins`).
-This days, most people use PostCSS directly so we decided to make integration of
+popular; thus, includes some options that don't really belong in a PostCSS
+plugin (e.g., `import`, `url`, `compress`, `plugins`).
+These days, most people use PostCSS directly so we decided to make integration of
 cssnext more simple by providing a simple (real) plugin.
 
 If you were using cssnext with some options here is what you need to know:
 
-- `import`: just add in your plugins list
-  [postcss-import](https://github.com/postcss/postcss-import)
-- `url`: just add in your plugins list
-  [postcss-url](https://github.com/postcss/postcss-url)
-- `compress`: just add in your plugins list
-  [cssnano](https://github.com/ben-eb/cssnano)
+- `import`: just add into your plugins list
+  [`postcss-import`](https://github.com/postcss/postcss-import)
+- `url`: just add into your plugins list
+  [`postcss-url`](https://github.com/postcss/postcss-url)
+- `compress`: just add into your plugins list
+  [`cssnano`](https://github.com/ben-eb/cssnano)
 - `plugins`: just add the plugins directly in your list
 - `messages`: see
-  [postcss-reporter](https://github.com/postcss/postcss-reporter)
+  [`postcss-reporter`](https://github.com/postcss/postcss-reporter)
   and
-  [postcss-browser-reporter](https://github.com/postcss/postcss-browser-reporter)
+  [`postcss-browser-reporter`](https://github.com/postcss/postcss-browser-reporter)
 - `sourcemap`, `map`, `to`, `from`: see
   [PostCSS source map documentation](https://github.com/postcss/postcss#source-map)
 
@@ -43,8 +43,8 @@ If you were using cssnext with some options here is what you need to know:
 ## But I like cssnext as it was !
 
 _Don't worry. That's why we created another package._
-**cssnext** package will have a major release soon in order to introduce a minor
-but breaking changes in the Node.js API, but you will get the same tool as
+The **cssnext** package will have a major release soon in order to introduce a
+minor but breaking changes in the Node.js API, but you will get the same tool as
 before.
 The nice thing is: **cssnext** will use **postcss-cssnext** under the hood.
 
