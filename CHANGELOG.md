@@ -1,4 +1,4 @@
-# 2.0.0 - Unreleased
+# 2.0.0 - 2015-09-14
 
 - Added: support for PostCSS v5.x
 - Removed: support for PostCSS v4.x
