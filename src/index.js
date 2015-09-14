@@ -4,9 +4,7 @@ import { isSupported } from "caniuse-api"
 import libraryFeatures from "./features"
 import featuresActivationMap from "./features-activation-map"
 
-export { libraryFeatures as features }
-
-export default postcss.plugin("postcss-cssnext", (options) => {
+const plugin = postcss.plugin("postcss-cssnext", (options) => {
   options = {
     features: {},
     // options.browsers is deliberately undefined by default to inherit
@@ -68,3 +66,15 @@ export default postcss.plugin("postcss-cssnext", (options) => {
 
   return processor
 })
+
+// according to the way babel transpile es6 module
+// we cannot use the following syntax to export features
+//
+// export { libraryFeatures as features }
+//
+// babel only add `module.exports = exports["default"];` if there is only one
+// thing exported
+// so we add `features` as a plugin property
+plugin.features = libraryFeatures
+
+export default plugin
