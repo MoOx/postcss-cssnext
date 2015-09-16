@@ -130,14 +130,12 @@ options for more informations.
 
 #### As a PostCSS plugin
 
-`var postcssPlugin = cssnext(options)`
-
-cssnext can be used as a postcss plugin:
+To use cssnext as a postcss plugin check [postcss-cssnext](https://github.com/cssnext/postcss-cssnext).
 
 ```js
 var fs = require("fs")
 var postcss = require("postcss")
-var cssnext = require("cssnext")
+var cssnext = require("postcss-cssnext")
 
 var input = fs.readFileSync("index.css", "utf8")
 
