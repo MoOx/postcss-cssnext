@@ -36,6 +36,9 @@ export default {
   filter(options) {
     return require("pleeease-filters")(options)
   },
+  initial(options) {
+    return require("postcss-initial")(options)
+  },
   rem(options) {
     return require("pixrem")(options)
   },
