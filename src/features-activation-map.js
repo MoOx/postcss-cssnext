@@ -19,6 +19,7 @@ export default {
   // fontVariant: [ null ],
   // @todo can be done using a callback, this is only used for Firefox < 35
   // filter: [ null ],
+  initial: [ "css-all", "css-initial-value" ],
   rem: [ "rem" ],
   pseudoElements: [ "css-gencontent" ],
   // pseudoClassMatches: [ null ],
