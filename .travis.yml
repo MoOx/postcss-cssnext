@@ -1,5 +1,16 @@
 sudo: false
 
+# iojs requires GCC 4.8
+# https://github.com/wadey/node-microtime/issues/34#issuecomment-138529797
+env:
+  - CXX=g++-4.8
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - g++-4.8
+
 language: node_js
 node_js:
   - iojs

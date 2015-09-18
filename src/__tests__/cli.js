@@ -95,18 +95,19 @@ test("cli", function(t) {
   exec(
     cssnextBin + " src/__tests__/fixtures/cli.error.css",
     function(err, stdout, stderr) {
-    t.ok(err && err.code === 2, "should throw an error")
-    t.ok(
-      utils.contains(stderr, "encounters an error"),
-      "should output a readable error")
-    t.ok(
-      utils.contains(
-        stderr,
-        "If this error looks like a bug, please report it here"
-      ),
-      "should show the url where to report bugs"
-    )
-  })
+      t.ok(err && err.code === 2, "should throw an error")
+      t.ok(
+        utils.contains(stderr, "encounters an error"),
+        "should output a readable error")
+      t.ok(
+        utils.contains(
+          stderr,
+          "If this error looks like a bug, please report it here"
+        ),
+        "should show the url where to report bugs"
+      )
+    }
+  )
   planned += 3
 
   exec(
@@ -114,26 +115,28 @@ test("cli", function(t) {
       " --config src/__tests__/fixtures/config.json" +
       " src/__tests__/fixtures/config.css",
     function(err, stdout) {
-    if (err) {
-      throw err
+      if (err) {
+        throw err
+      }
+      t.equal(
+        stdout,
+        utils.readFixture("config.expected"),
+        "should read config file on --config"
+      )
     }
-    t.equal(
-      stdout,
-      utils.readFixture("config.expected"),
-      "should read config file on --config"
-    )
-  })
+  )
   planned += 1
 
   const noCustomPropInput = ":root{--foo:bar}baz{qux:var(--foo)}"
   const childProcessBrowsers = exec(
     cssnextBin + " --browsers \"Firefox >= 31\"",
     function(err, stdout) {
-    if (err) {
-      throw err
+      if (err) {
+        throw err
+      }
+      t.equal(stdout, noCustomPropInput, "should have a --browsers option")
     }
-    t.equal(stdout, noCustomPropInput, "should have a --browsers option")
-  })
+  )
   childProcessBrowsers.stdin.write(new Buffer(noCustomPropInput))
   childProcessBrowsers.stdin.end()
   planned += 1
@@ -156,15 +159,16 @@ test("cli", function(t) {
   exec(
     cssnextBin + " --no-import src/__tests__/fixtures/import.css",
     function(err, stdout) {
-    if (err) {
-      throw err
+      if (err) {
+        throw err
+      }
+      t.equal(
+        stdout,
+        utils.readFixture("import"),
+        "should not import on --no-import"
+      )
     }
-    t.equal(
-      stdout,
-      utils.readFixture("import"),
-      "should not import on --no-import"
-    )
-  })
+  )
   planned += 1
 
   exec(
