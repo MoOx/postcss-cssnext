@@ -1,0 +1,14 @@
+a {
+  all: initial;
+}
+
+a {
+  animation: initial;
+  background: initial;
+  border: initial;
+  column-rule: initial;
+  font: initial;
+  list-style: initial;
+  outline: initial;
+  text-decoration: initial;
+}
