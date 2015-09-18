@@ -28,26 +28,29 @@ const cleanups = {
 // @styled(styles)
 export default class SVGIcon extends Component {
 
-  static defaultProps = {
-    component: "span",
-    classSuffix: "-svg",
-    cleanup: [],
-    cleanupExceptions: [],
-  }
-
   static propTypes = {
+    className: PropTypes.string,
     component: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.func,
     ]),
+    classSuffix: PropTypes.string,
     svg: PropTypes.string.isRequired,
     fill: PropTypes.string,
     cleanup: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.array,
     ]),
+    cleanupExceptions: PropTypes.array,
     width: PropTypes.string,
     height: PropTypes.string,
+  }
+
+  static defaultProps = {
+    component: "span",
+    classSuffix: "-svg",
+    cleanup: [],
+    cleanupExceptions: [],
   }
 
   static cleanupSvg(svg, cleanup = []) {
