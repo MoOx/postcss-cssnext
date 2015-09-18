@@ -10,7 +10,7 @@ test("cssnext option: plugins", (t) => {
       {
         plugins: [
           styles => {
-            styles.eachAtRule(atRule => {
+            styles.walkRules(atRule => {
               atRule.name = "ok"
             })
           },

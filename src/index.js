@@ -5,8 +5,7 @@ import {isSupported} from "caniuse-api"
 
 import fixes from "./fixes"
 
-import libraryFeatures from "./features"
-import featuresActivationMap from "./features-activation-map"
+import postcssCssNext from "postcss-cssnext"
 
 import optionMessages from "./option.messages"
 
@@ -53,25 +52,6 @@ function cssnext(string, options) {
     ...options,
   }
 
-  const features = options.features
-
-  // propagate browsers option to autoprefixer
-  if (features.autoprefixer !== false) {
-    features.autoprefixer = {
-      browsers: (
-        features.autoprefixer && features.autoprefixer.browsers
-          ? features.autoprefixer.browsers
-          : options.browsers
-      ),
-      ...(features.autoprefixer || {}),
-    }
-
-    // autoprefixer doesn't like an "undefined" value. Related to coffee ?
-    if (features.autoprefixer.browsers === undefined) {
-      delete features.autoprefixer.browsers
-    }
-  }
-
   const postcss = postCSS()
 
   // only enable import & url if fs module is available
@@ -100,36 +80,11 @@ function cssnext(string, options) {
   // tmp fixes
   Object.keys(fixes).forEach(key => postcss.use(fixes[key]))
 
-  // features
-  Object.keys(cssnext.features).forEach(key => {
-    // feature is auto enabled if: not disable && (enabled || no data yet ||
-    // !supported yet)
-    if (
-      // feature is not disabled
-      features[key] !== false &&
-      (
-        // feature is enabled
-        features[key] === true ||
-
-        // feature don't have any browsers data (yet)
-        featuresActivationMap[key] === undefined ||
-
-        // feature is not yet supported by the browsers scope
-        (
-          featuresActivationMap[key] &&
-          featuresActivationMap[key][0] &&
-          !isSupported(featuresActivationMap[key][0], options.browsers)
-        )
-      )
-    ) {
-      const plugin = cssnext.features[key](
-        typeof features[key] === "object"
-          ? {...features[key]}
-          : undefined
-        )
-      postcss.use(plugin)
-    }
-  })
+  const postcssCssNextOptions = {features: options.features}
+  if (options.browsers) {
+    postcssCssNextOptions.browsers = options.browsers
+  }
+  postcss.use(postcssCssNext(postcssCssNextOptions))
 
   if (options.plugins) {
     if (!Array.isArray(options.plugins)) {
@@ -185,7 +140,7 @@ function cssnext(string, options) {
  *
  * @type {Object}
  */
-cssnext.features = libraryFeatures
+cssnext.features = postcssCssNext.features
 
 /**
  * Expose cssnext
