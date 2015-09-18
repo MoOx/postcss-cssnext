@@ -41,7 +41,8 @@ test("cssnext import option", function(t) {
     transform: transformFn,
   }
   Object.freeze(importOpt)
-  t.doesNotThrow(function() {
+  t.doesNotThrow(
+    function() {
       cssnext(input, {
         from: opts.from,
         import: importOpt,
