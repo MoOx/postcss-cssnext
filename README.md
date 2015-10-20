@@ -53,11 +53,8 @@ If you were using cssnext with some options here is what you need to know:
 
 ## But I like cssnext as it was !
 
-_Don't worry. That's why we created another package._
-The **cssnext** package will have a major release soon in order to introduce a
-minor but breaking changes in the Node.js API, but you will get the same tool as
-before.
-The nice thing is: **cssnext** will use **postcss-cssnext** under the hood.
+We plan to offer a simple migration by make postcss better.
+Please track this issue https://github.com/cssnext/cssnext/issues/208
 
 ---
 
