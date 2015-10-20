@@ -53,7 +53,7 @@ If you were using cssnext with some options here is what you need to know:
 
 ## But I like cssnext as it was !
 
-We plan to offer a simple migration by make postcss better.
+We plan to offer a simple migration by making postcss better.
 Please track this issue https://github.com/cssnext/cssnext/issues/208
 
 ---
