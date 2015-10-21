@@ -1,0 +1,7 @@
+.foo {
+  color: red;
+
+  @nest & .bar {
+    color: white;
+  }
+}

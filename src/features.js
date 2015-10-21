@@ -6,6 +6,9 @@ export default {
   calc(options) {
     return require("postcss-calc")(options)
   },
+  nesting(options) {
+    return require("postcss-nesting")(options)
+  },
   customMedia(options) {
     return require("postcss-custom-media")(options)
   },
