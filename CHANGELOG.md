@@ -1,3 +1,9 @@
+# 2.2.0 - 2015-10-21
+
+- Added [postcss-nesting](https://github.com/jonathantneal/postcss-nesting)
+([#14](https://github.com/cssnext/postcss-cssnext/issues/14)).
+Supports nesting via the `@nest` syntax. See postcss-nesting documentation.
+
 # 2.1.0 - 2015-09-16
 
 - Added: [postcss-initial](https://github.com/maximkoretskiy/postcss-initial)
