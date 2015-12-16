@@ -1,6 +1,16 @@
+# 2.3.0 - 2015-12-16
+
+- Added: we use latest version of pixrem(@^3)
+([19](https://github.com/cssnext/postcss-cssnext/pull/19))
+So now `rem` have
+[2 new parameters](https://github.com/robwierzbowski/node-pixrem#options):
+  - ``rootValue`` to define the root element font-size manually
+  - ``unitPrecision`` for rounded values
+
+
 # 2.2.0 - 2015-10-21
 
-- Added [postcss-nesting](https://github.com/jonathantneal/postcss-nesting)
+- Added: [postcss-nesting](https://github.com/jonathantneal/postcss-nesting)
 ([#14](https://github.com/cssnext/postcss-cssnext/issues/14)).
 Supports nesting via the `@nest` syntax. See postcss-nesting documentation.
 
