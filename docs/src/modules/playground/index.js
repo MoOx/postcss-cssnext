@@ -1,5 +1,5 @@
 import cssnext from "../../../../src/index"
-import {version as cssnextVersion} from "../../../../package"
+import { version as cssnextVersion } from "../../../../package"
 import messagesStyles from "../../../../src/option.messages.browser.styles"
 
 const bullet = "›"

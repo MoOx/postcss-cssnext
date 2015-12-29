@@ -48,7 +48,7 @@ module.exports = {
 
   plugins: ([
     new webpack.DefinePlugin(buildConfig),
-    new ExtractTextPlugin("[name].css", {disable: !buildConfig.__PROD__}),
+    new ExtractTextPlugin("[name].css", { disable: !buildConfig.__PROD__ }),
   ].concat(
       buildConfig.__PROD__
       ? [

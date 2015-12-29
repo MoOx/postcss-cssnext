@@ -35,6 +35,7 @@ rules:
   indent: [2, 2] # 2 spaces indentation
   max-len: [2, 80, 4]
   quotes: [2, "double"]
+  jsx-quotes: [2, "prefer-double"]
   semi: [2, "never"]
   no-multiple-empty-lines: [2, {"max": 1}]
 
@@ -65,7 +66,6 @@ rules:
   # eslint-plugin-react rules
   react/jsx-boolean-value: 2
   react/jsx-no-undef: 2
-  react/jsx-quotes: 2
   #react/jsx-sort-prop-types: 2
   #react/jsx-sort-props: 2
   react/jsx-uses-react: 2

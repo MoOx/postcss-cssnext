@@ -1,6 +1,6 @@
 import path from "path"
 
-import {sync as rm} from "rimraf"
+import { sync as rm } from "rimraf"
 import color from "chalk"
 
 import Metalsmith from "metalsmith"
@@ -30,7 +30,7 @@ const log = nanoLogger("./build")
 
 JSON.stringify(buildConfig, null, 2).split("\n").forEach(l => log(l))
 
-const mdToHtmlReplacement = [/\.md$/, ".html"]
+const mdToHtmlReplacement = [ /\.md$/, ".html" ]
 
 // We clean ./dist by hand mainly for prod, in order to be able to build
 // assets with webpack before metalsmith build.
@@ -63,7 +63,7 @@ smith
 .use(
   url([
     mdToHtmlReplacement,
-    [/index\.html?$/, ""],
+    [ /index\.html?$/, "" ],
   ])
 )
 // wrap .html into react `template:`
@@ -87,9 +87,9 @@ smith
   rename([
     mdToHtmlReplacement,
     // no .html at the end of urls
-    [/\.html$/, "/index.html"],
+    [ /\.html$/, "/index.html" ],
     // ensure we only have index.html, no index/index
-    [/index\/index\.html$/, "index.html"],
+    [ /index\/index\.html$/, "index.html" ],
   ])
 )
 

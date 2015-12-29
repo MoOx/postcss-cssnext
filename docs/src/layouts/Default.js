@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from "react"
+import React, { Component, PropTypes } from "react"
 import cx from "classnames"
 
 import dashify from "../modules/dashify"
@@ -124,7 +124,7 @@ export default class Default extends Component {
                 "r-Grid-cell": true,
                 "js-markdownIt-TOCOriginalContainer": true,
               })}
-              dangerouslySetInnerHTML={{__html: file.contents}}
+              dangerouslySetInnerHTML={{ __html: file.contents }}
             />
             <div
               className={cx({

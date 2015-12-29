@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from "react"
+import React, { Component, PropTypes } from "react"
 
 import SVGIcon from "../SVGIcon"
 import requireRaw from "../requireRaw"

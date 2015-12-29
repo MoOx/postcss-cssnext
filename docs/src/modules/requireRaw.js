@@ -11,7 +11,7 @@ if (fs && fs.readFileSync) {
   requireRaw = (filename) => {
     return fs.readFileSync(
       path.join(__dirname, "..", "..", filename),
-      {encoding: "utf8"}
+      { encoding: "utf8" }
     )
   }
 }

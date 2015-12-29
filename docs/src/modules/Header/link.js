@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from "react"
+import React, { Component, PropTypes } from "react"
 import cx from "classnames"
 
 export default class HeaderLink extends Component {
@@ -30,7 +30,7 @@ export default class HeaderLink extends Component {
         className={cx({
           ...(
             this.props.className
-              ? {[this.props.className]: true}
+              ? { [this.props.className]: true }
               : {}
           ),
           "cssnext-Header-nav-item": true,

@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from "react"
+import React, { Component, PropTypes } from "react"
 
 import Html from "../modules/Html"
 import Head from "../modules/Head"
@@ -52,7 +52,7 @@ export default class Simple extends Component {
         >
           <div
             className={file.className || ""}
-            dangerouslySetInnerHTML={{__html: file.contents}}
+            dangerouslySetInnerHTML={{ __html: file.contents }}
           />
         </Body>
       </Html>
