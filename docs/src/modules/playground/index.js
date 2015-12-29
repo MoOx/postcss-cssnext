@@ -40,7 +40,8 @@ function playground(opts) {
       opts.console.innerHTML =
         "<small class=\"cssnext-Playground-console-footer\"><br /><br />" +
         "If you think it's a bug, please " +
-        "<a href=\"https://github.com/cssnext/cssnext/issues\">report it</a>." +
+        "<a href=\"https://github.com/MoOx/postcss-cssnext/issues\">" +
+          "report it</a>." +
         "<br /><small><em>cssnext v" + cssnextVersion +
         "</em></small></small>"
       // use createTextNode to escape html entities

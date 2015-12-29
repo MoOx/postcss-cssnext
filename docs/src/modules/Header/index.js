@@ -47,10 +47,13 @@ export default class Header extends Component {
           </div>
           <div className="r-Grid-cell r-minM--2of6">
             <div className="cssnext-Header-nav">
-              <Link href="https://gitter.im/cssnext/cssnext">
+              <Link href="https://gitter.im/MoOx/postcss-cssnext">
                 Support
               </Link>
-              <Link href="https://github.com/cssnext/cssnext" title="GitHub">
+              <Link
+                href="https://github.com/MoOx/postcss-cssnext"
+                title="GitHub"
+              >
                 GitHub
               </Link>
               <Link href="https://twitter.com/cssnext" title="Twitter">

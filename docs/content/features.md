@@ -1,5 +1,5 @@
 ---
-title: cssnext features
+title: postcss-cssnext features
 subtitle: Discover the future of CSS
 
 backgroundModifier: darkRoad
@@ -337,30 +337,13 @@ body {
 _Note that according to your [browser scope](#nodejs-options) some might be not
 transpiled to avoid extra useless output._
 
-## Bonus features
-
-_The features below are considered as bonus since it's totally not
-related to CSS specs._
-
-### `@import`
-
-`@import` inline local files and modules - `node_modules` or `web_modules`
-([⇗](https://github.com/postcss/postcss-import)) to output a bundled CSS file.
-`url()` referenced are also rebased.
-
-### minification
-
-minification/compression is available ([⇗](https://github.com/ben-eb/cssnano))
-if you want to compress the output for production.
-
-
 ## @todo
 
 Any omissions of the CSS specifications (even in draft) that are subject to be
 handled by cssnext are not intentional.
-You can take a look at the [list of features that are waiting to be implemented](https://github.com/cssnext/cssnext/issues?q=is%3Aopen+is%3Aissue+label%3A%22type%3A+feature+request%22).
+You can take a look at the [list of features that are waiting to be implemented](https://github.com/MoOx/postcss-cssnext/issues?q=is%3Aopen+is%3Aissue+label%3A%22type%3A+feature+request%22).
 Feel free to work on a feature ready to be added, or
-[open a new issue](https://github.com/cssnext/cssnext/issues/new)
+[open a new issue](https://github.com/MoOx/postcss-cssnext/issues/new)
 if you find something that should be handled.
 Keep in mind that, as of right now, this project is intended to support new CSS
 *syntax* only.

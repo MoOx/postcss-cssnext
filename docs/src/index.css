@@ -98,6 +98,11 @@ h6 {
   font-weight: 400;
 }
 
+hr {
+  opacity: .4;
+  margin: 4rem 0 !important; /* yeah... */
+}
+
 /**
  * customise recipes
  */
@@ -263,22 +268,6 @@ h6 {
         color(var(--cssnext-Color-purple) l(90%) a(.9))
       ),
       url("assets/fast.jpg") no-repeat 50% 50%/cover
-    ;
-  }
-  .cssnext-Jumbotron--darkFlux {
-    background: linear-gradient(160deg,
-        color(var(--cssnext-Color-blue) a(.7)),
-        color(var(--cssnext-Color-purple) a(.9))
-      ),
-      url("assets/flux.jpg") no-repeat 50% 50%/cover
-    ;
-  }
-  .cssnext-Jumbotron--lightTeam {
-    background: linear-gradient(160deg,
-        color(var(--cssnext-Color-purple) l(90%) a(.95)),
-        color(var(--cssnext-Color-blue) l(90%) a(.95))
-      ),
-      url("assets/team.jpg") no-repeat 50% 50%/cover
     ;
   }
   .cssnext-Jumbotron--darkTeam {

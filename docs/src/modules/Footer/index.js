@@ -20,7 +20,7 @@ export default class Footer extends Component {
           {" is brought to you by "}
           <a href="https://twitter.com/MoOx">@MoOx</a>
           {" & "}
-          <a href="https://github.com/cssnext/cssnext/graphs/contributors">
+          <a href="https://github.com/MoOx/postcss-cssnext/graphs/contributors">
             some other contributors
           </a>.
         </p>
@@ -37,7 +37,7 @@ export default class Footer extends Component {
             </a>
             {" | "}
             <a href={
-              "https://github.com/cssnext/cssnext/edit/master/" +
+              "https://github.com/MoOx/postcss-cssnext/edit/master/" +
               "docs/content/" + this.context.file.filename
             }>
               Edit this page

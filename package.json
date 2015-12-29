@@ -3,17 +3,11 @@
   "version": "2.3.0",
   "description": "Use tomorrow’s CSS syntax, today",
   "keywords": [
-    "css",
-    "w3c",
-    "cssnext",
-    "preprocessor",
-    "postprocessor",
-    "rework",
     "postcss",
     "postcss-plugin",
-    "autoprefixer",
-    "babel",
-    "transpiler"
+    "css",
+    "w3c",
+    "cssnext"
   ],
   "author": "Maxime Thirouin",
   "license": "MIT",

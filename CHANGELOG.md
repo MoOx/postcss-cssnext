@@ -1,23 +1,22 @@
 # 2.3.0 - 2015-12-16
 
 - Added: we use latest version of pixrem(@^3)
-([19](https://github.com/cssnext/postcss-cssnext/pull/19))
+([6d44410](https://github.com/MoOx/postcss-cssnext/commit/6d4441023f30895211f010776b142d02359f4d0a))
 So now `rem` have
 [2 new parameters](https://github.com/robwierzbowski/node-pixrem#options):
   - ``rootValue`` to define the root element font-size manually
   - ``unitPrecision`` for rounded values
 
-
 # 2.2.0 - 2015-10-21
 
 - Added: [postcss-nesting](https://github.com/jonathantneal/postcss-nesting)
-([#14](https://github.com/cssnext/postcss-cssnext/issues/14)).
+([b31f167](https://github.com/MoOx/postcss-cssnext/commit/b31f167d7659a18a14fce65a7a94da07560e6a59)).
 Supports nesting via the `@nest` syntax. See postcss-nesting documentation.
 
 # 2.1.0 - 2015-09-16
 
 - Added: [postcss-initial](https://github.com/maximkoretskiy/postcss-initial)
-([#12](https://github.com/cssnext/postcss-cssnext/issues/12)).
+([a907881](https://github.com/MoOx/postcss-cssnext/commit/a90788153801a3f898f6cc1ade189d4de2af3367)).
 Supports `initial` value for  all properties. Also it supports `all: initial`.
 _Does not support `all: unset` and `all: inherit`._
 Plugin can be useful for creating isolated components.
@@ -29,16 +28,19 @@ Plugin can be useful for creating isolated components.
 # 2.0.1 - 2015-09-14
 
 - Fixed: plugin can be consumed correctly from es5 environment
-([#11](https://github.com/cssnext/postcss-cssnext/issues/11))
+([7d6d3c0](https://github.com/MoOx/postcss-cssnext/commit/7d6d3c018d8ca17091d4cfe3d5d61e246ad8775d)).
 
 # 2.0.0 - 2015-09-14
 
 - Added: support for PostCSS v5.x
 - Removed: support for PostCSS v4.x
+([b5ece99...8907c13](https://github.com/MoOx/postcss-cssnext/compare/b5ece99c1e1b5e4cdfd6c25f856946bbcbc2247c...8907c13d31662a2cb393edb0387144dfbba81659)).
 
 ---
 
 **pre 2.0.0 information was related to `cssnext` package.**
+
+---
 
 # 1.8.4 - 2015-08-24
 
@@ -47,7 +49,7 @@ has introduced some minor breaking changes the way cssnext changed plugins
 metadata (`pluginName`).
 A direct minor change is that `messages` (in console or in css output) now show
 real origin (postcss plugin name) instead of a vague "cssnext" origin.
-([#195](https://github.com/cssnext/cssnext/issues/195))
+([#195](https://github.com/MoOx/postcss-cssnext/issues/195))
 
 # 1.8.3 - 2015-08-06
 
@@ -57,28 +59,28 @@ severals fixes.
 # 1.8.2 - 2015-07-23
 
 - Fixed: CLI watcher now works watchs correctl multiples `@import`
-([#123](https://github.com/cssnext/cssnext/issues/123))
+([#123](https://github.com/MoOx/postcss-cssnext/issues/123))
 
 # 1.8.1 - 2015-07-15
 
 - Added: cssnext now throw an error if used as a webpack loader to prevent
 unexpected usage with a recommendation for
-[cssnext-loader](https://github.com/cssnext/cssnext-loader)
-([#61](https://github.com/cssnext/cssnext/issues/61))
+[cssnext-loader](https://github.com/MoOx/postcss-cssnext-loader)
+([#61](https://github.com/MoOx/postcss-cssnext/issues/61))
 
 # 1.8.0 - 2015-06-29
 
 - Fixed: replacement of `postcss-log-warnings` (deprecated) by
 `postcss-reporter`
-([#162](https://github.com/cssnext/cssnext/issues/162))
+([#162](https://github.com/MoOx/postcss-cssnext/issues/162))
 - Fixed: CLI now add `to` option automatically
-([#159](https://github.com/cssnext/cssnext/issues/159))
+([#159](https://github.com/MoOx/postcss-cssnext/issues/159))
 If you were happy with the previous CLI behavior (which was not rebasing url),
 you should probably just add the `--no-url` to keep the CSS as it was.
 - Changed: `compress` option now use cssnano v2.x
-([#166](https://github.com/cssnext/cssnext/issues/166))
+([#166](https://github.com/MoOx/postcss-cssnext/issues/166))
 - Added: CLI output file dirname is now automatically created (using `mkdirp`)
-([#146](https://github.com/cssnext/cssnext/issues/146))
+([#146](https://github.com/MoOx/postcss-cssnext/issues/146))
 
 # 1.7.1 - 2015-06-19
 
@@ -94,28 +96,28 @@ Now you must use `@custom-selector :--{name}` syntax instead of
 `@custom-selector --{name}`
 The support of syntax without : and the warning message will be remove in the
 next major release
-([#97](https://github.com/cssnext/cssnext/issues/97))
+([#97](https://github.com/MoOx/postcss-cssnext/issues/97))
 - Added: `plugins` option that allows you to pipe your own transformations
-([#118](https://github.com/cssnext/cssnext/issues/118))
+([#118](https://github.com/MoOx/postcss-cssnext/issues/118))
 - Added: `messages` option that allows you to see messages of transformations
-([#88](https://github.com/cssnext/cssnext/issues/88))
+([#88](https://github.com/MoOx/postcss-cssnext/issues/88))
 - Added: `:any-link` pseudo class support
 
 # 1.6.0 - 2015-06-02
 
 - Added: prevent mutability issues with frozen options objects
-([#147](https://github.com/cssnext/cssnext/pull/147))
+([#147](https://github.com/MoOx/postcss-cssnext/pull/147))
 
 # 1.5.2 - 2015-05-27
 
 - Fixed: support for autoprefixer 5.2
-([#131](https://github.com/cssnext/cssnext/issues/131))
+([#131](https://github.com/MoOx/postcss-cssnext/issues/131))
 
 # 1.5.1 - 2015-05-25
 
 - Fixed: when printing a bug report in CLI, url was not printed, due to a
 replacement of colors lib by chalk in 1.5.0
-([#129](https://github.com/cssnext/cssnext/pull/129))
+([#129](https://github.com/MoOx/postcss-cssnext/pull/129))
 
 # 1.5.0 - 2015-05-23
 
@@ -163,7 +165,7 @@ files anymore
 # 1.0.1 - 2015-02-18
 
 - Fixed: cssnext binary doesn't exit on an error if --watch is enabled
-([#69](https://github.com/cssnext/cssnext/pull/69))
+([#69](https://github.com/MoOx/postcss-cssnext/pull/69))
 
 # 1.0.0 - 2015-02-06
 
@@ -204,7 +206,7 @@ autoprefixer
 # 0.6.6 - 2014-12-22
 
 - Fixed: `Cannot find module 'exit'` error when an error came out
-([#54](https://github.com/cssnext/cssnext/issues/54))
+([#54](https://github.com/MoOx/postcss-cssnext/issues/54))
 
 # 0.6.5 - 2014-12-16
 
@@ -258,7 +260,7 @@ v3.0.0 have by default `{inline: true, sourceContent: true}`
 # 0.4.3 - 2014-11-09
 
 - Added: font-variant support
-([#42](https://github.com/cssnext/cssnext/issues/42))
+([#42](https://github.com/MoOx/postcss-cssnext/issues/42))
 
 # 0.4.2 - 2014-11-02
 
@@ -267,17 +269,17 @@ v3.0.0 have by default `{inline: true, sourceContent: true}`
 - Added: echo a warning when using a non root custom properties
 ([#13](https://github.com/postcss/postcss-custom-properties/issues/13))
 - Added: cssnext can return a postcss instance of no string given
-([#3](https://github.com/cssnext/cssnext/issues/3))
+([#3](https://github.com/MoOx/postcss-cssnext/issues/3))
 
 # 0.4.1 - 2014-11-01
 
 - Added: gray() support
-([#44](https://github.com/cssnext/cssnext/issues/44))
+([#44](https://github.com/MoOx/postcss-cssnext/issues/44))
 
 # 0.4.0 - 2014-10-23
 
 - Changed: color feature has been exploded to multiples features
-([#40](https://github.com/cssnext/cssnext/issues/40)).
+([#40](https://github.com/MoOx/postcss-cssnext/issues/40)).
 
 Before
 
@@ -313,7 +315,7 @@ var output = cssnext(input, {
 
 - Changed: cssnext options are not passed to all plugins anymore. You know need
 to specify feature options by passing object to `features` properties  
-([#39](https://github.com/cssnext/cssnext/issues/39)).
+([#39](https://github.com/MoOx/postcss-cssnext/issues/39)).
 
 Before
 
@@ -348,7 +350,7 @@ This change have been made to avoid collision between options
 # 0.3.1 - 2014-08-27
 
 - Fixed: nested custom properties usages
-([#25](https://github.com/cssnext/cssnext/issues/25))
+([#25](https://github.com/MoOx/postcss-cssnext/issues/25))
 
 # 0.3.0 - 2014-08-26
 
@@ -358,7 +360,7 @@ This change have been made to avoid collision between options
 # 0.2.3 - 2014-08-26
 
 - Fixed: support empty files
-([#24](https://github.com/cssnext/cssnext/issues/24))
+([#24](https://github.com/MoOx/postcss-cssnext/issues/24))
 
 # 0.2.2 - 2014-08-22
 

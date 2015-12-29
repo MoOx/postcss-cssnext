@@ -8,10 +8,10 @@ title: cssnext - Use tomorrow’s CSS syntax, today.
       <strong class="cssnext-Jumbotron-title">Use tomorrow’s CSS syntax, today.</strong>
       <p>
         <a
-          title="github.com/cssnext/cssnext"
-          href="https://github.com/cssnext/cssnext"
+          title="github.com/MoOx/postcss-cssnext"
+          href="https://github.com/MoOx/postcss-cssnext"
         >
-          Check out cssnext on GitHub
+          Check out postcss-cssnext on GitHub
         </a>
         or
         <a href="/playground/">
@@ -22,7 +22,7 @@ title: cssnext - Use tomorrow’s CSS syntax, today.
         frameborder="0" scrolling="0"
         width="145px" height="30px"
         style="vertical-align: middle"
-        src="https://ghbtns.com/github-btn.html?user=cssnext&repo=cssnext&type=star&count=true&size=large"
+        src="https://ghbtns.com/github-btn.html?user=MoOx&repo=postcss-cssnext&type=star&count=true&size=large"
       ></iframe>
     </div>
   </section>
@@ -32,8 +32,8 @@ title: cssnext - Use tomorrow’s CSS syntax, today.
   <div class="r-Grid-cell r-minM--1of3">
     <h2 class="cssnext-Section-title">What is cssnext?</h2>
     <p class="cssnext-Section-content">
-      cssnext is a CSS transpiler that allows you to use
-      the latest CSS syntax today.
+      PostCSS-cssnext is a <a href="https://github.com/postcss/postcss#readme">PostCSS</a>
+      plugin that helps you to use the latest CSS syntax today.
       It transforms
       <a href="http://www.xanthir.com/b4Ko0">new CSS specs</a>
       into more compatible CSS
@@ -168,52 +168,11 @@ title: cssnext - Use tomorrow’s CSS syntax, today.
   </div>
 </section>
 
-<section class="cssnext-Jumbotron cssnext-Jumbotron--darkFlux cssnext-Light">
-  <div class="r-Grid">
-    <div class="r-Grid-cell r-minM--1of2 cssnext-Section">
-      <h3 class="cssnext-Section-title">Active development</h3>
-      <p class="cssnext-Section-content">
-        No longer wait for releases.
-        A fixed bug will be released ASAP.
-        <br />
-        Minor features will never be idle for long.
-        <br />
-        See that by yourself on
-        <a href="https://github.com/cssnext/cssnext/graphs/contributors">cssnext</a>
-        &amp;
-        <a href="https://github.com/postcss/postcss/graphs/contributors">PostCSS</a>.
-        activities graphs.
-        <br />
-        cssnext uses lots of PostCSS plugins,
-        <a href="https://github.com/postcss/">so check them out too.</a>
-      </p>
-    </div>
-  </div>
-</section>
-
-<section class="cssnext-Jumbotron cssnext-Jumbotron--lightTeam">
-  <div class="r-Grid">
-    <div class="r-Grid-cell r-minM--1of2"></div>
-    <div class="r-Grid-cell r-minM--1of2 cssnext-Section">
-      <h3 class="cssnext-Section-title">Based on NPM ecosystem</h3>
-      <p class="cssnext-Section-content">
-        cssnext uses <a href="https://www.npmjs.org/">npm packages</a> that should respect <a href="http://semver.org/">semver</a>.
-        <br />
-        Bugfixes are pushed often.
-        Minor changes won't break your code.
-        Major releases are, well, major and are not supposed to happen a lot.
-        <br />
-        Codebase is exploded into smart and standalone packages so it's easier to work on something or fix a bug.
-      </p>
-    </div>
-  </div>
-</section>
-
 <div class="cssnext-Jumbotron cssnext-Jumbotron--default cssnext-Center cssnext-Light">
   <section class="r-Grid">
     <div class="r-Grid-cell">
       <div class="cssnext-Jumbotron-title">
-        <a href="/playground/">Try cssnext in your browser now.</a>
+        <a href="/playground/">Try postcss-cssnext in your browser now.</a>
       </div>
     </div>
   </section>
@@ -226,7 +185,7 @@ title: cssnext - Use tomorrow’s CSS syntax, today.
       <a href="https://twitter.com/cssnext">@cssnext</a>
       to get the latest news
       or
-      <a href="https://gitter.im/cssnext/cssnext">join the chat on gitter</a>
+      <a href="https://gitter.im/MoOx/postcss-cssnext">join the chat on gitter</a>
       if you have any questions.
     </div>
   </div>
