@@ -84,7 +84,6 @@
     "metalsmith-rss": "^1.0.0",
     "metalsmith-url": "^1.0.0",
     "metalsmith-watch": "^1.0.1",
-    "microtime": "^1.2.0",
     "nano-logger": "^1.0.0",
     "node-libs-browser": "^0.5.0",
     "normalize.css": "^3.0.3",
