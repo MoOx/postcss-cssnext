@@ -1,11 +1,11 @@
 ---
 template: Simple
-title: cssnext - Use tomorrow's CSS syntax, today.
+title: cssnext - Use tomorrow’s CSS syntax, today.
 ---
 <div class="cssnext-Jumbotron cssnext-Jumbotron--default cssnext-Center cssnext-Light">
   <section class="r-Grid">
     <div class="r-Grid-cell">
-      <strong class="cssnext-Jumbotron-title">Use tomorrow's CSS syntax, today.</strong>
+      <strong class="cssnext-Jumbotron-title">Use tomorrow’s CSS syntax, today.</strong>
       <p>
         <a
           title="github.com/cssnext/cssnext"

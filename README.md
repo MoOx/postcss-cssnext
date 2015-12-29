@@ -6,7 +6,7 @@
 [![Join the chat at https://gitter.im/cssnext/cssnext](https://img.shields.io/badge/gitter%20-join%20chat%20%E2%9E%9E-1dce73.svg)](https://gitter.im/cssnext/cssnext)
 
 
-> Use tomorrow's CSS syntax, today.
+> Use tomorrow’s CSS syntax, today.
 
 cssnext is a CSS transpiler that allows you to use the latest CSS syntax today.
 It transforms CSS specs into more compatible CSS so you don’t need to wait for browser support.
