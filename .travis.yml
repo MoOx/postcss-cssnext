@@ -2,7 +2,9 @@ sudo: false
 
 language: node_js
 node_js:
-  - iojs
+  - '5'
+  - '4'
+  - '0.12'
 
 script:
   - npm run test
