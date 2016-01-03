@@ -61,7 +61,7 @@ If you were using cssnext with default options, you might just need this:
 
 ```console
 $ npm uninstall cssnext [--save[-dev]]
-$ npm install postcss postcss-import postcss-url postcss-reporter postcss-browser-reporter postcss-cssnext [--save[-dev]]
+$ npm install postcss postcss-import postcss-url postcss-cssnext postcss-browser-reporter postcss-reporter [--save[-dev]]
 ```
 
 With the previous lines you might thing that you are going backward by having a
@@ -73,15 +73,23 @@ and previous default cssnext behavior.
 
 ##### [postcss-cli](https://www.npmjs.com/package/postcss-cli)
 
+```console
+$ npm install postcss-cli --save-dev
+```
+
 Here is an example of the json config you might use with something like
 ``$ postcss-cli -c postcss.config.json``.
 
-```json
+```js
 {
   "use": [
     "postcss-import",
     "postcss-url",
-    "postcss-cssnext"
+    "postcss-cssnext",
+    // add your "plugins" here
+    // ...
+    // and if you want to compress
+    // "cssnano",
     "postcss-browser-reporter",
     "postcss-reporter",
   ]
@@ -89,6 +97,11 @@ Here is an example of the json config you might use with something like
 ```
 
 ##### [grunt-postcss](https://www.npmjs.com/package/grunt-postcss)
+
+```console
+$ npm uninstall grunt-cssnext --save-dev
+$ npm install grunt-postcss --save-dev
+```
 
 ```js
 grunt.initConfig({
@@ -98,6 +111,10 @@ grunt.initConfig({
         require("postcss-import")(),
         require("postcss-url")(),
         require("postcss-cssnext")(),
+        // add your "plugins" here
+        // ...
+        // and if you want to compress
+        // require("cssnano")(),
         require("postcss-browser-reporter")(),
         require("postcss-reporter")(),
       ]
@@ -111,6 +128,11 @@ grunt.initConfig({
 
 ##### [gulp-postcss](https://www.npmjs.com/package/gulp-postcss)
 
+```console
+$ npm uninstall gulp-cssnext --save-dev
+$ npm install gulp-postcss --save-dev
+```
+
 ```js
 var gulp = require('gulp')
 var postcss = require('gulp-postcss')
@@ -122,6 +144,10 @@ gulp.task('css', function () {
       require("postcss-import")(),
       require("postcss-url")(),
       require("postcss-cssnext")(),
+      // add your "plugins" here
+      // ...
+      // and if you want to compress
+      // require("cssnano")(),
       require("postcss-browser-reporter")(),
       require("postcss-reporter")(),
     ]))
@@ -131,6 +157,11 @@ gulp.task('css', function () {
 ```
 
 ##### [postcss-loader](https://www.npmjs.com/package/postcss-loader)
+
+```console
+$ npm uninstall cssnext-loader --save-dev
+$ npm install postcss-loader --save-dev
+```
 
 ```js
 module.exports = {
@@ -147,6 +178,10 @@ module.exports = {
       require("postcss-import")({ addDependencyTo: webpack }),
       require("postcss-url")(),
       require("postcss-cssnext")(),
+      // add your "plugins" here
+      // ...
+      // and if you want to compress,
+      // just use css-loader option that already use cssnano under the hood
       require("postcss-browser-reporter")(),
       require("postcss-reporter")(),
     ]
