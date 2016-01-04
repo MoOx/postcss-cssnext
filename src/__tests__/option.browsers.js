@@ -1,16 +1,13 @@
-const test = require("tape")
+import tape from "tape"
 
-const cssnext = require("..")
+import cssnext from ".."
 
-test("cssnext browsers option", function(t) {
+tape("cssnext browsers option", function(t) {
 
   // no recent browser need pixrem
   const remInput = "body{font-size:2rem}"
   t.equal(
-    cssnext(
-      remInput,
-      {browsers: "last 1 version"}
-    ),
+    cssnext({ browsers: "last 1 version" }).process(remInput).css,
     remInput,
     "should not enable px fallback when all browsers support it"
   )
@@ -20,21 +17,21 @@ test("cssnext browsers option", function(t) {
 
   // fx 30 doesn't handle custom prop
   t.equal(
-    cssnext(customPropsInput, {browsers: "Firefox >= 30"}),
+    cssnext({ browsers: "Firefox >= 30" }).process(customPropsInput).css,
     customPropsOutput,
     "should enable custom properties when browsers do not support it"
   )
 
   // fx 31 handle custom prop
   t.equal(
-    cssnext(customPropsInput, {browsers: "Firefox >= 31"}),
+    cssnext({ browsers: "Firefox >= 31" }).process(customPropsInput).css,
     customPropsInput,
     "should NOT enable custom properties when browsers support it"
   )
 
   // fx 31 support but not IE 8
   t.equal(
-    cssnext(customPropsInput, {browsers: "Firefox >= 31, IE 8"}),
+    cssnext({ browsers: "Firefox >= 31, IE 8" }).process(customPropsInput).css,
     customPropsOutput,
     "should enable custom properties when at least one browsers do not " +
       "support it"
@@ -43,20 +40,20 @@ test("cssnext browsers option", function(t) {
   t.end()
 })
 
-test("cssnext browsers option propagation", function(t) {
+tape("cssnext browsers option propagation", function(t) {
   const input = "body{transition: 1s}"
   const output = "body{-webkit-transition: 1s;transition: 1s}"
 
   // Safari 6 need -webkit prefix
   t.equal(
-    cssnext(input, {browsers: "Safari 6"}),
+    cssnext({ browsers: "Safari 6" }).process(input).css,
     output,
     "should propagate browsers option to autoprefixer"
   )
 
   // Safari 6.1 do not need -webkit prefix
   t.equal(
-    cssnext(input, {browsers: "Safari 6.1"}),
+    cssnext({ browsers: "Safari 6.1" }).process(input).css,
     input,
     "should propagate browsers option to autoprefixer"
   )

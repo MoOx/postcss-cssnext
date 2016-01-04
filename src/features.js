@@ -6,6 +6,9 @@ export default {
   calc(options) {
     return require("postcss-calc")(options)
   },
+  nesting(options) {
+    return require("postcss-nesting")(options)
+  },
   customMedia(options) {
     return require("postcss-custom-media")(options)
   },
@@ -36,6 +39,9 @@ export default {
   filter(options) {
     return require("pleeease-filters")(options)
   },
+  initial(options) {
+    return require("postcss-initial")(options)
+  },
   rem(options) {
     return require("pixrem")(options)
   },
@@ -55,6 +61,6 @@ export default {
     return require("postcss-color-rgba-fallback")(options)
   },
   autoprefixer(options) {
-    return require("autoprefixer-core")(options)
+    return require("autoprefixer")(options)
   },
 }

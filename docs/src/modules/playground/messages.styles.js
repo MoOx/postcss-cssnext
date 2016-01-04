@@ -1,7 +1,5 @@
-// not using fs for in browser usage (playground)
-//
-// source: http://iconmonstr.com/warning-3-icon/
 /* eslint-disable max-len */
+// source: http://iconmonstr.com/warning-3-icon/
 const svgGradient = `
 <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="125.7515" y1="307.4834" x2="125.7514" y2="-73.4854" gradientTransform="matrix(1 0 0 -1 -50 373)">
   <stop  offset="0" style="stop-color:#428BCA"/>

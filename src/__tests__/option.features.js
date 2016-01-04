@@ -1,75 +1,60 @@
 /**
  * Test dependencies
  */
-const test = require("tape")
+import test from "tape"
+import { join } from "path"
 
-const utils = require("./utils")
-const cssnext = require("..")
-const cssnextStandalone = require("../cssnext")
+import utils from "./utils"
+import cssnext, { features } from ".."
 
 /**
  * Features tests
  */
-const toSlug = require("to-slug-case")
+import toSlug from "to-slug-case"
 const testFeature = function(
   t,
   feature,
-  cssnextInstance,
-  version,
   source,
   input,
   expected
 ) {
-  const options = {from: source, sourcemap: false, features: {}}
+  const options = { features: { } }
 
   // disable all features
-  Object.keys(cssnextInstance.features).forEach(function(key) {
+  Object.keys(features).forEach(function(key) {
     options.features[key] = false
   })
 
-  const css = cssnextInstance(input, options)
+  const css = cssnext(options).process(input).css
   t.notEqual(
     css,
     expected,
-    version + ": should not add " + feature + " support if disabled"
+    "should not add " + feature + " support if disabled"
   )
   t.equal(
     css,
     input,
-    version + ": should not modify input if  " + feature + " is disabled"
+    "should not modify input if  " + feature + " is disabled"
   )
 
   // enable only the one we want to test...
   options.features[feature] = true
 
-  // ...except "url" because we want to validate its behaviour when integrated
-  // with "import"
-  if (feature === "url") {
-    options.features.import = true
-  }
   t.equal(
-    cssnextInstance(input, options).trim(),
+    cssnext(options).process(input).css.trim(),
     expected.trim(),
-    version + ": should add " + feature + " support"
+    "should add " + feature + " support"
   )
 }
 
-Object.keys(cssnext.features).forEach(function(name) {
+Object.keys(features).forEach(function(name) {
   const slug = toSlug(name)
-  const source = utils.fixturePath("features/" + slug)
-  const input = utils.readFixture("features/" + slug)
-  const expected = utils.readFixture("features/" + slug + ".expected")
+  const source = utils.fixturePath(join("features", slug))
+  const input = utils.readFixture(join("features", slug))
+  const expected = utils.readFixture(join("features", slug + ".expected"))
 
   test(slug, function(t) {
-    testFeature(t, name, cssnext, "node.js", source, input, expected)
-
-    // we do not support @import  or url rewriting in the browser
-    if (name === "import" || name === "url") {
-      t.end()
-      return
-    }
-
-    testFeature(t, name, cssnextStandalone, "browser", source, input, expected)
+    testFeature(t, name, source, input, expected)
 
     t.end()
   })

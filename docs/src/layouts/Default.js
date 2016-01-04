@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from "react"
+import React, { Component, PropTypes } from "react"
 import cx from "classnames"
 
 import dashify from "../modules/dashify"
@@ -102,7 +102,7 @@ export default class Default extends Component {
                   <br />
                   <a
                   href={
-                  "https://github.com/cssnext/cssnext/issues" +
+                  "https://github.com/MoOx/postcss-cssnext/issues" +
                   "?q=is%3Aopen+is%3Aissue+label%3A%22type%3A+documentation%22"
                   }>
                     Pull requests
@@ -124,7 +124,7 @@ export default class Default extends Component {
                 "r-Grid-cell": true,
                 "js-markdownIt-TOCOriginalContainer": true,
               })}
-              dangerouslySetInnerHTML={{__html: file.contents}}
+              dangerouslySetInnerHTML={{ __html: file.contents }}
             />
             <div
               className={cx({
@@ -144,7 +144,9 @@ export default class Default extends Component {
                 "cssnext-Light"
               )}>
                 <div className="cssnext-Jumbotron-title">
-                  <a href="/playground/">Try cssnext in your browser now.</a>
+                  <a href="/playground/">
+                    Try postcss-cssnext in your browser now.
+                  </a>
                 </div>
             </div>
           }

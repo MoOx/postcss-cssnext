@@ -3,27 +3,28 @@
 //
 // null == always enable (& no caniuse data)
 export default {
-  customProperties: ["css-variables"],
+  customProperties: [ "css-variables" ],
   // calc() transformation only make sense with transformed custom properties,
   // don't you think ?
   // calc: null,
   // @todo open PR on caniuse repo https://github.com/Fyrd/caniuse
-  // customMedia: [null],
-  // mediaQueriesRange: [null],
-  // customSelectors: [null],
-  // colorRebeccapurple: [null], // @todo can be done easily
-  // colorHwb: [null],
-  // colorGray: [null],
-  // colorHexAlpha: [null],
-  // colorFunction:[null],
-  // fontVariant: [null],
+  // customMedia: [ null ],
+  // mediaQueriesRange: [ null ],
+  // customSelectors: [ null ],
+  // colorRebeccapurple: [ null ], // @todo can be done easily
+  // colorHwb: [ null ],
+  // colorGray: [ null ],
+  // colorHexAlpha: [ null ],
+  // colorFunction:[ null],
+  // fontVariant: [ null ],
   // @todo can be done using a callback, this is only used for Firefox < 35
-  // filter: [null],
-  rem: ["rem"],
-  pseudoElements: ["css-gencontent"],
-  // pseudoClassMatches: [null],
-  // pseudoClassNot: [null],
-  colorRgba: ["css3-colors"],
+  // filter: [ null ],
+  initial: [ "css-all", "css-initial-value" ],
+  rem: [ "rem" ],
+  pseudoElements: [ "css-gencontent" ],
+  // pseudoClassMatches: [ null ],
+  // pseudoClassNot: [ null ],
+  colorRgba: [ "css3-colors" ],
   // will always be null since autoprefixer does the same game as we do
-  // autoprefixer: [null]
+  // autoprefixer: [ null ]
 }

@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from "react"
+import React, { Component, PropTypes } from "react"
 // import styled from "bloody-react-styled"
 import cx from "classnames"
 
@@ -28,14 +28,9 @@ const cleanups = {
 // @styled(styles)
 export default class SVGIcon extends Component {
 
-  static defaultProps = {
-    component: "span",
-    classSuffix: "-svg",
-    cleanup: [],
-    cleanupExceptions: [],
-  }
-
   static propTypes = {
+    className: PropTypes.string,
+    classSuffix: PropTypes.string,
     component: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.func,
@@ -46,8 +41,16 @@ export default class SVGIcon extends Component {
       PropTypes.bool,
       PropTypes.array,
     ]),
+    cleanupExceptions: PropTypes.array,
     width: PropTypes.string,
     height: PropTypes.string,
+  }
+
+  static defaultProps = {
+    component: "span",
+    classSuffix: "-svg",
+    cleanup: [],
+    cleanupExceptions: [],
   }
 
   static cleanupSvg(svg, cleanup = []) {
@@ -97,7 +100,7 @@ export default class SVGIcon extends Component {
       height = width
     }
 
-    const props = {...this.props}
+    const props = { ...this.props }
     // remove useless props for wrapper
     delete props.svg
     delete props.fill

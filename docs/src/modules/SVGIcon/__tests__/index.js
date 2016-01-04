@@ -1,5 +1,5 @@
 import tape from "tape-catch"
-import React, {Component} from "react"
+import React, { Component } from "react"
 import SVGIcon from ".."
 
 tape("SVGIcon", (test) => {
@@ -70,7 +70,7 @@ tape("SVGIcon", (test) => {
 
   test.equal(
     React.renderToStaticMarkup(
-      <SVGIcon cleanupExceptions={["fill"]} svg={`<svg ${svgPiece}`} />
+      <SVGIcon cleanupExceptions={[ "fill" ]} svg={`<svg ${svgPiece}`} />
     ),
     `${SVGIconCleanedStart}><g fill="none"><path fill="#ab234f"></path></g>` +
       `</svg></span>`,
