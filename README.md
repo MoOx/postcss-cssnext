@@ -1,12 +1,12 @@
 # postcss-cssnext
 
-[![NPM version](http://img.shields.io/npm/v/postcss-cssnext.svg?style=flat)](https://www.npmjs.org/package/postcss-cssnext)
 [![Travis Build Status](https://img.shields.io/travis/MoOx/postcss-cssnext.svg?label=unix%20build)](https://travis-ci.org/cssnext/postcss-cssnext)
 [![AppVeyor Build Status](https://img.shields.io/appveyor/ci/MoOx/postcss-cssnext.svg?label=windows%20build)](https://ci.appveyor.com/project/MoOx/postcss-cssnext)
-[![Join the chat at https://gitter.im/MoOx/postcss-cssnext](https://img.shields.io/badge/gitter%20-join%20chat%20%E2%9E%9E-1dce73.svg)](https://gitter.im/MoOx/postcss-cssnext)
+[![NPM version](http://img.shields.io/npm/v/postcss-cssnext.svg?style=flat)](https://www.npmjs.org/package/postcss-cssnext)
+[![Support on gitter chat](https://img.shields.io/badge/support-gitter%20chat-E40255.svg)](https://gitter.im/MoOx/postcss-cssnext)
 
 
-> Use tomorrow’s CSS syntax, today.
+> PostCSS plugin to use tomorrow’s CSS syntax, today.
 
 PostCSS-cssnext is a PostCSS plugin that helps you to use the latest CSS syntax today.
 It transforms CSS specs into more compatible CSS so you don’t need to wait for browser support.
