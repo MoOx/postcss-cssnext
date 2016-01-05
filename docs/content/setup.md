@@ -36,11 +36,11 @@ PostCSS runner that suits your workflow:
 
 ---
 
-## Wait? What were is previous cssnext interface?
+## Wait, what? Where is the previous cssnext interface?
 
 [`cssnext` is dead. Long live to `postcss-cssnext`.](/postcss/)
 
 
-## Wait? What is PostCSS?
+## Wait, what is PostCSS?
 
 [Here is what you are looking for.](https://github.com/postcss/postcss#readme)
