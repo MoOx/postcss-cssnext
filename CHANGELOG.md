@@ -1,3 +1,8 @@
+# 2.4.0 - 2016-01-08
+
+- Added: documentation is now included in the npm package in
+  `postcss-cssnext/docs/content`
+
 # 2.3.0 - 2015-12-16
 
 - Added: we use latest version of pixrem(@^3)

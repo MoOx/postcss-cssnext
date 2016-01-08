@@ -34,7 +34,7 @@ module.exports = {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract(
           "style-loader",
-          "css-loader!cssnext-loader"
+          "css-loader!postcss-loader"
         ),
       },
       {
@@ -44,6 +44,16 @@ module.exports = {
         ],
       },
     ],
+  },
+
+  postcss: (webpack) => {
+    return [
+      require("postcss-import")({ addDependencyTo: webpack }),
+      require("postcss-url")(),
+      require("./lib/index.js")(), // postcss-cssnext !
+      require("postcss-browser-reporter")(),
+      require("postcss-reporter")(),
+    ]
   },
 
   plugins: ([

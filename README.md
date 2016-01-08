@@ -2,7 +2,8 @@
 
 [![Travis Build Status](https://img.shields.io/travis/MoOx/postcss-cssnext.svg?label=unix%20build)](https://travis-ci.org/cssnext/postcss-cssnext)
 [![AppVeyor Build Status](https://img.shields.io/appveyor/ci/MoOx/postcss-cssnext.svg?label=windows%20build)](https://ci.appveyor.com/project/MoOx/postcss-cssnext)
-[![NPM version](http://img.shields.io/npm/v/postcss-cssnext.svg?style=flat)](https://www.npmjs.org/package/postcss-cssnext)
+[![Package Quality](http://npm.packagequality.com/shield/postcss-cssnext.svg)](http://packagequality.com/#?package=postcss-cssnext)
+[![Version](https://img.shields.io/github/release/MoOx/postcss-cssnext.svg)](https://github.com/MoOx/postcss-cssnext/blob/master/CHANGELOG.md)
 [![Support on gitter chat](https://img.shields.io/badge/support-gitter%20chat-E40255.svg)](https://gitter.im/MoOx/postcss-cssnext)
 
 
@@ -22,15 +23,17 @@ It transforms CSS specs into more compatible CSS so you don’t need to wait for
 - [Migration to postcss-cssnext](http://cssnext.io/postcss/)
 
 For questions and support please visit the
-[gitter room](https://gitter.im/MoOx/postcss-cssnext).
+[support chat](https://gitter.im/MoOx/postcss-cssnext).
 
 For offline documentation, check out `statinamic/docs/content`.
 
 ---
 
-_The [issue tracker](https://github.com/MoOx/postcss-cssnext/issues) is exclusively for bug reports and feature requests._
+## CONTRIBUTING
 
----
+* ⇄ Pull requests and ★ Stars are always welcome.
+* For bugs and feature requests, please create an issue.
+* Pull requests must be accompanied by passing automated tests (`$ npm test`).
 
 ## [Changelog](CHANGELOG.md)
 
