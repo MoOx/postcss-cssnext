@@ -48,69 +48,82 @@ title: cssnext - Use tomorrow’s CSS syntax, today.
   <h2 class="cssnext-Section-title"><a href="/features/">Features</a></h2>
     <ul class="r-Grid cssnext-List cssnext-FeaturesList">
       <li class="r-Grid-cell r-minS--1of2">
-        custom properties & `var()`
+        <a href="/features/#automatic-vendor-prefixes">automatic vendor prefixes</a>
       </li>
       <li class="r-Grid-cell r-minS--1of2">
-        reduced `calc()`
+        <a href="/features/#custom-properties-var">custom properties & <code>var()</code></a>
       </li>
       <li class="r-Grid-cell r-minS--1of2">
-        custom media queries
+        <a href="/features/#reduced-calc">reduced <code>calc()</code></a>
       </li>
       <li class="r-Grid-cell r-minS--1of2">
-        media queries ranges
+        <a href="/features/#custom-media-queries">custom media queries</a>
       </li>
       <li class="r-Grid-cell r-minS--1of2">
-        custom selectors
+        <a href="/features/#media-queries-ranges">media queries ranges</a>
       </li>
       <li class="r-Grid-cell r-minS--1of2">
-        automatic vendor prefixes
+        <a href="/features/#custom-selectors">custom selectors</a>
       </li>
       <li class="r-Grid-cell r-minS--1of2">
-        `color()` support
+        <a href="/features/#nesting">nesting</a>
       </li>
       <li class="r-Grid-cell r-minS--1of2">
-        `gray()` support
+        <a href="/features/#color-function"><code>color()</code> function</a>
       </li>
       <li class="r-Grid-cell r-minS--1of2">
-        `hwb()` support
+        <a href="/features/#hwb-function"><code>hwb()</code> function</a>
       </li>
       <li class="r-Grid-cell r-minS--1of2">
-        hexa `#rrggbbaa` support
+        <a href="/features/#gray-function"><code>gray()</code> function</a>
       </li>
       <li class="r-Grid-cell r-minS--1of2">
-        `rebeccapurple`
+        <a href="/features/#rrggbbaa-colors"><code>#rrggbbaa</code> colors</a>
       </li>
       <li class="r-Grid-cell r-minS--1of2">
-        `:matches` pseudo-class
+        <a href="/features/#rgba-function-rgb-fallback"><code>rgba</code> function
+          <small class="cssnext-FeaturesList-small">
+            (<code>rgb</code> fallback</code>)
+          </small>
+        </a>
       </li>
       <li class="r-Grid-cell r-minS--1of2">
-        `:not` pseudo-class
-        <small class="cssnext-FeaturesList-small">
-          (to l.3)
-        </small>
+        <a href="/features/#rebeccapurple-color"><code>rebeccapurple</code> color</a>
       </li>
       <li class="r-Grid-cell r-minS--1of2">
-        font-variant
-        <small class="cssnext-FeaturesList-small">
-          (to font-feature-settings)
-        </small>
+        <a href="/features/#font-variant-property"><code>font-variant</code> property</a>
       </li>
       <li class="r-Grid-cell r-minS--1of2">
-        filters
+        <a href="/features/#filter-property"><code>filter</code> property</a>
         <small class="cssnext-FeaturesList-small">
           (svg fallback)
         </small>
       </li>
       <li class="r-Grid-cell r-minS--1of2">
-        `rem` units fallback
+        <a href="/features/#initial-value"><code>initial</code> value</a>
+      </li>
+      <li class="r-Grid-cell r-minS--1of2">
+        <a href="/features/#rem-unit-px-fallback"><code>rem</code> unit</a>
         <small class="cssnext-FeaturesList-small">
-          (to px)
+          (<code>px</code> fallback)
         </small>
       </li>
       <li class="r-Grid-cell r-minS--1of2">
-        ::pseudo syntax
+        <a href="/features/#any-link-pseudo-class"><code>:any-link</code> pseudo-class</a>
+      </li>
+      <li class="r-Grid-cell r-minS--1of2">
+        <a href="/features/#matches-pseudo-class"><code>:matches</code> pseudo-class</a>
+      </li>
+      <li class="r-Grid-cell r-minS--1of2">
+        <a href="/features/#not-pseudo-class"><code>:not</code> pseudo-class</a>
         <small class="cssnext-FeaturesList-small">
-          (`:` compat)
+          (to l.3)
+        </small>
+      </li>
+      <li class="r-Grid-cell r-minS--1of2">
+        <a href="/features/#pseudo-syntax-fallback"><code>::</code>pseudo syntax</a>
+        <small class="cssnext-FeaturesList-small">
+          (<code>:</code> fallback)
         </small>
       </li>
     </ul>
@@ -119,7 +132,7 @@ title: cssnext - Use tomorrow’s CSS syntax, today.
       style="display: block; text-align: center;"
     >
       <small>
-        _l.* are level of the specification (when information is relevant)_
+        <em>l.* are level of the specification (when information is relevant)</em>
       </small>
     </small>
   </div>

@@ -15,6 +15,7 @@
   "homepage": "http://cssnext.io/",
   "main": "lib/index.js",
   "files": [
+    "docs/content",
     "lib",
     "src",
     "!**/__tests__"

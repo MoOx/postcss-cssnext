@@ -7,11 +7,15 @@ backgroundModifier: darkRoad
 
 @[toc]
 
+**Note that according to your [browser scope](usage/#browsers) some
+transformation can be skipped to avoid extra useless output.**
+Eg: if you use don't cover IE 8, rem fallback and rgba fallback might be skipped.
+
 ## automatic vendor prefixes
 
 Vendor prefixes are automatically added (and removed if deprecated/useless
 depending on your browser scope) using
-[autoprefixer](https://github.com/postcss/autoprefixer))
+**[autoprefixer](https://github.com/postcss/autoprefixer)**).
 
 
 ## custom properties & `var()`
@@ -120,7 +124,34 @@ Alows you to create your own selectors
 |
 [Plugin documentation](https://github.com/postcss/postcss-custom-selector)
 
-## `color()`
+## nesting
+
+Allow you to nest selectors
+
+```scss
+a {
+  /* direct nesting (& MUST be the first part of selector)*/
+  & span {
+    color: white;
+  }
+
+  /* @nest rule (for complex nesting) */
+  @nest span & {
+    color: blue;
+  }
+
+  /* media query automatic nesting */
+  @media (min-width: 30em) {
+    color: yellow;
+  }
+}
+```
+
+[Specification](http://tabatkins.github.io/specs/css-nesting/)
+|
+[Plugin documentation](https://github.com/jonathantneal/postcss-nesting)
+
+## `color()` function
 
 a color function to modify colors (transpiled to: `rgba()`)
 
@@ -142,7 +173,7 @@ so be sure to check them !
 |
 [Plugin documentation](https://github.com/postcss/postcss-color-function)
 
-## `hwb()`
+## `hwb()` function
 
 Similar to `hsl()` but easier for humans to work with (transpiled to: `rgba()`).
 
@@ -156,7 +187,7 @@ body {
 |
 [Plugin documentation](https://github.com/postcss/postcss-color-hwb)
 
-## `gray()`
+## `gray()` function
 
 Allow you to use more than 50 shades of gray (transpiled to: `rgba()`).
 For the first argument, you can use a number between 0 and 255 or a percentage.
@@ -175,7 +206,7 @@ For the first argument, you can use a number between 0 and 255 or a percentage.
 |
 [Plugin documentation](https://github.com/postcss/postcss-color-gray)
 
-## #rrggbbaa
+## `#rrggbbaa` colors
 
 Allows use to use 4 or 8 digits hexadecimal notation (transpiled to: `rgba()`).
 
@@ -189,7 +220,23 @@ body {
 |
 [Plugin documentation](https://github.com/postcss/postcss-color-hex-alpha)
 
-## `rebeccapurple`
+## `rgba` function (`rgb` fallback)
+
+Add solid colors fallback for rgba colors
+(if you browser scope cover old browsers, eg: IE8).
+
+```css
+body {
+  background: rgba(153, 221, 153, 0.8);
+  /* you will have the same value without alpha as a fallback */
+}
+```
+
+[Specification](http://www.w3.org/TR/css3-color/)
+|
+[Plugin documentation](https://github.com/postcss/postcss-color-rgba-fallback)
+
+## `rebeccapurple` color
 
 Allows you to use the new color keyword as a homage to
 [Eric Meyer’s daughter](https://github.com/postcss/postcss-color-rebeccapurple#why-this-plugin-)
@@ -204,8 +251,7 @@ body {
 |
 [Plugin documentation](https://github.com/postcss/postcss-color-rebeccapurple)
 
-
-## font-variant
+## `font-variant` property
 
 properties (fallback: `font-feature-settings`)
 
@@ -228,7 +274,7 @@ at the support of
 |
 [Plugin documentation](https://github.com/postcss/postcss-font-variant)
 
-## filter
+## `filter` property
 
 The W3C filters are only transformed as svg filter using the `url(data:*)` trick
 for Firefox < 35.
@@ -243,10 +289,38 @@ for Firefox < 35.
 |
 [Plugin documentation](https://github.com/iamvdo/pleeease-filters)
 
-## `rem` units
+## `initial` value
+
+Allow you to use `initial` value for any value. This value represents the value
+specified as the property’s initial value. **It does not mean browser default.**
+
+For example, for the `display` property, `initial` always means `inline`,
+because that’s the designated initial value of the property.
+As an example, using `div { display: initial }`, will **not** be `block`, but
+`inline`.
+
+```css
+div {
+  display: initial; /* inline */
+}
+```
+
+_Killer feature :_
+
+```css
+div {
+  all: initial; /* use initial for ALL PROPERTIES in one shot */
+}
+```
+
+[Specification](http://www.w3.org/TR/css3-values/#common-keywords)
+|
+[Plugin documentation](https://github.com/maximkoretskiy/postcss-initial)
+
+## `rem` unit (`px` fallback)
 
 `rem` fallback to `px`
-(if you browser scope cover old browsers).
+(if you browser scope cover old browsers, eg: IE8).
 
 ```css
 h1 {
@@ -303,10 +377,10 @@ p:not(:first-child, .special) {
 |
 [Plugin documentation](https://github.com/postcss/postcss-selector-NOT)
 
-## pseudo-elements
+## `::` pseudo syntax (`:` fallback)
 
 Adjust `::` to `:`
-(if you browser scope cover old browsers)
+(if you browser scope cover old browsers, eg: IE8).
 
 ```css
 a::before {
@@ -317,25 +391,6 @@ a::before {
 [Specification](http://www.w3.org/TR/css3-selectors/#pseudo-elements)
 |
 [Plugin documentation](https://github.com/axa-ch/postcss-pseudoelements)
-
-## Alpha colors
-
-Add solid colors fallback for rgba colors
-(if you browser scope cover old browsers)
-
-```css
-body {
-  background: rgba(153, 221, 153, 0.8);
-  /* you will have the same value without alpha as a fallback */
-}
-```
-
-[Specification](http://www.w3.org/TR/css3-color/)
-|
-[Plugin documentation](https://github.com/postcss/postcss-color-rgba-fallback)
-
-_Note that according to your [browser scope](#nodejs-options) some might be not
-transpiled to avoid extra useless output._
 
 ## @todo
 

@@ -24,6 +24,8 @@ It transforms CSS specs into more compatible CSS so you don’t need to wait for
 For questions and support please visit the
 [gitter room](https://gitter.im/MoOx/postcss-cssnext).
 
+For offline documentation, check out `statinamic/docs/content`.
+
 ---
 
 _The [issue tracker](https://github.com/MoOx/postcss-cssnext/issues) is exclusively for bug reports and feature requests._
