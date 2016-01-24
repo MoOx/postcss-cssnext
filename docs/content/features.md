@@ -7,7 +7,7 @@ backgroundModifier: darkRoad
 
 @[toc]
 
-**Note that according to your [browser scope](usage/#browsers) some
+**Note that according to your [browser scope](/usage/#browsers) some
 transformation can be skipped to avoid extra useless output.**
 Eg: if you use don't cover IE 8, rem fallback and rgba fallback might be skipped.
 
