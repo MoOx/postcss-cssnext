@@ -223,7 +223,7 @@ body {
 ## `rgba` function (`rgb` fallback)
 
 Add solid colors fallback for rgba colors
-(if you browser scope cover old browsers, eg: IE8).
+(if your browser scope cover old browsers, eg: IE8).
 
 ```css
 body {
@@ -320,7 +320,7 @@ div {
 ## `rem` unit (`px` fallback)
 
 `rem` fallback to `px`
-(if you browser scope cover old browsers, eg: IE8).
+(if your browser scope cover old browsers, eg: IE8).
 
 ```css
 h1 {
@@ -380,7 +380,7 @@ p:not(:first-child, .special) {
 ## `::` pseudo syntax (`:` fallback)
 
 Adjust `::` to `:`
-(if you browser scope cover old browsers, eg: IE8).
+(if your browser scope cover old browsers, eg: IE8).
 
 ```css
 a::before {
