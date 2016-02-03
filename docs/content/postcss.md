@@ -64,7 +64,7 @@ $ npm uninstall cssnext [--save[-dev]]
 $ npm install postcss postcss-import postcss-url postcss-cssnext postcss-browser-reporter postcss-reporter [--save[-dev]]
 ```
 
-With the previous lines you might thing that you are going backward by having a
+With the previous lines you might think that you are going backward by having a
 more complex boilerplate. But if you look carefully, you will notice that you
 might not be interested by some options.
 
