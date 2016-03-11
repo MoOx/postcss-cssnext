@@ -31,6 +31,18 @@ const plugin = postcss.plugin("postcss-cssnext", (options) => {
     }
   }
 
+  // propagate browsers option to pixrem
+  if (features.pixrem !== false) {
+    features.pixrem = {
+      browsers: (
+        features.pixrem && features.pixrem.browsers
+          ? features.pixrem.browsers
+          : options.browsers
+      ),
+      ...(features.pixrem || {}),
+    }
+  }
+
   const processor = postcss()
 
   // features
