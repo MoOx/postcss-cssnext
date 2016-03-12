@@ -13,7 +13,7 @@ a {
   caption-side: top;
   clear: none;
   clip: auto;
-  color: inherit;
+  color: #000;
   columns: auto;
   column-count: auto;
   column-fill: balance;
@@ -29,7 +29,13 @@ a {
   display: inline;
   empty-cells: show;
   float: none;
-  font: normal normal normal normal medium/normal inherit;
+  font-family: serif;
+  font-size: medium;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: normal;
   height: auto;
   hyphens: none;
   left: auto;
@@ -41,7 +47,7 @@ a {
   min-height: 0;
   min-width: 0;
   opacity: 1;
-  orphans: 0;
+  orphans: 2;
   outline: medium none invert;
   overflow: visible;
   overflow-x: visible;
@@ -56,9 +62,9 @@ a {
   right: auto;
   tab-size: 8;
   table-layout: auto;
-  text-align: inherit;
+  text-align: left;
   text-align-last: auto;
-  text-decoration: none solid currentColor;
+  text-decoration: none;
   text-indent: 0;
   text-shadow: none;
   text-transform: none;
@@ -71,7 +77,7 @@ a {
   vertical-align: baseline;
   visibility: visible;
   white-space: normal;
-  widows: 0;
+  widows: 2;
   width: auto;
   word-spacing: normal;
   z-index: auto;
@@ -87,12 +93,18 @@ a {
   border: initial;
   column-rule: medium none currentColor;
   column-rule: initial;
-  font: normal normal normal normal medium/normal inherit;
+  font-family: serif;
+  font-size: medium;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: normal;
   font: initial;
   list-style: disc outside none;
   list-style: initial;
   outline: medium none invert;
   outline: initial;
-  text-decoration: none solid currentColor;
+  text-decoration: none;
   text-decoration: initial;
 }
