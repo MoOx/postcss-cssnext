@@ -16,7 +16,8 @@ const testFeature = function(
   feature,
   source,
   input,
-  expected
+  expected,
+  slug
 ) {
   const options = { features: { } }
 
@@ -40,8 +41,11 @@ const testFeature = function(
   // enable only the one we want to test...
   options.features[feature] = true
 
+  const actual = cssnext(options).process(input).css.trim()
+  utils.write(utils.fixturePath(join("features", slug + ".actual")), actual)
+
   t.equal(
-    cssnext(options).process(input).css.trim(),
+    actual,
     expected.trim(),
     "should add " + feature + " support"
   )
@@ -54,7 +58,7 @@ Object.keys(features).forEach(function(name) {
   const expected = utils.readFixture(join("features", slug + ".expected"))
 
   test(slug, function(t) {
-    testFeature(t, name, source, input, expected)
+    testFeature(t, name, source, input, expected, slug)
 
     t.end()
   })
