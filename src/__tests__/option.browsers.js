@@ -72,5 +72,21 @@ tape("cssnext browsers option propagation to pixrem", function(t) {
     "should propagate browsers option to pixrem"
   )
 
+  // IE 9 doesn't need rem fallback on a simple font-size
+  t.equal(
+    cssnext({ browsers: "ie 9" }).process(input).css,
+    input,
+    "should propagate browsers option to pixrem"
+  )
+
+  // IE 9 needs rem on pseudo element
+  const inputWeirdCase = input.replace("body", "body::before")
+  const outputWeirdCase = output.replace("body", "body::before")
+  t.equal(
+    cssnext({ browsers: "ie 9" }).process(inputWeirdCase).css,
+    outputWeirdCase,
+    "should propagate browsers option to pixrem"
+  )
+
   t.end()
 })
