@@ -15,15 +15,16 @@ const plugin = postcss.plugin("postcss-cssnext", (options) => {
   const features = options.features
 
   // propagate browsers option to plugins that supports it
-  "autoprefixer pixrem".split(/\s/).forEach(name => {
+  const pluginsToPropagateBrowserOption = [ "autoprefixer", "rem" ]
+  pluginsToPropagateBrowserOption.forEach((name) => {
     const feature = features[name]
 
     if (feature !== false) {
       features[name] = {
         browsers: (
           feature && feature.browsers
-            ? feature.browsers
-            : options.browsers
+          ? feature.browsers
+          : options.browsers
         ),
         ...(feature || {}),
       }
