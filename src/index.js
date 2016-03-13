@@ -14,21 +14,25 @@ const plugin = postcss.plugin("postcss-cssnext", (options) => {
 
   const features = options.features
 
-  // propagate browsers option to autoprefixer
-  if (features.autoprefixer !== false) {
-    features.autoprefixer = {
-      browsers: (
-        features.autoprefixer && features.autoprefixer.browsers
-          ? features.autoprefixer.browsers
-          : options.browsers
-      ),
-      ...(features.autoprefixer || {}),
-    }
+  // propagate browsers option to plugins that supports it
+  "autoprefixer pixrem".split(/\s/).forEach(name => {
+    const feature = features[name]
 
-    // autoprefixer doesn't like an "undefined" value. Related to coffee ?
-    if (features.autoprefixer.browsers === undefined) {
-      delete features.autoprefixer.browsers
+    if (feature !== false) {
+      features[name] = {
+        browsers: (
+          feature && feature.browsers
+            ? feature.browsers
+            : options.browsers
+        ),
+        ...(feature || {}),
+      }
     }
+  })
+
+  // autoprefixer doesn't like an "undefined" value. Related to coffee ?
+  if (features.autoprefixer && features.autoprefixer.browsers === undefined) {
+    delete features.autoprefixer.browsers
   }
 
   const processor = postcss()

@@ -40,7 +40,7 @@ tape("cssnext browsers option", function(t) {
   t.end()
 })
 
-tape("cssnext browsers option propagation", function(t) {
+tape("cssnext browsers option propagation to autoprefixer", function(t) {
   const input = "body{transition: 1s}"
   const output = "body{-webkit-transition: 1s;transition: 1s}"
 
@@ -56,6 +56,20 @@ tape("cssnext browsers option propagation", function(t) {
     cssnext({ browsers: "Safari 6.1" }).process(input).css,
     input,
     "should propagate browsers option to autoprefixer"
+  )
+
+  t.end()
+})
+
+tape("cssnext browsers option propagation to pixrem", function(t) {
+  const input = "body{font-size: 1rem}"
+  const output = "body{font-size: 16px;font-size: 1rem}"
+
+  // IE 8 needs rem fallback
+  t.equal(
+    cssnext({ browsers: "ie 8" }).process(input).css,
+    output,
+    "should propagate browsers option to pixrem"
   )
 
   t.end()
