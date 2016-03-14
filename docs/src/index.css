@@ -12,9 +12,9 @@
 @import "cssrecipes-vertical-rhythm";
 @import "cssrecipes-vertical-rhythm/lib/ratio/minor-third.css";
 
+@import "react-svg-inline/lib/index.css";
 @import "./modules/Header";
 @import "./modules/Footer";
-@import "./modules/SVGIcon";
 @import "./modules/playground";
 
 @custom-media --r-maxXL (max-width: 90em);

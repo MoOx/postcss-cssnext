@@ -4,28 +4,7 @@ import Header from "../Header"
 import Footer from "../Footer"
 import Analytics from "../Analytics"
 
-export default class Body extends Component {
-
-  static propTypes = {
-    children: PropTypes.oneOfType([
-      PropTypes.array,
-      PropTypes.object,
-    ]).isRequired,
-    scripts: PropTypes.array,
-    version: PropTypes.string,
-    footer: PropTypes.bool,
-  }
-
-  static contextTypes = {
-    pkg: PropTypes.object.isRequired,
-    file: PropTypes.object.isRequired,
-  }
-
-  static defaultProps = {
-    scripts: [],
-    footer: true,
-  }
-
+class Body extends Component {
   render() {
     const {
       version,
@@ -38,12 +17,12 @@ export default class Body extends Component {
 
         <Header />
 
-        {this.props.children}
+        { this.props.children }
 
-        <Footer playground={footer} />
+        <Footer playground={ footer } />
         {
           scripts.map(script => (
-            <script key={script} src={`${ script }?${ version }`}></script>
+            <script key={ script } src={ `${ script }?${ version }` }></script>
           ))
         }
 
@@ -52,3 +31,25 @@ export default class Body extends Component {
     )
   }
 }
+
+Body.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.object,
+  ]).isRequired,
+  scripts: PropTypes.array,
+  version: PropTypes.string,
+  footer: PropTypes.bool,
+}
+
+Body.contextTypes = {
+  pkg: PropTypes.object.isRequired,
+  file: PropTypes.object.isRequired,
+}
+
+Body.defaultProps = {
+  scripts: [],
+  footer: true,
+}
+
+export default Body

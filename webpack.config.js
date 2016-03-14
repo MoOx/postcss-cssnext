@@ -17,7 +17,7 @@ module.exports = {
     // ! \\ note that loaders are executed from bottom to top !
     loaders: [
       {
-        test: /\.(jsx?|es)$/,
+        test: /\.js$/,
         loaders: [
           "babel",
           "eslint",

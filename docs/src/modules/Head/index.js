@@ -1,20 +1,6 @@
 import React, { Component, PropTypes } from "react"
 
-export default class Head extends Component {
-
-  static propTypes = {
-    title: PropTypes.string.isRequired,
-    children: PropTypes.oneOfType([
-      PropTypes.array,
-      PropTypes.object,
-    ]),
-    stylesheets: PropTypes.array,
-  }
-
-  static defaultProps = {
-    stylesheets: [],
-  }
-
+class Head extends Component {
   render() {
     return (
       <head>
@@ -29,20 +15,35 @@ export default class Head extends Component {
           type="image/png"
           href="/favicon.png"
         />
-        <title>{this.props.title}</title>
+        <title>{ this.props.title }</title>
         {
           this.props.stylesheets.map(stylesheet => (
-            <link key={stylesheet} rel="stylesheet" href={stylesheet} />
+            <link key={ stylesheet } rel="stylesheet" href={ stylesheet } />
           ))
         }
         <link
           rel="alternate"
           href="/feed.xml"
-          title={this.props.title}
+          title={ this.props.title }
           type="application/atom+xml"
         />
-        {this.props.children}
+        { this.props.children }
       </head>
     )
   }
 }
+
+Head.propTypes = {
+  title: PropTypes.string.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.object,
+  ]),
+  stylesheets: PropTypes.array,
+}
+
+Head.defaultProps = {
+  stylesheets: [],
+}
+
+export default Head

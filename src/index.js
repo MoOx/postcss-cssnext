@@ -75,21 +75,14 @@ const plugin = postcss.plugin("postcss-cssnext", (options) => {
   if (options.warnForDuplicates) {
     processor.use(warnForDuplicates({
       keys: Object.keys(libraryFeatures),
-      console: options.console
+      console: options.console,
     }))
   }
 
   return processor
 })
 
-// according to the way babel transpile es6 module
-// we cannot use the following syntax to export features
-//
-// export { libraryFeatures as features }
-//
-// babel only add `module.exports = exports["default"];` if there is only one
-// thing exported
-// so we add `features` as a plugin property
+// es5/6 support
 plugin.features = libraryFeatures
 
-export default plugin
+module.exports = plugin

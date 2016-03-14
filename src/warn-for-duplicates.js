@@ -3,17 +3,17 @@ import color from "chalk"
 
 const msg = (name) => (
   `Warning: postcss-cssnext found a duplicate plugin ('${ name }') ` +
-  `in your postcss plugins. ` +
+  "in your postcss plugins. " +
   `This might be inefficient. You should remove '${ name }' of you postcss ` +
-  `plugin list since it's already included by postcss-cssnext.`
+  "plugin list since it's already included by postcss-cssnext."
 )
 
 let shouldGlobalWarn = true
 const globalWarning = (
-  `Note: If, for a really specific reason, postcss-cssnext warnings are ` +
-  `irrelevant for your use case, and you really know what you are doing, ` +
-  `you can disable this warnings by setting  'warnForDuplicates' option of ` +
-  `postcss-cssnext to 'false'.`
+  "Note: If, for a really specific reason, postcss-cssnext warnings are " +
+  "irrelevant for your use case, and you really know what you are doing, " +
+  "you can disable this warnings by setting  'warnForDuplicates' option of " +
+  "postcss-cssnext to 'false'."
 )
 export const spotted = []
 

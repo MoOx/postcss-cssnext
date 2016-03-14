@@ -1,16 +1,18 @@
 import React, { Component, PropTypes } from "react"
 
-export default class Html extends Component {
-
-  static propTypes = {
-    children: PropTypes.array.isRequired,
-  }
+class Html extends Component {
 
   render() {
     return (
       <html lang="fr" className="r-VerticalRhythm">
-        {this.props.children}
+        { this.props.children }
       </html>
     )
   }
 }
+
+Html.propTypes = {
+  children: PropTypes.array.isRequired,
+}
+
+export default Html

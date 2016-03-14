@@ -15,7 +15,7 @@ tape("cssnext warnForDuplicates option", (t) => {
   spotted.length = 0 // reset spotted plugins
   const instance = postcss([
     cssnext({
-      console: { log: (msg) => messages.push(msg) }
+      console: { log: (msg) => messages.push(msg) },
     }),
   ])
 
@@ -35,7 +35,7 @@ tape("cssnext warnForDuplicates option", (t) => {
   const instance = postcss([
     autoprefixer(),
     cssnext({
-      console: { log: (msg) => messages.push(msg) }
+      console: { log: (msg) => messages.push(msg) },
     }),
   ])
 
@@ -56,7 +56,7 @@ tape("cssnext warnForDuplicates option", (t) => {
     autoprefixer(),
     cssnext({
       warnForDuplicates: false,
-      console: { log: (msg) => messages.push(msg) }
+      console: { log: (msg) => messages.push(msg) },
     }),
   ])
 
@@ -75,7 +75,7 @@ tape("cssnext warnForDuplicates option", (t) => {
   spotted.length = 0 // reset spotted plugins
   const instance = postcss([
     cssnext({
-      console: { log: (msg) => messages.push(msg) }
+      console: { log: (msg) => messages.push(msg) },
     }),
     autoprefixer(),
   ])

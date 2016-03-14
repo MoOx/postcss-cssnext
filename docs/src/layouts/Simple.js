@@ -4,20 +4,7 @@ import Html from "../modules/Html"
 import Head from "../modules/Head"
 import Body from "../modules/Body"
 
-export default class Simple extends Component {
-
-  static propTypes = {
-    pkg: PropTypes.object.isRequired,
-    metadata: PropTypes.object.isRequired,
-    // collections: PropTypes.object.isRequired,
-    file: PropTypes.object.isRequired,
-  }
-
-  static childContextTypes = {
-    pkg: PropTypes.object.isRequired,
-    // collections: PropTypes.object.isRequired,
-    file: PropTypes.object.isRequired,
-  }
+class Simple extends Component {
 
   getChildContext() {
     return {
@@ -39,23 +26,38 @@ export default class Simple extends Component {
     return (
       <Html>
         <Head
-          title={file.title}
-          stylesheets={this.props.metadata.assets.stylesheets}
+          title={ file.title }
+          stylesheets={ this.props.metadata.assets.stylesheets }
         />
         <Body
-          scripts={[
+          scripts={ [
             ...file.scripts || [],
             ...this.props.metadata.assets.scripts || [],
-          ]}
-          version={this.props.metadata.assets.version}
-          footer={footer}
+          ] }
+          version={ this.props.metadata.assets.version }
+          footer={ footer }
         >
           <div
-            className={file.className || ""}
-            dangerouslySetInnerHTML={{ __html: file.contents }}
+            className={ file.className || "" }
+            dangerouslySetInnerHTML={ { __html: file.contents } }
           />
         </Body>
       </Html>
     )
   }
 }
+
+Simple.propTypes = {
+  pkg: PropTypes.object.isRequired,
+  metadata: PropTypes.object.isRequired,
+  // collections: PropTypes.object.isRequired,
+  file: PropTypes.object.isRequired,
+}
+
+Simple.childContextTypes = {
+  pkg: PropTypes.object.isRequired,
+  // collections: PropTypes.object.isRequired,
+  file: PropTypes.object.isRequired,
+}
+
+export default Simple

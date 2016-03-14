@@ -1,17 +1,11 @@
 import React, { Component, PropTypes } from "react"
 
-import SVGIcon from "../SVGIcon"
+import SVGIcon from "react-svg-inline"
 import requireRaw from "../requireRaw"
 
 import Link from "./link"
 
-export default class Header extends Component {
-
-  static contextTypes = {
-    pkg: PropTypes.object.isRequired,
-    file: PropTypes.object.isRequired,
-  }
-
+class Header extends Component {
   render() {
     return (
       <header className="cssnext-Header js-Headroom">
@@ -24,40 +18,40 @@ export default class Header extends Component {
               >
                 <SVGIcon
                   cleanup
-                  svg={requireRaw("./src/assets/cssnext.svg")}
+                  svg={ requireRaw("./src/assets/cssnext.svg") }
                   className="cssnext-Header-logo-img"
                 />
                 <span className="cssnext-Header-version">
-                  {this.context.pkg.version}
+                  { this.context.pkg.version }
                 </span>
               </a>
-              <Link href={"/features/"}>
-                Features
+              <Link href={ "/features/" }>
+                { "Features" }
               </Link>
-              <Link href={"/setup/"}>
-                Setup
+              <Link href={ "/setup/" }>
+                { "Setup" }
               </Link>
-              <Link href={"/usage/"}>
-                Usage
+              <Link href={ "/usage/" }>
+                { "Usage" }
               </Link>
-              <Link href={"/playground/"}>
-                Playground
+              <Link href={ "/playground/" }>
+                { "Playground" }
               </Link>
             </span>
           </div>
           <div className="r-Grid-cell r-minM--2of6">
             <div className="cssnext-Header-nav">
               <Link href="https://gitter.im/MoOx/postcss-cssnext">
-                Support
+                { "Support" }
               </Link>
               <Link
                 href="https://github.com/MoOx/postcss-cssnext"
                 title="GitHub"
               >
-                GitHub
+                { "GitHub" }
               </Link>
               <Link href="https://twitter.com/cssnext" title="Twitter">
-                Twitter
+                { "Twitter" }
               </Link>
             </div>
           </div>
@@ -66,3 +60,10 @@ export default class Header extends Component {
     )
   }
 }
+
+Header.contextTypes = {
+  pkg: PropTypes.object.isRequired,
+  file: PropTypes.object.isRequired,
+}
+
+export default Header

@@ -20,7 +20,7 @@ export default (config, options) => {
 
   const devEntries = [
     `webpack-dev-server/client?${serverUrl}`,
-    `webpack/hot/only-dev-server`,
+    "webpack/hot/only-dev-server",
   ]
 
   const devConfig = {

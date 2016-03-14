@@ -66,12 +66,16 @@ var output = cssnext(input, {
 _(default: true)_
 
 This option should be left with its default value, unless you really know what
-you are doing.
-Most tutorial on the internet are wrong and show provide duplicate
-(eg: autoprefixer + cssnext - but cssnext already includes autoprefixer).
+you are doing.  
+**Most tutorial on the internet are wrong (probably 99%)
+and show provide duplicates in their examples.
+(eg: autoprefixer + cssnext - but cssnext already includes autoprefixer).**  
+_In order to fix this, here is a warning. You are welcome._
+
+---
 
 **To know all available options, please check corresponding postcss plugin by
 browsing the
-[feature mapping](https://github.com/MoOx/postcss-cssnext/blob/master/src/features.js).**
+[feature mapping](https://github.com/MoOx/postcss-cssnext/blob/master/src/features.js)**
 
 _Note: order is important to get everything working correctly._
