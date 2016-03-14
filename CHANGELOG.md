@@ -1,3 +1,5 @@
+# 2.5.0 - 2016-03-14
+
 - Added: cssnext will now warn you when you have duplicates plugins.
   This is a really common mistake, people include plugins that are already
   included in cssnext and maybe sometimes in an inaccurate position.  
