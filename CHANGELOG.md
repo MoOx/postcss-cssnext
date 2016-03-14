@@ -1,3 +1,8 @@
+- Added: ``rem`` will now adjust its behavior according to browser option
+  (IE 9 and IE 10 will only have ``px`` in some places, where rem support is
+  buggy, per caniuse notes)
+  ([#264](https://github.com/MoOx/postcss-cssnext/issues/264))
+
 # 2.4.0 - 2016-01-08
 
 - Added: documentation is now included in the npm package in
