@@ -1,3 +1,11 @@
+# 2.5.1 - 2016-03-14
+
+> Oops!
+
+- Fixed: ``"chalk" is undefined``.
+  ([#266](https://github.com/MoOx/postcss-cssnext/pull/266))
+- Fixed: typo in related warning.
+
 # 2.5.0 - 2016-03-14
 
 - Added: cssnext will now warn you when you have duplicates plugins.

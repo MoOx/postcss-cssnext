@@ -4,8 +4,8 @@ import color from "chalk"
 const msg = (name) => (
   `Warning: postcss-cssnext found a duplicate plugin ('${ name }') ` +
   "in your postcss plugins. " +
-  `This might be inefficient. You should remove '${ name }' of you postcss ` +
-  "plugin list since it's already included by postcss-cssnext."
+  `This might be inefficient. You should remove '${ name }' from your ` +
+  "postcss plugin list since it's already included by postcss-cssnext."
 )
 
 let shouldGlobalWarn = true
