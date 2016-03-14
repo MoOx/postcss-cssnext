@@ -3,9 +3,12 @@ import { isSupported } from "caniuse-api"
 
 import libraryFeatures from "./features"
 import featuresActivationMap from "./features-activation-map"
+import warnForDuplicates from "./warn-for-duplicates"
 
 const plugin = postcss.plugin("postcss-cssnext", (options) => {
   options = {
+    console: console,
+    warnForDuplicates: true,
     features: {},
     // options.browsers is deliberately undefined by default to inherit
     // browserslist default behavior
@@ -68,6 +71,13 @@ const plugin = postcss.plugin("postcss-cssnext", (options) => {
       processor.use(plugin)
     }
   })
+
+  if (options.warnForDuplicates) {
+    processor.use(warnForDuplicates({
+      keys: Object.keys(libraryFeatures),
+      console: options.console
+    }))
+  }
 
   return processor
 })

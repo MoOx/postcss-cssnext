@@ -61,6 +61,15 @@ var output = cssnext(input, {
 })
 ```
 
+## `warnForDuplicates`
+
+_(default: true)_
+
+This option should be left with its default value, unless you really know what
+you are doing.
+Most tutorial on the internet are wrong and show provide duplicate
+(eg: autoprefixer + cssnext - but cssnext already includes autoprefixer).
+
 **To know all available options, please check corresponding postcss plugin by
 browsing the
 [feature mapping](https://github.com/MoOx/postcss-cssnext/blob/master/src/features.js).**

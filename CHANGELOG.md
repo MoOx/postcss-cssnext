@@ -1,3 +1,11 @@
+- Added: cssnext will now warn you when you have duplicates plugins.
+  This is a really common mistake, people include plugins that are already
+  included in cssnext and maybe sometimes in an inaccurate position.
+  **Most tutorial on the internet are wrong (probably 99%)
+  and show provide duplicates in their examples.
+  (eg: autoprefixer + cssnext - but cssnext already includes autoprefixer).**
+  In order to fix this, here is a warning. You are welcome.
+  [Read more about this issue](https://github.com/postcss/postcss/issues/764)
 - Added: ``rem`` will now adjust its behavior according to browser option
   (IE 9 and IE 10 will only have ``px`` in some places, where rem support is
   buggy, per caniuse notes)
