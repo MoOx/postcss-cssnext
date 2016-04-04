@@ -1,3 +1,9 @@
+# 2.5.2 - 2016-04-04
+
+- Fixed: pleeease-filters has been udpated to v3, in order to provide a real
+  PostCSS plugin
+  ([#274](https://github.com/MoOx/postcss-cssnext/pull/274))
+
 # 2.5.1 - 2016-03-14
 
 > Oops!
