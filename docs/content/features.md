@@ -126,7 +126,7 @@ Alows you to create your own selectors
 
 ## nesting
 
-Allow you to nest selectors
+Allows you to nest selectors
 
 ```scss
 a {
@@ -153,7 +153,7 @@ a {
 
 ## `color()` function
 
-a color function to modify colors (transpiled to: `rgba()`)
+A color function to modify colors (transpiled to: `rgba()`)
 
 ```css
 a {
@@ -189,7 +189,7 @@ body {
 
 ## `gray()` function
 
-Allow you to use more than 50 shades of gray (transpiled to: `rgba()`).
+Allows you to use more than 50 shades of gray (transpiled to: `rgba()`).
 For the first argument, you can use a number between 0 and 255 or a percentage.
 
 ```css
