@@ -101,7 +101,7 @@ Allows to replace min-/max- with `<=` & `>=` (syntax easier to read)
 
 ## custom selectors
 
-Alows you to create your own selectors
+Allows you to create your own selectors
 
 ```css
 @custom-selector :--button button, .button;
