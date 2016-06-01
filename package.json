@@ -1,6 +1,6 @@
 {
   "name": "postcss-cssnext",
-  "version": "2.5.2",
+  "version": "2.6.0",
   "description": "Use tomorrow’s CSS syntax, today",
   "keywords": [
     "postcss",
@@ -120,7 +120,8 @@
     "docs-test": "npm run docs-build -- --production",
     "_docs-deploy": "GIT_DEPLOY_DIR=docs/dist ./docs/scripts/deploy-to-gh-pages.sh -v",
     "docs-deploy": "npm run docs-test && npm run _docs-deploy",
-    "release": "npmpub && npm run docs-deploy"
+    "release": "npmpub",
+    "postrelease": "npm run docs-deploy"
   },
   "babel": {
     "presets": [

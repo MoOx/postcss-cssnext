@@ -1,3 +1,9 @@
+# 2.6.0 - 2016-06-01
+
+- Added: ``overflow-wrap`` fallback
+  ([#280](https://github.com/MoOx/postcss-cssnext/pull/280))
+  - @MattDiMu
+
 # 2.5.2 - 2016-04-04
 
 - Fixed: pleeease-filters has been udpated to v3, in order to provide a real
