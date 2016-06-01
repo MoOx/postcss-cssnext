@@ -392,6 +392,20 @@ a::before {
 |
 [Plugin documentation](https://github.com/axa-ch/postcss-pseudoelements)
 
+## `overflow-wrap` property (`word-wrap` fallback)
+
+Converts `overflow-wrap` to `word-wrap` (many browser support only the old [word-wrap](http://caniuse.com/#feat=wordwrap) property).
+
+```css
+body {
+  overflow-wrap: break-word;
+}
+```
+
+[Specification](https://drafts.csswg.org/css-text-3/#propdef-word-wrap)
+|
+[Plugin documentation](https://github.com/MattDiMu/postcss-replace-overflow-wrap)
+
 ## @todo
 
 Any omissions of the CSS specifications (even in draft) that are subject to be

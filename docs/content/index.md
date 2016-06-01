@@ -126,6 +126,12 @@ title: cssnext - Use tomorrow’s CSS syntax, today.
           (<code>:</code> fallback)
         </small>
       </li>
+      <li class="r-Grid-cell r-minS--1of2">
+        <a href="/features/#replace-overflow-wrap"><code>overflow-wrap</code> property</a>
+        <small class="cssnext-FeaturesList-small">
+          (<code>word-wrap</code> fallback)
+        </small>
+      </li>
     </ul>
     <small
       class="cssnext-FeaturesList-small"
