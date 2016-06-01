@@ -91,7 +91,7 @@ Here is an example of the json config you might use with something like
     // and if you want to compress
     // "cssnano",
     "postcss-browser-reporter",
-    "postcss-reporter",
+    "postcss-reporter"
   ]
 }
 ```
