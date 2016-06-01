@@ -67,7 +67,7 @@ export default {
   colorRgba: (options) => require("postcss-color-rgba-fallback")(options),
 
   // https://www.npmjs.com/package/postcss-replace-overflow-wrap
-  replaceOverflowWrap: (options) => require("postcss-replace-overflow-wrap")(options),
+  overflowWrap: (options) => require("postcss-replace-overflow-wrap")(options),
 
   // https://npmjs.com/package/autoprefixer
   autoprefixer: (options) => require("autoprefixer")(options),
