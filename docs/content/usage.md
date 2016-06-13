@@ -33,7 +33,7 @@ _(default: all features depending on your `browsers` options)_
 **You should probably use `browsers` option instead of this one.**
 
 Object containing key of features to enable/disable.
-_Features are enabled by default: no key means feature is enabled_.
+_Features are enabled by default: no key means feature is enabled_. Keys can be found by looking in [src/features.js](https://github.com/MoOx/postcss-cssnext/blob/master/src/features.js).
 
 ```js
 //eg: disable custom properties support
