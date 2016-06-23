@@ -16,6 +16,19 @@ scripts:
 --highlightColor: hwb(190, 35%, 20%);
 }
 
+/* custom properties set & @apply rule */
+:root {
+  --centered: {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  };
+}
+
+.centered {
+  @apply --centered;
+}
+
 /* custom media queries */
 @custom-media --viewport-medium (width <= 50rem);
 
@@ -65,7 +78,7 @@ filter: sepia(.8);
 
 /* overflow-wrap fallback */
 body {
-overflow-wrap: break-word;  
+overflow-wrap: break-word;
 }
 
     </textarea>
