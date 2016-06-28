@@ -78,7 +78,7 @@ $ npm install postcss-cli --save-dev
 ```
 
 Here is an example of the json config you might use with something like
-``$ postcss-cli -c postcss.config.json``.
+``$ postcss -c postcss.config.json``.
 
 ```js
 {
