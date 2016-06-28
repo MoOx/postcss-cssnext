@@ -27,6 +27,7 @@
     "pixrem": "^3.0.0",
     "pleeease-filters": "^3.0.0",
     "postcss": "^5.0.4",
+    "postcss-apply": "^0.3.0",
     "postcss-calc": "^5.0.0",
     "postcss-color-function": "^2.0.0",
     "postcss-color-gray": "^3.0.0",

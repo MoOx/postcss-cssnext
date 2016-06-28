@@ -9,6 +9,9 @@ export default {
    // https://npmjs.com/package/postcss-custom-properties
   customProperties: (options) => require("postcss-custom-properties")(options),
 
+  // https://npmjs.com/package/postcss-apply
+  applyRule: (options) => require("postcss-apply")(options),
+
   // https://npmjs.com/package/postcss-calc
   calc: (options) => require("postcss-calc")(options),
 

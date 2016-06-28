@@ -51,7 +51,10 @@ title: cssnext - Use tomorrow’s CSS syntax, today.
         <a href="/features/#automatic-vendor-prefixes">automatic vendor prefixes</a>
       </li>
       <li class="r-Grid-cell r-minS--1of2">
-        <a href="/features/#custom-properties-var">custom properties & <code>var()</code></a>
+        <a href="/features/#custom-properties-var">custom properties &amp; <code>var()</code></a>
+      </li>
+      <li class="r-Grid-cell r-minS--1of2">
+        <a href="/features/#custom-properties-set-apply">custom properties set &amp; <code>@apply</code></a>
       </li>
       <li class="r-Grid-cell r-minS--1of2">
         <a href="/features/#reduced-calc">reduced <code>calc()</code></a>

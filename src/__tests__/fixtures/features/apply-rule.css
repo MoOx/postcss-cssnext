@@ -1,0 +1,10 @@
+:root {
+  --foo-set: {
+    color: tomato;
+    content: 'foo';
+  };
+}
+
+.foo {
+  @apply --foo-set;
+}

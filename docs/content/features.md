@@ -18,7 +18,7 @@ depending on your browser scope) using
 **[autoprefixer](https://github.com/postcss/autoprefixer)**).
 
 
-## custom properties & `var()`
+## custom properties &amp; `var()`
 
 The current transformation for custom properties aims to provide a
 future-proof way of using a **limited subset (to top-level `:root` selector)**
@@ -41,6 +41,30 @@ might happen).
 [Specification](http://www.w3.org/TR/css-variables/)
 |
 [Plugin documentation](https://github.com/postcss/postcss-custom-properties)
+
+## custom properties set &amp; `@apply`
+
+Allows you to store a set of properties in a named variable, then reference them
+in other style rules.
+
+```css
+:root {
+  --danger-theme: {
+    color: white;
+    background-color: red;
+  };
+}
+
+.danger {
+  @apply --danger-theme;
+}
+```
+
+(The same DOM restrictions as the custom properties plugin apply).
+
+[Specification](https://tabatkins.github.io/specs/css-apply-rule)
+|
+[Plugin documentation](https://github.com/pascalduez/postcss-apply)
 
 ## reduced `calc()`
 
