@@ -21,7 +21,7 @@ depending on your browser scope) using
 ## custom properties &amp; `var()`
 
 The current transformation for custom properties aims to provide a
-future-proof way of using a **limited subset (to top-level `:root` selector)**
+future-proof way of using a **limited to `:root` selector**
 of the features provided by native CSS custom properties.
 
 ```css
@@ -34,9 +34,7 @@ a {
 }
 ```
 
-(The transformation is not complete and can't be properly. By injecting selectors
-with new computed rules, we will break original cascade & unexpected results
-might happen).
+⚠️ [_The definitions are **limited to `:root` selector.**_](https://github.com/postcss/postcss-custom-properties#readme)
 
 [Specification](http://www.w3.org/TR/css-variables/)
 |
@@ -44,8 +42,8 @@ might happen).
 
 ## custom properties set &amp; `@apply`
 
-Allows you to store a set of properties in a named variable, then reference them
-in other style rules.
+Allows you to store a set of properties in a named custom property,
+then reference them in other style rules.
 
 ```css
 :root {
@@ -60,7 +58,7 @@ in other style rules.
 }
 ```
 
-(The same DOM restrictions as the custom properties plugin apply).
+⚠️ [_The definitions are **limited to `:root` selector.**_](https://github.com/postcss/postcss-custom-properties#readme)
 
 [Specification](https://tabatkins.github.io/specs/css-apply-rule)
 |

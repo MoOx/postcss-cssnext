@@ -1,8 +1,12 @@
+# 2.7.0 - 2016-06-28
+
+- Added: ``＠apply`` support (definitions limited to ``:root`` selector)
+  ([#291](https://github.com/MoOx/postcss-cssnext/issues/291)) - @pascalduez)
+
 # 2.6.0 - 2016-06-01
 
 - Added: ``overflow-wrap`` fallback
-  ([#280](https://github.com/MoOx/postcss-cssnext/pull/280))
-  - @MattDiMu
+  ([#280](https://github.com/MoOx/postcss-cssnext/pull/280) - @MattDiMu)
 
 # 2.5.2 - 2016-04-04
 
