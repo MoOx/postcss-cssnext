@@ -155,12 +155,18 @@ hr {
     opacity: .85;
   }
 
-  .markdownIt-TOC li::before {
-    content: "› ";
-    padding-right: .4rem;
-    opacity: .6;
-    font-size: var(--r-small-fontSize);
+  .markdownIt-TOC li {
+    padding-left: .8rem;
+    position: relative;
   }
+
+    .markdownIt-TOC li::before {
+      content: "› ";
+      opacity: .6;
+      font-size: var(--r-small-fontSize);
+      position: absolute;
+      left: 0;
+    }
 
   .markdownIt-TOC ul {
     list-style: none;
