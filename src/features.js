@@ -27,6 +27,9 @@ export default {
   // https://npmjs.com/package/postcss-custom-selectors
   customSelectors: (options) => require("postcss-custom-selectors")(options),
 
+  // https://npmjs.com/package/postcss-attribute-case-insensitive
+  attributeCaseInsensitive: (options) => require("postcss-attribute-case-insensitive")(options),
+
   // https://npmjs.com/package/postcss-color-rebeccapurple
   colorRebeccapurple: (options) => require("postcss-color-rebeccapurple")(options),
 

@@ -428,6 +428,20 @@ body {
 |
 [Plugin documentation](https://github.com/MattDiMu/postcss-replace-overflow-wrap)
 
+## attribute case insensitive
+
+Allows you to use case insensitive attributes.
+
+```css
+[frame=hsides i] {
+  border-style: solid none;
+}
+```
+
+[Specification](https://www.w3.org/TR/selectors4/#attribute-case)
+|
+[Plugin documentation](https://github.com/Semigradsky/postcss-attribute-case-insensitive)
+
 ## @todo
 
 Any omissions of the CSS specifications (even in draft) that are subject to be

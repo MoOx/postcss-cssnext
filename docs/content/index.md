@@ -135,6 +135,9 @@ title: cssnext - Use tomorrow’s CSS syntax, today.
           (<code>word-wrap</code> fallback)
         </small>
       </li>
+      <li class="r-Grid-cell r-minS--1of2">
+        <a href="/features/#attribute-case-insensitive">attribute case insensitive</a>
+      </li>
     </ul>
     <small
       class="cssnext-FeaturesList-small"

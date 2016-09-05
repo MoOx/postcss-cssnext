@@ -1,0 +1,3 @@
+[data-foo=test],[data-foo=Test],[data-foo=tEst],[data-foo=TEst],[data-foo=teSt],[data-foo=TeSt],[data-foo=tESt],[data-foo=TESt],[data-foo=tesT],[data-foo=TesT],[data-foo=tEsT],[data-foo=TEsT],[data-foo=teST],[data-foo=TeST],[data-foo=tEST],[data-foo=TEST] {
+  display: block;
+}
