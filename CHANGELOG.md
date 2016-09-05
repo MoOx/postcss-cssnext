@@ -1,3 +1,10 @@
+# 2.8.0 - 2016-09-05
+
+-  Added: attribute case insensitive support
+  (eg: ``[data-thing=stuff i] {`` to be able to select all ``data-thing``
+  attribute, without having to thing about the case of the value)
+  ([#306](https://github.com/MoOx/postcss-cssnext/pull/306) - @Semigradsky)
+
 # 2.7.0 - 2016-06-28
 
 - Added: ``＠apply`` support (definitions limited to ``:root`` selector)
