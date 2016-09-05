@@ -113,7 +113,7 @@
     "#lint": "even if there is a .eslintignore symlink, we use an explicit command because windows don't like unix symlink",
     "lint": "eslint --ignore-path .gitignore .",
     "#tape": "to avoid really slow tests, we run babel once & run tests on the result",
-    "tape": "tape 'lib/__tests__/*.js'",
+    "tape": "tape \"lib/__tests__/*.js\"",
     "test": "npm run lint && npm run babelify && npm run tape",
     "docs-build": "babel-node docs/scripts/build",
     "predocs-start": "npm run prepublish",
