@@ -22,7 +22,7 @@ class Body extends Component {
         <Footer playground={ footer } />
         {
           scripts.map(script => (
-            <script key={ script } src={ `${ script }?${ version }` }></script>
+            <script key={ script } src={ `${ script }?${ version }` } />
           ))
         }
 
