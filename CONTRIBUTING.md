@@ -29,7 +29,6 @@ module directly in console._
 ### Add a feature
 
 1. Add test files (input + expected output) in [`src/__tests__/fixtures/features`](src/__tests__/features)
-- If the feature can affect some others, update [`src/__tests__/fixtures/cases/example.css`](src/__tests__/cases/example.css) to test integration with other features
 
 - Choose a pretty simple and clear name (that match the specs), if you are not sure, ask using an issue.
 - Add the feature in :
