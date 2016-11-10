@@ -439,3 +439,54 @@ pre {
   .hljs-function {
     color: var(--cssnext-Color-purple);
   }
+
+#carbonads {
+  display: block;
+  overflow: hidden;
+  margin: 3em auto 0;
+  padding: 1em;
+  max-width: 330px;
+  border: solid 1px hsla(232, 51%, 80%, .6);
+  border-radius: 3px;
+  background-color: hsla(232, 51%, 68%, .25);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+}
+
+#carbonads a:before { height: 0; }
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+  #carbonads span {
+    position: relative;
+    display: block;
+    overflow: hidden;
+  }
+
+  .carbon-img {
+    float: left;
+    margin-right: 1em;
+  }
+
+  .carbon-img img { display: block; }
+
+  .carbon-text {
+    display: block;
+    float: left;
+    max-width: calc(100% - 130px - 1em);
+    text-align: left;
+  }
+
+  .carbon-poweredby {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: block;
+    font-size: 11px;
+  }
