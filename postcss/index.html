@@ -238,7 +238,8 @@ $ npm install grunt-postcss --<span class="hljs-built_in">save</span>-<span clas
         <span class="hljs-comment">// add your "plugins" here</span>
         <span class="hljs-comment">// ...</span>
         <span class="hljs-comment">// and if you want to compress</span>
-        <span class="hljs-comment">// require("cssnano")(),</span>
+        <span class="hljs-comment">// Disable autoprefixer, because it's already included in cssnext</span>
+        <span class="hljs-comment">// require("cssnano")({ autoprefixer: false }),</span>
         <span class="hljs-built_in">require</span>(<span class="hljs-string">"postcss-browser-reporter"</span>)(),
         <span class="hljs-built_in">require</span>(<span class="hljs-string">"postcss-reporter"</span>)(),
       ]
@@ -264,7 +265,8 @@ gulp.task(<span class="hljs-string">'css'</span>, <span class="hljs-function"><s
       <span class="hljs-comment">// add your "plugins" here</span>
       <span class="hljs-comment">// ...</span>
       <span class="hljs-comment">// and if you want to compress</span>
-      <span class="hljs-comment">// require("cssnano")(),</span>
+      <span class="hljs-comment">// Disable autoprefixer, because it's already included in cssnext</span>
+      <span class="hljs-comment">// require("cssnano")({ autoprefixer: false }),</span>
       <span class="hljs-built_in">require</span>(<span class="hljs-string">"postcss-browser-reporter"</span>)(),
       <span class="hljs-built_in">require</span>(<span class="hljs-string">"postcss-reporter"</span>)(),
     ]))
