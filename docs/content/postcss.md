@@ -114,7 +114,8 @@ grunt.initConfig({
         // add your "plugins" here
         // ...
         // and if you want to compress
-        // require("cssnano")(),
+        // Disable autoprefixer, because it's already included in cssnext
+        // require("cssnano")({ autoprefixer: false }),
         require("postcss-browser-reporter")(),
         require("postcss-reporter")(),
       ]
@@ -147,7 +148,8 @@ gulp.task('css', function () {
       // add your "plugins" here
       // ...
       // and if you want to compress
-      // require("cssnano")(),
+      // Disable autoprefixer, because it's already included in cssnext
+      // require("cssnano")({ autoprefixer: false }),
       require("postcss-browser-reporter")(),
       require("postcss-reporter")(),
     ]))
