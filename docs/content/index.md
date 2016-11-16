@@ -139,6 +139,18 @@ title: cssnext - Use tomorrow’s CSS syntax, today.
       <li class="r-Grid-cell r-minS--1of2">
         <a href="/features/#attribute-case-insensitive">attribute case insensitive</a>
       </li>
+      <li class="r-Grid-cell r-minS--1of2">
+        <a href="/features/#rgb-function-functional-notation"><code>rgb()</code> function</a>
+        <small class="cssnext-FeaturesList-small">
+          (functional-notation)
+        </small>
+      </li>
+      <li class="r-Grid-cell r-minS--1of2">
+        <a href="/features/#hsl-function-functional-notation"><code>hsl()</code> function</a>
+        <small class="cssnext-FeaturesList-small">
+          (functional-notation)
+        </small>
+      </li>
     </ul>
     <small
       class="cssnext-FeaturesList-small"

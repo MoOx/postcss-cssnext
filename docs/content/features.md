@@ -442,6 +442,47 @@ Allows you to use case insensitive attributes.
 |
 [Plugin documentation](https://github.com/Semigradsky/postcss-attribute-case-insensitive)
 
+## `rgb()` function (functional-notation)
+
+Allows you to use its new syntax consisting of space-separated arguments and
+an optional slash-separated opacity. 
+
+You can also use number for color channels.
+
+The alpha value accepts percentage as well as number and has been added to
+`rgb()` as optional argument. As a result, `rgb()` and `rgba()` are now
+aliases of each other.
+
+```css
+div {
+  background-color: rgb(100 222.2 100.9 / 30%);
+}
+```
+
+[Specification](https://drafts.csswg.org/css-color/#rgb-functions)
+|
+[Plugin documentation](https://github.com/dmarchena/postcss-color-rgb)
+
+## `hsl()` function (functional-notation)
+
+Allows you to use its new syntax consisting of space-separated arguments and
+an optional slash-separated opacity. 
+
+`hsl()` now accepts angles (`deg`, `grad`, `rad`, `turn`) as well as numbers for
+hues and an optional percentage or number for alpha value. So, `hsl()` and
+`hsla()` are now aliases of each other too.
+
+```css
+div {
+  color: hsl(90deg 90% 70%);
+  background-color: hsl(300grad 25% 15% / 70%);
+}
+```
+
+[Specification](https://drafts.csswg.org/css-color/#the-hsl-notation)
+|
+[Plugin documentation](https://github.com/dmarchena/postcss-color-hsl)
+
 ## @todo
 
 Any omissions of the CSS specifications (even in draft) that are subject to be

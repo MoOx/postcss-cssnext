@@ -12,7 +12,9 @@ export default {
   // mediaQueriesRange: [ null ],
   // customSelectors: [ null ],
   // colorRebeccapurple: [ null ], // @todo can be done easily
+  // colorHsl: [ null ],
   // colorHwb: [ null ],
+  // colorRgb: [ null ],
   // colorGray: [ null ],
   // colorHexAlpha: [ null ],
   // colorFunction:[ null],
