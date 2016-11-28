@@ -1,3 +1,13 @@
+# 2.9.0 - 2016-11-28
+
+- Added: new rgb() & hsl() functional notation
+(via
+  [postcss-color-rgb](https://github.com/dmarchena/postcss-color-rgb) &
+  [postcss-color-hsl](https://github.com/dmarchena/postcss-color-hsl)
+)
+([#330](https://github.com/MoOx/postcss-cssnext/pull/330) - @dmarchena)
+
+
 # 2.8.0 - 2016-09-05
 
 -  Added: attribute case insensitive support

@@ -1,6 +1,6 @@
 {
   "name": "postcss-cssnext",
-  "version": "2.8.0",
+  "version": "2.9.0",
   "description": "Use tomorrow’s CSS syntax, today",
   "keywords": [
     "postcss",
