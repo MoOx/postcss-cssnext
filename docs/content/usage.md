@@ -37,11 +37,17 @@ _Features are enabled by default: no key means feature is enabled_. Keys can be 
 
 ```js
 //eg: disable custom properties support
-var output = cssnext(input, {
-  features: {
-    customProperties: false
-  }
-})
+
+var postcss = require("postcss")
+var cssnext = require("postcss-cssnext")
+
+postcss([
+  cssnext({
+    features: {
+      customProperties: false
+    }
+  })
+])
 ```
 
 Each feature is based on PostCSS plugins & can get its own options.
@@ -49,16 +55,22 @@ To pass options to a feature, you can just pass an object to the feature:
 
 ```js
 //eg: pass variables
-var output = cssnext(input, {
-  features: {
-    customProperties: {
-      variables: {
-        mainColor: "red",
-        altColor: "blue",
+
+var postcss = require("postcss")
+var cssnext = require("postcss-cssnext")
+
+postcss([
+  cssnext({
+    features: {
+      customProperties: {
+        variables: {
+          mainColor: "red",
+          altColor: "blue",
+        }
       }
     }
-  }
-})
+  })
+])
 ```
 
 ## `warnForDuplicates`
