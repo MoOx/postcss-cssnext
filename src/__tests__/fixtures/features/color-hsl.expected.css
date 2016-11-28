@@ -1,0 +1,5 @@
+.foo {
+	color: hsl(90, 90%, 70%);
+	background-color: hsla(270, 25%, 15%, .7);
+	border: 1px solid hsla(0, 5%, 10%, .6);
+}

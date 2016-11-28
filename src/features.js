@@ -36,6 +36,12 @@ export default {
   // https://npmjs.com/package/postcss-color-hwb
   colorHwb: (options) => require("postcss-color-hwb")(options),
 
+  // https://npmjs.com/package/postcss-color-hsl
+  colorHsl: (options) => require("postcss-color-hsl")(options),
+
+  // https://npmjs.com/package/postcss-color-rgb
+  colorRgb: (options) => require("postcss-color-rgb")(options),
+
   // https://npmjs.com/package/postcss-color-gray
   colorGray: (options) => require("postcss-color-gray")(options),
 

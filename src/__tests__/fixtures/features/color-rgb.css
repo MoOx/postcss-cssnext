@@ -1,0 +1,5 @@
+.foo {
+	color: rgb(255 200 205);
+	background-color: rgb(100 222.2 100.9 / 30%);
+	border: 1px solid rgb(0% 5% 10% / .7);
+}
