@@ -483,6 +483,20 @@ div {
 |
 [Plugin documentation](https://github.com/dmarchena/postcss-color-hsl)
 
+## `system-ui` font-family
+
+Allows you to use `system-ui` generic font-family. The current transformation provides a practical font-family list as fallback.
+
+```css
+body {
+  font-family: system-ui;
+}
+```
+
+[Specification](https://drafts.csswg.org/css-fonts-4/#valdef-font-family-system-ui)
+|
+[Plugin documentation](https://github.com/JLHwung/postcss-font-family-system-ui)
+
 ## @todo
 
 Any omissions of the CSS specifications (even in draft) that are subject to be
