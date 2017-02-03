@@ -51,6 +51,9 @@ export default {
   // https://npmjs.com/package/postcss-color-function
   colorFunction: (options) => require("postcss-color-function")(options),
 
+  // https://npmjs.com/package/postcss-font-family-system-ui
+  fontFamilySystemUi: (options) => require("postcss-font-family-system-ui")(options),
+
   // https://npmjs.com/package/postcss-font-variant
   fontVariant: (options) => require("postcss-font-variant")(options),
 
