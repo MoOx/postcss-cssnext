@@ -29,7 +29,7 @@ const warnForDuplicates = postcss.plugin(
         if (
           pluginNames.indexOf(name) > -1 &&
           // warn for cssnext plugins only
-          keys.indexOf(name) > -1 &&
+          keys.has(name) &&
           // show warning once
           spotted.indexOf(name) === -1
         ) {

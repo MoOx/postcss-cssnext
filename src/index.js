@@ -42,7 +42,7 @@ const plugin = postcss.plugin("postcss-cssnext", (options) => {
   const processor = postcss()
 
   // features
-  Object.keys(libraryFeatures).forEach(key => {
+  libraryFeatures.forEach((value, key) => {
     // feature is auto enabled if: not disable && (enabled || no data yet ||
     // !supported yet)
     if (
@@ -63,7 +63,7 @@ const plugin = postcss.plugin("postcss-cssnext", (options) => {
         )
       )
     ) {
-      const plugin = libraryFeatures[key](
+      const plugin = value(
         typeof features[key] === "object"
           ? { ...features[key] }
           : undefined
@@ -74,7 +74,7 @@ const plugin = postcss.plugin("postcss-cssnext", (options) => {
 
   if (options.warnForDuplicates) {
     processor.use(warnForDuplicates({
-      keys: Object.keys(libraryFeatures),
+      keys: libraryFeatures,
       console: options.console,
     }))
   }

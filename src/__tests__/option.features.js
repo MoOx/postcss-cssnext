@@ -22,7 +22,7 @@ const testFeature = function(
   const options = { features: { } }
 
   // disable all features
-  Object.keys(features).forEach(function(key) {
+  features.forEach(function(_, key) {
     options.features[key] = false
   })
 
@@ -51,7 +51,7 @@ const testFeature = function(
   )
 }
 
-Object.keys(features).forEach(function(name) {
+features.forEach(function(_, name) {
   const slug = toSlug(name)
   const source = utils.fixturePath(join("features", slug))
   const input = utils.readFixture(join("features", slug))
