@@ -1,5 +1,6 @@
 import tape from "tape"
 
+import utils from "./utils"
 import cssnext from ".."
 
 tape("cssnext browsers option", function(t) {
@@ -61,6 +62,28 @@ tape("cssnext browsers option propagation to autoprefixer", function(t) {
   t.end()
 })
 
+tape("cssnext browsers option - support boolean operator", function(t) {
+  const input = utils.readFixture("autoprefixer")
+  const expected = utils.readFixture("autoprefixer.expected")
+  const actual = utils.readFixture("autoprefixer.actual")
+
+  // IE 10 need -ms prefix
+  t.equal(
+    cssnext({ browsers: "> 3%, not ie <= 10" }).process(input).css.trim(),
+    expected.trim(),
+    "should propagate browsers option to autoprefixer"
+  )
+
+  // IE 11 do not need -ms prefix
+  t.equal(
+    cssnext({ browsers: "> 3%, not ie <= 11" }).process(input).css.trim(),
+    actual.trim(),
+    "should propagate browsers option to autoprefixer"
+  )
+
+  t.end()
+})
+
 tape("cssnext browsers option propagation to pixrem", function(t) {
   const input = "body{font-size: 1rem}"
   const output = "body{font-size: 16px;font-size: 1rem}"
@@ -75,6 +98,13 @@ tape("cssnext browsers option propagation to pixrem", function(t) {
   // IE 9 doesn't need rem fallback on a simple font-size
   t.equal(
     cssnext({ browsers: "ie 9" }).process(input).css,
+    input,
+    "should propagate browsers option to pixrem"
+  )
+
+  // IE 9 doesn't need rem fallback on a simple font-size
+  t.equal(
+    cssnext({ browsers: "not ie <= 8" }).process(input).css,
     input,
     "should propagate browsers option to pixrem"
   )
