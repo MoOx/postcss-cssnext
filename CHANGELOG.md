@@ -1,3 +1,11 @@
+# 2.10.0 - 2017-03-16
+
+- Added: ``system-ui`` keyword to define current System font-size
+  (via [postcss-font-family-system-ui](https://github.com/JLHwung/postcss-font-family-system-ui))
+  ([#342](https://github.com/MoOx/postcss-cssnext/pull/342) - @JLHwung)
+- Added: new auto-deactivation rules in features map
+  ([#345](https://github.com/MoOx/postcss-cssnext/pull/345) - @Semigradsky)
+
 # 2.9.0 - 2016-11-28
 
 - Added: new rgb() & hsl() functional notation
