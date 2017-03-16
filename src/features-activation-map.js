@@ -4,29 +4,35 @@
 // null == always enable (& no caniuse data)
 export default {
   customProperties: [ "css-variables" ],
+  // applyRule: [ null ],
   // calc() transformation only make sense with transformed custom properties,
   // don't you think ?
-  // calc: null,
+  // calc: [ null ],
+  // nesting: [ null ],
   // @todo open PR on caniuse repo https://github.com/Fyrd/caniuse
   // customMedia: [ null ],
   // mediaQueriesRange: [ null ],
   // customSelectors: [ null ],
-  // colorRebeccapurple: [ null ], // @todo can be done easily
+  attributeCaseInsensitive: [ "css-case-insensitive" ],
+  // @todo wait https://github.com/Fyrd/caniuse/issues/1271
+  // colorRebeccapurple: [ null ],
   // colorHsl: [ null ],
   // colorHwb: [ null ],
   // colorRgb: [ null ],
   // colorGray: [ null ],
-  // colorHexAlpha: [ null ],
+  colorHexAlpha: [ "css-rrggbbaa" ],
   // colorFunction:[ null],
   // fontVariant: [ null ],
   // @todo can be done using a callback, this is only used for Firefox < 35
-  // filter: [ null ],
+  filter: [ "css-filters" ],
   initial: [ "css-all", "css-initial-value" ],
   rem: [ "rem" ],
   pseudoElements: [ "css-gencontent" ],
-  // pseudoClassMatches: [ null ],
-  // pseudoClassNot: [ null ],
+  pseudoClassMatches: [ "css-matches-pseudo" ],
+  pseudoClassNot: [ "css-not-sel-list" ],
+  // pseudoClassAnyLink: [ null ],
   colorRgba: [ "css3-colors" ],
+  overflowWrap: [ "wordwrap" ],
   // will always be null since autoprefixer does the same game as we do
   // autoprefixer: [ null ]
 }

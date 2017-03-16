@@ -22,7 +22,7 @@
   ],
   "dependencies": {
     "autoprefixer": "^6.0.2",
-    "caniuse-api": "^1.3.2",
+    "caniuse-api": "^1.5.3",
     "chalk": "^1.1.1",
     "pixrem": "^3.0.0",
     "pleeease-filters": "^3.0.0",
