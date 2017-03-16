@@ -151,6 +151,12 @@ title: cssnext - Use tomorrow’s CSS syntax, today.
           (functional-notation)
         </small>
       </li>
+      <li class="r-Grid-cell r-minS--1of2">
+        <a href="/features/#system-ui-font-family"><code>system-ui</code> font-family</a>
+        <small class="cssnext-FeaturesList-small">
+          (font-family fallback)
+        </small>
+      </li>
     </ul>
     <small
       class="cssnext-FeaturesList-small"

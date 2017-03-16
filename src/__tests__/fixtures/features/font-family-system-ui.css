@@ -1,0 +1,27 @@
+selector {
+  font-family: system-ui, sans-serif;
+}
+
+selector {
+  font-family: system-ui, Helvetica Neue, sans-serif;
+}
+
+selector {
+  font-family: sans-serif;
+}
+
+selector {
+  font: italic bold 12px/30px system-ui, sans-serif;
+}
+
+selector {
+  font: italic bold 12px/30px system-ui, Helvetica Neue, sans-serif;
+}
+
+selector {
+  font: italic 12px sans-serif;
+}
+
+selector {
+  font-weight: 700;
+}

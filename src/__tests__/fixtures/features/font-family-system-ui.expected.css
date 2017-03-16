@@ -1,0 +1,27 @@
+selector {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+selector {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica Neue, sans-serif;
+}
+
+selector {
+  font-family: sans-serif;
+}
+
+selector {
+  font: italic bold 12px/30px system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+selector {
+  font: italic bold 12px/30px system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica Neue, sans-serif;
+}
+
+selector {
+  font: italic 12px sans-serif;
+}
+
+selector {
+  font-weight: 700;
+}
