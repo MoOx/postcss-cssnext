@@ -20,7 +20,7 @@ export default {
   // colorHwb: [ null ],
   // colorRgb: [ null ],
   // colorGray: [ null ],
-  colorHexAlpha: [ "css-rrggbbaa" ],
+  // colorHexAlpha: [ "css-rrggbbaa" ],
   // colorFunction:[ null],
   // fontVariant: [ null ],
   // @todo can be done using a callback, this is only used for Firefox < 35
