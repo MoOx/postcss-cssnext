@@ -199,7 +199,7 @@ find a <code>browserslist</code> config file or use its default value.</em></p>
 <span class="hljs-keyword">var</span> postcss = <span class="hljs-built_in">require</span>(<span class="hljs-string">"postcss"</span>)
 <span class="hljs-keyword">var</span> cssnext = <span class="hljs-built_in">require</span>(<span class="hljs-string">"postcss-cssnext"</span>)
 
-postcss([
+module.exports = postcss([
   cssnext({
     features: {
       customProperties: <span class="hljs-literal">false</span>
@@ -213,7 +213,7 @@ To pass options to a feature, you can just pass an object to the feature:</p>
 <span class="hljs-keyword">var</span> postcss = <span class="hljs-built_in">require</span>(<span class="hljs-string">"postcss"</span>)
 <span class="hljs-keyword">var</span> cssnext = <span class="hljs-built_in">require</span>(<span class="hljs-string">"postcss-cssnext"</span>)
 
-postcss([
+module.exports = postcss([
   cssnext({
     features: {
       customProperties: {
