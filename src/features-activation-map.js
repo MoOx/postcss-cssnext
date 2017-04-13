@@ -14,8 +14,7 @@ export default {
   // mediaQueriesRange: [ null ],
   // customSelectors: [ null ],
   attributeCaseInsensitive: [ "css-case-insensitive" ],
-  // @todo wait https://github.com/Fyrd/caniuse/issues/1271
-  // colorRebeccapurple: [ null ],
+  colorRebeccapurple: [ "css-rebeccapurple" ],
   // colorHsl: [ null ],
   // colorHwb: [ null ],
   // colorRgb: [ null ],
