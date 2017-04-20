@@ -52,6 +52,9 @@
     "postcss-selector-matches": "^2.0.0",
     "postcss-selector-not": "^2.0.0"
   },
+  "peerDependencies": {
+    "caniuse-db": "^1.0.30000652"
+  },
   "devDependencies": {
     "babel-cli": "^6.6.5",
     "babel-core": "^6.7.2",
