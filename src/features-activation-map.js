@@ -33,6 +33,7 @@ export default {
   // pseudoClassAnyLink: [ null ],
   colorRgba: [ "css3-colors" ],
   overflowWrap: [ "wordwrap" ],
+  imageSet: [ "css-image-set" ],
   // will always be null since autoprefixer does the same game as we do
   // autoprefixer: [ null ]
 }

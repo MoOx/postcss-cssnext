@@ -73,7 +73,10 @@ title: cssnext - Use tomorrow’s CSS syntax, today.
         <a href="/features/#nesting">nesting</a>
       </li>
       <li class="r-Grid-cell r-minS--1of2">
-        <a href="/features/#color-function"><code>color()</code> function</a>
+        <a href="/features/#image-set-function"><code>image-set()</code> function</a>
+      </li>
+      <li class="r-Grid-cell r-minS--1of2">
+          <a href="/features/#color-function"><code>color()</code> function</a>
       </li>
       <li class="r-Grid-cell r-minS--1of2">
         <a href="/features/#hwb-function"><code>hwb()</code> function</a>
