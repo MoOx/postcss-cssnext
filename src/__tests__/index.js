@@ -15,7 +15,7 @@ tape("postcss-cssnext is a postcss plugin", (t) => {
 tape("cssnext regression test", (t) => {
   const input = utils.readFixture("regression")
   const expected = utils.readFixture("regression.expected")
-  const actual = postcssnext().process(input).css.trim()
+  const actual = postcssnext({ browsers: "IE 6" }).process(input).css.trim()
 
   utils.write(utils.fixturePath("regression.actual"), actual)
 

@@ -21,6 +21,12 @@ const testFeature = function(
 ) {
   const options = { features: { } }
 
+  const browsers = utils.readFixtureBrowsers(join("features", slug))
+
+  if (browsers) {
+    options.browsers = browsers
+  }
+
   // disable all features
   Object.keys(features).forEach(function(key) {
     options.features[key] = false

@@ -32,12 +32,22 @@ export default {
   },
 
   /**
-   * read a fixture
+   * read a fixture browsers
    * @param {String} name
-   * @param {String} ext (optional extension, default to ".css")
-   * @return the fixture content
+   * @return the fixture browsers string
+   */
+  readFixtureBrowsers(name) {
+    const filePath = this.fixturePath(name, ".browsers")
+    const exists = fs.existsSync(filePath)
+    return exists && fs.readFileSync(filePath, "utf8").split("\n")[0]
+  },
+
+  /**
+   * write a result
+   * @param {String} name
+   * @param {String} content
    */
   write(name, content) {
-    return fs.writeFileSync(name, content)
+    fs.writeFileSync(name, content)
   },
 }
