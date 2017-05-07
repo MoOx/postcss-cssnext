@@ -50,6 +50,15 @@ body { font-size: calc(var(--fontSize) * 1.2); }
 @custom-selector :--heading h1, h2, h3, h4, h5, h6;
 :--heading { margin-top: 0 }
 
+/* image-set function */
+.foo {
+    background-image:
+      image-set(
+        url(img/test.png) 1x,
+        url(img/test-2x.png) 2x
+      );
+}
+
 /* colors stuff */
 a {
 color: var(--highlightColor);

@@ -15,6 +15,9 @@ export default {
   // https://npmjs.com/package/postcss-calc
   calc: (options) => require("postcss-calc")(options),
 
+  // https://www.npmjs.com/package/postcss-image-set-polyfill
+  imageSet: (options) => require("postcss-image-set-polyfill")(options),
+
   // https://npmjs.com/package/postcss-nesting
   nesting: (options) => require("postcss-nesting")(options),
 

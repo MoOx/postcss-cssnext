@@ -173,6 +173,23 @@ a {
 |
 [Plugin documentation](https://github.com/jonathantneal/postcss-nesting)
 
+## `image-set()` function
+
+Allows you to set different images for each kind of resolution of user device. 
+
+```css
+.foo {
+    background-image: image-set(url(img/test.png) 1x,
+                                url(img/test-2x.png) 2x,
+                                url(my-img-print.png) 600dpi);
+}
+```
+
+[Specification](https://drafts.csswg.org/css-images-3/#image-set-notation)
+|
+[Plugin documentation](https://github.com/SuperOl3g/postcss-image-set-polyfill)
+
+
 ## `color()` function
 
 A color function to modify colors (transpiled to: `rgba()`)
