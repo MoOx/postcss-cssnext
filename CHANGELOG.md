@@ -1,3 +1,11 @@
+# 2.11.0 - 2017-05-15
+
+- Added: `image-set()` support
+  (via [postcss-image-set-polyfill](https://github.com/SuperOl3g/postcss-image-set-polyfill))
+  ([#373](https://github.com/MoOx/postcss-cssnext/pull/373) - @SuperOl3g)
+- Added: new auto-deactivation rule in features map
+  ([#345](https://github.com/MoOx/postcss-cssnext/pull/345) - @Semigradsky)
+
 # 2.10.0 - 2017-03-16
 
 - Added: ``system-ui`` keyword to define current System font-size
