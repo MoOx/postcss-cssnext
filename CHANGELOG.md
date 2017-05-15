@@ -4,7 +4,7 @@
   (via [postcss-image-set-polyfill](https://github.com/SuperOl3g/postcss-image-set-polyfill))
   ([#373](https://github.com/MoOx/postcss-cssnext/pull/373) - @SuperOl3g)
 - Added: new auto-deactivation rule in features map
-  ([#345](https://github.com/MoOx/postcss-cssnext/pull/345) - @Semigradsky)
+  ([#369](https://github.com/MoOx/postcss-cssnext/pull/369) - @Semigradsky)
 
 # 2.10.0 - 2017-03-16
 
