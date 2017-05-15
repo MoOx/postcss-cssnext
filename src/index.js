@@ -18,7 +18,7 @@ const plugin = postcss.plugin("postcss-cssnext", (options) => {
   const features = options.features
 
   // propagate browsers option to plugins that supports it
-  const pluginsToPropagateBrowserOption = [ "autoprefixer", "rem" ]
+  const pluginsToPropagateBrowserOption = [ "autoprefixer" ]
   pluginsToPropagateBrowserOption.forEach((name) => {
     const feature = features[name]
 

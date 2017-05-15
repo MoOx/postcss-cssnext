@@ -11,9 +11,9 @@ scripts:
     <textarea class="js-cssnext-Playground-from cssnext-Playground-code cssnext-Playground-code--from" spellcheck="false">
 /* custom properties */
 :root {
---fontSize: 1rem;
---mainColor: #12345678;
---highlightColor: hwb(190, 35%, 20%);
+  --fontSize: 1rem;
+  --mainColor: #12345678;
+  --highlightColor: hwb(190, 35%, 20%);
 }
 
 /* custom properties set & @apply rule */
@@ -34,16 +34,16 @@ scripts:
 
 /* some var() & calc() */
 body {
-color: var(--mainColor);
+  color: var(--mainColor);
 
-font-size: var(--fontSize);
-line-height: calc(var(--fontSize) * 1.5);
-padding: calc((var(--fontSize) / 2) + 1px);
+  font-size: var(--fontSize);
+  line-height: calc(var(--fontSize) * 1.5);
+  padding: calc((var(--fontSize) / 2) + 1px);
 }
 
 /* custom media query usage */
 @media (--viewport-medium) {
-body { font-size: calc(var(--fontSize) * 1.2); }
+  body { font-size: calc(var(--fontSize) * 1.2); }
 }
 
 /* custom selectors */
@@ -52,17 +52,17 @@ body { font-size: calc(var(--fontSize) * 1.2); }
 
 /* image-set function */
 .foo {
-    background-image:
-      image-set(
-        url(img/test.png) 1x,
-        url(img/test-2x.png) 2x
-      );
+  background-image:
+    image-set(
+      url(img/test.png) 1x,
+      url(img/test-2x.png) 2x
+    );
 }
 
 /* colors stuff */
 a {
-color: var(--highlightColor);
-transition: color 1s; /* autoprefixed ! */
+  color: var(--highlightColor);
+  transition: color 1s; /* autoprefixed ! */
 }
 a:hover { color: gray(255, 50%) }
 a:active { color: rebeccapurple }
@@ -71,34 +71,34 @@ a:any-link { color: color(var(--highlightColor) blackness(+20%)) }
 
 /* font stuff */
 h2 {
-font-variant-caps: small-caps;
+  font-variant-caps: small-caps;
 }
 
 table {
-font-variant-numeric: lining-nums;
+  font-variant-numeric: lining-nums;
 }
 
 /* filters */
 .blur {
-filter: blur(4px);
+  filter: blur(4px);
 }
 .sepia {
-filter: sepia(.8);
+  filter: sepia(.8);
 }
 
 /* overflow-wrap fallback */
 body {
-overflow-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 /* attribute case insensitive */
 [frame=hsides i] {
-border-style: solid none;
+  border-style: solid none;
 }
 
 /* system-ui font-family */
 body {
-font-family: system-ui;
+  font-family: system-ui;
 }
 
     </textarea>

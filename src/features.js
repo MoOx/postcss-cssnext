@@ -66,12 +66,6 @@ export default {
   // https://npmjs.com/package/postcss-initial
   initial: (options) => require("postcss-initial")(options),
 
-  // https://npmjs.com/package/pixrem
-  rem: (options) => require("pixrem")(options),
-
-  // https://npmjs.com/package/postcss-pseudoelements
-  pseudoElements: (options) => require("postcss-pseudoelements")(options),
-
   // https://npmjs.com/package/postcss-selector-matches
   pseudoClassMatches: (options) => require("postcss-selector-matches")(options),
 
@@ -80,9 +74,6 @@ export default {
 
   // https://npmjs.com/package/postcss-pseudo-class-any-link
   pseudoClassAnyLink: (options) => require("postcss-pseudo-class-any-link")(options),
-
-  // https://npmjs.com/package/postcss-color-rgba-fallback
-  colorRgba: (options) => require("postcss-color-rgba-fallback")(options),
 
   // https://www.npmjs.com/package/postcss-replace-overflow-wrap
   overflowWrap: (options) => require("postcss-replace-overflow-wrap")(options),

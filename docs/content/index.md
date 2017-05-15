@@ -88,13 +88,6 @@ title: cssnext - Use tomorrow’s CSS syntax, today.
         <a href="/features/#rrggbbaa-colors"><code>#rrggbbaa</code> colors</a>
       </li>
       <li class="r-Grid-cell r-minS--1of2">
-        <a href="/features/#rgba-function-rgb-fallback"><code>rgba</code> function
-          <small class="cssnext-FeaturesList-small">
-            (<code>rgb</code> fallback</code>)
-          </small>
-        </a>
-      </li>
-      <li class="r-Grid-cell r-minS--1of2">
         <a href="/features/#rebeccapurple-color"><code>rebeccapurple</code> color</a>
       </li>
       <li class="r-Grid-cell r-minS--1of2">
@@ -110,12 +103,6 @@ title: cssnext - Use tomorrow’s CSS syntax, today.
         <a href="/features/#initial-value"><code>initial</code> value</a>
       </li>
       <li class="r-Grid-cell r-minS--1of2">
-        <a href="/features/#rem-unit-px-fallback"><code>rem</code> unit</a>
-        <small class="cssnext-FeaturesList-small">
-          (<code>px</code> fallback)
-        </small>
-      </li>
-      <li class="r-Grid-cell r-minS--1of2">
         <a href="/features/#any-link-pseudo-class"><code>:any-link</code> pseudo-class</a>
       </li>
       <li class="r-Grid-cell r-minS--1of2">
@@ -125,12 +112,6 @@ title: cssnext - Use tomorrow’s CSS syntax, today.
         <a href="/features/#not-pseudo-class"><code>:not</code> pseudo-class</a>
         <small class="cssnext-FeaturesList-small">
           (to l.3)
-        </small>
-      </li>
-      <li class="r-Grid-cell r-minS--1of2">
-        <a href="/features/#pseudo-syntax-fallback"><code>::</code>pseudo syntax</a>
-        <small class="cssnext-FeaturesList-small">
-          (<code>:</code> fallback)
         </small>
       </li>
       <li class="r-Grid-cell r-minS--1of2">
