@@ -39,7 +39,7 @@ export default {
   readFixtureBrowsers(name) {
     const filePath = this.fixturePath(name, ".browsers")
     const exists = fs.existsSync(filePath)
-    return exists && fs.readFileSync(filePath, "utf8").split("\n")[0]
+    return exists && fs.readFileSync(filePath, "utf8").split("\n")[0].trim()
   },
 
   /**
