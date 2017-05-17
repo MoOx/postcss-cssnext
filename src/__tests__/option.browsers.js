@@ -13,7 +13,7 @@ tape("cssnext browsers option", function(t) {
   )
 
   const customPropsInput = ":root{--foo:bar}baz{qux:var(--foo)}"
-  const customPropsOutput = "baz{qux: bar}"
+  const customPropsOutput = "baz{qux:bar}"
 
   // fx 30 doesn't handle custom prop
   t.equal(
