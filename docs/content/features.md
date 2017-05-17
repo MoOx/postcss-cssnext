@@ -297,21 +297,6 @@ at the support of
 |
 [Plugin documentation](https://github.com/postcss/postcss-font-variant)
 
-## `filter` property
-
-The W3C filters are only transformed as svg filter using the `url(data:*)` trick
-for Firefox < 35.
-
-```css
-.blur {
-    filter: blur(4px);
-}
-```
-
-[Specification](http://www.w3.org/TR/filter-effects/)
-|
-[Plugin documentation](https://github.com/iamvdo/pleeease-filters)
-
 ## `initial` value
 
 Allow you to use `initial` value for any value. This value represents the value

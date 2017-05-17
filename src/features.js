@@ -60,9 +60,6 @@ export default {
   // https://npmjs.com/package/postcss-font-variant
   fontVariant: (options) => require("postcss-font-variant")(options),
 
-  // https://npmjs.com/package/pleeease-filters
-  filter: (options) => require("pleeease-filters")(options),
-
   // https://npmjs.com/package/postcss-initial
   initial: (options) => require("postcss-initial")(options),
 
