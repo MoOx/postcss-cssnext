@@ -27,7 +27,7 @@
     "pixrem": "^3.0.0",
     "pleeease-filters": "^3.0.1",
     "postcss": "^6.0.1",
-    "postcss-attribute-case-insensitive": "^1.0.1",
+    "postcss-attribute-case-insensitive": "^2.0.0",
     "postcss-calc": "^5.0.0",
     "postcss-color-function": "^2.0.0",
     "postcss-color-gray": "^3.0.0",
