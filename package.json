@@ -47,7 +47,7 @@
     "postcss-pseudo-class-any-link": "^4.0.0",
     "postcss-replace-overflow-wrap": "^1.0.0",
     "postcss-selector-matches": "^3.0.1",
-    "postcss-selector-not": "^2.0.0"
+    "postcss-selector-not": "^3.0.1"
   },
   "peerDependencies": {
     "caniuse-db": "^1.0.30000652"
