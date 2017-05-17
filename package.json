@@ -21,7 +21,7 @@
     "!**/__tests__"
   ],
   "dependencies": {
-    "autoprefixer": "^6.0.2",
+    "autoprefixer": "^7.1.0",
     "caniuse-api": "^1.5.3",
     "chalk": "^1.1.1",
     "pleeease-filters": "^3.0.0",
