@@ -400,21 +400,6 @@ p:not(:first-child, .special) {
 |
 [Plugin documentation](https://github.com/postcss/postcss-selector-NOT)
 
-## `::` pseudo syntax (`:` fallback)
-
-Adjust `::` to `:`
-(if your browser scope cover old browsers, eg: IE8).
-
-```css
-a::before {
-  /* ... */
-}
-```
-
-[Specification](http://www.w3.org/TR/css3-selectors/#pseudo-elements)
-|
-[Plugin documentation](https://github.com/axa-ch/postcss-pseudoelements)
-
 ## `overflow-wrap` property (`word-wrap` fallback)
 
 Converts `overflow-wrap` to `word-wrap` (many browser support only the old [word-wrap](http://caniuse.com/#feat=wordwrap) property).
