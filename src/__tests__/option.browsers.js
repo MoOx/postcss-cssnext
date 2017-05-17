@@ -4,14 +4,6 @@ import cssnext from ".."
 
 tape("cssnext browsers option", function(t) {
 
-  // no recent browser need pixrem
-  const remInput = "body{font-size:2rem}"
-  t.equal(
-    cssnext({ browsers: "last 1 version" }).process(remInput).css,
-    remInput,
-    "should not enable px fallback when all browsers support it"
-  )
-
   const customPropsInput = ":root{--foo:bar}baz{qux:var(--foo)}"
   const customPropsOutput = "baz{qux:bar}"
 
@@ -56,36 +48,6 @@ tape("cssnext browsers option propagation to autoprefixer", function(t) {
     cssnext({ browsers: "Safari 6.1" }).process(input).css,
     input,
     "should propagate browsers option to autoprefixer"
-  )
-
-  t.end()
-})
-
-tape("cssnext browsers option propagation to pixrem", function(t) {
-  const input = "body{font-size: 1rem}"
-  const output = "body{font-size: 16px;font-size: 1rem}"
-
-  // IE 8 needs rem fallback
-  t.equal(
-    cssnext({ browsers: "ie 8" }).process(input).css,
-    output,
-    "should propagate browsers option to pixrem"
-  )
-
-  // IE 9 doesn't need rem fallback on a simple font-size
-  t.equal(
-    cssnext({ browsers: "ie 9" }).process(input).css,
-    input,
-    "should propagate browsers option to pixrem"
-  )
-
-  // IE 9 needs rem on pseudo element
-  const inputWeirdCase = input.replace("body", "body::before")
-  const outputWeirdCase = output.replace("body", "body::before")
-  t.equal(
-    cssnext({ browsers: "ie 9" }).process(inputWeirdCase).css,
-    outputWeirdCase,
-    "should propagate browsers option to pixrem"
   )
 
   t.end()

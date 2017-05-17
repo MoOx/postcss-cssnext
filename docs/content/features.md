@@ -340,21 +340,6 @@ div {
 |
 [Plugin documentation](https://github.com/maximkoretskiy/postcss-initial)
 
-## `rem` unit (`px` fallback)
-
-`rem` fallback to `px`
-(if your browser scope cover old browsers, eg: IE8).
-
-```css
-h1 {
-  font-size: 1.5rem;
-}
-```
-
-[Specification](http://www.w3.org/TR/css3-values/#rem-unit)
-|
-[Plugin documentation](https://github.com/robwierzbowski/node-pixrem)
-
 ## `:any-link` pseudo-class
 
 Allows you to use `:any-link` pseudo class.

@@ -66,9 +66,6 @@ export default {
   // https://npmjs.com/package/postcss-initial
   initial: (options) => require("postcss-initial")(options),
 
-  // https://npmjs.com/package/pixrem
-  rem: (options) => require("pixrem")(options),
-
   // https://npmjs.com/package/postcss-selector-matches
   pseudoClassMatches: (options) => require("postcss-selector-matches")(options),
 
