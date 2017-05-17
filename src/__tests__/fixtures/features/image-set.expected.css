@@ -1,13 +1,9 @@
 .image {
   background-image: url(img/test.png);
+}@media (min-resolution: 144dpi) {.image {
+  background-image: url(img/test-2x.png);
 }
-@media (min-resolution: 144dpi) {
-  .image {
-    background-image: url(img/test-2x.png);
-  }
+}@media (min-resolution: 600dpi) {.image {
+  background-image: url(my-img-print.png);
 }
-@media (min-resolution: 600dpi) {
-  .image {
-    background-image: url(my-img-print.png);
-  }
 }
