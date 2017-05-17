@@ -259,22 +259,6 @@ body {
 |
 [Plugin documentation](https://github.com/postcss/postcss-color-hex-alpha)
 
-## `rgba` function (`rgb` fallback)
-
-Add solid colors fallback for rgba colors
-(if your browser scope cover old browsers, eg: IE8).
-
-```css
-body {
-  background: rgba(153, 221, 153, 0.8);
-  /* you will have the same value without alpha as a fallback */
-}
-```
-
-[Specification](http://www.w3.org/TR/css3-color/)
-|
-[Plugin documentation](https://github.com/postcss/postcss-color-rgba-fallback)
-
 ## `rebeccapurple` color
 
 Allows you to use the new color keyword as a homage to
