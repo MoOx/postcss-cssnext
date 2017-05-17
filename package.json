@@ -46,7 +46,7 @@
     "postcss-initial": "^2.0.0",
     "postcss-media-minmax": "^3.0.0",
     "postcss-nesting": "^3.0.0",
-    "postcss-pseudo-class-any-link": "^1.0.0",
+    "postcss-pseudo-class-any-link": "^4.0.0",
     "postcss-pseudoelements": "^3.0.0",
     "postcss-replace-overflow-wrap": "^1.0.0",
     "postcss-selector-matches": "^2.0.0",
