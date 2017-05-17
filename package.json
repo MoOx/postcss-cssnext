@@ -42,7 +42,7 @@
     "postcss-font-variant": "^3.0.0",
     "postcss-image-set-polyfill": "^0.3.3",
     "postcss-initial": "^2.0.0",
-    "postcss-media-minmax": "^2.1.0",
+    "postcss-media-minmax": "^3.0.0",
     "postcss-nesting": "^2.0.5",
     "postcss-pseudo-class-any-link": "^1.0.0",
     "postcss-replace-overflow-wrap": "^1.0.0",
