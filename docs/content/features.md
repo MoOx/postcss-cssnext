@@ -259,22 +259,6 @@ body {
 |
 [Plugin documentation](https://github.com/postcss/postcss-color-hex-alpha)
 
-## `rgba` function (`rgb` fallback)
-
-Add solid colors fallback for rgba colors
-(if your browser scope cover old browsers, eg: IE8).
-
-```css
-body {
-  background: rgba(153, 221, 153, 0.8);
-  /* you will have the same value without alpha as a fallback */
-}
-```
-
-[Specification](http://www.w3.org/TR/css3-color/)
-|
-[Plugin documentation](https://github.com/postcss/postcss-color-rgba-fallback)
-
 ## `rebeccapurple` color
 
 Allows you to use the new color keyword as a homage to
@@ -313,21 +297,6 @@ at the support of
 |
 [Plugin documentation](https://github.com/postcss/postcss-font-variant)
 
-## `filter` property
-
-The W3C filters are only transformed as svg filter using the `url(data:*)` trick
-for Firefox < 35.
-
-```css
-.blur {
-    filter: blur(4px);
-}
-```
-
-[Specification](http://www.w3.org/TR/filter-effects/)
-|
-[Plugin documentation](https://github.com/iamvdo/pleeease-filters)
-
 ## `initial` value
 
 Allow you to use `initial` value for any value. This value represents the value
@@ -355,21 +324,6 @@ div {
 [Specification](http://www.w3.org/TR/css3-values/#common-keywords)
 |
 [Plugin documentation](https://github.com/maximkoretskiy/postcss-initial)
-
-## `rem` unit (`px` fallback)
-
-`rem` fallback to `px`
-(if your browser scope cover old browsers, eg: IE8).
-
-```css
-h1 {
-  font-size: 1.5rem;
-}
-```
-
-[Specification](http://www.w3.org/TR/css3-values/#rem-unit)
-|
-[Plugin documentation](https://github.com/robwierzbowski/node-pixrem)
 
 ## `:any-link` pseudo-class
 
@@ -415,21 +369,6 @@ p:not(:first-child, .special) {
 [Specification](http://dev.w3.org/csswg/selectors-4/#negation)
 |
 [Plugin documentation](https://github.com/postcss/postcss-selector-NOT)
-
-## `::` pseudo syntax (`:` fallback)
-
-Adjust `::` to `:`
-(if your browser scope cover old browsers, eg: IE8).
-
-```css
-a::before {
-  /* ... */
-}
-```
-
-[Specification](http://www.w3.org/TR/css3-selectors/#pseudo-elements)
-|
-[Plugin documentation](https://github.com/axa-ch/postcss-pseudoelements)
 
 ## `overflow-wrap` property (`word-wrap` fallback)
 
