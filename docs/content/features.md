@@ -96,7 +96,7 @@ A nice way to have semantic media queries
 }
 ```
 
-[Specification](http://dev.w3.org/csswg/mediaqueries/#custom-mq)
+[Specification](https://drafts.csswg.org/mediaqueries-5/#custom-mq)
 |
 [Plugin documentation](https://github.com/postcss/postcss-custom-media)
 
