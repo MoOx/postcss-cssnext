@@ -5,3 +5,9 @@
     color: black;
   }
 }
+
+.foo {
+  &:matches(p) {
+    color: red;
+  }
+}
