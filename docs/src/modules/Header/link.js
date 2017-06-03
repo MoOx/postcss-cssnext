@@ -7,7 +7,7 @@ class HeaderLink extends Component {
 
     return (
       <a
-        {...this.props}
+        { ...this.props }
         className={ cx({
           ...(
             this.props.className
