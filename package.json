@@ -39,7 +39,7 @@
     "postcss-color-rgb": "^1.1.4",
     "postcss-color-rgba-fallback": "^2.0.0",
     "postcss-custom-media": "^5.0.0",
-    "postcss-custom-properties": "^5.0.0",
+    "postcss-custom-properties": "^6.1.0",
     "postcss-custom-selectors": "^3.0.0",
     "postcss-font-family-system-ui": "^1.0.1",
     "postcss-font-variant": "^2.0.0",
