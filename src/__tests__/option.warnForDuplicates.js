@@ -1,8 +1,9 @@
 import tape from "tape"
-
 import postcss from "postcss"
 import autoprefixer from "autoprefixer"
+
 import cssnext from ".."
+
 import { spotted } from "../warn-for-duplicates"
 
 const reportFail = (t) => (error) => {

@@ -23,7 +23,7 @@
   "dependencies": {
     "autoprefixer": "^7.1.1",
     "caniuse-api": "^2.0.0",
-    "chalk": "^1.1.1",
+    "chalk": "^2.0.1",
     "pleeease-filters": "^4.0.0",
     "postcss": "^6.0.3",
     "postcss-apply": "^0.8.0",
