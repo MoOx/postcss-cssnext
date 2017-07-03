@@ -1,16 +1,18 @@
 /**
  * Test dependencies
  */
-import test from "tape"
 import { join } from "path"
 
-import utils from "./utils"
-import cssnext, { features } from ".."
-
+import test from "tape"
 /**
  * Features tests
  */
 import toSlug from "to-slug-case"
+
+import utils from "./utils"
+
+import cssnext, { features } from ".."
+
 const testFeature = function(
   t,
   feature,

@@ -1,4 +1,4 @@
-/* eslint-disable max-len */
+/* eslint-disable max-len, import/max-dependencies */
 export default {
   /**
    * REMINDER:
@@ -11,9 +11,6 @@ export default {
 
   // https://npmjs.com/package/postcss-apply
   applyRule: (options) => require("postcss-apply")(options),
-
-  // https://npmjs.com/package/postcss-calc
-  calc: (options) => require("postcss-calc")(options),
 
   // https://www.npmjs.com/package/postcss-image-set-polyfill
   imageSet: (options) => require("postcss-image-set-polyfill")(options),
@@ -42,9 +39,6 @@ export default {
   // https://npmjs.com/package/postcss-color-hsl
   colorHsl: (options) => require("postcss-color-hsl")(options),
 
-  // https://npmjs.com/package/postcss-color-rgb
-  colorRgb: (options) => require("postcss-color-rgb")(options),
-
   // https://npmjs.com/package/postcss-color-gray
   colorGray: (options) => require("postcss-color-gray")(options),
 
@@ -59,9 +53,6 @@ export default {
 
   // https://npmjs.com/package/postcss-font-variant
   fontVariant: (options) => require("postcss-font-variant")(options),
-
-  // https://npmjs.com/package/pleeease-filters
-  filter: (options) => require("pleeease-filters")(options),
 
   // https://npmjs.com/package/postcss-initial
   initial: (options) => require("postcss-initial")(options),

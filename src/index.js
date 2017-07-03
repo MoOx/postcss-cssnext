@@ -83,6 +83,6 @@ const plugin = postcss.plugin("postcss-cssnext", (options) => {
 })
 
 // es5/6 support
-plugin.features = libraryFeatures
+export const features = libraryFeatures
 
-module.exports = plugin
+export default plugin

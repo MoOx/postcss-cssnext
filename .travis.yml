@@ -4,10 +4,6 @@ language: node_js
 node_js:
   - '6'
   - '5'
-  - '4'
-  - '0.12'
 
 script:
   - npm run test
-  # travis take is weird, disabled for now
-  #- if [[ $(node --version) != v0.* ]]; then; npm run docs-test; fi
