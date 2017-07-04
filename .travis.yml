@@ -2,10 +2,9 @@ sudo: false
 
 language: node_js
 node_js:
-  - '6'
-  - '5'
-  - '4'
-  - '0.12'
+  - 8
+  - 6
+  - 4
 
 script:
   - npm run test
