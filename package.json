@@ -54,7 +54,7 @@
     "postcss-selector-not": "^2.0.0"
   },
   "peerDependencies": {
-    "caniuse-db": "^1.0.30000652"
+    "caniuse-db": "^1.0.30000670"
   },
   "devDependencies": {
     "babel-cli": "^6.6.5",
