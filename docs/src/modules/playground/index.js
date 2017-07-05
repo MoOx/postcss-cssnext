@@ -4,7 +4,7 @@ import messagesStyles from "./messages.styles"
 
 const bullet = "›"
 
-import colors from "chalk"
+import stripColor from "strip-ansi"
 
 function playground(opts) {
   opts.options = opts.options || {}
@@ -29,7 +29,7 @@ function playground(opts) {
       const messages = result.warnings()
       if (messages.length) {
         opts.messages.textContent =
-          `${ bullet } ${ colors.stripColor(
+          `${ bullet } ${ stripColor(
             messages.map(message => message.toString())
           ).join("\n\n\n" + bullet + " ") }`
       }

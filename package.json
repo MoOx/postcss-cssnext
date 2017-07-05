@@ -107,6 +107,7 @@
     "react-dom": "^15.0.0-rc.1",
     "react-svg-inline": "^1.0.1",
     "rimraf": "^2.4.3",
+    "strip-ansi": "^4.0.0",
     "style-loader": "^0.12.2",
     "tape": "^4.2.0",
     "to-slug-case": "^0.1.2",
