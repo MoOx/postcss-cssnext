@@ -4,11 +4,13 @@ import { isSupported } from "caniuse-api"
 import libraryFeatures from "./features"
 import featuresActivationMap from "./features-activation-map"
 import warnForDuplicates from "./warn-for-duplicates"
+import warnForDeprecations from "./warn-for-deprecations"
 
 const plugin = postcss.plugin("postcss-cssnext", (options) => {
   options = {
     console: console,
     warnForDuplicates: true,
+    warnForDeprecations: true,
     features: {},
     // options.browsers is deliberately undefined by default to inherit
     // browserslist default behavior
@@ -40,6 +42,12 @@ const plugin = postcss.plugin("postcss-cssnext", (options) => {
   }
 
   const processor = postcss()
+
+  if (options.warnForDeprecations) {
+    processor.use(warnForDeprecations({
+      console: options.console,
+    }))
+  }
 
   // features
   Object.keys(libraryFeatures).forEach(key => {
