@@ -84,6 +84,13 @@ and show provide duplicates in their examples.
 (eg: autoprefixer + cssnext - but cssnext already includes autoprefixer).**  
 _In order to fix this, here is a warning. You are welcome._
 
+## `warnForDeprecations`
+
+_(default: true)_
+
+This option should be left with its default value, unless you are aware of the
+risk and plan to handle the situation.  
+
 ---
 
 **To know all available options, please check corresponding postcss plugin by

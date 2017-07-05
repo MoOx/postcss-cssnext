@@ -18,11 +18,9 @@ const globalWarning = (
 export const spotted = []
 
 const warnForDuplicates = postcss.plugin(
-  "postcss-warn-for-duplicates",
-  (options) => {
+  "postcss-cssnext-warn-for-duplicates",
+  ({ keys, console: messenger }) => {
     return (style, result) => {
-      // https://github.com/postcss/postcss/issues/768
-      const { keys, console: messenger } = options
       const pluginNames = []
       result.processor.plugins.forEach((plugin) => {
         const name = plugin.postcssPlugin
