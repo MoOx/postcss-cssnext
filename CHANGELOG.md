@@ -1,3 +1,34 @@
+# 3.0.0 - 2017-07-05
+
+## Removed: support for node 0.12
+
+Node 4+ is supported.
+
+## Changed: upgrade to PostCSS 6
+
+All postcss plugins dependencies have been updated to latest version to ensure
+full PostCSS 6 compatibility.
+
+Some breaking (minor) changes:
+
+- image-set polyfill change 2x from 144dpi to 192dpi
+- whitespace changes for image-set polyfill output
+- rebeccapurpule is now an hexa number
+- custom-selector does not output useless (empty) blocks with a selector with no rules associated
+
+You can expect some other since all postcss plugins used have been updated to
+latest versions.
+If you have unexpected regression, please check corresponding plugins changelog before opening an issue.
+
+## Added: warning is emitted is you use custom property sets and `@apply`
+
+This feature won't be included in next the major release of postcss-cssnext.
+
+This most likely won't get any more support from browser vendors as the
+spec is yet considered deprecated and alternative solutions are being
+discussed.
+Read more about the reason here https://github.com/pascalduez/postcss-apply
+
 # 2.11.0 - 2017-05-15
 
 - Added: `image-set()` support
