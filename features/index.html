@@ -161,7 +161,7 @@
 	</linearGradient>
 	<path fill="url(#SVGID_12_)" d="M255.475,13.569l-4.391,21.613h-0.932l4.373-21.613H255.475z"/>
 </g>
-</svg></span><span class="cssnext-Header-version">2.10.0</span></a><a href="/features/" class="cssnext-Header-nav-item">Features</a><a href="/setup/" class="cssnext-Header-nav-item">Setup</a><a href="/usage/" class="cssnext-Header-nav-item">Usage</a><a href="/playground/" class="cssnext-Header-nav-item">Playground</a></span></div><div class="r-Grid-cell r-minM--2of6"><div class="cssnext-Header-nav"><a href="https://gitter.im/MoOx/postcss-cssnext" class="cssnext-Header-nav-item">Support</a><a href="https://github.com/MoOx/postcss-cssnext" title="GitHub" class="cssnext-Header-nav-item">GitHub</a><a href="https://twitter.com/cssnext" title="Twitter" class="cssnext-Header-nav-item">Twitter</a></div></div></div></header><header class="cssnext-Jumbotron cssnext-Jumbotron--default cssnext-Jumbotron--features-html cssnext-Jumbotron--darkRoad"><div class="r-Grid"><div class="r-Grid-cell"><h1 class="cssnext-Jumbotron-title cssnext-Light">postcss-cssnext features</h1><strong class="cssnext-Jumbotron-subtitle cssnext-Light">Discover the future of CSS</strong></div></div></header><section class="r-Grid cssnext-Section"><div class="r-Grid-cell js-markdownIt-TOCOriginalContainer"><p>
+</svg></span><span class="cssnext-Header-version">3.0.0</span></a><a href="/features/" class="cssnext-Header-nav-item">Features</a><a href="/setup/" class="cssnext-Header-nav-item">Setup</a><a href="/usage/" class="cssnext-Header-nav-item">Usage</a><a href="/playground/" class="cssnext-Header-nav-item">Playground</a></span></div><div class="r-Grid-cell r-minM--2of6"><div class="cssnext-Header-nav"><a href="https://gitter.im/MoOx/postcss-cssnext" class="cssnext-Header-nav-item">Support</a><a href="https://github.com/MoOx/postcss-cssnext" title="GitHub" class="cssnext-Header-nav-item">GitHub</a><a href="https://twitter.com/cssnext" title="Twitter" class="cssnext-Header-nav-item">Twitter</a></div></div></div></header><header class="cssnext-Jumbotron cssnext-Jumbotron--default cssnext-Jumbotron--features-html cssnext-Jumbotron--darkRoad"><div class="r-Grid"><div class="r-Grid-cell"><h1 class="cssnext-Jumbotron-title cssnext-Light">postcss-cssnext features</h1><strong class="cssnext-Jumbotron-subtitle cssnext-Light">Discover the future of CSS</strong></div></div></header><section class="r-Grid cssnext-Section"><div class="r-Grid-cell js-markdownIt-TOCOriginalContainer"><p>
 <ul class="markdownIt-TOC">
   <li>
     <a href="#automatic-vendor-prefixes">automatic vendor prefixes</a>
@@ -186,6 +186,9 @@
   </li>
   <li>
     <a href="#nesting">nesting</a>
+  </li>
+  <li>
+    <a href="#image-set-function">`image-set()` function</a>
   </li>
   <li>
     <a href="#color-function">`color()` function</a>
@@ -309,7 +312,7 @@ parsed <code>var()</code> references.</p>
 <span class="hljs-at_rule">@<span class="hljs-keyword">media</span> (--small-viewport) </span>{
   <span class="hljs-comment">/* styles for small viewport */</span>
 }</code></pre>
-<p><a href="http://dev.w3.org/csswg/mediaqueries/#custom-mq">Specification</a>
+<p><a href="https://drafts.csswg.org/mediaqueries-5/#custom-mq">Specification</a>
 |
 <a href="https://github.com/postcss/postcss-custom-media">Plugin documentation</a></p>
 <h2 id="media-queries-ranges"><a class="markdownIt-Anchor" href="#media-queries-ranges">#</a> media queries ranges</h2>
@@ -367,6 +370,16 @@ parsed <code>var()</code> references.</p>
 <p><a href="http://tabatkins.github.io/specs/css-nesting/">Specification</a>
 |
 <a href="https://github.com/jonathantneal/postcss-nesting">Plugin documentation</a></p>
+<h2 id="image-set-function"><a class="markdownIt-Anchor" href="#image-set-function">#</a> <code>image-set()</code> function</h2>
+<p>Allows you to set different images for each kind of resolution of user device.</p>
+<pre><code class="language-css"><span class="hljs-class">.foo</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">background-image</span>:<span class="hljs-value"> <span class="hljs-function">image-set</span>(<span class="hljs-function">url</span>(img/test.png) <span class="hljs-number">1</span>x,
+                                <span class="hljs-function">url</span>(img/test-<span class="hljs-number">2</span>x.png) <span class="hljs-number">2</span>x,
+                                <span class="hljs-function">url</span>(my-img-print.png) <span class="hljs-number">600dpi</span>)</span></span>;
+}</span></code></pre>
+<p><a href="https://drafts.csswg.org/css-images-3/#image-set-notation">Specification</a>
+|
+<a href="https://github.com/SuperOl3g/postcss-image-set-polyfill">Plugin documentation</a></p>
 <h2 id="color-function"><a class="markdownIt-Anchor" href="#color-function">#</a> <code>color()</code> function</h2>
 <p>A color function to modify colors (transpiled to: <code>rgba()</code>)</p>
 <pre><code class="language-css"><span class="hljs-tag">a</span> <span class="hljs-rules">{
@@ -736,5 +749,5 @@ Keep in mind that, as of right now, this project is intended to support new CSS
 	</linearGradient>
 	<path fill="url(#SVGID_12_)" d="M255.475,13.569l-4.391,21.613h-0.932l4.373-21.613H255.475z"/>
 </g>
-</svg></span> is brought to you by <a href="https://twitter.com/MoOx">@MoOx</a> &amp; <a href="https://github.com/MoOx/postcss-cssnext/graphs/contributors">some other contributors</a>.</p><small><a href="/it-s-cssnext-not-CSSNext">Note: it&#x27;s cssnext, not CSSNext</a><span style="opacity:.4;margin-left:1rem;"><a href="/credits">Credits</a> | <a href="https://github.com/MoOx/postcss-cssnext/edit/master/docs/content/features.md">Edit this page</a></span></small></footer><script src="/index.js?af0cb5897af25de652df"></script><script>
+</svg></span> is brought to you by <a href="https://twitter.com/MoOx">@MoOx</a> &amp; <a href="https://github.com/MoOx/postcss-cssnext/graphs/contributors">some other contributors</a>.</p><small><a href="/it-s-cssnext-not-CSSNext">Note: it&#x27;s cssnext, not CSSNext</a><span style="opacity:.4;margin-left:1rem;"><a href="/credits">Credits</a> | <a href="https://github.com/MoOx/postcss-cssnext/edit/master/docs/content/features.md">Edit this page</a></span></small></footer><script src="/index.js?b42105295b7f9d60dbf4"></script><script>
 !function(c,s,S,n,e,x,t){c.GoogleAnalyticsObject=S;c[S]||(c[S]=function(){(c[S].q=c[S].q||[]).push(arguments)});c[S].l=+new Date;x=s.createElement(n);t=s.getElementsByTagName(n)[0];x.src=e;t.parentNode.insertBefore(x,t)}(window,document,'ga','script','//www.google-analytics.com/analytics.js');ga('create','UA-55403963-1','auto');ga('send','pageview');</script></body></html>
