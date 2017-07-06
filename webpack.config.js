@@ -1,6 +1,7 @@
 const webpack = require("webpack")
 const ExtractTextPlugin = require("extract-text-webpack-plugin")
 
+const pkg = require("./package.json")
 const buildConfig = require("./build.config")
 
 module.exports = {
@@ -18,17 +19,26 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
-        loaders: [
-          "babel",
-          "eslint",
-        ],
+        loader: "babel-loader",
+        query: {
+          babelrc: false,
+          ...pkg.babel.env.browsers,
+        },
         exclude: /node_modules/,
+      },
+      // some plugins that are node4+ in da browsers need uglify compat
+      {
+        test: /\.js$/,
+        loader: "babel-loader",
+        query: {
+          babelrc: false,
+          ...pkg.babel.env.browsers,
+        },
+        include: /node_modules\/(chalk|ansi-styles|strip-ansi|postcss-.*)/,
       },
       {
         test: /\.json$/,
-        loaders: [
-          "json",
-        ],
+        loader: "json-loader",
       },
       {
         test: /\.css$/,
@@ -40,7 +50,7 @@ module.exports = {
       {
         test: /\.(ico|jpe?g|png|gif|svg)$/,
         loaders: [
-          "file?name=[path][name].[ext]&context=./docs/src",
+          "file-loader?name=[path][name].[ext]&context=./docs/src",
         ],
       },
     ],
