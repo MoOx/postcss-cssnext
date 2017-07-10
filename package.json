@@ -120,7 +120,6 @@
     "prebabelify": "rimraf lib",
     "babelify": "babel src --out-dir lib",
     "prepare": "npm run babelify",
-    "postinstall": "npm run babelify",
     "#lint": "even if there is a .eslintignore symlink, we use an explicit command because windows don't like unix symlink",
     "lint": "eslint --ignore-path .gitignore .",
     "#tape": "to avoid really slow tests, we run babel once & run tests on the result",
