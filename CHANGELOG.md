@@ -1,7 +1,7 @@
 # 3.0.2 - 2017-07-10
 
 - Fixed: remove incorrect "postinstall" npm script
-  ([#404](https://github.com/MoOx/postcss-cssnext/issues/404))@MoOx)
+  ([#404](https://github.com/MoOx/postcss-cssnext/issues/404) - @MoOx)
 
 # 3.0.1 - 2017-07-10
 
@@ -205,7 +205,7 @@ you should probably just add the `--no-url` to keep the CSS as it was.
 # 1.7.1 - 2015-06-19
 
 - Fixed: bullet for browser messages should be visible on Chrome Windows.
-Changed from `〉` to `›`
+Changed from `〉` to `›`
 
 # 1.7.0 - 2015-06-17
 
