@@ -1,3 +1,10 @@
+# 3.0.1 - 2017-07-10
+
+- Fixed: specify the actual require peer dependency for caniuse database (caniuse-lite is used since latest caniuse-api latest major bump)
+  (@MoOx)
+- Fixed: bump dependencies not updated to PostCSS@6
+  ([#401](https://github.com/MoOx/postcss-cssnext/issues/401) - @MoOx)
+
 # 3.0.0 - 2017-07-05
 
 ## Removed: support for node 0.12
