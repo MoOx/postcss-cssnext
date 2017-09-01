@@ -8,28 +8,28 @@ subtitle: How to migrate from cssnext to postcss-cssnext
 ### Short answer: PostCSS
 
 If you're using [PostCSS](https://github.com/postcss/postcss)
-in your build process, and were using `cssnext`,
+in your build process, and you were using `cssnext`,
 you can quickly switch to only `postcss-cssnext`
 (check the [Migration](#migration) section here below).
 
 ### Wait? What is PostCSS?
 
-cssnext was at first designed to be a complete tool, before PostCSS became
-popular; thus, includes some options that don't really belong in a PostCSS
+At first, before PostCSS became
+popular, cssnext was designed to be a complete tool. Thus, cssnext included some options that don't really belong in a PostCSS
 plugin focused on the future of CSS
 (e.g., `import`, `url`, `compress`, `plugins`...) .
 
 These days, most people use [PostCSS](https://github.com/postcss/postcss)
-directly (so they can easily adjust and choose their CSS transformations)
-so we decided to make integration and of cssnext more simple by providing a
+directly (so they can easily adjust and choose their CSS transformations).
+So we decided to make the integration of cssnext simpler by providing a
 simple (real) plugin.
 
-Also, having to maintain severals cssnext and PostCSS runners that does almost
-the same is not optimal.
+Also, having to maintain several cssnext and PostCSS runners that do almost
+the same thing is not optimal.
 
 ### Migration
 
-If you were using cssnext with some options here is what you need to know:
+If you were using cssnext with some options, here is what you need to know:
 
 #### Options
 
@@ -66,7 +66,7 @@ $ npm install postcss postcss-import postcss-url postcss-cssnext postcss-browser
 
 With the previous lines you might think that you are going backward by having a
 more complex boilerplate. But if you look carefully, you will notice that you
-might not be interested by some options.
+might not be interested in some options.
 
 Now that you have the appropriate plugins, here are some examples with some runners
 and previous default cssnext behavior.
@@ -191,6 +191,6 @@ module.exports = {
 }
 ```
 
-**With those examples, you got it.
+**With these examples, you'll have future facing CSS.
 Feel free to adjust the configuration with the appropriate
 [PostCSS runner](/setup/#usage).**
