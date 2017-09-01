@@ -164,22 +164,22 @@
 </svg></span><span class="cssnext-Header-version">3.0.2</span></a><a href="/features/" class="cssnext-Header-nav-item">Features</a><a href="/setup/" class="cssnext-Header-nav-item">Setup</a><a href="/usage/" class="cssnext-Header-nav-item">Usage</a><a href="/playground/" class="cssnext-Header-nav-item">Playground</a></span></div><div class="r-Grid-cell r-minM--2of6"><div class="cssnext-Header-nav"><a href="https://gitter.im/MoOx/postcss-cssnext" class="cssnext-Header-nav-item">Support</a><a href="https://github.com/MoOx/postcss-cssnext" title="GitHub" class="cssnext-Header-nav-item">GitHub</a><a href="https://twitter.com/cssnext" title="Twitter" class="cssnext-Header-nav-item">Twitter</a></div></div></div></header><header class="cssnext-Jumbotron cssnext-Jumbotron--default cssnext-Jumbotron--postcss-html"><div class="r-Grid"><div class="r-Grid-cell"><h1 class="cssnext-Jumbotron-title cssnext-Light">Using postcss-cssnext</h1><strong class="cssnext-Jumbotron-subtitle cssnext-Light">How to migrate from cssnext to postcss-cssnext</strong></div></div></header><section class="r-Grid cssnext-Section"><div class="r-Grid-cell js-markdownIt-TOCOriginalContainer"><h2 id="why-postcss-cssnext-what-is-the-difference-with-cssnext"><a class="markdownIt-Anchor" href="#why-postcss-cssnext-what-is-the-difference-with-cssnext">#</a> Why <strong>postcss-cssnext</strong>? What is the difference with <strong>cssnext</strong>?</h2>
 <h3 id="short-answer-postcss"><a class="markdownIt-Anchor" href="#short-answer-postcss">#</a> Short answer: PostCSS</h3>
 <p>If you’re using <a href="https://github.com/postcss/postcss">PostCSS</a>
-in your build process, and were using <code>cssnext</code>,
+in your build process, and you were using <code>cssnext</code>,
 you can quickly switch to only <code>postcss-cssnext</code>
 (check the <a href="#migration">Migration</a> section here below).</p>
 <h3 id="wait-what-is-postcss"><a class="markdownIt-Anchor" href="#wait-what-is-postcss">#</a> Wait? What is PostCSS?</h3>
-<p>cssnext was at first designed to be a complete tool, before PostCSS became
-popular; thus, includes some options that don’t really belong in a PostCSS
+<p>At first, before PostCSS became
+popular, cssnext was designed to be a complete tool. Thus, cssnext included some options that don’t really belong in a PostCSS
 plugin focused on the future of CSS
 (e.g., <code>import</code>, <code>url</code>, <code>compress</code>, <code>plugins</code>…) .</p>
 <p>These days, most people use <a href="https://github.com/postcss/postcss">PostCSS</a>
-directly (so they can easily adjust and choose their CSS transformations)
-so we decided to make integration and of cssnext more simple by providing a
+directly (so they can easily adjust and choose their CSS transformations).
+So we decided to make the integration of cssnext simpler by providing a
 simple (real) plugin.</p>
-<p>Also, having to maintain severals cssnext and PostCSS runners that does almost
-the same is not optimal.</p>
+<p>Also, having to maintain several cssnext and PostCSS runners that do almost
+the same thing is not optimal.</p>
 <h3 id="migration"><a class="markdownIt-Anchor" href="#migration">#</a> Migration</h3>
-<p>If you were using cssnext with some options here is what you need to know:</p>
+<p>If you were using cssnext with some options, here is what you need to know:</p>
 <h4 id="options"><a class="markdownIt-Anchor" href="#options">#</a> Options</h4>
 <h5 id="options-import-url-compress-messages"><a class="markdownIt-Anchor" href="#options-import-url-compress-messages">#</a> Options <code>import</code>, <code>url</code>, <code>compress</code>, <code>messages</code></h5>
 <ul>
@@ -205,7 +205,7 @@ Just pick up the one you want (or both).</li>
 $ npm <span class="hljs-keyword">install</span> postcss postcss-<span class="hljs-keyword">import</span> postcss-<span class="hljs-keyword">url</span> postcss-cssnext postcss-browser-reporter postcss-reporter [<span class="hljs-comment">--save[-dev]]</span></span></code></pre>
 <p>With the previous lines you might think that you are going backward by having a
 more complex boilerplate. But if you look carefully, you will notice that you
-might not be interested by some options.</p>
+might not be interested in some options.</p>
 <p>Now that you have the appropriate plugins, here are some examples with some runners
 and previous default cssnext behavior.</p>
 <h5 id="postcss-cli"><a class="markdownIt-Anchor" href="#postcss-cli">#</a> <a href="https://www.npmjs.com/package/postcss-cli">postcss-cli</a></h5>
@@ -299,7 +299,7 @@ $ npm install postcss-loader --<span class="hljs-built_in">save</span>-<span cla
     ]
   }
 }</code></pre>
-<p><strong>With those examples, you got it.
+<p><strong>With these examples, you’ll have future facing CSS.
 Feel free to adjust the configuration with the appropriate
 <a href="/setup/#usage">PostCSS runner</a>.</strong></p>
 </div><div class="r-Grid-cell js-markdownIt-TOCPlaceholder"></div></section><div class="cssnext-Jumbotron cssnext-Jumbotron--default cssnext-Center cssnext-Light"><div class="cssnext-Jumbotron-title"><a href="/playground/">Try postcss-cssnext in your browser now.</a></div></div><footer class="cssnext-Footer"><p><span class="SVGInline cssnext-Header-logo-img"><?xml version="1.0" encoding="utf-8"?>
