@@ -247,7 +247,7 @@ For the first argument, you can use a number between 0 and 255 or a percentage.
 
 ## `#rrggbbaa` colors
 
-Allows use to use 4 or 8 digits hexadecimal notation (transpiled to: `rgba()`).
+Allows you to use 4 or 8 digits hexadecimal notation (transpiled to: `rgba()`).
 
 ```css
 body {
