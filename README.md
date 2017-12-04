@@ -13,10 +13,6 @@ It transforms CSS specs into more compatible CSS so you don’t need to wait for
 
 ---
 
-<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/6RNUx3a3Vj2k5iApeppsc9L9/MoOx/postcss-cssnext'>  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/6RNUx3a3Vj2k5iApeppsc9L9/MoOx/postcss-cssnext.svg' /></a>
-
----
-
 ## [Documentation](http://cssnext.io/)
 
 - [Features](http://cssnext.io/features/)
