@@ -16,7 +16,7 @@ const warnForDeprecations = postcss.plugin(
 color.yellow.bold(
   "You are using @apply rule and custom property sets. \n" +
 
-  "This feature won't be included in next the major release "+
+  "This feature won't be included in the next major release "+
   "of postcss-cssnext. \n"
 ) +
 
