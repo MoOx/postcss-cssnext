@@ -77,9 +77,10 @@ and previous default cssnext behavior.
 $ npm install postcss-cli --save-dev
 ```
 
-Here is an example of the json config you might use with something like
+Here is an example of the JS config you might use with something like
 ``$ postcss input.css -o output.css``.
 
+**postcss.config.js**
 ```js
 module.exports = {
   plugins: [
