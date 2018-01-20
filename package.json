@@ -41,7 +41,7 @@
     "postcss-custom-media": "^6.0.0",
     "postcss-custom-properties": "^6.1.0",
     "postcss-custom-selectors": "^4.0.1",
-    "postcss-font-family-system-ui": "^2.0.1",
+    "postcss-font-family-system-ui": "^3.0.0",
     "postcss-font-variant": "^3.0.0",
     "postcss-image-set-polyfill": "^0.3.5",
     "postcss-initial": "^2.0.0",
