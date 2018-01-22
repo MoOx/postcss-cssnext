@@ -1,19 +1,14 @@
 const webpack = require("webpack")
 const ExtractTextPlugin = require("extract-text-webpack-plugin")
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin")
 
 const pkg = require("./package.json")
 const buildConfig = require("./build.config")
 
 module.exports = {
   resolve: {
-    extensions: [
-      "",
-      ".js",
-      ".json",
-      ".css",
-    ],
+    mainFields: ["browser", "main"]
   },
-
   module: {
     // ! \\ note that loaders are executed from bottom to top !
     loaders: [
@@ -37,15 +32,11 @@ module.exports = {
         include: /node_modules\/(chalk|ansi-styles|strip-ansi|postcss-.*)/,
       },
       {
-        test: /\.json$/,
-        loader: "json-loader",
-      },
-      {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract(
-          "style-loader",
-          "css-loader!postcss-loader"
-        ),
+        loader: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: "css-loader",
+        }),
       },
       {
         test: /\.(ico|jpe?g|png|gif|svg)$/,
@@ -56,26 +47,21 @@ module.exports = {
     ],
   },
 
-  postcss: (webpack) => {
-    return [
-      require("postcss-import")({ addDependencyTo: webpack }),
-      require("postcss-url")(),
-      require("./lib/index.js")(), // postcss-cssnext !
-      require("postcss-browser-reporter")(),
-      require("postcss-reporter")(),
-    ]
-  },
-
   plugins: ([
     new webpack.DefinePlugin(buildConfig),
-    new ExtractTextPlugin("[name].css", { disable: !buildConfig.__PROD__ }),
+    new ExtractTextPlugin({
+      filename: "[name].css",
+      disable: !buildConfig.__PROD__,
+    }),
   ].concat(
       buildConfig.__PROD__
       ? [
         new webpack.optimize.DedupePlugin(),
-        new webpack.optimize.UglifyJsPlugin({
-          compress: {
-            warnings: false,
+        new UglifyJsPlugin({
+          uglifyOptions: {
+            compress: {
+              warnings: false
+            }
           },
         }),
       ]

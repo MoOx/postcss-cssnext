@@ -1,10 +1,10 @@
+import stripColor from "strip-ansi"
+
 import cssnext from "../../../../src/index"
 import { version as cssnextVersion } from "../../../../package"
 import messagesStyles from "./messages.styles"
 
 const bullet = "›"
-
-import stripColor from "strip-ansi"
 
 function playground(opts) {
   opts.options = opts.options || {}

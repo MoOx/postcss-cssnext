@@ -1,3 +1,4 @@
+/* eslint-disable import/max-dependencies */
 import path from "path"
 
 import { sync as rm } from "rimraf"
@@ -11,21 +12,19 @@ import rename from "metalsmith-rename"
 // import collections from "metalsmith-collections"
 // import rss from "metalsmith-rss"
 import react from "metalsmith-react"
-
+import nanoLogger from "nano-logger"
 import markdownIt from "markdown-it"
+import watch from "metalsmith-watch"
+
 import markdownOptions from "./markdown"
 import markdownItTocAndAnchor from "markdown-it-toc-and-anchor"
 
-import webpack from "./webpack"
 import pkg from "../../package"
 import buildConfig from "../../build.config"
 import webpackConfig from "../../webpack.config"
-
-// dev
-import watch from "metalsmith-watch"
+import webpack from "./webpack"
 import devServer from "./webpack-dev-server"
 
-import nanoLogger from "nano-logger"
 const log = nanoLogger("./build")
 
 JSON.stringify(buildConfig, null, 2).split("\n").forEach(l => log(l))

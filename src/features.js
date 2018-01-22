@@ -1,4 +1,5 @@
-/* eslint-disable max-len */
+/* eslint-disable import/max-dependencies */
+
 export default {
   /**
    * REMINDER:

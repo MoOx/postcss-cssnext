@@ -5,12 +5,14 @@ import test from "tape"
 import { join } from "path"
 
 import utils from "./utils"
+// eslint-disable-next-line import/named
 import cssnext, { features } from ".."
 
 /**
  * Features tests
  */
 import toSlug from "to-slug-case"
+
 const testFeature = function(
   t,
   feature,

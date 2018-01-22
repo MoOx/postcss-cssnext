@@ -25,10 +25,6 @@ export default (config, options) => {
 
   const devConfig = {
     ...config,
-    debug: true,
-    watch: true,
-    colors: true,
-    progress: true,
     entry: {
       // add devEntries
       ...Object.keys(config.entry)
@@ -49,14 +45,9 @@ export default (config, options) => {
     plugins: [
       ...(config.plugins || []),
       ...(options.plugins || []),
-      new webpack.NoErrorsPlugin(),
       new webpack.HotModuleReplacementPlugin(),
       webpackNanoLogs,
     ],
-    eslint: {
-      ...config.eslint,
-      emitWarning: true,
-    },
   }
 
   return new WebpackDevServer(
