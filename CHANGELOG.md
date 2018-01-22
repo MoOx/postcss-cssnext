@@ -1,3 +1,10 @@
+# 3.1.0 - 2018-01-22
+
+- Update postcss-font-family-system-ui to version 3.0
+  by @JLHwung in [#443](https://github.com/MoOx/postcss-cssnext/pull/443)
+- Update postcss-cli usage example in docs
+  by @RyanZim in [#444](https://github.com/MoOx/postcss-cssnext/pull/444)
+
 # 3.0.2 - 2017-07-10
 
 - Fixed: remove incorrect "postinstall" npm script
