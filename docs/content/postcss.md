@@ -77,21 +77,21 @@ and previous default cssnext behavior.
 $ npm install postcss-cli --save-dev
 ```
 
-Here is an example of the json config you might use with something like
-``$ postcss -c postcss.config.json``.
+Here is an example of the JS config you might use with something like
+``$ postcss input.css -o output.css``.
 
+**postcss.config.js**
 ```js
-{
-  "use": [
-    "postcss-import",
-    "postcss-url",
-    "postcss-cssnext",
+module.exports = {
+  plugins: [
+    require('postcss-import'),
+    require('postcss-url'),
+    require('postcss-cssnext'),
     // add your "plugins" here
     // ...
     // and if you want to compress
-    // "cssnano",
-    "postcss-browser-reporter",
-    "postcss-reporter"
+    // require('cssnano'),
+    require('postcss-browser-reporter')
   ]
 }
 ```
