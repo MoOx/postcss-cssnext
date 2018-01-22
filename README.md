@@ -1,6 +1,6 @@
 # postcss-cssnext
 
-[![Travis Build Status](https://img.shields.io/travis/MoOx/postcss-cssnext.svg?label=unix%20build)](https://travis-ci.org/cssnext/postcss-cssnext)
+[![Travis Build Status](https://img.shields.io/travis/MoOx/postcss-cssnext.svg?label=unix%20build)](https://travis-ci.org/MoOx/postcss-cssnext)
 [![AppVeyor Build Status](https://img.shields.io/appveyor/ci/MoOx/postcss-cssnext.svg?label=windows%20build)](https://ci.appveyor.com/project/MoOx/postcss-cssnext)
 [![Version](https://img.shields.io/npm/v/postcss-cssnext.svg)](https://github.com/MoOx/postcss-cssnext/blob/master/CHANGELOG.md)
 [![Support on gitter chat](https://img.shields.io/badge/support-gitter%20chat-E40255.svg)](https://gitter.im/MoOx/postcss-cssnext)
