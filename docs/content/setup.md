@@ -8,7 +8,8 @@ backgroundModifier: darkTeam
 
 ## Installation
 
-postcss-cssnext is available on [npm](https://www.npmjs.org/package/postcss-cssnext)
+postcss-cssnext is available on
+[npm](https://www.npmjs.org/package/postcss-cssnext)
 
 ```console
 $ npm install postcss postcss-cssnext
@@ -39,7 +40,6 @@ PostCSS runner that suits your workflow:
 ## Wait, what? Where is the previous cssnext interface?
 
 [`cssnext` is dead. Long live to `postcss-cssnext`.](/postcss/)
-
 
 ## Wait, what is PostCSS?
 

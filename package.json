@@ -2,24 +2,13 @@
   "name": "postcss-cssnext",
   "version": "3.1.0",
   "description": "Use tomorrow’s CSS syntax, today",
-  "keywords": [
-    "postcss",
-    "postcss-plugin",
-    "css",
-    "w3c",
-    "cssnext"
-  ],
+  "keywords": ["postcss", "postcss-plugin", "css", "w3c", "cssnext"],
   "author": "Maxime Thirouin",
   "license": "MIT",
   "repository": "https://github.com/MoOx/postcss-cssnext.git",
   "homepage": "http://cssnext.io/",
   "main": "lib/index.js",
-  "files": [
-    "docs/content",
-    "lib",
-    "src",
-    "!**/__tests__"
-  ],
+  "files": ["docs/content", "lib", "src", "!**/__tests__"],
   "dependencies": {
     "autoprefixer": "^7.1.1",
     "caniuse-api": "^2.0.0",
@@ -73,6 +62,7 @@
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.6",
     "highlight.js": "^8.6.0",
+    "husky": "^0.14.3",
     "isogram": "^0.5.0",
     "js-yaml": "^3.3.1",
     "markdown-it": "^4.2.1",
@@ -91,6 +81,8 @@
     "npmpub": "^3.1.0",
     "object-assign": "^3.0.0",
     "opn": "^1.0.2",
+    "prettier": "^1.10.2",
+    "pretty-quick": "^1.2.2",
     "prop-types": "^15.5.10",
     "react": "^15.0.0",
     "react-dom": "^15.0.0",
@@ -106,19 +98,24 @@
     "webpack-nano-logs": "^1.0.0"
   },
   "scripts": {
+    "precommit": "pretty-quick --staged",
+    "format": "prettier --write \"**/*.{js,json,css,md}\"",
     "prebabelify": "rimraf lib",
     "babelify": "babel src --out-dir lib",
     "prepare": "npm run babelify",
-    "#lint": "even if there is a .eslintignore symlink, we use an explicit command because windows don't like unix symlink",
+    "#lint":
+      "even if there is a .eslintignore symlink, we use an explicit command because windows don't like unix symlink",
     "lint": "eslint --ignore-path .gitignore .",
-    "#tape": "to avoid really slow tests, we run babel once & run tests on the result",
+    "#tape":
+      "to avoid really slow tests, we run babel once & run tests on the result",
     "tape": "tape \"lib/__tests__/*.js\"",
     "test": "npm run lint && npm run babelify && npm run tape",
     "docs-build": "babel-node docs/scripts/build",
     "predocs-start": "npm run prepare",
     "docs-start": "npm run docs-build -- --dev --dev-server --open",
     "docs-test": "npm run docs-build -- --production",
-    "_docs-deploy": "GIT_DEPLOY_DIR=docs/dist ./docs/scripts/deploy-to-gh-pages.sh -v",
+    "_docs-deploy":
+      "GIT_DEPLOY_DIR=docs/dist ./docs/scripts/deploy-to-gh-pages.sh -v",
     "docs-deploy": "npm run docs-test && npm run _docs-deploy",
     "release": "npmpub",
     "postrelease": "npm run docs-deploy"
@@ -144,9 +141,7 @@
             "babel-preset-env",
             {
               "targets": {
-                "browsers": [
-                  "last 5 versions"
-                ]
+                "browsers": ["last 5 versions"]
               }
             }
           ],
@@ -162,5 +157,8 @@
       "import/default": "off",
       "react/prefer-stateless-function": "off"
     }
+  },
+  "prettier": {
+    "proseWrap": "always"
   }
 }

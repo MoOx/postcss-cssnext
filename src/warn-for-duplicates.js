@@ -1,29 +1,27 @@
-import postcss from "postcss"
-import color from "chalk"
+import postcss from "postcss";
+import color from "chalk";
 
-const msg = (name) => (
-  `Warning: postcss-cssnext found a duplicate plugin ('${ name }') ` +
+const msg = name =>
+  `Warning: postcss-cssnext found a duplicate plugin ('${name}') ` +
   "in your postcss plugins. " +
-  `This might be inefficient. You should remove '${ name }' from your ` +
-  "postcss plugin list since it's already included by postcss-cssnext."
-)
+  `This might be inefficient. You should remove '${name}' from your ` +
+  "postcss plugin list since it's already included by postcss-cssnext.";
 
-let shouldGlobalWarn = true
-const globalWarning = (
+let shouldGlobalWarn = true;
+const globalWarning =
   "Note: If, for a really specific reason, postcss-cssnext warnings are " +
   "irrelevant for your use case, and you really know what you are doing, " +
   "you can disable this warnings by setting  'warnForDuplicates' option of " +
-  "postcss-cssnext to 'false'."
-)
-export const spotted = []
+  "postcss-cssnext to 'false'.";
+export const spotted = [];
 
 const warnForDuplicates = postcss.plugin(
   "postcss-cssnext-warn-for-duplicates",
   ({ keys, console: messenger }) => {
     return (style, result) => {
-      const pluginNames = []
-      result.processor.plugins.forEach((plugin) => {
-        const name = plugin.postcssPlugin
+      const pluginNames = [];
+      result.processor.plugins.forEach(plugin => {
+        const name = plugin.postcssPlugin;
         if (
           pluginNames.indexOf(name) > -1 &&
           // warn for cssnext plugins only
@@ -31,20 +29,19 @@ const warnForDuplicates = postcss.plugin(
           // show warning once
           spotted.indexOf(name) === -1
         ) {
-          messenger.log(color.yellow.bold(msg(name)))
-          spotted.push(name)
+          messenger.log(color.yellow.bold(msg(name)));
+          spotted.push(name);
+        } else {
+          pluginNames.push(name);
         }
-        else {
-          pluginNames.push(name)
-        }
-      })
+      });
 
       if (spotted.length > 0 && shouldGlobalWarn) {
-        shouldGlobalWarn = false
-        messenger.log(globalWarning)
+        shouldGlobalWarn = false;
+        messenger.log(globalWarning);
       }
-    }
+    };
   }
-)
+);
 
-export default warnForDuplicates
+export default warnForDuplicates;

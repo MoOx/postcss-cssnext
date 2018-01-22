@@ -7,25 +7,24 @@ subtitle: How to migrate from cssnext to postcss-cssnext
 
 ### Short answer: PostCSS
 
-If you're using [PostCSS](https://github.com/postcss/postcss)
-in your build process, and you were using `cssnext`,
-you can quickly switch to only `postcss-cssnext`
-(check the [Migration](#migration) section here below).
+If you're using [PostCSS](https://github.com/postcss/postcss) in your build
+process, and you were using `cssnext`, you can quickly switch to only
+`postcss-cssnext` (check the [Migration](#migration) section here below).
 
 ### Wait? What is PostCSS?
 
-At first, before PostCSS became
-popular, cssnext was designed to be a complete tool. Thus, cssnext included some options that don't really belong in a PostCSS
-plugin focused on the future of CSS
-(e.g., `import`, `url`, `compress`, `plugins`...) .
+At first, before PostCSS became popular, cssnext was designed to be a complete
+tool. Thus, cssnext included some options that don't really belong in a PostCSS
+plugin focused on the future of CSS (e.g., `import`, `url`, `compress`,
+`plugins`...) .
 
 These days, most people use [PostCSS](https://github.com/postcss/postcss)
-directly (so they can easily adjust and choose their CSS transformations).
-So we decided to make the integration of cssnext simpler by providing a
-simple (real) plugin.
+directly (so they can easily adjust and choose their CSS transformations). So we
+decided to make the integration of cssnext simpler by providing a simple (real)
+plugin.
 
-Also, having to maintain several cssnext and PostCSS runners that do almost
-the same thing is not optimal.
+Also, having to maintain several cssnext and PostCSS runners that do almost the
+same thing is not optimal.
 
 ### Migration
 
@@ -35,15 +34,12 @@ If you were using cssnext with some options, here is what you need to know:
 
 ##### Options `import`, `url`, `compress`, `messages`
 
-- `import` options is just
+* `import` options is just
   [`postcss-import`](https://github.com/postcss/postcss-import)
-- `url` option is just
-  [`postcss-url`](https://github.com/postcss/postcss-url)
-- `compress` option is just
-  [`cssnano`](https://github.com/ben-eb/cssnano)
-- `messages`: was a combination of
-  [`postcss-reporter`](https://github.com/postcss/postcss-reporter)
-  and
+* `url` option is just [`postcss-url`](https://github.com/postcss/postcss-url)
+* `compress` option is just [`cssnano`](https://github.com/ben-eb/cssnano)
+* `messages`: was a combination of
+  [`postcss-reporter`](https://github.com/postcss/postcss-reporter) and
   [`postcss-browser-reporter`](https://github.com/postcss/postcss-browser-reporter).
   Just pick up the one you want (or both).
 
@@ -53,7 +49,8 @@ Just add the plugins directly in your PostCSS list.
 
 ##### Options `sourcemap`, `map`, `to`, `from`
 
-These options were just proxy to [PostCSS source map options](https://github.com/postcss/postcss/blob/master/docs/source-maps.md).
+These options were just proxy to
+[PostCSS source map options](https://github.com/postcss/postcss/blob/master/docs/source-maps.md).
 
 #### Examples
 
@@ -68,8 +65,8 @@ With the previous lines you might think that you are going backward by having a
 more complex boilerplate. But if you look carefully, you will notice that you
 might not be interested in some options.
 
-Now that you have the appropriate plugins, here are some examples with some runners
-and previous default cssnext behavior.
+Now that you have the appropriate plugins, here are some examples with some
+runners and previous default cssnext behavior.
 
 ##### [postcss-cli](https://www.npmjs.com/package/postcss-cli)
 
@@ -78,22 +75,23 @@ $ npm install postcss-cli --save-dev
 ```
 
 Here is an example of the JS config you might use with something like
-``$ postcss input.css -o output.css``.
+`$ postcss input.css -o output.css`.
 
 **postcss.config.js**
+
 ```js
 module.exports = {
   plugins: [
-    require('postcss-import'),
-    require('postcss-url'),
-    require('postcss-cssnext'),
+    require("postcss-import"),
+    require("postcss-url"),
+    require("postcss-cssnext"),
     // add your "plugins" here
     // ...
     // and if you want to compress
     // require('cssnano'),
-    require('postcss-browser-reporter')
+    require("postcss-browser-reporter")
   ]
-}
+};
 ```
 
 ##### [grunt-postcss](https://www.npmjs.com/package/grunt-postcss)
@@ -117,11 +115,11 @@ grunt.initConfig({
         // Disable autoprefixer, because it's already included in cssnext
         // require("cssnano")({ autoprefixer: false }),
         require("postcss-browser-reporter")(),
-        require("postcss-reporter")(),
+        require("postcss-reporter")()
       ]
     },
     dist: {
-      src: 'css/*.css'
+      src: "css/*.css"
     }
   }
 });
@@ -135,27 +133,28 @@ $ npm install gulp-postcss --save-dev
 ```
 
 ```js
-var gulp = require('gulp')
-var postcss = require('gulp-postcss')
+var gulp = require("gulp");
+var postcss = require("gulp-postcss");
 
-gulp.task('css', function () {
-  return (
-    gulp.src('./src/*.css')
-    .pipe(postcss([
-      require("postcss-import")(),
-      require("postcss-url")(),
-      require("postcss-cssnext")(),
-      // add your "plugins" here
-      // ...
-      // and if you want to compress
-      // Disable autoprefixer, because it's already included in cssnext
-      // require("cssnano")({ autoprefixer: false }),
-      require("postcss-browser-reporter")(),
-      require("postcss-reporter")(),
-    ]))
-    .pipe(gulp.dest('./dest'))
-  )
-})
+gulp.task("css", function() {
+  return gulp
+    .src("./src/*.css")
+    .pipe(
+      postcss([
+        require("postcss-import")(),
+        require("postcss-url")(),
+        require("postcss-cssnext")(),
+        // add your "plugins" here
+        // ...
+        // and if you want to compress
+        // Disable autoprefixer, because it's already included in cssnext
+        // require("cssnano")({ autoprefixer: false }),
+        require("postcss-browser-reporter")(),
+        require("postcss-reporter")()
+      ])
+    )
+    .pipe(gulp.dest("./dest"));
+});
 ```
 
 ##### [postcss-loader](https://www.npmjs.com/package/postcss-loader)
@@ -170,12 +169,12 @@ module.exports = {
   module: {
     loaders: [
       {
-          test:   /\.css$/,
-          loader: "style-loader!css-loader!postcss-loader"
+        test: /\.css$/,
+        loader: "style-loader!css-loader!postcss-loader"
       }
     ]
   },
-  postcss: function (webpack) {
+  postcss: function(webpack) {
     return [
       require("postcss-import")({ addDependencyTo: webpack }),
       require("postcss-url")(),
@@ -185,12 +184,11 @@ module.exports = {
       // and if you want to compress,
       // just use css-loader option that already use cssnano under the hood
       require("postcss-browser-reporter")(),
-      require("postcss-reporter")(),
-    ]
+      require("postcss-reporter")()
+    ];
   }
-}
+};
 ```
 
-**With these examples, you'll have future facing CSS.
-Feel free to adjust the configuration with the appropriate
-[PostCSS runner](/setup/#usage).**
+**With these examples, you'll have future facing CSS. Feel free to adjust the
+configuration with the appropriate [PostCSS runner](/setup/#usage).**

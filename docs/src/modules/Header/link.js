@@ -1,26 +1,23 @@
-import React, { Component } from "react";import PropTypes from "prop-types"
-import cx from "classnames"
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import cx from "classnames";
 
 class HeaderLink extends Component {
   render() {
-    const currentUrl = "/" + this.context.file.url
+    const currentUrl = "/" + this.context.file.url;
 
     return (
       <a
         {...this.props}
-        className={ cx({
-          ...(
-            this.props.className
-              ? { [this.props.className]: true }
-              : {}
-          ),
+        className={cx({
+          ...(this.props.className ? { [this.props.className]: true } : {}),
           "cssnext-Header-nav-item": true,
-          "cssnext-Header-nav-item--active": currentUrl === this.props.href,
-        }) }
+          "cssnext-Header-nav-item--active": currentUrl === this.props.href
+        })}
       >
-        { this.props.children }
+        {this.props.children}
       </a>
-    )
+    );
   }
 }
 
@@ -29,17 +26,17 @@ HeaderLink.propTypes = {
   className: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.object,
-    PropTypes.array,
+    PropTypes.array
   ]),
   children: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.array,
-    PropTypes.object,
-  ]).isRequired,
-}
+    PropTypes.object
+  ]).isRequired
+};
 
 HeaderLink.contextTypes = {
-  file: PropTypes.object.isRequired,
-}
+  file: PropTypes.object.isRequired
+};
 
-export default HeaderLink
+export default HeaderLink;

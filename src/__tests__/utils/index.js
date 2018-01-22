@@ -1,8 +1,8 @@
 /**
  * Module dependencies
  */
-import fs from "fs"
-import { join } from "path"
+import fs from "fs";
+import { join } from "path";
 
 /**
  * Exposes functions
@@ -17,8 +17,8 @@ export default {
    * @return the fixture filename
    */
   fixturePath(name, ext) {
-    ext = (ext !== undefined ? ext : ".css")
-    return join("src", "__tests__", "fixtures", name + ext)
+    ext = ext !== undefined ? ext : ".css";
+    return join("src", "__tests__", "fixtures", name + ext);
   },
 
   /**
@@ -28,7 +28,7 @@ export default {
    * @return the fixture content
    */
   readFixture(name, ext) {
-    return fs.readFileSync(this.fixturePath(name, ext), "utf8")
+    return fs.readFileSync(this.fixturePath(name, ext), "utf8");
   },
 
   /**
@@ -37,9 +37,15 @@ export default {
    * @return the fixture browsers string
    */
   readFixtureBrowsers(name) {
-    const filePath = this.fixturePath(name, ".browsers")
-    const exists = fs.existsSync(filePath)
-    return exists && fs.readFileSync(filePath, "utf8").split("\n")[0].trim()
+    const filePath = this.fixturePath(name, ".browsers");
+    const exists = fs.existsSync(filePath);
+    return (
+      exists &&
+      fs
+        .readFileSync(filePath, "utf8")
+        .split("\n")[0]
+        .trim()
+    );
   },
 
   /**
@@ -48,6 +54,6 @@ export default {
    * @param {String} content
    */
   write(name, content) {
-    fs.writeFileSync(name, content)
-  },
-}
+    fs.writeFileSync(name, content);
+  }
+};

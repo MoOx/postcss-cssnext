@@ -8,8 +8,8 @@ backgroundModifier: darkRoad
 @[toc]
 
 **Note that according to your [browser scope](/usage/#browsers) some
-transformation can be skipped to avoid extra useless output.**
-Eg: if you use don't cover IE 8, rem fallback and rgba fallback might be skipped.
+transformation can be skipped to avoid extra useless output.** Eg: if you use
+don't cover IE 8, rem fallback and rgba fallback might be skipped.
 
 ## automatic vendor prefixes
 
@@ -17,12 +17,11 @@ Vendor prefixes are automatically added (and removed if deprecated/useless
 depending on your browser scope) using
 **[autoprefixer](https://github.com/postcss/autoprefixer)**).
 
-
 ## custom properties &amp; `var()`
 
-The current transformation for custom properties aims to provide a
-future-proof way of using a **limited to `:root` selector**
-of the features provided by native CSS custom properties.
+The current transformation for custom properties aims to provide a future-proof
+way of using a **limited to `:root` selector** of the features provided by
+native CSS custom properties.
 
 ```css
 :root {
@@ -34,23 +33,23 @@ a {
 }
 ```
 
-⚠️ [_The definitions are **limited to `:root` selector.**_](https://github.com/postcss/postcss-custom-properties#readme)
+⚠️
+[_The definitions are **limited to `:root` selector.**_](https://github.com/postcss/postcss-custom-properties#readme)
 
-[Specification](http://www.w3.org/TR/css-variables/)
-|
+[Specification](http://www.w3.org/TR/css-variables/) |
 [Plugin documentation](https://github.com/postcss/postcss-custom-properties)
 
 ## custom properties set &amp; `@apply`
 
-Allows you to store a set of properties in a named custom property,
-then reference them in other style rules.
+Allows you to store a set of properties in a named custom property, then
+reference them in other style rules.
 
 ```css
 :root {
   --danger-theme: {
     color: white;
     background-color: red;
-  };
+  }
 }
 
 .danger {
@@ -58,10 +57,10 @@ then reference them in other style rules.
 }
 ```
 
-⚠️ [_The definitions are **limited to `:root` selector.**_](https://github.com/postcss/postcss-custom-properties#readme)
+⚠️
+[_The definitions are **limited to `:root` selector.**_](https://github.com/postcss/postcss-custom-properties#readme)
 
-[Specification](https://tabatkins.github.io/specs/css-apply-rule)
-|
+[Specification](https://tabatkins.github.io/specs/css-apply-rule) |
 [Plugin documentation](https://github.com/pascalduez/postcss-apply)
 
 ## reduced `calc()`
@@ -79,8 +78,7 @@ h1 {
 }
 ```
 
-[Specification](https://github.com/MoOx/reduce-css-calc#readme)
-|
+[Specification](https://github.com/MoOx/reduce-css-calc#readme) |
 [Plugin documentation](https://github.com/postcss/postcss-calc)
 
 ## custom media queries
@@ -96,8 +94,7 @@ A nice way to have semantic media queries
 }
 ```
 
-[Specification](https://drafts.csswg.org/mediaqueries-5/#custom-mq)
-|
+[Specification](https://drafts.csswg.org/mediaqueries-5/#custom-mq) |
 [Plugin documentation](https://github.com/postcss/postcss-custom-media)
 
 ## media queries ranges
@@ -117,8 +114,7 @@ Allows to replace min-/max- with `<=` & `>=` (syntax easier to read)
 }
 ```
 
-[Specification](http://dev.w3.org/csswg/mediaqueries/#mq-ranges)
-|
+[Specification](http://dev.w3.org/csswg/mediaqueries/#mq-ranges) |
 [Plugin documentation](https://github.com/postcss/postcss-media-minmax)
 
 ## custom selectors
@@ -133,17 +129,13 @@ Allows you to create your own selectors
   /* styles for your buttons */
 }
 :--button:--enter {
-  /*
-    hover/focus styles for your button
-
-    Read more about :enter proposal
-    http://discourse.specifiction.org/t/a-common-pseudo-class-for-hover-and-focus/877
-   */
+  /* hover/focus styles for your button */
+  /* Read more about :enter proposal */
+  /* http://discourse.specifiction.org/t/a-common-pseudo-class-for-hover-and-focus/877 */
 }
 ```
 
-[Specification](http://dev.w3.org/csswg/css-extensions/#custom-selectors)
-|
+[Specification](http://dev.w3.org/csswg/css-extensions/#custom-selectors) |
 [Plugin documentation](https://github.com/postcss/postcss-custom-selector)
 
 ## nesting
@@ -169,26 +161,25 @@ a {
 }
 ```
 
-[Specification](http://tabatkins.github.io/specs/css-nesting/)
-|
+[Specification](http://tabatkins.github.io/specs/css-nesting/) |
 [Plugin documentation](https://github.com/jonathantneal/postcss-nesting)
 
 ## `image-set()` function
 
-Allows you to set different images for each kind of resolution of user device. 
+Allows you to set different images for each kind of resolution of user device.
 
 ```css
 .foo {
-    background-image: image-set(url(img/test.png) 1x,
-                                url(img/test-2x.png) 2x,
-                                url(my-img-print.png) 600dpi);
+  background-image: image-set(
+    url(img/test.png) 1x,
+    url(img/test-2x.png) 2x,
+    url(my-img-print.png) 600dpi
+  );
 }
 ```
 
-[Specification](https://drafts.csswg.org/css-images-3/#image-set-notation)
-|
+[Specification](https://drafts.csswg.org/css-images-3/#image-set-notation) |
 [Plugin documentation](https://github.com/SuperOl3g/postcss-image-set-polyfill)
-
 
 ## `color()` function
 
@@ -199,17 +190,16 @@ a {
   color: color(red alpha(-10%));
 }
 
-  a:hover {
-    color: color(red blackness(80%));
-  }
+a:hover {
+  color: color(red blackness(80%));
+}
 ```
 
 There is a
 [lot of color modifiers available](https://github.com/postcss/postcss-color-function#list-of-color-adjuster),
 so be sure to check them !
 
-[Specification](http://dev.w3.org/csswg/css-color/#modifying-colors)
-|
+[Specification](http://dev.w3.org/csswg/css-color/#modifying-colors) |
 [Plugin documentation](https://github.com/postcss/postcss-color-function)
 
 ## `hwb()` function
@@ -222,14 +212,13 @@ body {
 }
 ```
 
-[Specification](http://dev.w3.org/csswg/css-color/#the-hwb-notation)
-|
+[Specification](http://dev.w3.org/csswg/css-color/#the-hwb-notation) |
 [Plugin documentation](https://github.com/postcss/postcss-color-hwb)
 
 ## `gray()` function
 
-Allows you to use more than 50 shades of gray (transpiled to: `rgba()`).
-For the first argument, you can use a number between 0 and 255 or a percentage.
+Allows you to use more than 50 shades of gray (transpiled to: `rgba()`). For the
+first argument, you can use a number between 0 and 255 or a percentage.
 
 ```css
 .foo {
@@ -241,8 +230,7 @@ For the first argument, you can use a number between 0 and 255 or a percentage.
 }
 ```
 
-[Specification](http://dev.w3.org/csswg/css-color/#grays)
-|
+[Specification](http://dev.w3.org/csswg/css-color/#grays) |
 [Plugin documentation](https://github.com/postcss/postcss-color-gray)
 
 ## `#rrggbbaa` colors
@@ -255,14 +243,13 @@ body {
 }
 ```
 
-[Specification](http://dev.w3.org/csswg/css-color/#hex-notation)
-|
+[Specification](http://dev.w3.org/csswg/css-color/#hex-notation) |
 [Plugin documentation](https://github.com/postcss/postcss-color-hex-alpha)
 
 ## `rgba` function (`rgb` fallback)
 
-Add solid colors fallback for rgba colors
-(if your browser scope cover old browsers, eg: IE8).
+Add solid colors fallback for rgba colors (if your browser scope cover old
+browsers, eg: IE8).
 
 ```css
 body {
@@ -271,8 +258,7 @@ body {
 }
 ```
 
-[Specification](http://www.w3.org/TR/css3-color/)
-|
+[Specification](http://www.w3.org/TR/css3-color/) |
 [Plugin documentation](https://github.com/postcss/postcss-color-rgba-fallback)
 
 ## `rebeccapurple` color
@@ -286,8 +272,7 @@ body {
 }
 ```
 
-[Specification](http://dev.w3.org/csswg/css-color/#valdef-color-rebeccapurple)
-|
+[Specification](http://dev.w3.org/csswg/css-color/#valdef-color-rebeccapurple) |
 [Plugin documentation](https://github.com/postcss/postcss-color-rebeccapurple)
 
 ## `font-variant` property
@@ -308,9 +293,7 @@ table {
 at the support of
 [font feature settings](http://caniuse.com/#feat=font-feature).
 
-
-[Specification](http://dev.w3.org/csswg/css-fonts/#propdef-font-variant)
-|
+[Specification](http://dev.w3.org/csswg/css-fonts/#propdef-font-variant) |
 [Plugin documentation](https://github.com/postcss/postcss-font-variant)
 
 ## `filter` property
@@ -320,12 +303,11 @@ for Firefox < 35.
 
 ```css
 .blur {
-    filter: blur(4px);
+  filter: blur(4px);
 }
 ```
 
-[Specification](http://www.w3.org/TR/filter-effects/)
-|
+[Specification](http://www.w3.org/TR/filter-effects/) |
 [Plugin documentation](https://github.com/iamvdo/pleeease-filters)
 
 ## `initial` value
@@ -334,9 +316,8 @@ Allow you to use `initial` value for any value. This value represents the value
 specified as the property’s initial value. **It does not mean browser default.**
 
 For example, for the `display` property, `initial` always means `inline`,
-because that’s the designated initial value of the property.
-As an example, using `div { display: initial }`, will **not** be `block`, but
-`inline`.
+because that’s the designated initial value of the property. As an example,
+using `div { display: initial }`, will **not** be `block`, but `inline`.
 
 ```css
 div {
@@ -352,14 +333,12 @@ div {
 }
 ```
 
-[Specification](http://www.w3.org/TR/css3-values/#common-keywords)
-|
+[Specification](http://www.w3.org/TR/css3-values/#common-keywords) |
 [Plugin documentation](https://github.com/maximkoretskiy/postcss-initial)
 
 ## `rem` unit (`px` fallback)
 
-`rem` fallback to `px`
-(if your browser scope cover old browsers, eg: IE8).
+`rem` fallback to `px` (if your browser scope cover old browsers, eg: IE8).
 
 ```css
 h1 {
@@ -367,8 +346,7 @@ h1 {
 }
 ```
 
-[Specification](http://www.w3.org/TR/css3-values/#rem-unit)
-|
+[Specification](http://www.w3.org/TR/css3-values/#rem-unit) |
 [Plugin documentation](https://github.com/robwierzbowski/node-pixrem)
 
 ## `:any-link` pseudo-class
@@ -381,10 +359,8 @@ nav :any-link {
 }
 ```
 
-[Specification](http://dev.w3.org/csswg/selectors/#any-link-pseudo)
-|
+[Specification](http://dev.w3.org/csswg/selectors/#any-link-pseudo) |
 [Plugin documentation](https://github.com/jonathantneal/postcss-pseudo-class-any-link)
-
 
 ## `:matches` pseudo-class
 
@@ -396,10 +372,8 @@ p:matches(:first-child, .special) {
 }
 ```
 
-[Specification](http://dev.w3.org/csswg/selectors-4/#matches)
-|
+[Specification](http://dev.w3.org/csswg/selectors-4/#matches) |
 [Plugin documentation](https://github.com/postcss/postcss-selector-matches)
-
 
 ## `:not` pseudo-class
 
@@ -412,14 +386,12 @@ p:not(:first-child, .special) {
 }
 ```
 
-[Specification](http://dev.w3.org/csswg/selectors-4/#negation)
-|
+[Specification](http://dev.w3.org/csswg/selectors-4/#negation) |
 [Plugin documentation](https://github.com/postcss/postcss-selector-NOT)
 
 ## `::` pseudo syntax (`:` fallback)
 
-Adjust `::` to `:`
-(if your browser scope cover old browsers, eg: IE8).
+Adjust `::` to `:` (if your browser scope cover old browsers, eg: IE8).
 
 ```css
 a::before {
@@ -427,13 +399,13 @@ a::before {
 }
 ```
 
-[Specification](http://www.w3.org/TR/css3-selectors/#pseudo-elements)
-|
+[Specification](http://www.w3.org/TR/css3-selectors/#pseudo-elements) |
 [Plugin documentation](https://github.com/axa-ch/postcss-pseudoelements)
 
 ## `overflow-wrap` property (`word-wrap` fallback)
 
-Converts `overflow-wrap` to `word-wrap` (many browser support only the old [word-wrap](http://caniuse.com/#feat=wordwrap) property).
+Converts `overflow-wrap` to `word-wrap` (many browser support only the old
+[word-wrap](http://caniuse.com/#feat=wordwrap) property).
 
 ```css
 body {
@@ -441,8 +413,7 @@ body {
 }
 ```
 
-[Specification](https://drafts.csswg.org/css-text-3/#propdef-word-wrap)
-|
+[Specification](https://drafts.csswg.org/css-text-3/#propdef-word-wrap) |
 [Plugin documentation](https://github.com/MattDiMu/postcss-replace-overflow-wrap)
 
 ## attribute case insensitive
@@ -450,25 +421,24 @@ body {
 Allows you to use case insensitive attributes.
 
 ```css
-[frame=hsides i] {
+[frame="hsides" i] {
   border-style: solid none;
 }
 ```
 
-[Specification](https://www.w3.org/TR/selectors4/#attribute-case)
-|
+[Specification](https://www.w3.org/TR/selectors4/#attribute-case) |
 [Plugin documentation](https://github.com/Semigradsky/postcss-attribute-case-insensitive)
 
 ## `rgb()` function (functional-notation)
 
-Allows you to use its new syntax consisting of space-separated arguments and
-an optional slash-separated opacity. 
+Allows you to use its new syntax consisting of space-separated arguments and an
+optional slash-separated opacity.
 
 You can also use number for color channels.
 
 The alpha value accepts percentage as well as number and has been added to
-`rgb()` as optional argument. As a result, `rgb()` and `rgba()` are now
-aliases of each other.
+`rgb()` as optional argument. As a result, `rgb()` and `rgba()` are now aliases
+of each other.
 
 ```css
 div {
@@ -476,14 +446,13 @@ div {
 }
 ```
 
-[Specification](https://drafts.csswg.org/css-color/#rgb-functions)
-|
+[Specification](https://drafts.csswg.org/css-color/#rgb-functions) |
 [Plugin documentation](https://github.com/dmarchena/postcss-color-rgb)
 
 ## `hsl()` function (functional-notation)
 
-Allows you to use its new syntax consisting of space-separated arguments and
-an optional slash-separated opacity. 
+Allows you to use its new syntax consisting of space-separated arguments and an
+optional slash-separated opacity.
 
 `hsl()` now accepts angles (`deg`, `grad`, `rad`, `turn`) as well as numbers for
 hues and an optional percentage or number for alpha value. So, `hsl()` and
@@ -496,13 +465,13 @@ div {
 }
 ```
 
-[Specification](https://drafts.csswg.org/css-color/#the-hsl-notation)
-|
+[Specification](https://drafts.csswg.org/css-color/#the-hsl-notation) |
 [Plugin documentation](https://github.com/dmarchena/postcss-color-hsl)
 
 ## `system-ui` font-family
 
-Allows you to use `system-ui` generic font-family. The current transformation provides a practical font-family list as fallback.
+Allows you to use `system-ui` generic font-family. The current transformation
+provides a practical font-family list as fallback.
 
 ```css
 body {
@@ -517,10 +486,9 @@ body {
 ## @todo
 
 Any omissions of the CSS specifications (even in draft) that are subject to be
-handled by cssnext are not intentional.
-You can take a look at the [list of features that are waiting to be implemented](https://github.com/MoOx/postcss-cssnext/issues?q=is%3Aopen+is%3Aissue+label%3A%22type%3A+feature+request%22).
+handled by cssnext are not intentional. You can take a look at the
+[list of features that are waiting to be implemented](https://github.com/MoOx/postcss-cssnext/issues?q=is%3Aopen+is%3Aissue+label%3A%22type%3A+feature+request%22).
 Feel free to work on a feature ready to be added, or
-[open a new issue](https://github.com/MoOx/postcss-cssnext/issues/new)
-if you find something that should be handled.
-Keep in mind that, as of right now, this project is intended to support new CSS
-*syntax* only.
+[open a new issue](https://github.com/MoOx/postcss-cssnext/issues/new) if you
+find something that should be handled. Keep in mind that, as of right now, this
+project is intended to support new CSS _syntax_ only.

@@ -10,15 +10,13 @@ const monthNames = [
   "sept.",
   "oct.",
   "nov.",
-  "déc.",
-]
+  "déc."
+];
 
 export default function formatDate(date) {
-  date = new Date(date)
+  date = new Date(date);
 
-  return [
-    date.getDate(),
-    monthNames[date.getMonth()],
-    date.getFullYear(),
-  ].join(" ")
+  return [date.getDate(), monthNames[date.getMonth()], date.getFullYear()].join(
+    " "
+  );
 }

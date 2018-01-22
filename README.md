@@ -5,21 +5,21 @@
 [![Version](https://img.shields.io/npm/v/postcss-cssnext.svg)](https://github.com/MoOx/postcss-cssnext/blob/master/CHANGELOG.md)
 [![Support on gitter chat](https://img.shields.io/badge/support-gitter%20chat-E40255.svg)](https://gitter.im/MoOx/postcss-cssnext)
 
-
 > PostCSS plugin to use tomorrow’s CSS syntax, today.
 
-PostCSS-cssnext is a PostCSS plugin that helps you to use the latest CSS syntax today.
-It transforms CSS specs into more compatible CSS so you don’t need to wait for browser support.
+PostCSS-cssnext is a PostCSS plugin that helps you to use the latest CSS syntax
+today. It transforms CSS specs into more compatible CSS so you don’t need to
+wait for browser support.
 
 ---
 
 ## [Documentation](http://cssnext.io/)
 
-- [Features](http://cssnext.io/features/)
-- [Setup](http://cssnext.io/setup/)
-- [Usage](http://cssnext.io/usage/)
-- [Playground](http://cssnext.io/playground/)
-- [Migration to postcss-cssnext](http://cssnext.io/postcss/)
+* [Features](http://cssnext.io/features/)
+* [Setup](http://cssnext.io/setup/)
+* [Usage](http://cssnext.io/usage/)
+* [Playground](http://cssnext.io/playground/)
+* [Migration to postcss-cssnext](http://cssnext.io/postcss/)
 
 For questions and support please visit the
 [support chat](https://gitter.im/MoOx/postcss-cssnext).

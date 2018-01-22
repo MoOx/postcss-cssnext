@@ -1,43 +1,45 @@
-import tape from "tape"
+import tape from "tape";
 
-import postcss from "postcss"
-import cssnext from ".."
-import { resetWarning } from "../warn-for-deprecations"
+import postcss from "postcss";
+import cssnext from "..";
+import { resetWarning } from "../warn-for-deprecations";
 
-const reportFail = (t) => (error) => {
-  console.log(error)
-  t.fail()
-}
+const reportFail = t => error => {
+  console.log(error);
+  t.fail();
+};
 
-tape("cssnext warnForDeprecation option", (t) => {
-  const messages = []
-  resetWarning()
+tape("cssnext warnForDeprecation option", t => {
+  const messages = [];
+  resetWarning();
   const instance = postcss([
     cssnext({
-      console: { log: (msg) => messages.push(msg) },
-    }),
-  ])
+      console: { log: msg => messages.push(msg) }
+    })
+  ]);
 
   instance.process("body{}").then(() => {
     t.equal(
       messages.length,
       0,
       "should not add warning there is no deprecated stuff"
-    )
-    t.end()
-  }, reportFail(t))
-})
+    );
+    t.end();
+  }, reportFail(t));
+});
 
-tape("cssnext warnForDeprecation option", (t) => {
-  const messages = []
-  resetWarning()
+tape("cssnext warnForDeprecation option", t => {
+  const messages = [];
+  resetWarning();
   const instance = postcss([
     cssnext({
-      console: { log: (msg) => messages.push(msg) },
-    }),
-  ])
+      console: { log: msg => messages.push(msg) }
+    })
+  ]);
 
-  instance.process(`
+  instance
+    .process(
+      `
 :root {
   --toolbar-theme: {
     border: 1px solid green;
@@ -47,13 +49,14 @@ tape("cssnext warnForDeprecation option", (t) => {
   @apply --toolbar-theme;
   @apply --toolbar-theme;
 }
-  `)
-  .then(() => {
-    t.equal(
-      messages.length,
-      1,
-      "should add a single warning if there are deprecated stuff"
+  `
     )
-    t.end()
-  }, reportFail(t))
-})
+    .then(() => {
+      t.equal(
+        messages.length,
+        1,
+        "should add a single warning if there are deprecated stuff"
+      );
+      t.end();
+    }, reportFail(t));
+});

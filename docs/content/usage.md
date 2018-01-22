@@ -10,15 +10,13 @@ little bit. You will find below all the available **options**.
 
 ## `browsers`
 
-_(default:
-[browserslist default](https://github.com/ai/browserslist#readme)
+_(default: [browserslist default](https://github.com/ai/browserslist#readme)
 `> 1%, last 2 versions, Firefox ESR, Opera 12.1`)_
 
-Allows you to specify your browser scope.
-**This option enables or disables `features` according to
-[caniuse](http://caniuse.com/) database.**
-This is the exact same option that you might know from Autoprefixer.
-Since cssnext includes Autoprefixer, the option is propagated.
+Allows you to specify your browser scope. **This option enables or disables
+`features` according to [caniuse](http://caniuse.com/) database.** This is the
+exact same option that you might know from Autoprefixer. Since cssnext includes
+Autoprefixer, the option is propagated.
 
 See [Browserslist](https://github.com/ai/browserslist#queries) queries syntax to
 adjust this option to your needs.
@@ -32,14 +30,15 @@ _(default: all features depending on your `browsers` options)_
 
 **You should probably use `browsers` option instead of this one.**
 
-Object containing key of features to enable/disable.
-_Features are enabled by default: no key means feature is enabled_. Keys can be found by looking in [src/features.js](https://github.com/MoOx/postcss-cssnext/blob/master/src/features.js).
+Object containing key of features to enable/disable. _Features are enabled by
+default: no key means feature is enabled_. Keys can be found by looking in
+[src/features.js](https://github.com/MoOx/postcss-cssnext/blob/master/src/features.js).
 
 ```js
 //eg: disable custom properties support
 
-var postcss = require("postcss")
-var cssnext = require("postcss-cssnext")
+var postcss = require("postcss");
+var cssnext = require("postcss-cssnext");
 
 postcss([
   cssnext({
@@ -47,17 +46,17 @@ postcss([
       customProperties: false
     }
   })
-])
+]);
 ```
 
-Each feature is based on PostCSS plugins & can get its own options.
-To pass options to a feature, you can just pass an object to the feature:
+Each feature is based on PostCSS plugins & can get its own options. To pass
+options to a feature, you can just pass an object to the feature:
 
 ```js
 //eg: pass variables
 
-var postcss = require("postcss")
-var cssnext = require("postcss-cssnext")
+var postcss = require("postcss");
+var cssnext = require("postcss-cssnext");
 
 postcss([
   cssnext({
@@ -65,12 +64,12 @@ postcss([
       customProperties: {
         variables: {
           mainColor: "red",
-          altColor: "blue",
+          altColor: "blue"
         }
       }
     }
   })
-])
+]);
 ```
 
 ## `warnForDuplicates`
@@ -79,9 +78,8 @@ _(default: true)_
 
 This option should be left with its default value, unless you really know what
 you are doing.  
-**Most tutorial on the internet are wrong (probably 99%)
-and show provide duplicates in their examples.
-(eg: autoprefixer + cssnext - but cssnext already includes autoprefixer).**  
+**Most tutorial on the internet are wrong (probably 99%) and show provide duplicates
+in their examples. (eg: autoprefixer + cssnext - but cssnext already includes autoprefixer).**  
 _In order to fix this, here is a warning. You are welcome._
 
 ## `warnForDeprecations`
@@ -89,7 +87,7 @@ _In order to fix this, here is a warning. You are welcome._
 _(default: true)_
 
 This option should be left with its default value, unless you are aware of the
-risk and plan to handle the situation.  
+risk and plan to handle the situation.
 
 ---
 

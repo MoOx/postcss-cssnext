@@ -1,55 +1,46 @@
-import React, { Component } from "react";import PropTypes from "prop-types"
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 
-import Header from "../Header"
-import Footer from "../Footer"
-import Analytics from "../Analytics"
+import Header from "../Header";
+import Footer from "../Footer";
+import Analytics from "../Analytics";
 
 class Body extends Component {
   render() {
-    const {
-      version,
-      scripts,
-      footer,
-    } = this.props
+    const { version, scripts, footer } = this.props;
 
     return (
       <body className="cssnext-Body">
-
         <Header />
 
-        { this.props.children }
+        {this.props.children}
 
-        <Footer playground={ footer } />
-        {
-          scripts.map(script => (
-            <script key={ script } src={ `${ script }?${ version }` }/>
-          ))
-        }
+        <Footer playground={footer} />
+        {scripts.map(script => (
+          <script key={script} src={`${script}?${version}`} />
+        ))}
 
         <Analytics />
       </body>
-    )
+    );
   }
 }
 
 Body.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.array,
-    PropTypes.object,
-  ]).isRequired,
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
   scripts: PropTypes.array,
   version: PropTypes.string,
-  footer: PropTypes.bool,
-}
+  footer: PropTypes.bool
+};
 
 Body.contextTypes = {
   pkg: PropTypes.object.isRequired,
-  file: PropTypes.object.isRequired,
-}
+  file: PropTypes.object.isRequired
+};
 
 Body.defaultProps = {
   scripts: [],
-  footer: true,
-}
+  footer: true
+};
 
-export default Body
+export default Body;
