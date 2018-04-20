@@ -6,7 +6,7 @@ node_js:
   - 6
   - 4
 
-script:
-  - npm run test
-  # travis take is weird, disabled for now
-  #- if [[ $(node --version) != v0.* ]]; then; npm run docs-test; fi
+before_install:
+  - npm i -g npm@latest
+install:
+  - npm ci
