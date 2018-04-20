@@ -14,7 +14,8 @@ matrix:
 
 install:
   - ps: Install-Product node $env:nodejs_version
-  - npm install
+  - npm install -g npm@latest
+  - npm ci
 
 test_script:
   - node --version
