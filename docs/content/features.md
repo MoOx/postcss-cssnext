@@ -8,14 +8,14 @@ backgroundModifier: darkRoad
 @[toc]
 
 **Note that according to your [browser scope](/usage/#browsers) some
-transformation can be skipped to avoid extra useless output.** Eg: if you use
+transformations can be skipped to avoid extra useless output.** Eg: if you use
 don't cover IE 8, rem fallback and rgba fallback might be skipped.
 
 ## automatic vendor prefixes
 
 Vendor prefixes are automatically added (and removed if deprecated/useless
 depending on your browser scope) using
-**[autoprefixer](https://github.com/postcss/autoprefixer)**).
+**[autoprefixer](https://github.com/postcss/autoprefixer)**.
 
 ## custom properties &amp; `var()`
 
@@ -83,7 +83,7 @@ h1 {
 
 ## custom media queries
 
-A nice way to have semantic media queries
+A nice way to have semantic media queries.
 
 ```css
 @custom-media --small-viewport (max-width: 30em);
@@ -99,7 +99,7 @@ A nice way to have semantic media queries
 
 ## media queries ranges
 
-Allows to replace min-/max- with `<=` & `>=` (syntax easier to read)
+Allows to replace min-/max- with `<=` & `>=` (syntax easier to read).
 
 ```css
 @media (width >= 500px) and (width <= 1200px) {
@@ -119,7 +119,7 @@ Allows to replace min-/max- with `<=` & `>=` (syntax easier to read)
 
 ## custom selectors
 
-Allows you to create your own selectors
+Allows you to create your own selectors.
 
 ```css
 @custom-selector :--button button, .button;
@@ -140,7 +140,7 @@ Allows you to create your own selectors
 
 ## nesting
 
-Allows you to nest selectors
+Allows you to nest selectors.
 
 ```scss
 a {
@@ -183,7 +183,7 @@ Allows you to set different images for each kind of resolution of user device.
 
 ## `color()` function
 
-A color function to modify colors (transpiled to: `rgba()`)
+A color function to modify colors (transpiled to: `rgba()`).
 
 ```css
 a {
@@ -248,7 +248,7 @@ body {
 
 ## `rgba` function (`rgb` fallback)
 
-Add solid colors fallback for rgba colors (if your browser scope cover old
+Add solid colors fallback for rgba colors (if your browser scope covers old
 browsers, eg: IE8).
 
 ```css
@@ -264,7 +264,7 @@ body {
 ## `rebeccapurple` color
 
 Allows you to use the new color keyword as a homage to
-[Eric Meyer’s daughter](https://github.com/postcss/postcss-color-rebeccapurple#why-this-plugin-)
+[Eric Meyer’s daughter](https://github.com/postcss/postcss-color-rebeccapurple#why-this-plugin-).
 
 ```css
 body {
@@ -277,7 +277,7 @@ body {
 
 ## `font-variant` property
 
-properties (fallback: `font-feature-settings`)
+properties (fallback: `font-feature-settings`).
 
 ```css
 h2 {
@@ -312,7 +312,7 @@ for Firefox < 35.
 
 ## `initial` value
 
-Allow you to use `initial` value for any value. This value represents the value
+Allows you to use `initial` value for any property. This value represents the value
 specified as the property’s initial value. **It does not mean browser default.**
 
 For example, for the `display` property, `initial` always means `inline`,
@@ -338,7 +338,7 @@ div {
 
 ## `rem` unit (`px` fallback)
 
-`rem` fallback to `px` (if your browser scope cover old browsers, eg: IE8).
+`rem` fallback to `px` (if your browser scope covers old browsers, eg: IE8).
 
 ```css
 h1 {
@@ -378,7 +378,7 @@ p:matches(:first-child, .special) {
 ## `:not` pseudo-class
 
 Allows you to use `:not()` level 4 (which allows multiples selector).
-Transformed to `:not()` level 3 (which allow only one selector)`.
+Transformed to `:not()` level 3 (which allows only one selector).
 
 ```css
 p:not(:first-child, .special) {
@@ -391,7 +391,7 @@ p:not(:first-child, .special) {
 
 ## `::` pseudo syntax (`:` fallback)
 
-Adjust `::` to `:` (if your browser scope cover old browsers, eg: IE8).
+Adjust `::` to `:` (if your browser scope covers old browsers, eg: IE8).
 
 ```css
 a::before {
@@ -404,7 +404,7 @@ a::before {
 
 ## `overflow-wrap` property (`word-wrap` fallback)
 
-Converts `overflow-wrap` to `word-wrap` (many browser support only the old
+Converts `overflow-wrap` to `word-wrap` (many browsers only support the old
 [word-wrap](http://caniuse.com/#feat=wordwrap) property).
 
 ```css
