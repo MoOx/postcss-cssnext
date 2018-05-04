@@ -2,9 +2,9 @@
 
 environment:
   matrix:
+    - nodejs_version: 10
     - nodejs_version: 8
     - nodejs_version: 6
-    - nodejs_version: 4
 
 version: "{build}"
 build: off
