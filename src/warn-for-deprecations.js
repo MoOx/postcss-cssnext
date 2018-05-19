@@ -23,7 +23,7 @@ const warnForDeprecations = postcss.plugin(
                   "spec is yet considered deprecated and alternative solutions are being " +
                   "discussed. \n"
               ) +
-              "Read more about the reason here https://github.com/pascalduez/postcss-apply."
+              "Read more about the reason here https://github.com/pascalduez/postcss-apply ."
           );
         }
       });
