@@ -1,4 +1,4 @@
-<!doctype html><html lang="fr" class="r-VerticalRhythm"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=Edge"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="icon" type="image/png" href="/favicon.png"/><title>Using postcss-cssnext</title><link rel="stylesheet" href="/index.css"/><link rel="alternate" href="/feed.xml" title="Using postcss-cssnext" type="application/atom+xml"/></head><body class="cssnext-Body"><header class="cssnext-Header js-Headroom"><div class="r-Grid"><div class="r-Grid-cell r-minM--4of6"><span class="cssnext-Header-nav"><a class="cssnext-Header-logo" href="/"><span class="SVGInline SVGInline--cleaned cssnext-Header-logo-img"><?xml version="1.0" encoding="utf-8"?>
+<!doctype html><html lang="fr" class="r-VerticalRhythm"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=Edge"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="icon" type="image/png" href="/favicon.png"/><title>Using postcss-cssnext</title><link rel="stylesheet" href="/index.css"/><link rel="alternate" href="/feed.xml" title="Using postcss-cssnext" type="application/atom+xml"/></head><body class="cssnext-Body"><header class="cssnext-Header js-Headroom"><div style="background:#000;color:#fff;text-align:center;"><a href="https://moox.io/blog/deprecating-cssnext/"><code>postcss-cssnext</code> has been deprecated in favor or <code>postcss-preset-env</code>. Read more.</a></div><div class="r-Grid"><div class="r-Grid-cell r-minM--4of6"><span class="cssnext-Header-nav"><a class="cssnext-Header-logo" href="/"><span class="SVGInline SVGInline--cleaned cssnext-Header-logo-img"><?xml version="1.0" encoding="utf-8"?>
 
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg class="SVGInline-svg SVGInline--cleaned-svg cssnext-Header-logo-img-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -163,21 +163,20 @@
 </g>
 </svg></span><span class="cssnext-Header-version">3.1.0</span></a><a href="/features/" class="cssnext-Header-nav-item">Features</a><a href="/setup/" class="cssnext-Header-nav-item">Setup</a><a href="/usage/" class="cssnext-Header-nav-item">Usage</a><a href="/playground/" class="cssnext-Header-nav-item">Playground</a></span></div><div class="r-Grid-cell r-minM--2of6"><div class="cssnext-Header-nav"><a href="https://gitter.im/MoOx/postcss-cssnext" class="cssnext-Header-nav-item">Support</a><a href="https://github.com/MoOx/postcss-cssnext" title="GitHub" class="cssnext-Header-nav-item">GitHub</a><a href="https://twitter.com/cssnext" title="Twitter" class="cssnext-Header-nav-item">Twitter</a></div></div></div></header><header class="cssnext-Jumbotron cssnext-Jumbotron--default cssnext-Jumbotron--postcss-html"><div class="r-Grid"><div class="r-Grid-cell"><h1 class="cssnext-Jumbotron-title cssnext-Light">Using postcss-cssnext</h1><strong class="cssnext-Jumbotron-subtitle cssnext-Light">How to migrate from cssnext to postcss-cssnext</strong></div></div></header><section class="r-Grid cssnext-Section"><div class="r-Grid-cell js-markdownIt-TOCOriginalContainer"><h2 id="why-postcss-cssnext-what-is-the-difference-with-cssnext"><a class="markdownIt-Anchor" href="#why-postcss-cssnext-what-is-the-difference-with-cssnext">#</a> Why <strong>postcss-cssnext</strong>? What is the difference with <strong>cssnext</strong>?</h2>
 <h3 id="short-answer-postcss"><a class="markdownIt-Anchor" href="#short-answer-postcss">#</a> Short answer: PostCSS</h3>
-<p>If you’re using <a href="https://github.com/postcss/postcss">PostCSS</a>
-in your build process, and you were using <code>cssnext</code>,
-you can quickly switch to only <code>postcss-cssnext</code>
-(check the <a href="#migration">Migration</a> section here below).</p>
+<p>If you’re using <a href="https://github.com/postcss/postcss">PostCSS</a> in your build
+process, and you were using <code>cssnext</code>, you can quickly switch to only
+<code>postcss-cssnext</code> (check the <a href="#migration">Migration</a> section here below).</p>
 <h3 id="wait-what-is-postcss"><a class="markdownIt-Anchor" href="#wait-what-is-postcss">#</a> Wait? What is PostCSS?</h3>
-<p>At first, before PostCSS became
-popular, cssnext was designed to be a complete tool. Thus, cssnext included some options that don’t really belong in a PostCSS
-plugin focused on the future of CSS
-(e.g., <code>import</code>, <code>url</code>, <code>compress</code>, <code>plugins</code>…) .</p>
+<p>At first, before PostCSS became popular, cssnext was designed to be a complete
+tool. Thus, cssnext included some options that don’t really belong in a PostCSS
+plugin focused on the future of CSS (e.g., <code>import</code>, <code>url</code>, <code>compress</code>,
+<code>plugins</code>…) .</p>
 <p>These days, most people use <a href="https://github.com/postcss/postcss">PostCSS</a>
-directly (so they can easily adjust and choose their CSS transformations).
-So we decided to make the integration of cssnext simpler by providing a
-simple (real) plugin.</p>
-<p>Also, having to maintain several cssnext and PostCSS runners that do almost
-the same thing is not optimal.</p>
+directly (so they can easily adjust and choose their CSS transformations). So we
+decided to make the integration of cssnext simpler by providing a simple (real)
+plugin.</p>
+<p>Also, having to maintain several cssnext and PostCSS runners that do almost the
+same thing is not optimal.</p>
 <h3 id="migration"><a class="markdownIt-Anchor" href="#migration">#</a> Migration</h3>
 <p>If you were using cssnext with some options, here is what you need to know:</p>
 <h4 id="options"><a class="markdownIt-Anchor" href="#options">#</a> Options</h4>
@@ -185,20 +184,18 @@ the same thing is not optimal.</p>
 <ul>
 <li><code>import</code> options is just
 <a href="https://github.com/postcss/postcss-import"><code>postcss-import</code></a></li>
-<li><code>url</code> option is just
-<a href="https://github.com/postcss/postcss-url"><code>postcss-url</code></a></li>
-<li><code>compress</code> option is just
-<a href="https://github.com/ben-eb/cssnano"><code>cssnano</code></a></li>
+<li><code>url</code> option is just <a href="https://github.com/postcss/postcss-url"><code>postcss-url</code></a></li>
+<li><code>compress</code> option is just <a href="https://github.com/ben-eb/cssnano"><code>cssnano</code></a></li>
 <li><code>messages</code>: was a combination of
-<a href="https://github.com/postcss/postcss-reporter"><code>postcss-reporter</code></a>
-and
+<a href="https://github.com/postcss/postcss-reporter"><code>postcss-reporter</code></a> and
 <a href="https://github.com/postcss/postcss-browser-reporter"><code>postcss-browser-reporter</code></a>.
 Just pick up the one you want (or both).</li>
 </ul>
 <h5 id="option-plugins"><a class="markdownIt-Anchor" href="#option-plugins">#</a> Option <code>plugins</code></h5>
 <p>Just add the plugins directly in your PostCSS list.</p>
 <h5 id="options-sourcemap-map-to-from"><a class="markdownIt-Anchor" href="#options-sourcemap-map-to-from">#</a> Options <code>sourcemap</code>, <code>map</code>, <code>to</code>, <code>from</code></h5>
-<p>These options were just proxy to <a href="https://github.com/postcss/postcss/blob/master/docs/source-maps.md">PostCSS source map options</a>.</p>
+<p>These options were just proxy to
+<a href="https://github.com/postcss/postcss/blob/master/docs/source-maps.md">PostCSS source map options</a>.</p>
 <h4 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h4>
 <p>If you were using cssnext with default options, you might just need this:</p>
 <pre><code class="language-console">$ npm <span class="hljs-operator"><span class="hljs-keyword">uninstall</span> cssnext [<span class="hljs-comment">--save[-dev]]</span>
@@ -206,8 +203,8 @@ $ npm <span class="hljs-keyword">install</span> postcss postcss-<span class="hlj
 <p>With the previous lines you might think that you are going backward by having a
 more complex boilerplate. But if you look carefully, you will notice that you
 might not be interested in some options.</p>
-<p>Now that you have the appropriate plugins, here are some examples with some runners
-and previous default cssnext behavior.</p>
+<p>Now that you have the appropriate plugins, here are some examples with some
+runners and previous default cssnext behavior.</p>
 <h5 id="postcss-cli"><a class="markdownIt-Anchor" href="#postcss-cli">#</a> <a href="https://www.npmjs.com/package/postcss-cli">postcss-cli</a></h5>
 <pre><code class="language-console">$ npm install postcss-cli --<span class="hljs-built_in">save</span>-<span class="hljs-built_in">dev</span></code></pre>
 <p>Here is an example of the JS config you might use with something like
@@ -215,16 +212,16 @@ and previous default cssnext behavior.</p>
 <p><strong>postcss.config.js</strong></p>
 <pre><code class="language-js"><span class="hljs-built_in">module</span>.exports = {
   plugins: [
-    <span class="hljs-built_in">require</span>(<span class="hljs-string">'postcss-import'</span>),
-    <span class="hljs-built_in">require</span>(<span class="hljs-string">'postcss-url'</span>),
-    <span class="hljs-built_in">require</span>(<span class="hljs-string">'postcss-cssnext'</span>),
+    <span class="hljs-built_in">require</span>(<span class="hljs-string">"postcss-import"</span>),
+    <span class="hljs-built_in">require</span>(<span class="hljs-string">"postcss-url"</span>),
+    <span class="hljs-built_in">require</span>(<span class="hljs-string">"postcss-cssnext"</span>),
     <span class="hljs-comment">// add your "plugins" here</span>
     <span class="hljs-comment">// ...</span>
     <span class="hljs-comment">// and if you want to compress</span>
     <span class="hljs-comment">// require('cssnano'),</span>
-    <span class="hljs-built_in">require</span>(<span class="hljs-string">'postcss-browser-reporter'</span>)
+    <span class="hljs-built_in">require</span>(<span class="hljs-string">"postcss-browser-reporter"</span>)
   ]
-}</code></pre>
+};</code></pre>
 <h5 id="grunt-postcss"><a class="markdownIt-Anchor" href="#grunt-postcss">#</a> <a href="https://www.npmjs.com/package/grunt-postcss">grunt-postcss</a></h5>
 <pre><code class="language-console">$ npm uninstall grunt-cssnext --<span class="hljs-built_in">save</span>-<span class="hljs-built_in">dev</span>
 $ npm install grunt-postcss --<span class="hljs-built_in">save</span>-<span class="hljs-built_in">dev</span></code></pre>
@@ -241,38 +238,39 @@ $ npm install grunt-postcss --<span class="hljs-built_in">save</span>-<span clas
         <span class="hljs-comment">// Disable autoprefixer, because it's already included in cssnext</span>
         <span class="hljs-comment">// require("cssnano")({ autoprefixer: false }),</span>
         <span class="hljs-built_in">require</span>(<span class="hljs-string">"postcss-browser-reporter"</span>)(),
-        <span class="hljs-built_in">require</span>(<span class="hljs-string">"postcss-reporter"</span>)(),
+        <span class="hljs-built_in">require</span>(<span class="hljs-string">"postcss-reporter"</span>)()
       ]
     },
     dist: {
-      src: <span class="hljs-string">'css/*.css'</span>
+      src: <span class="hljs-string">"css/*.css"</span>
     }
   }
 });</code></pre>
 <h5 id="gulp-postcss"><a class="markdownIt-Anchor" href="#gulp-postcss">#</a> <a href="https://www.npmjs.com/package/gulp-postcss">gulp-postcss</a></h5>
 <pre><code class="language-console">$ npm uninstall gulp-cssnext --<span class="hljs-built_in">save</span>-<span class="hljs-built_in">dev</span>
 $ npm install gulp-postcss --<span class="hljs-built_in">save</span>-<span class="hljs-built_in">dev</span></code></pre>
-<pre><code class="language-js"><span class="hljs-keyword">var</span> gulp = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>)
-<span class="hljs-keyword">var</span> postcss = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-postcss'</span>)
+<pre><code class="language-js"><span class="hljs-keyword">var</span> gulp = <span class="hljs-built_in">require</span>(<span class="hljs-string">"gulp"</span>);
+<span class="hljs-keyword">var</span> postcss = <span class="hljs-built_in">require</span>(<span class="hljs-string">"gulp-postcss"</span>);
 
-gulp.task(<span class="hljs-string">'css'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
-  <span class="hljs-keyword">return</span> (
-    gulp.src(<span class="hljs-string">'./src/*.css'</span>)
-    .pipe(postcss([
-      <span class="hljs-built_in">require</span>(<span class="hljs-string">"postcss-import"</span>)(),
-      <span class="hljs-built_in">require</span>(<span class="hljs-string">"postcss-url"</span>)(),
-      <span class="hljs-built_in">require</span>(<span class="hljs-string">"postcss-cssnext"</span>)(),
-      <span class="hljs-comment">// add your "plugins" here</span>
-      <span class="hljs-comment">// ...</span>
-      <span class="hljs-comment">// and if you want to compress</span>
-      <span class="hljs-comment">// Disable autoprefixer, because it's already included in cssnext</span>
-      <span class="hljs-comment">// require("cssnano")({ autoprefixer: false }),</span>
-      <span class="hljs-built_in">require</span>(<span class="hljs-string">"postcss-browser-reporter"</span>)(),
-      <span class="hljs-built_in">require</span>(<span class="hljs-string">"postcss-reporter"</span>)(),
-    ]))
-    .pipe(gulp.dest(<span class="hljs-string">'./dest'</span>))
-  )
-})</code></pre>
+gulp.task(<span class="hljs-string">"css"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> gulp
+    .src(<span class="hljs-string">"./src/*.css"</span>)
+    .pipe(
+      postcss([
+        <span class="hljs-built_in">require</span>(<span class="hljs-string">"postcss-import"</span>)(),
+        <span class="hljs-built_in">require</span>(<span class="hljs-string">"postcss-url"</span>)(),
+        <span class="hljs-built_in">require</span>(<span class="hljs-string">"postcss-cssnext"</span>)(),
+        <span class="hljs-comment">// add your "plugins" here</span>
+        <span class="hljs-comment">// ...</span>
+        <span class="hljs-comment">// and if you want to compress</span>
+        <span class="hljs-comment">// Disable autoprefixer, because it's already included in cssnext</span>
+        <span class="hljs-comment">// require("cssnano")({ autoprefixer: false }),</span>
+        <span class="hljs-built_in">require</span>(<span class="hljs-string">"postcss-browser-reporter"</span>)(),
+        <span class="hljs-built_in">require</span>(<span class="hljs-string">"postcss-reporter"</span>)()
+      ])
+    )
+    .pipe(gulp.dest(<span class="hljs-string">"./dest"</span>));
+});</code></pre>
 <h5 id="postcss-loader"><a class="markdownIt-Anchor" href="#postcss-loader">#</a> <a href="https://www.npmjs.com/package/postcss-loader">postcss-loader</a></h5>
 <pre><code class="language-console">$ npm uninstall cssnext-loader --<span class="hljs-built_in">save</span>-<span class="hljs-built_in">dev</span>
 $ npm install postcss-loader --<span class="hljs-built_in">save</span>-<span class="hljs-built_in">dev</span></code></pre>
@@ -280,12 +278,12 @@ $ npm install postcss-loader --<span class="hljs-built_in">save</span>-<span cla
   <span class="hljs-built_in">module</span>: {
     loaders: [
       {
-          test:   <span class="hljs-regexp">/\.css$/</span>,
-          loader: <span class="hljs-string">"style-loader!css-loader!postcss-loader"</span>
+        test: <span class="hljs-regexp">/\.css$/</span>,
+        loader: <span class="hljs-string">"style-loader!css-loader!postcss-loader"</span>
       }
     ]
   },
-  postcss: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">webpack</span>) </span>{
+  postcss: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">webpack</span>) </span>{
     <span class="hljs-keyword">return</span> [
       <span class="hljs-built_in">require</span>(<span class="hljs-string">"postcss-import"</span>)({ addDependencyTo: webpack }),
       <span class="hljs-built_in">require</span>(<span class="hljs-string">"postcss-url"</span>)(),
@@ -295,13 +293,12 @@ $ npm install postcss-loader --<span class="hljs-built_in">save</span>-<span cla
       <span class="hljs-comment">// and if you want to compress,</span>
       <span class="hljs-comment">// just use css-loader option that already use cssnano under the hood</span>
       <span class="hljs-built_in">require</span>(<span class="hljs-string">"postcss-browser-reporter"</span>)(),
-      <span class="hljs-built_in">require</span>(<span class="hljs-string">"postcss-reporter"</span>)(),
-    ]
+      <span class="hljs-built_in">require</span>(<span class="hljs-string">"postcss-reporter"</span>)()
+    ];
   }
-}</code></pre>
-<p><strong>With these examples, you’ll have future facing CSS.
-Feel free to adjust the configuration with the appropriate
-<a href="/setup/#usage">PostCSS runner</a>.</strong></p>
+};</code></pre>
+<p><strong>With these examples, you’ll have future facing CSS. Feel free to adjust the
+configuration with the appropriate <a href="/setup/#usage">PostCSS runner</a>.</strong></p>
 </div><div class="r-Grid-cell js-markdownIt-TOCPlaceholder"></div></section><div class="cssnext-Jumbotron cssnext-Jumbotron--default cssnext-Center cssnext-Light"><div class="cssnext-Jumbotron-title"><a href="/playground/">Try postcss-cssnext in your browser now.</a></div></div><footer class="cssnext-Footer"><p><span class="SVGInline cssnext-Header-logo-img"><?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -465,5 +462,5 @@ Feel free to adjust the configuration with the appropriate
 	</linearGradient>
 	<path fill="url(#SVGID_12_)" d="M255.475,13.569l-4.391,21.613h-0.932l4.373-21.613H255.475z"/>
 </g>
-</svg></span> is brought to you by <a href="https://twitter.com/MoOx">@MoOx</a> &amp; <a href="https://github.com/MoOx/postcss-cssnext/graphs/contributors">some other contributors</a>.</p><small><a href="/it-s-cssnext-not-CSSNext">Note: it&#x27;s cssnext, not CSSNext</a><span style="opacity:.4;margin-left:1rem;"><a href="/credits">Credits</a> | <a href="https://github.com/MoOx/postcss-cssnext/edit/master/docs/content/postcss.md">Edit this page</a></span></small></footer><script src="/index.js?98cdd121df98d0656b39"></script><script>
+</svg></span> is brought to you by <a href="https://twitter.com/MoOx">@MoOx</a> &amp; <a href="https://github.com/MoOx/postcss-cssnext/graphs/contributors">some other contributors</a>.</p><small><a href="/it-s-cssnext-not-CSSNext">Note: it&#x27;s cssnext, not CSSNext</a><span style="opacity:.4;margin-left:1rem;"><a href="/credits">Credits</a> | <a href="https://github.com/MoOx/postcss-cssnext/edit/master/docs/content/postcss.md">Edit this page</a></span></small></footer><script src="/index.js?398f4984599f15c9a996"></script><script>
 !function(c,s,S,n,e,x,t){c.GoogleAnalyticsObject=S;c[S]||(c[S]=function(){(c[S].q=c[S].q||[]).push(arguments)});c[S].l=+new Date;x=s.createElement(n);t=s.getElementsByTagName(n)[0];x.src=e;t.parentNode.insertBefore(x,t)}(window,document,'ga','script','//www.google-analytics.com/analytics.js');ga('create','UA-55403963-1','auto');ga('send','pageview');</script></body></html>

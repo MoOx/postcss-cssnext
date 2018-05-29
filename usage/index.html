@@ -1,4 +1,4 @@
-<!doctype html><html lang="fr" class="r-VerticalRhythm"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=Edge"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="icon" type="image/png" href="/favicon.png"/><title>Using postcss-cssnext</title><link rel="stylesheet" href="/index.css"/><link rel="alternate" href="/feed.xml" title="Using postcss-cssnext" type="application/atom+xml"/></head><body class="cssnext-Body"><header class="cssnext-Header js-Headroom"><div class="r-Grid"><div class="r-Grid-cell r-minM--4of6"><span class="cssnext-Header-nav"><a class="cssnext-Header-logo" href="/"><span class="SVGInline SVGInline--cleaned cssnext-Header-logo-img"><?xml version="1.0" encoding="utf-8"?>
+<!doctype html><html lang="fr" class="r-VerticalRhythm"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=Edge"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="icon" type="image/png" href="/favicon.png"/><title>Using postcss-cssnext</title><link rel="stylesheet" href="/index.css"/><link rel="alternate" href="/feed.xml" title="Using postcss-cssnext" type="application/atom+xml"/></head><body class="cssnext-Body"><header class="cssnext-Header js-Headroom"><div style="background:#000;color:#fff;text-align:center;"><a href="https://moox.io/blog/deprecating-cssnext/"><code>postcss-cssnext</code> has been deprecated in favor or <code>postcss-preset-env</code>. Read more.</a></div><div class="r-Grid"><div class="r-Grid-cell r-minM--4of6"><span class="cssnext-Header-nav"><a class="cssnext-Header-logo" href="/"><span class="SVGInline SVGInline--cleaned cssnext-Header-logo-img"><?xml version="1.0" encoding="utf-8"?>
 
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg class="SVGInline-svg SVGInline--cleaned-svg cssnext-Header-logo-img-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -180,14 +180,12 @@
 <p>When you have correctly <a href="/setup/">setup</a> cssnext, you might want to tweak it a
 little bit. You will find below all the available <strong>options</strong>.</p>
 <h2 id="browsers"><a class="markdownIt-Anchor" href="#browsers">#</a> <code>browsers</code></h2>
-<p><em>(default:
-<a href="https://github.com/ai/browserslist#readme">browserslist default</a>
+<p><em>(default: <a href="https://github.com/ai/browserslist#readme">browserslist default</a>
 <code>&gt; 1%, last 2 versions, Firefox ESR, Opera 12.1</code>)</em></p>
-<p>Allows you to specify your browser scope.
-<strong>This option enables or disables <code>features</code> according to
-<a href="http://caniuse.com/">caniuse</a> database.</strong>
-This is the exact same option that you might know from Autoprefixer.
-Since cssnext includes Autoprefixer, the option is propagated.</p>
+<p>Allows you to specify your browser scope. <strong>This option enables or disables
+<code>features</code> according to <a href="http://caniuse.com/">caniuse</a> database.</strong> This is the
+exact same option that you might know from Autoprefixer. Since cssnext includes
+Autoprefixer, the option is propagated.</p>
 <p>See <a href="https://github.com/ai/browserslist#queries">Browserslist</a> queries syntax to
 adjust this option to your needs.</p>
 <p><em>Note: if you don’t specify this option, Browserslist will automatically try to
@@ -195,12 +193,13 @@ find a <code>browserslist</code> config file or use its default value.</em></p>
 <h2 id="features"><a class="markdownIt-Anchor" href="#features">#</a> <code>features</code></h2>
 <p><em>(default: all features depending on your <code>browsers</code> options)</em></p>
 <p><strong>You should probably use <code>browsers</code> option instead of this one.</strong></p>
-<p>Object containing key of features to enable/disable.
-<em>Features are enabled by default: no key means feature is enabled</em>. Keys can be found by looking in <a href="https://github.com/MoOx/postcss-cssnext/blob/master/src/features.js">src/features.js</a>.</p>
+<p>Object containing key of features to enable/disable. <em>Features are enabled by
+default: no key means feature is enabled</em>. Keys can be found by looking in
+<a href="https://github.com/MoOx/postcss-cssnext/blob/master/src/features.js">src/features.js</a>.</p>
 <pre><code class="language-js"><span class="hljs-comment">//eg: disable custom properties support</span>
 
-<span class="hljs-keyword">var</span> postcss = <span class="hljs-built_in">require</span>(<span class="hljs-string">"postcss"</span>)
-<span class="hljs-keyword">var</span> cssnext = <span class="hljs-built_in">require</span>(<span class="hljs-string">"postcss-cssnext"</span>)
+<span class="hljs-keyword">var</span> postcss = <span class="hljs-built_in">require</span>(<span class="hljs-string">"postcss"</span>);
+<span class="hljs-keyword">var</span> cssnext = <span class="hljs-built_in">require</span>(<span class="hljs-string">"postcss-cssnext"</span>);
 
 postcss([
   cssnext({
@@ -208,13 +207,13 @@ postcss([
       customProperties: <span class="hljs-literal">false</span>
     }
   })
-])</code></pre>
-<p>Each feature is based on PostCSS plugins &amp; can get its own options.
-To pass options to a feature, you can just pass an object to the feature:</p>
+]);</code></pre>
+<p>Each feature is based on PostCSS plugins &amp; can get its own options. To pass
+options to a feature, you can just pass an object to the feature:</p>
 <pre><code class="language-js"><span class="hljs-comment">//eg: pass variables</span>
 
-<span class="hljs-keyword">var</span> postcss = <span class="hljs-built_in">require</span>(<span class="hljs-string">"postcss"</span>)
-<span class="hljs-keyword">var</span> cssnext = <span class="hljs-built_in">require</span>(<span class="hljs-string">"postcss-cssnext"</span>)
+<span class="hljs-keyword">var</span> postcss = <span class="hljs-built_in">require</span>(<span class="hljs-string">"postcss"</span>);
+<span class="hljs-keyword">var</span> cssnext = <span class="hljs-built_in">require</span>(<span class="hljs-string">"postcss-cssnext"</span>);
 
 postcss([
   cssnext({
@@ -222,19 +221,18 @@ postcss([
       customProperties: {
         variables: {
           mainColor: <span class="hljs-string">"red"</span>,
-          altColor: <span class="hljs-string">"blue"</span>,
+          altColor: <span class="hljs-string">"blue"</span>
         }
       }
     }
   })
-])</code></pre>
+]);</code></pre>
 <h2 id="warnforduplicates"><a class="markdownIt-Anchor" href="#warnforduplicates">#</a> <code>warnForDuplicates</code></h2>
 <p><em>(default: true)</em></p>
 <p>This option should be left with its default value, unless you really know what
 you are doing.<br>
-<strong>Most tutorial on the internet are wrong (probably 99%)
-and show provide duplicates in their examples.
-(eg: autoprefixer + cssnext - but cssnext already includes autoprefixer).</strong><br>
+<strong>Most tutorial on the internet are wrong (probably 99%) and show provide duplicates
+in their examples. (eg: autoprefixer + cssnext - but cssnext already includes autoprefixer).</strong><br>
 <em>In order to fix this, here is a warning. You are welcome.</em></p>
 <h2 id="warnfordeprecations"><a class="markdownIt-Anchor" href="#warnfordeprecations">#</a> <code>warnForDeprecations</code></h2>
 <p><em>(default: true)</em></p>
@@ -408,5 +406,5 @@ browsing the
 	</linearGradient>
 	<path fill="url(#SVGID_12_)" d="M255.475,13.569l-4.391,21.613h-0.932l4.373-21.613H255.475z"/>
 </g>
-</svg></span> is brought to you by <a href="https://twitter.com/MoOx">@MoOx</a> &amp; <a href="https://github.com/MoOx/postcss-cssnext/graphs/contributors">some other contributors</a>.</p><small><a href="/it-s-cssnext-not-CSSNext">Note: it&#x27;s cssnext, not CSSNext</a><span style="opacity:.4;margin-left:1rem;"><a href="/credits">Credits</a> | <a href="https://github.com/MoOx/postcss-cssnext/edit/master/docs/content/usage.md">Edit this page</a></span></small></footer><script src="/index.js?98cdd121df98d0656b39"></script><script>
+</svg></span> is brought to you by <a href="https://twitter.com/MoOx">@MoOx</a> &amp; <a href="https://github.com/MoOx/postcss-cssnext/graphs/contributors">some other contributors</a>.</p><small><a href="/it-s-cssnext-not-CSSNext">Note: it&#x27;s cssnext, not CSSNext</a><span style="opacity:.4;margin-left:1rem;"><a href="/credits">Credits</a> | <a href="https://github.com/MoOx/postcss-cssnext/edit/master/docs/content/usage.md">Edit this page</a></span></small></footer><script src="/index.js?398f4984599f15c9a996"></script><script>
 !function(c,s,S,n,e,x,t){c.GoogleAnalyticsObject=S;c[S]||(c[S]=function(){(c[S].q=c[S].q||[]).push(arguments)});c[S].l=+new Date;x=s.createElement(n);t=s.getElementsByTagName(n)[0];x.src=e;t.parentNode.insertBefore(x,t)}(window,document,'ga','script','//www.google-analytics.com/analytics.js');ga('create','UA-55403963-1','auto');ga('send','pageview');</script></body></html>

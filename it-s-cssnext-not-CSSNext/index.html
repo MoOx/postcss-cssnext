@@ -1,4 +1,4 @@
-<!doctype html><html lang="fr" class="r-VerticalRhythm"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=Edge"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="icon" type="image/png" href="/favicon.png"/><title>It&#x27;s cssnext, not CSSNext</title><link rel="stylesheet" href="/index.css"/><link rel="alternate" href="/feed.xml" title="It&#x27;s cssnext, not CSSNext" type="application/atom+xml"/></head><body class="cssnext-Body"><header class="cssnext-Header js-Headroom"><div class="r-Grid"><div class="r-Grid-cell r-minM--4of6"><span class="cssnext-Header-nav"><a class="cssnext-Header-logo" href="/"><span class="SVGInline SVGInline--cleaned cssnext-Header-logo-img"><?xml version="1.0" encoding="utf-8"?>
+<!doctype html><html lang="fr" class="r-VerticalRhythm"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=Edge"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="icon" type="image/png" href="/favicon.png"/><title>It&#x27;s cssnext, not CSSNext</title><link rel="stylesheet" href="/index.css"/><link rel="alternate" href="/feed.xml" title="It&#x27;s cssnext, not CSSNext" type="application/atom+xml"/></head><body class="cssnext-Body"><header class="cssnext-Header js-Headroom"><div style="background:#000;color:#fff;text-align:center;"><a href="https://moox.io/blog/deprecating-cssnext/"><code>postcss-cssnext</code> has been deprecated in favor or <code>postcss-preset-env</code>. Read more.</a></div><div class="r-Grid"><div class="r-Grid-cell r-minM--4of6"><span class="cssnext-Header-nav"><a class="cssnext-Header-logo" href="/"><span class="SVGInline SVGInline--cleaned cssnext-Header-logo-img"><?xml version="1.0" encoding="utf-8"?>
 
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg class="SVGInline-svg SVGInline--cleaned-svg cssnext-Header-logo-img-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -162,20 +162,20 @@
 	<path fill="url(#SVGID_12_)" d="M255.475,13.569l-4.391,21.613h-0.932l4.373-21.613H255.475z"/>
 </g>
 </svg></span><span class="cssnext-Header-version">3.1.0</span></a><a href="/features/" class="cssnext-Header-nav-item">Features</a><a href="/setup/" class="cssnext-Header-nav-item">Setup</a><a href="/usage/" class="cssnext-Header-nav-item">Usage</a><a href="/playground/" class="cssnext-Header-nav-item">Playground</a></span></div><div class="r-Grid-cell r-minM--2of6"><div class="cssnext-Header-nav"><a href="https://gitter.im/MoOx/postcss-cssnext" class="cssnext-Header-nav-item">Support</a><a href="https://github.com/MoOx/postcss-cssnext" title="GitHub" class="cssnext-Header-nav-item">GitHub</a><a href="https://twitter.com/cssnext" title="Twitter" class="cssnext-Header-nav-item">Twitter</a></div></div></div></header><header class="cssnext-Jumbotron cssnext-Jumbotron--default cssnext-Jumbotron--it-s-cssnext-not-cssnext-html"><div class="r-Grid"><div class="r-Grid-cell"><h1 class="cssnext-Jumbotron-title cssnext-Light">It&#x27;s cssnext, not CSSNext</h1></div></div></header><section class="r-Grid cssnext-Section"><div class="r-Grid-cell js-markdownIt-TOCOriginalContainer"><h2 id="is-it-cssnext-or-cssnext-or-cssnext"><a class="markdownIt-Anchor" href="#is-it-cssnext-or-cssnext-or-cssnext">#</a> Is it cssnext or CSSNext or CSSnext?</h2>
-<p>The official name is <strong>cssnext</strong>, which should never be capitalized, especially not at the start of a sentence, unless it is being displayed in a location that is customarily all-caps (such as the title of man pages).</p>
+<p>The official name is <strong>cssnext</strong>, which should never be capitalized, especially
+not at the start of a sentence, unless it is being displayed in a location that
+is customarily all-caps (such as the title of man pages).</p>
 <h3 id="why"><a class="markdownIt-Anchor" href="#why">#</a> Why ?</h3>
 <pre><code class="language-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">nameify</span>(<span class="hljs-params">string</span>) </span>{
-  <span class="hljs-keyword">return</span> string
-    .replace(<span class="hljs-string">" "</span>, <span class="hljs-string">""</span>)
-    .toLowerCase()
+  <span class="hljs-keyword">return</span> string.replace(<span class="hljs-string">" "</span>, <span class="hljs-string">""</span>).toLowerCase();
 }
 
-nameify(<span class="hljs-string">"CSS Next"</span>)
-nameify(<span class="hljs-string">"CSSNext"</span>)
-nameify(<span class="hljs-string">"CSSnext"</span>)
-nameify(<span class="hljs-string">"CSS next"</span>)
-nameify(<span class="hljs-string">"css next"</span>)
-nameify(<span class="hljs-string">"cssnext"</span>)
+nameify(<span class="hljs-string">"CSS Next"</span>);
+nameify(<span class="hljs-string">"CSSNext"</span>);
+nameify(<span class="hljs-string">"CSSnext"</span>);
+nameify(<span class="hljs-string">"CSS next"</span>);
+nameify(<span class="hljs-string">"css next"</span>);
+nameify(<span class="hljs-string">"cssnext"</span>);
 
 <span class="hljs-comment">// all the results above are just the same</span>
 <span class="hljs-comment">// -&gt; "cssnext" !</span></code></pre>
@@ -342,5 +342,5 @@ nameify(<span class="hljs-string">"cssnext"</span>)
 	</linearGradient>
 	<path fill="url(#SVGID_12_)" d="M255.475,13.569l-4.391,21.613h-0.932l4.373-21.613H255.475z"/>
 </g>
-</svg></span> is brought to you by <a href="https://twitter.com/MoOx">@MoOx</a> &amp; <a href="https://github.com/MoOx/postcss-cssnext/graphs/contributors">some other contributors</a>.</p><small><a href="/it-s-cssnext-not-CSSNext">Note: it&#x27;s cssnext, not CSSNext</a><span style="opacity:.4;margin-left:1rem;"><a href="/credits">Credits</a> | <a href="https://github.com/MoOx/postcss-cssnext/edit/master/docs/content/it-s-cssnext-not-CSSNext.md">Edit this page</a></span></small></footer><script src="/index.js?98cdd121df98d0656b39"></script><script>
+</svg></span> is brought to you by <a href="https://twitter.com/MoOx">@MoOx</a> &amp; <a href="https://github.com/MoOx/postcss-cssnext/graphs/contributors">some other contributors</a>.</p><small><a href="/it-s-cssnext-not-CSSNext">Note: it&#x27;s cssnext, not CSSNext</a><span style="opacity:.4;margin-left:1rem;"><a href="/credits">Credits</a> | <a href="https://github.com/MoOx/postcss-cssnext/edit/master/docs/content/it-s-cssnext-not-CSSNext.md">Edit this page</a></span></small></footer><script src="/index.js?398f4984599f15c9a996"></script><script>
 !function(c,s,S,n,e,x,t){c.GoogleAnalyticsObject=S;c[S]||(c[S]=function(){(c[S].q=c[S].q||[]).push(arguments)});c[S].l=+new Date;x=s.createElement(n);t=s.getElementsByTagName(n)[0];x.src=e;t.parentNode.insertBefore(x,t)}(window,document,'ga','script','//www.google-analytics.com/analytics.js');ga('create','UA-55403963-1','auto');ga('send','pageview');</script></body></html>
