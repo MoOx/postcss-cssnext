@@ -12,7 +12,7 @@ class Header extends Component {
       <header className="cssnext-Header js-Headroom">
         <div style={{ background: "#000", color: "#fff", textAlign: "center" }}>
           <a href="https://moox.io/blog/deprecating-cssnext/">
-            <code>postcss-cssnext</code> has been deprecated in favor or{" "}
+            <code>postcss-cssnext</code> has been deprecated in favor of{" "}
             <code>postcss-preset-env</code>. Read more.
           </a>
         </div>
