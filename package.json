@@ -16,7 +16,7 @@
     "pixrem": "^4.0.0",
     "pleeease-filters": "^4.0.0",
     "postcss": "^6.0.5",
-    "postcss-apply": "^0.8.0",
+    "postcss-apply": "^0.9.0",
     "postcss-attribute-case-insensitive": "^2.0.0",
     "postcss-calc": "^6.0.0",
     "postcss-color-function": "^4.0.0",
