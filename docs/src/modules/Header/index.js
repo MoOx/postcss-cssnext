@@ -10,6 +10,12 @@ class Header extends Component {
   render() {
     return (
       <header className="cssnext-Header js-Headroom">
+        <div style={{ background: "#000", color: "#fff", textAlign: "center" }}>
+          <a href="https://moox.io/blog/deprecating-cssnext/">
+            <code>postcss-cssnext</code> has been deprecated in favor or{" "}
+            <code>postcss-preset-env</code>. Read more.
+          </a>
+        </div>
         <div className="r-Grid">
           <div className="r-Grid-cell r-minM--4of6">
             <span className="cssnext-Header-nav">

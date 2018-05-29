@@ -1,3 +1,7 @@
+## `postcss-cssnext` has been deprecated in favor or `postcss-preset-env`
+
+Read more at https://moox.io/blog/deprecating-cssnext/
+
 # postcss-cssnext
 
 [![Travis Build Status](https://img.shields.io/travis/MoOx/postcss-cssnext.svg?label=unix%20build)](https://travis-ci.org/MoOx/postcss-cssnext)
