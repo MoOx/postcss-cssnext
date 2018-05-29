@@ -1,4 +1,4 @@
-## `postcss-cssnext` has been deprecated in favor or `postcss-preset-env`
+## `postcss-cssnext` has been deprecated in favor of `postcss-preset-env`
 
 Read more at https://moox.io/blog/deprecating-cssnext/
 
